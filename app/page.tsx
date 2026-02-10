@@ -1,4 +1,4 @@
-import { dbConnect } from "./dbconnect";
+import { dbConnect } from "./dbconnection";
 
 export default async function Home() {
   const dbInfo = await dbConnect();
