@@ -5,7 +5,13 @@ export type DbItem = {
   name: string;
 };
 
-export async function dbConnect(): Promise<DbItem[]> {
+export async function dbConnect({
+  query,
+  values = [],
+}: {
+  query: string;
+  values?: any[];
+}): Promise<DbItem[]> {
   const client = new Client({
     host: process.env.DB_HOST,
     port: Number(process.env.DB_PORT),
@@ -19,7 +25,7 @@ export async function dbConnect(): Promise<DbItem[]> {
 
   await client.connect();
 
-  const res = await client.query(`SELECT id, name FROM firstdb`);
+  const res = await client.query(query, values);
 
   await client.end();
 
