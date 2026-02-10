@@ -19,7 +19,7 @@ export async function dbConnect(): Promise<DbItem[]> {
 
   await client.connect();
 
-  const res = await client.query("SELECT id, name FROM firstDB");
+  const res = await client.query(`SELECT id, name FROM firstdb`);
 
   await client.end();
 
