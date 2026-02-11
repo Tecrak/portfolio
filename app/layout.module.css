@@ -1,0 +1,48 @@
+.Main {
+  background-color: black;
+  color: white;
+}
+.Navigation {
+  background: rgb(39, 39, 39);
+  position: fixed;
+  width: 100%;
+}
+.navigationItems {
+  display: flex;
+  gap: 10px;
+  font-size: 20px;
+}
+.navigationItems a {
+  padding: 5px 20px 5px 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+}
+.navigationItems a::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 0;
+  border-radius: 100%;
+  background: rgb(75, 84, 254);
+  z-index: -1;
+}
+.navigationItems a:hover::before {
+  animation: alternate navSelector 0.2s ease forwards;
+}
+.navigationItems a:hover {
+  text-shadow: 0.2px 0.2px 1px rgb(0, 0, 0);
+}
+@keyframes navSelector {
+  0% {
+    height: 0%;
+    border-radius: 100%;
+  }
+  100% {
+    height: 100%;
+    border-radius: 0%;
+  }
+}
