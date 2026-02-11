@@ -3,11 +3,12 @@ import { useState } from "react";
 
 export function FormSubmit({ onNewEntry }: { onNewEntry: () => void }) {
   const [name, setName] = useState("");
+  const [nameLenght, setNameLeght] = useState(4);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
 
-    await fetch("/api/submit", {
+    await fetch("/api", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name }),
@@ -18,8 +19,24 @@ export function FormSubmit({ onNewEntry }: { onNewEntry: () => void }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="mt-4 flex gap-2">
-      <input value={name} onChange={(e) => setName(e.target.value)} />
+    <form
+      onSubmit={
+        name.length <= 3 || name === ""
+          ? (e) => {
+              e.preventDefault();
+            }
+          : handleSubmit
+      }
+      className="mt-4 flex gap-2"
+    >
+      <input
+        value={name}
+        onChange={(e) => {
+          setName(e.target.value);
+          setNameLeght(e.target.value.length);
+        }}
+      />
+      <p>{nameLenght <= 3 ? "Name is too short" : ""}</p>
       <button type="submit">Submit</button>
     </form>
   );
