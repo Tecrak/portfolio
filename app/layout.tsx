@@ -1,6 +1,6 @@
-import Link from "next/link";
 import "./globals.css";
 import styles from "./layout.module.css";
+import { ActivePathName } from "./activePathName";
 
 export default function RootLayout({
   children,
@@ -11,10 +11,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={styles.Main}>
         <div className={styles.Navigation}>
-          <nav className={styles.navigationItems}>
-            <Link href="/about">About</Link>
-            <Link href="./">Home</Link>
-          </nav>
+          <ActivePathName />
         </div>
         {children}
       </body>
