@@ -14,10 +14,7 @@ export function ActivePathName() {
       >
         About
       </Link>
-      <Link
-        href="./"
-        className={`${pathname === "/" ? styles.activePath : ""}`}
-      >
+      <Link href="/" className={`${pathname === "/" ? styles.activePath : ""}`}>
         Home
       </Link>
     </nav>

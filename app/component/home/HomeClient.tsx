@@ -1,32 +1,25 @@
 "use client";
 import { useState, useEffect } from "react";
 import { FormSubmit } from "./formSubmit";
+import { useFetchDB } from "../../api/useFetchDb";
 export function HomeClient() {
-  const [dbInfo, setDbInfo] = useState<{ id: number; name: string }[]>([]);
-  const [loading, setLoading] = useState(true);
   const [isEditing, setIsEditing] = useState(false);
   const [newName, setNewName] = useState("");
+  const { dbInfo, fetchData } = useFetchDB();
 
-  async function fetchData() {
-    setLoading(true);
-    const res = await fetch("/api");
-    const data = await res.json();
-    setDbInfo(data);
-    setLoading(false);
-  }
   async function deleteUser(id: number) {
     await fetch("/api", {
       method: "DELETE",
       body: JSON.stringify({ id }),
     });
-    fetchData();
+    await fetchData();
   }
   async function changeUser(id: number, name: string) {
     await fetch("/api", {
       method: "PUT",
       body: JSON.stringify({ id, name }),
     });
-    fetchData();
+    await fetchData();
   }
 
   useEffect(() => {
@@ -34,7 +27,6 @@ export function HomeClient() {
   }, []);
   return (
     <div className="flex min-h-screen flex-col items-center justify-center">
-      {loading && <p>Loading...</p>}
       <ul>
         {dbInfo.map((data) => (
           <li key={data.id}>
