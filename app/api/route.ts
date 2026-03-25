@@ -50,12 +50,26 @@ export async function POST(req: Request) {
 }
 
 export async function GET(req: Request) {
+  const { searchParams } = new URL(req.url);
+  const id = searchParams.get("id");
+
+  // якщо id передали — фільтруємо
+  if (id) {
+    const data = await dbConnect({
+      query: `SELECT * FROM ${process.env.DB_TABLE} WHERE id = $1`,
+      values: [id],
+    });
+
+    return NextResponse.json(data);
+  }
+
+  // якщо ні — повертаємо все (опційно)
   const data = await dbConnect({
     query: `SELECT * FROM ${process.env.DB_TABLE}`,
   });
-  return new Response(JSON.stringify(data), { status: 200 });
-}
 
+  return NextResponse.json(data);
+}
 export async function PUT(req: Request) {
   const { id, name } = await req.json();
 

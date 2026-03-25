@@ -22,6 +22,30 @@ export function useFetchDB() {
   return { dbInfo, fetchData };
 }
 
+export function useFilterFetchDB(id: string) {
+  const [data, setData] = useState<{ id: number; name: string } | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (!id) return;
+
+    async function fetchData() {
+      try {
+        const res = await fetch(`/api?id=${id}`);
+        const result = await res.json();
+        setData(result[0] || null);
+      } catch (e) {
+        console.error(e);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchData();
+  }, [id]);
+
+  return { data, loading };
+}
 // async function fetchData() {
 //   setLoading(true);
 //   const res = await fetch("/api");

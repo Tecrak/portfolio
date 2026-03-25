@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { FormSubmit } from "./formSubmit";
 import { useFetchDB } from "../../api/useFetchDb";
 export function HomeClient() {
-  const [isEditing, setIsEditing] = useState(false);
+  const [editingId, setEditingId] = useState<number | null>(null);
   const [newName, setNewName] = useState("");
   const { dbInfo, fetchData } = useFetchDB();
 
@@ -39,15 +39,19 @@ export function HomeClient() {
             </button>
             <button
               style={{ background: "green" }}
-              onClick={() => setIsEditing(!isEditing)}
+              onClick={() =>
+                setEditingId(editingId === data.id ? null : data.id)
+              }
             >
-              {isEditing ? "Stop" : "Edit"}
+              {editingId === data.id ? "Stop" : "Edit"}
             </button>
-            {isEditing && (
+            {editingId === data.id && (
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
                   changeUser(data.id, newName);
+                  setEditingId(null);
+                  setNewName("");
                 }}
               >
                 <input
