@@ -1,6 +1,6 @@
 "use client";
 
-import { useFetchDB } from "./api/useFetchDb";
+import { useFetchDB } from "./api/useFetch";
 import Link from "next/link";
 
 export default function SideBar() {
@@ -8,7 +8,7 @@ export default function SideBar() {
 
   return (
     <ul>
-      {dbInfo.map((data) => (
+      {dbInfo.map((data: { id: number; name: string }) => (
         <li key={data.id}>
           <Link href={`/component/${data.id}`}>
             {data.id}: {data.name}

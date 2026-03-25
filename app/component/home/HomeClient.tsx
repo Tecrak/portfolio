@@ -1,34 +1,33 @@
 "use client";
 import { useState, useEffect } from "react";
 import { FormSubmit } from "./formSubmit";
-import { useFetchDB } from "../../api/useFetchDb";
+import { useFetchDB } from "../../api/useFetch";
 export function HomeClient() {
   const [editingId, setEditingId] = useState<number | null>(null);
   const [newName, setNewName] = useState("");
-  const { dbInfo, fetchData } = useFetchDB();
+  const { dbInfo, mutate } = useFetchDB();
 
   async function deleteUser(id: number) {
     await fetch("/api", {
       method: "DELETE",
       body: JSON.stringify({ id }),
     });
-    await fetchData();
+
+    await mutate(); // оновлює ВСІ компоненти
   }
   async function changeUser(id: number, name: string) {
     await fetch("/api", {
       method: "PUT",
       body: JSON.stringify({ id, name }),
     });
-    await fetchData();
+
+    await mutate(); // автоматичний рефреш всюди
   }
 
-  useEffect(() => {
-    fetchData();
-  }, []);
   return (
     <div className="flex min-h-screen flex-col items-center justify-center">
       <ul>
-        {dbInfo.map((data) => (
+        {dbInfo.map((data: { id: number; name: string }) => (
           <li key={data.id}>
             {data.name}
             <button
@@ -66,7 +65,7 @@ export function HomeClient() {
           </li>
         ))}
       </ul>
-      <FormSubmit onNewEntry={fetchData} />
+      <FormSubmit onNewEntry={mutate} />
     </div>
   );
 }

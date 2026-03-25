@@ -1,5 +1,5 @@
 "use client";
-import { useFilterFetchDB } from "../../api/useFetchDb";
+import { useFilterFetchDB } from "../../api/useFilterFetchDB";
 
 export default function InfoFun({ id }: { id: string }) {
   const { data, loading } = useFilterFetchDB(id);
