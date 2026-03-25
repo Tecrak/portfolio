@@ -30,6 +30,10 @@ export function FormSubmit({ onNewEntry }: { onNewEntry: () => void }) {
       className="mt-4 flex gap-2"
     >
       <input
+        style={{
+          border: name.length <= 3 ? "1px red solid" : "1px green solid",
+          outline: "none",
+        }}
         value={name}
         onChange={(e) => {
           setName(e.target.value);
