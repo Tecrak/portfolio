@@ -1,6 +1,6 @@
 "use client";
 
-import { useFetchDB } from "./api/useFetch";
+import { useFetchDB } from "../../../api/useFetch";
 import Link from "next/link";
 
 export default function SideBar() {

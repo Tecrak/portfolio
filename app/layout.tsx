@@ -1,7 +1,7 @@
 import "./globals.css";
 import styles from "./layout.module.css";
 import { ActivePathName } from "./activePathName";
-import SideBar from "./sideBar";
+// import SideBar from "./sideBar";
 
 export default function RootLayout({
   children,
@@ -14,7 +14,7 @@ export default function RootLayout({
         <div className={styles.Navigation}>
           <ActivePathName />
         </div>
-        <SideBar />
+        {/* <SideBar /> */}
         {children}
       </body>
     </html>
