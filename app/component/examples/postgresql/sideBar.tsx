@@ -1,14 +1,16 @@
 "use client";
 
-import { useFetchDB } from "../../../api/useFetch";
+import { usePeople } from "@/app/api/usePeople";
 import Link from "next/link";
 
 export default function SideBar() {
-  const { dbInfo } = useFetchDB();
+  const { data: people = [], isLoading } = usePeople();
+
+  if (isLoading) return <div>Loading...</div>;
 
   return (
     <ul>
-      {dbInfo.map((data: { id: number; name: string }) => (
+      {people.map((data: { id: number; name: string }) => (
         <li key={data.id}>
           <Link href={`/component/${data.id}`}>
             {data.id}: {data.name}

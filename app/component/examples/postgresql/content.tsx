@@ -1,29 +1,21 @@
 "use client";
 import { useState } from "react";
 import { FormSubmit } from "./formSubmit";
-import { useFetchDB } from "../../../api/useFetch";
+import {
+  usePeople,
+  useDeletePerson,
+  useUpdatePerson,
+} from "../../../api/usePeople";
 
 export default function PostgreContent() {
   const [editingId, setEditingId] = useState<number | null>(null);
   const [newName, setNewName] = useState("");
-  const { dbInfo, mutate } = useFetchDB();
 
-  async function deleteUser(id: number) {
-    await fetch("/api", {
-      method: "DELETE",
-      body: JSON.stringify({ id }),
-    });
+  const { data: dbInfo = [], isLoading } = usePeople();
+  const deleteMutation = useDeletePerson();
+  const updateMutation = useUpdatePerson();
 
-    await mutate(); // оновлює ВСІ компоненти
-  }
-  async function changeUser(id: number, name: string) {
-    await fetch("/api", {
-      method: "PUT",
-      body: JSON.stringify({ id, name }),
-    });
-
-    await mutate(); // автоматичний рефреш всюди
-  }
+  if (isLoading) return <div>Loading...</div>;
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center">
@@ -31,12 +23,14 @@ export default function PostgreContent() {
         {dbInfo.map((data: { id: number; name: string }) => (
           <li key={data.id}>
             {data.name}
+
             <button
-              onClick={() => deleteUser(data.id)}
+              onClick={() => deleteMutation.mutate(data.id)}
               style={{ background: "red", marginLeft: "15px" }}
             >
               Delete
             </button>
+
             <button
               style={{ background: "green" }}
               onClick={() =>
@@ -45,28 +39,33 @@ export default function PostgreContent() {
             >
               {editingId === data.id ? "Stop" : "Edit"}
             </button>
+
             {editingId === data.id && (
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
-                  changeUser(data.id, newName);
+
+                  updateMutation.mutate({
+                    id: data.id,
+                    name: newName,
+                  });
+
                   setEditingId(null);
                   setNewName("");
                 }}
               >
                 <input
                   type="text"
-                  name="name"
                   onChange={(e) => setNewName(e.target.value)}
                   style={{ background: "blue", marginLeft: "15px" }}
-                ></input>
+                />
                 <button type="submit">Edit</button>
               </form>
             )}
           </li>
         ))}
       </ul>
-      <FormSubmit onNewEntry={mutate} />
+      <FormSubmit />
     </div>
   );
 }

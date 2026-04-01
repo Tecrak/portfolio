@@ -1,47 +1,49 @@
 "use client";
 import { useState } from "react";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
-export function FormSubmit({ onNewEntry }: { onNewEntry: () => void }) {
+export function FormSubmit() {
   const [name, setName] = useState("");
-  const [nameLenght, setNameLeght] = useState(4);
+  const queryClient = useQueryClient();
 
-  async function handleSubmit(e: React.FormEvent) {
+  const createMutation = useMutation({
+    mutationFn: async (name: string) => {
+      await fetch("/api", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name }),
+      });
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["people"] });
+    },
+  });
+
+  function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
 
-    await fetch("/api", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name }),
-    });
+    if (name.length <= 3) return;
 
-    setName(""); // очищаємо поле
-    onNewEntry(); // оновлюємо список
+    createMutation.mutate(name);
+    setName("");
   }
 
   return (
-    <form
-      onSubmit={
-        name.length <= 3 || name === ""
-          ? (e) => {
-              e.preventDefault();
-            }
-          : handleSubmit
-      }
-      className="mt-4 flex gap-2"
-    >
+    <form onSubmit={handleSubmit} className="mt-4 flex gap-2">
       <input
+        value={name}
+        onChange={(e) => setName(e.target.value)}
         style={{
           border: name.length <= 3 ? "1px red solid" : "1px green solid",
           outline: "none",
         }}
-        value={name}
-        onChange={(e) => {
-          setName(e.target.value);
-          setNameLeght(e.target.value.length);
-        }}
       />
-      <p>{nameLenght <= 3 ? "Name is too short" : ""}</p>
-      <button type="submit">Submit</button>
+
+      {name.length <= 3 && <p>Name is too short</p>}
+
+      <button type="submit" disabled={createMutation.isPending}>
+        {createMutation.isPending ? "Adding..." : "Submit"}
+      </button>
     </form>
   );
 }
