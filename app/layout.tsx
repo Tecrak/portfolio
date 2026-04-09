@@ -5,15 +5,15 @@ import "./globals.css";
 
 export default function RootLayout({ children }: any) {
   return (
-    <html>
-      <Providers>
-        <body className={styles.Main}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={styles.Main}>
+        <Providers>
           <div className={styles.Navigation}>
             <ActivePathName />
           </div>
           {children}
-        </body>
-      </Providers>
+        </Providers>
+      </body>
     </html>
   );
 }
