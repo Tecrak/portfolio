@@ -28,7 +28,7 @@ export function ActivePathName() {
       ))}
       <button
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-        className="bg-white text-black dark:bg-gray-900 dark:text-white"
+        className="themeToggleButton"
       >
         {theme === "dark" ? "Turn on Light ☀️" : "Turn on Dark 🌙"}
       </button>
