@@ -1,4 +1,4 @@
-import styles from "./layout.module.css";
+import "./layout.css";
 import { ActivePathName } from "./activePathName";
 import Providers from "./api/providers";
 import "./globals.css";
@@ -6,9 +6,9 @@ import "./globals.css";
 export default function RootLayout({ children }: any) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={styles.Main}>
+      <body className="Main">
         <Providers>
-          <div className={styles.Navigation}>
+          <div className="Navigation">
             <ActivePathName />
           </div>
           {children}

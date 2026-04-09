@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import styles from "./layout.module.css";
+import "./layout.css";
 import { usePathname } from "next/navigation";
 import { NAVIGATION } from "./config/navigation";
 
@@ -16,12 +16,12 @@ export function ActivePathName() {
   if (!mounted) return null;
 
   return (
-    <nav className={styles.navigationItems}>
+    <nav className="navigationItems">
       {NAVIGATION.map((link) => (
         <Link
           key={link.path}
           href={link.path}
-          className={pathname === link.path ? styles.activePath : ""}
+          className={pathname === link.path ? "activePath" : ""}
         >
           {link.label}
         </Link>
