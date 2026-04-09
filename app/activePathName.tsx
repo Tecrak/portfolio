@@ -30,7 +30,7 @@ export function ActivePathName() {
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
         className="bg-white text-black dark:bg-gray-900 dark:text-white"
       >
-        {theme === "dark" ? "🌙 Dark" : "☀️ Light"}
+        {theme === "dark" ? "Turn on Light ☀️" : "Turn on Dark 🌙"}
       </button>
     </nav>
   );

@@ -1,11 +1,27 @@
-.Main {
+/* .Main {
   background-color: black;
   color: white;
+} */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --nav-bg: rgb(255, 187, 1); /* light */
 }
+
+.dark {
+  --nav-bg: purple; /* dark */
+}
+
 .Navigation {
-  background: rgb(39, 39, 39);
+  background: var(--nav-bg);
   width: 100%;
 }
+
+.dark .Navigation {
+  background: purple; /* темний (фіолетовий) */
+}
+
 .navigationItems {
   display: flex;
   font-size: 20px;
