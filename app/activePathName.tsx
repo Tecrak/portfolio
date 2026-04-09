@@ -26,12 +26,14 @@ export function ActivePathName() {
           {link.label}
         </Link>
       ))}
-      <button
-        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-        className="themeToggleButton"
-      >
-        {theme === "dark" ? "Turn on Light ☀️" : "Turn on Dark 🌙"}
-      </button>
+      <label className="switch">
+        <input
+          type="checkbox"
+          checked={theme === "dark"}
+          onChange={() => setTheme(theme === "dark" ? "light" : "dark")}
+        />
+        <span className="slider round"></span>
+      </label>
     </nav>
   );
 }
