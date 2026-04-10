@@ -2,11 +2,15 @@
   --nav-bg: rgb(1, 149, 255); /* light */
   --nav-bttn-hover: rgb(144, 255, 117);
   --theme-button-bg: rgb(252, 243, 200);
+  --slider-circle: #2400b2;
+  --slider-bg: rgb(255, 255, 0);
 }
 .dark {
   --nav-bg: rgb(179, 1, 179); /* dark */
   --nav-bttn-hover: rgb(97, 105, 255);
   --theme-button-bg: rgb(0, 83, 171);
+  --slider-circle: rgb(255, 255, 0);
+  --slider-bg: #2400b2;
 }
 .Navigation {
   background: var(--nav-bg);
@@ -72,6 +76,7 @@
 }
 
 /* The slider */
+
 .slider {
   position: absolute;
   cursor: pointer;
@@ -79,7 +84,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: var(--slider-bg);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -91,13 +96,13 @@
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: white;
+  background-color: var(--slider-circle);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: #2196f3;
+  background-color: var(--slider-bg);
 }
 
 input:focus + .slider {
@@ -108,6 +113,7 @@ input:checked + .slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
+  background-color: var(--slider-circle);
 }
 
 /* Rounded sliders */
