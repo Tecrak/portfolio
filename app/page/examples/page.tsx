@@ -1,28 +1,9 @@
 "use client";
 import Link from "next/link";
+import { EXAMPLELINKS } from "@/app/config/examplelinks";
 import { usePathname } from "next/navigation";
 
 export default function skillPage() {
-  type NavItem = {
-    label: string;
-    path: string;
-  };
-
-  const EXAMPLELINKS: NavItem[] = [
-    {
-      label: "PostgreSQL",
-      path: "/page/examples/postgresql",
-    },
-    {
-      label: "MongoDB",
-      path: "/page/examples/mongodb",
-    },
-    {
-      label: "MySQL",
-      path: "/page/examples/mysql",
-    },
-  ];
-
   const pathname = usePathname();
 
   return (

@@ -5,7 +5,7 @@ import {
   usePeople,
   useDeletePerson,
   useUpdatePerson,
-} from "../../../../api/usePeople";
+} from "@/app/api/usePeople";
 
 export default function postgresqlPage() {
   const [editingId, setEditingId] = useState<number | null>(null);
