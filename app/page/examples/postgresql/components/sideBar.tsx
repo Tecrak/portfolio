@@ -12,7 +12,7 @@ export default function SideBar() {
     <ul>
       {people.map((data: { id: number; name: string }) => (
         <li key={data.id}>
-          <Link href={`/page/${data.id}`}>
+          <Link href={`/page/examples/postgresql/${data.id}`}>
             {data.id}: {data.name}
           </Link>
         </li>
