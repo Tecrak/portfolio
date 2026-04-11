@@ -15,7 +15,7 @@ export const CONTACT_INFO: ContactInfo[] = [
     label: "Mittelberger Straße , 32, 96472, Rödental (Germany)",
   },
   {
-    icon: "https://imgs.search.brave.com/prOnA1Fub2ENOsqdekJThn9VkicvsUjF3VlUuhRe1lM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4t/aWNvbnMtcG5nLmZy/ZWVwaWsuY29tLzI1/Ni8xMzg0LzEzODQx/NzEucG5nP3NlbXQ9/YWlzX3doaXRlX2xh/YmVs",
+    icon: "https://imgs.search.brave.com/C5FDVEPxFH9YOmXz5blawVWUukYSika69QSaCVO5qPs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91eHdp/bmcuY29tL3dwLWNv/bnRlbnQvdGhlbWVz/L3V4d2luZy9kb3du/bG9hZC9icmFuZHMt/YW5kLXNvY2lhbC1t/ZWRpYS9saW5rZWRp/bi1zcXVhcmUtaWNv/bi5zdmc",
     label: "linkedin.com/in/ponstoone",
     isLink: true,
   },

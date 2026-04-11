@@ -41,7 +41,7 @@
   display: flex;
   border-bottom: 2px solid rgba(128, 128, 128, 0.501);
   border-radius: 0px 0px 15px 15px;
-  background-color: rgba(var(--about-bg), 0.837);
+  background-color: rgba(var(--about-bg), 0.8);
 }
 .aboutImage {
   display: flex;
@@ -94,7 +94,7 @@
   width: 40px;
   height: 40px;
   border: 1.5px grey solid;
-  background: rgba(var(--about-bg), 0.437);
+  background: rgba(var(--about-bg), 1);
   border-radius: 100%;
 }
 .contactIcon > img {
