@@ -1,6 +1,7 @@
 import { useDeletePerson } from "@/app/api/usePeople";
 export default function DeleteButton({ data }: { data: { id: number } }) {
   const deleteMutation = useDeletePerson();
+
   return (
     <button
       onClick={() => deleteMutation.mutate(data.id)}
