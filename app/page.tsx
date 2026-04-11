@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import "./page.css";
-
+import { CONTACT_INFO } from "./config/contactInfo";
 export const dynamic = "force-dynamic";
 
 export default function Page() {
@@ -29,7 +29,7 @@ export default function Page() {
           <div className="shortInfoAbout">
             <div className="detailedInfo">
               <div className="aboutMe">
-                <h4>Shorty about me</h4>
+                <h4>Shortly about me</h4>
                 <p>
                   Einstieg als Junior-Webentwickler (Frontend / Full-Stack) in
                   einem Unternehmen, in dem ich meine Kenntnisse in JavaScript,
@@ -51,7 +51,32 @@ export default function Page() {
               </div>
             </div>
             <div className="contactInfo">
-              <p>Contact info</p>
+              <ul className="contactsList">
+                {CONTACT_INFO.map((contact, index) =>
+                  contact.isLink ? (
+                    <a
+                      href={`https://${contact.label}`}
+                      key={index}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <li key={index} className="contactItem">
+                        <div className="contactIcon">
+                          <img src={contact.icon} alt={contact.label} />
+                        </div>
+                        <span>{contact.label}</span>
+                      </li>
+                    </a>
+                  ) : (
+                    <li key={index} className="contactItem">
+                      <div className="contactIcon">
+                        <img src={contact.icon} alt={contact.label} />
+                      </div>
+                      <span>{contact.label}</span>
+                    </li>
+                  ),
+                )}
+              </ul>
             </div>
           </div>
         </div>
