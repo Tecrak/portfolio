@@ -15,15 +15,15 @@ export default function exampleLayout({
   const EXAMPLELINKS: NavItem[] = [
     {
       label: "PostgreSQL",
-      path: "/component/examples/postgresql",
+      path: "/page/examples/postgresql",
     },
     {
       label: "MongoDB",
-      path: "/component/examples/mongodb",
+      path: "/page/examples/mongodb",
     },
     {
       label: "MySQL",
-      path: "/component/examples/mysql",
+      path: "/page/examples/mysql",
     },
   ];
 
