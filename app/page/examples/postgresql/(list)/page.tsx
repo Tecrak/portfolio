@@ -1,11 +1,11 @@
 "use client";
 import { useState } from "react";
-import { FormSubmit } from "./components/formSubmit";
+import { FormSubmit } from "../components/formSubmit";
 import {
   usePeople,
   useDeletePerson,
   useUpdatePerson,
-} from "../../../api/usePeople";
+} from "../../../../api/usePeople";
 
 export default function postgresqlPage() {
   const [editingId, setEditingId] = useState<number | null>(null);
