@@ -1,4 +1,4 @@
-import SideBar from "./sideBar";
+import SideBar from "./components/sideBar";
 
 export default function postgreLayout({
   children,
