@@ -1,7 +1,7 @@
-import "./layout.css";
-import { ActivePathName } from "./activePathName";
+import "./styles/layout.css";
+import { ActivePathName } from "./components/activePathName";
 import Providers from "./api/providers";
-import "./globals.css";
+import "./styles/globals.css";
 
 export default function RootLayout({ children }: any) {
   return (

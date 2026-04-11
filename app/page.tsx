@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import "./page.css";
+import "./styles/page.css";
 import { CONTACT_INFO } from "./config/contactInfo";
 export const dynamic = "force-dynamic";
 
