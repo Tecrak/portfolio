@@ -1,126 +1,49 @@
-Я маю таку структуру файлів
+"use client";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-app/api/usePeople.ts
-
-import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-
-export function usePeople() {
-  return useQuery({
-    queryKey: ["people"],
-    queryFn: async () => {
-      const res = await fetch("/api");
-      return res.json();
-    },
-  });
-}
-
- app/page/examples/postgresql/layout.tsx 
-
-```typescriptreact
-import SideBar from "./components/sideBar";
-
-export default function postgreLayout({
+export default function exampleLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
+  type NavItem = {
+    label: string;
+    path: string;
+  };
+
+  const EXAMPLELINKS: NavItem[] = [
+    {
+      label: "PostgreSQL",
+      path: "/page/examples/postgresql",
+    },
+    {
+      label: "MongoDB",
+      path: "/page/examples/mongodb",
+    },
+    {
+      label: "MySQL",
+      path: "/page/examples/mysql",
+    },
+  ];
+
+  const pathname = usePathname();
+
   return (
     <>
-      <SideBar></SideBar>
+      <div>
+        {EXAMPLELINKS.map((link) => (
+          <Link
+            key={link.path}
+            href={link.path}
+            className={pathname == link.path ? "active" : ""}
+          >
+            {link.label}
+          </Link>
+        ))}
+      </div>
+
       {children}
     </>
   );
 }
-
-```
-
-app/page/examples/postgresql/components/sideBar 
-
-```typescriptreact
-"use client";
-
-import { usePeople } from "@/app/api/usePeople";
-import Link from "next/link";
-
-export default function SideBar() {
-  const { data: people = [], isLoading } = usePeople();
-
-  if (isLoading) return <div>Loading...</div>;
-
-  return (
-    <ul>
-      {people.map((data: { id: number; name: string }) => (
-        <li key={data.id}>
-          <Link href={`/page/examples/postgresql/${data.id}`}>
-            {data.id}: {data.name}
-          </Link>
-        </li>
-      ))}
-    </ul>
-  );
-}
-
-```
-
-app/page/examples/postgresql/[id]/layout.tsx 
-
-```typescriptreact
-"use client";
-import { useFilterFetchDB } from "./useFilterFetchDB";
-
-export default function InfoFun({ id }: { id: string }) {
-  const { data, loading } = useFilterFetchDB(id);
-
-  if (loading) return <div>Loading...</div>;
-  if (!data) return <div>Not found</div>;
-
-  return <div>HIII: {data.name}</div>;
-}
-
-```
-
-app/page/examples/postgresql/[id]/page.tsx  
-
-```typescriptreact
-import InfoFun from "./layout";
-
-export default async function Page({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
-  const { id } = await params;
-
-  return (
-    <div>
-      <InfoFun id={id} />
-    </div>
-  );
-}
-
-```
-
-app/page/examples/postgresql/[id]/useFilterFetchDB.ts 
-
-```typescript
-import useSWR from "swr";
-
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
-
-export function useFilterFetchDB(id: string) {
-  const { data, error, mutate } = useSWR(
-    id ? `/api?id=${id}` : null, // якщо id немає, fetch не буде
-    fetcher,
-  );
-
-  return {
-    data: data ? data[0] : null, // як у тебе було: беремо перший елемент
-    loading: !error && !data,
-    isError: error,
-    mutate, // можна викликати mutate() після PUT/DELETE
-  };
-}
-
-```
-
-  Чому у мене виникає помилка  __sideBar.tsx:15__ Fetch failed loading: GET "__http://localhost:3000/page/examples/postgresql/46?_rsc=15lga__".
