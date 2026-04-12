@@ -4,7 +4,7 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import "../styles/layout.css";
 import { usePathname } from "next/navigation";
-import { NAVIGATION } from "../config/navigation";
+import { NAVIGATION } from "../../config/navigation";
 
 export function ActivePathName() {
   const pathname = usePathname();
