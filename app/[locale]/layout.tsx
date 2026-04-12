@@ -2,16 +2,34 @@ import "./styles/layout.css";
 import { ActivePathName } from "./components/activePathName";
 import Providers from "../api/providers";
 import "./styles/globals.css";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
+import { routing } from "../i18n/routing";
+import { notFound } from "next/navigation";
 
-export default function RootLayout({ children }: any) {
+export default async function RootLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+
+  if (!routing.locales.includes(locale as any)) {
+    notFound();
+  }
+  const messages = await getMessages();
   return (
-    <html suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body className="Main">
         <Providers>
-          <div className="Navigation">
-            <ActivePathName />
-          </div>
-          {children}
+          <NextIntlClientProvider locale={locale} messages={messages}>
+            <div className="Navigation">
+              <ActivePathName />
+            </div>
+            {children}
+          </NextIntlClientProvider>
         </Providers>
       </body>
     </html>

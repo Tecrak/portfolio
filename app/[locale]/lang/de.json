@@ -1,0 +1,12 @@
+{
+  "AboutMe": {
+    "aboutTitle": "Kurz über mich",
+    "aboutText": "Ich bin ein angehender Webentwickler (Frontend/Full-Stack) und beginne meine berufliche Laufbahn in einem Unternehmen, in dem ich meine Kenntnisse in JavaScript, React, HTML und CSS anwenden und meine Fähigkeiten in der modernen Webentwicklung mit Engagement und Ausdauer weiterentwickeln kann.",
+    "languagesMy": "Sprachen",
+    "languageLevel": "Ukrainisch - Native, Englisch - Proficient, Deutsch - Beginner, aktiv studierend"
+  },
+  "Navigation": {
+    "navHome": "Startseite",
+    "navExample": "Fähigkeitenbeispiel"
+  }
+}

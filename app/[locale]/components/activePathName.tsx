@@ -5,11 +5,14 @@ import { useEffect, useState } from "react";
 import "../styles/layout.css";
 import { usePathname } from "next/navigation";
 import { NAVIGATION } from "../../config/navigation";
+import { useTranslations } from "next-intl";
+import ThemeSwitchBttn from "./themeSwitchBttn";
+import LangSwithBttn from "./langSwithBttn";
 
 export function ActivePathName() {
   const pathname = usePathname();
-  const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const t = useTranslations("Navigation");
 
   useEffect(() => setMounted(true), []);
 
@@ -23,17 +26,11 @@ export function ActivePathName() {
           href={link.path}
           className={pathname === link.path ? "activePath" : ""}
         >
-          {link.label}
+          {t(link.label)}
         </Link>
       ))}
-      <label className="switch">
-        <input
-          type="checkbox"
-          checked={theme === "dark"}
-          onChange={() => setTheme(theme === "dark" ? "light" : "dark")}
-        />
-        <span className="slider round"></span>
-      </label>
+      <ThemeSwitchBttn />
+      <LangSwithBttn />
     </nav>
   );
 }
