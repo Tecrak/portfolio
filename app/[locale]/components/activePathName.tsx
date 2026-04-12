@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import "../styles/layout.css";
 import { usePathname } from "next/navigation";
@@ -29,8 +28,10 @@ export function ActivePathName() {
           {t(link.label)}
         </Link>
       ))}
-      <ThemeSwitchBttn />
-      <LangSwithBttn />
+      <div className="switchers">
+        <ThemeSwitchBttn />
+        <LangSwithBttn />
+      </div>
     </nav>
   );
 }

@@ -51,12 +51,18 @@
   height: 100%;
   border-radius: 0%;
 }
+.switchers {
+  display: flex;
+  margin-left: auto;
+  position: relative;
+  right: 5px;
+  gap: 5px;
+}
 .switch {
   position: relative;
   display: inline-block;
   width: 60px;
   height: 24px;
-  right: 5px;
   margin-left: auto;
 }
 
@@ -115,4 +121,8 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+.langSwitcher {
+  border: 1px grey solid;
 }

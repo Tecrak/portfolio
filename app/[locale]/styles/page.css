@@ -85,6 +85,11 @@
   display: flex;
   align-items: center;
 }
+.contactItem:hover {
+  background: rgb(1, 125, 144);
+
+  border-radius: 22px 0px 0px 22px;
+}
 .contactIcon {
   position: relative;
   display: flex;

@@ -16,6 +16,7 @@ export default function LangSwithBttn() {
       <select
         defaultValue={pathname.split("/")[1]}
         onChange={(e) => switchLocale(e.target.value)}
+        className="langSwitcher"
       >
         <option value="en" onClick={() => switchLocale("en")}>
           🇬🇧

@@ -3,9 +3,13 @@ export default function ContactsList() {
   return (
     <ul className="contactsList">
       {CONTACT_INFO.map((contact, index) =>
-        contact.isLink ? (
+        contact.linkType ? (
           <a
-            href={`https://${contact.label}`}
+            href={
+              contact.linkType === "email"
+                ? `mailto:${contact.label}`
+                : `https://${contact.label}`
+            }
             key={index}
             target="_blank"
             rel="noopener noreferrer"
