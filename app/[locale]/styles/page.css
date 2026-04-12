@@ -66,15 +66,6 @@
 .detailedInfo {
   width: 60%;
 }
-.contactInfo {
-  /* background: purple; */
-}
-.aboutMe {
-  /* background: yellow; */
-}
-.languageSkills {
-  /* background: cyan; */
-}
 .contactsList {
   display: flex;
   flex-direction: column;

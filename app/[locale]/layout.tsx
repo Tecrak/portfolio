@@ -6,7 +6,6 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { routing } from "../i18n/routing";
 import { notFound } from "next/navigation";
-import ScreenSave from "./components/screenSave";
 
 export default async function RootLayout({
   children,
