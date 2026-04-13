@@ -54,4 +54,6 @@ export const SKILLS_LIST = resolveSkills([
   { skillName: "Git", lvl: "Moderate", stage: "Active" },
   { skillName: "Figma & Sketch", lvl: "Moderate", stage: "InPlan" },
   { skillName: "Vite", lvl: "Confident", stage: "Completed" },
+  { skillName: "Python", lvl: "Bad", stage: "InPlan" },
+  { skillName: "PhP", lvl: "Bad", stage: "InPlan" },
 ]);
