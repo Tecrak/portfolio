@@ -2,12 +2,14 @@ import "./styles/page.css";
 import ContactsList from "./components/contactsList";
 import SkillsContent from "./components/skillsContent";
 import AboutMe from "./components/aboutMe";
+import ExpList from "./components/ExpList";
 import WelcomeWindow from "./components/welcomeWindow";
 export const dynamic = "force-dynamic";
 import { useTranslations } from "next-intl";
 
 export default function Page() {
   const t = useTranslations("SkillsList");
+  const tEXP = useTranslations("WorkEXP");
   return (
     <div className="main">
       <section className="main_content">
@@ -27,7 +29,11 @@ export default function Page() {
         <h2>{t("title")}</h2>
         <SkillsContent />
       </section>
-      <section className="experience_content"></section>
+      <section className="experience_content">
+        <h2>{tEXP("title")}</h2>
+        <ExpList />
+      </section>
+      <section className="education"></section>
       <section className="end_content"></section>
       <WelcomeWindow />
     </div>

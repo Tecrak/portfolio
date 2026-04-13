@@ -44,7 +44,9 @@ export const SKILLS_LIST = resolveSkills([
   },
   { skillName: "Typescript", lvl: "High", stage: "Active" },
   { skillName: "Node.JS", lvl: "Moderate", stage: "Active" },
-  { skillName: "Next.JS", lvl: "Moderate", stage: "Active" },
+  { skillName: "AI Promts", lvl: "Confident", stage: "Completed" },
+  { skillName: "Next.JS", lvl: "High", stage: "Active" },
+  { skillName: "Next-intl", lvl: "High", stage: "Active" },
   {
     skillName: "Databases(MongoDB, PostgreSQL, MySQL)",
     lvl: "Moderate",
@@ -56,4 +58,5 @@ export const SKILLS_LIST = resolveSkills([
   { skillName: "Vite", lvl: "Confident", stage: "Completed" },
   { skillName: "Python", lvl: "Bad", stage: "InPlan" },
   { skillName: "PhP", lvl: "Bad", stage: "InPlan" },
+  { skillName: "Java", lvl: "Moderate", stage: "InPlan" },
 ]);
