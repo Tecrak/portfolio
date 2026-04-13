@@ -19,13 +19,13 @@ export default function LangSwithBttn() {
         className="langSwitcher"
       >
         <option value="en" onClick={() => switchLocale("en")}>
-          🇬🇧
+          EN
         </option>
         <option value="ua" onClick={() => switchLocale("ua")}>
-          &#x1F1FA;&#x1F1E6;
+          UA
         </option>
         <option value="de" onClick={() => switchLocale("de")}>
-          &#x1F1E9;&#x1F1EA;
+          DE
         </option>
       </select>
     </div>
