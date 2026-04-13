@@ -1,12 +1,14 @@
 :root {
   --about-bg: 92, 228, 255;
-  --skill-bg: rgb(129, 221, 252);
-  --skill-bg-hover: 129, 221, 252;
+  --skill-bg: default;
+  --skill-bg-hover: rgb(176, 242, 255);
+  --skill-li-border: grey;
 }
 .dark {
   --about-bg: 16, 1, 47;
   --skill-bg: rgb(37, 31, 95);
-  --skill-bg-hover: 37, 31, 95;
+  --skill-bg-hover: rgb(84, 0, 0);
+  --skill-li-border: black;
 }
 
 /* ---WELCOME WINDOW--- */
@@ -148,16 +150,27 @@
   border-radius: 100%;
 }
 /* ---SKILLS TABLE--- */
+.skills_table > ul {
+  display: flex;
+  flex-direction: column;
+  height: 25vw;
+  width: 100%;
+  flex-wrap: wrap;
+}
 .skills_table > ul > li {
   display: flex;
   justify-content: space-between;
   position: relative;
   padding: 5px;
   background: var(--skill-bg);
-  border-bottom: 1.5px black solid;
+  cursor: pointer;
+  border: 1.5px var(--skill-li-border) solid;
 }
-.skills_table > ul > li:hover {
-  background: rgb(var(--skill-bg-hover), 0.2);
+.skills_table > ul > li.fixed {
+  border: 3px rgb(255, 255, 255) solid;
+}
+.skills_table > ul > li .skills_table > ul > li:hover {
+  background: var(--skill-bg-hover);
 }
 .skillStatusBall {
   height: 15px;
@@ -170,4 +183,5 @@
   justify-content: space-between;
   align-items: center;
   gap: 10px;
+  margin-left: 10px;
 }

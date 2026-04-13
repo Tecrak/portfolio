@@ -1,8 +1,12 @@
+"use client";
 import { SKILLS_LIST, skillStage, skillLVL } from "@/app/config/skills";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
 
 export default function SkillsContent() {
   const t = useTranslations("SkillsList");
+  const [fixedLi, setFixedLi] = useState<string | null>(null);
+
   return (
     <div className="skills_main">
       <div className="skills_lvl_stage">
@@ -46,7 +50,13 @@ export default function SkillsContent() {
       <div className="skills_table">
         <ul>
           {SKILLS_LIST.map((skill) => (
-            <li key={skill.skillName}>
+            <li
+              key={skill.skillName}
+              onClick={() =>
+                setFixedLi(fixedLi === skill.skillName ? null : skill.skillName)
+              }
+              className={fixedLi === skill.skillName ? "fixed" : ""}
+            >
               <p>{skill.skillName}</p>
               <div className="ballsContainer">
                 <p>{t("ballsText.lvl")}</p>
