@@ -16,6 +16,20 @@
     "ballsText": {
       "lvl": "Р",
       "stage": "E"
+    },
+    "statusBalls": {
+      "lvl": {
+        "Confident": "Впевнений",
+        "High": "Високий",
+        "Moderate": "Середній",
+        "Bad": "Погані"
+      },
+      "stage": {
+        "Completed": "Виконано",
+        "Active": "Активний",
+        "In Plan": "У плані",
+        "None": "Не знаю"
+      }
     }
   }
 }

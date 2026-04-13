@@ -18,7 +18,7 @@ export default function SkillsContent() {
                     className="statusBall"
                     style={{ background: lvl.color }}
                   ></span>
-                  {lvl.text}
+                  {t("statusBalls.lvl." + lvl.text)}
                 </li>
               ))}
             </ul>
@@ -36,7 +36,7 @@ export default function SkillsContent() {
                     className="statusBall"
                     style={{ background: stage.color }}
                   ></span>
-                  {stage.text}
+                  {t("statusBalls.stage." + stage.text)}
                 </li>
               ))}
             </ul>

@@ -16,6 +16,20 @@
     "ballsText": {
       "lvl": "L",
       "stage": "E"
+    },
+    "statusBalls": {
+      "lvl": {
+        "Confident": "Selbstbewusst",
+        "High": "Hoch",
+        "Moderate": "Mäßig",
+        "Bad": "Schlecht"
+      },
+      "stage": {
+        "Completed": "Abgeschlossen",
+        "Active": "Aktiv",
+        "In Plan": "In Plan",
+        "None": "Keine"
+      }
     }
   }
 }

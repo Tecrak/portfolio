@@ -9,6 +9,7 @@
     "navHome": "Home/About",
     "navExample": "Skill Examples"
   },
+
   "SkillsList": {
     "title": "My skills",
     "lvlTitle": "Skills LVL",
@@ -16,6 +17,20 @@
     "ballsText": {
       "lvl": "L",
       "stage": "S"
+    },
+    "statusBalls": {
+      "lvl": {
+        "Confident": "Confident",
+        "High": "High",
+        "Moderate": "Moderate",
+        "Bad": "Bad"
+      },
+      "stage": {
+        "Completed": "Completed",
+        "Active": "Active",
+        "In Plan": "In Plan",
+        "None": "None"
+      }
     }
   }
 }
