@@ -44,7 +44,7 @@ export default function SkillsContent() {
       <div className="skills_table">
         <ul>
           {SKILLS_LIST.map((skill) => (
-            <li>
+            <li key={skill.skillName}>
               <p>{skill.skillName}</p>
               <div className="ballsContainer">
                 <p>L</p>
