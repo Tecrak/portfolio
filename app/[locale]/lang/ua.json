@@ -8,5 +8,14 @@
   "Navigation": {
     "navHome": "Головна",
     "navExample": "Приклади навичок"
+  },
+  "SkillsList": {
+    "title": "Мої навички",
+    "lvlTitle": "Рівень навичок",
+    "stageTitle": "Етап вивчення",
+    "ballsText": {
+      "lvl": "Р",
+      "stage": "E"
+    }
   }
 }

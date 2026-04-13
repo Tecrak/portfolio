@@ -4,8 +4,10 @@ import SkillsContent from "./components/skillsContent";
 import AboutMe from "./components/aboutMe";
 import WelcomeWindow from "./components/welcomeWindow";
 export const dynamic = "force-dynamic";
+import { useTranslations } from "next-intl";
 
 export default function Page() {
+  const t = useTranslations("SkillsList");
   return (
     <div className="main">
       <section className="main_content">
@@ -22,7 +24,7 @@ export default function Page() {
         </div>
       </section>
       <section className="skills_content">
-        <h2>My skills</h2>
+        <h2>{t("title")}</h2>
         <SkillsContent />
       </section>
       <section className="experience_content"></section>

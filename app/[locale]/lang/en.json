@@ -8,5 +8,14 @@
   "Navigation": {
     "navHome": "Home/About",
     "navExample": "Skill Examples"
+  },
+  "SkillsList": {
+    "title": "My skills",
+    "lvlTitle": "Skills LVL",
+    "stageTitle": "Skills Stage",
+    "ballsText": {
+      "lvl": "L",
+      "stage": "S"
+    }
   }
 }

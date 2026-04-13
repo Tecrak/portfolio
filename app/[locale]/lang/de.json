@@ -8,5 +8,14 @@
   "Navigation": {
     "navHome": "Startseite",
     "navExample": "Fähigkeitenbeispiel"
+  },
+  "SkillsList": {
+    "title": "Meine Fähigkeiten",
+    "lvlTitle": "Fähigkeiten Level",
+    "stageTitle": "Erkundungsphase",
+    "ballsText": {
+      "lvl": "L",
+      "stage": "E"
+    }
   }
 }

@@ -1,12 +1,14 @@
 import { SKILLS_LIST, skillStage, skillLVL } from "@/app/config/skills";
+import { useTranslations } from "next-intl";
 
 export default function SkillsContent() {
+  const t = useTranslations("SkillsList");
   return (
     <div className="skills_main">
       <div className="skills_lvl_stage">
         <div className="skills_lvl ">
           <div className="skills_lvl_title">
-            <h3>Skills LVL</h3>
+            <h3>{t("lvlTitle")}</h3>
           </div>
           <div className="skills_lvl_list skills_shareStyles">
             <ul>
@@ -24,7 +26,7 @@ export default function SkillsContent() {
         </div>
         <div className="skills_stage ">
           <div className="skills_stage_title">
-            <h3>Skills Stage</h3>
+            <h3>{t("stageTitle")}</h3>
           </div>
           <div className="skills_stage_list skills_shareStyles">
             <ul>
@@ -47,12 +49,12 @@ export default function SkillsContent() {
             <li key={skill.skillName}>
               <p>{skill.skillName}</p>
               <div className="ballsContainer">
-                <p>L</p>
+                <p>{t("ballsText.lvl")}</p>
                 <span
                   className="skillStatusBall"
                   style={{ background: skill.lvl.color }}
                 ></span>
-                <p>S</p>
+                <p>{t("ballsText.stage")}</p>
                 <span
                   className="skillStatusBall"
                   style={{ background: skill.stage.color }}
