@@ -34,9 +34,17 @@
   },
   "WorkEXP": {
     "title": "Berufserfahrung",
-    "position": "ENTWICKLER MOBILER ANWENDUNGEN",
-    "date": "FEB 2024 - APR 2024",
-    "place": "STOCKPORT COUNCIL (UK), STOCKPORT",
-    "about": "Während dieses Zeitraums studierte ich am College und hatte noch keine beruichen Tätigkeiten im entsprechenden Bereich. In dieser Zeit konzentrierte ich mich darauf, Wissen und Fähigkeiten für zukünftige beruiche Herausforderungen zu erwerben."
+    "1": {
+      "title": "1ENTWICKLER MOBILER ANWENDUNGEN",
+      "date": "FEB 2024 - APR 2024",
+      "place": "STOCKPORT COUNCIL (UK), STOCKPORT",
+      "description": "Während dieses Zeitraums studierte ich am College und hatte noch keine beruichen Tätigkeiten im entspreche"
+    },
+    "2": {
+      "title": "2ENTWICKLER MOBILER ANWENDUNGEN",
+      "date": "FEB 2024 - APR 2024",
+      "place": "STOCKPORT COUNCIL (UK), STOCKPORT",
+      "description": "Während dieses Zeitraums studierte ich am College und hatte noch keine beruichen Tätigkeiten im entspreche"
+    }
   }
 }

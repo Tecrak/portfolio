@@ -3,24 +3,25 @@ import { useTranslations } from "next-intl";
 
 export default function ExpList() {
   const t = useTranslations("WorkEXP");
+
   return (
     <>
-      {EXP_LIST.map((list) => (
+      {EXP_LIST.map((list, index) => (
         <div className="exp_content">
           <div className="exp_header">
             <div className="exp_title_date">
               <div className="exp_title">
-                <p>{t("position")}</p>
+                <p>{t(`${list.id}.title`)}</p>
               </div>
-              <div className="exp_date">{t("date")}</div>
+              <div className="exp_date">{t(`${list.id}.date`)}</div>
             </div>
             <div className="exp_place">
-              <p>{t("place")}</p>
+              <p>{t(`${list.id}.place`)}</p>
             </div>
           </div>
           <div className="exp_main">
             <div className="exp_about">
-              <p>{t("about")}</p>
+              <p>{t(`${list.id}.description`)}</p>
             </div>
             <div className="exp_list">
               <ul>

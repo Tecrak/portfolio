@@ -35,9 +35,17 @@
   },
   "WorkEXP": {
     "title": "Work Experiance",
-    "position": "MOBILE WEB DEVELOPER",
-    "date": "FEB 2024 - APR 2024",
-    "place": "STOCKPORT COUNCIL (UK), STOCKPORT",
-    "about": "During this time, I was attending college and had not yetgained any professional experience in the relevant field. During this period, I focusedon acquiring the knowledge and skills needed to meet future professional challenges."
+    "1": {
+      "title": "1MOBILE WEB DEVELOPER",
+      "date": "FEB 2024 - APR 2024",
+      "place": "STOCKPORT COUNCIL (UK), STOCKPORT",
+      "description": "During this time..."
+    },
+    "2": {
+      "title": "2ANOTHER JOB",
+      "date": "MAY 2024 - JUN 2024",
+      "place": "Some Company",
+      "description": "Description here..."
+    }
   }
 }
