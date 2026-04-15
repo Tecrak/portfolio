@@ -223,3 +223,7 @@
   width: 100%;
   flex-direction: column;
 }
+.exp_list > ul > li {
+  list-style: circle;
+  margin-left: 18px;
+}

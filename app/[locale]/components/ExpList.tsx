@@ -11,7 +11,7 @@ export default function ExpList() {
           <div className="exp_header">
             <div className="exp_title_date">
               <div className="exp_title">
-                <p>{t(`${list.id}.title`)}</p>
+                <h3>{t(`${list.id}.title`)}</h3>
               </div>
               <div className="exp_date">{t(`${list.id}.date`)}</div>
             </div>

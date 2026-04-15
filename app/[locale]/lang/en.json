@@ -34,18 +34,42 @@
     }
   },
   "WorkEXP": {
-    "title": "Work Experiance",
+    "title": "Work Experiance and activities",
     "1": {
-      "title": "1MOBILE WEB DEVELOPER",
-      "date": "FEB 2024 - APR 2024",
-      "place": "STOCKPORT COUNCIL (UK), STOCKPORT",
-      "description": "During this time..."
+      "title": "JOB SEARCH AND SELF-STUDY",
+      "date": "FROM 2025",
+      "place": "",
+      "description": "I've been carrying on to study more and harder to find a job of dream."
     },
     "2": {
-      "title": "2ANOTHER JOB",
-      "date": "MAY 2024 - JUN 2024",
-      "place": "Some Company",
-      "description": "Description here..."
+      "title": "DEVELOPING WEBSITE FOR FLOWERS WEBSITE AS TEST TASK",
+      "date": "Aug 2025 - September 2025",
+      "place": "ElifTech School",
+      "description": "I was creating Flowers app to get a place in an school to developer my skills more in there."
+    },
+    "3": {
+      "title": "JOB SEARCH AND SELF-STUDY",
+      "date": "FROM 2024",
+      "place": "",
+      "description": "Since graduating from college in 2024, I have been actively looking for a job in the IT field. At the same time, I am continuously furthering my education, including through courseson Udemy and Laracasts. I also regularly develop my own websites forpractical experience and to further develop my skills."
+    },
+    "4": {
+      "title": "Volunteer MOBILE WEB DEVELOPER",
+      "date": "FEB 2024 - APR 2024",
+      "place": "STOCKPORT COUNCIL (UK), STOCKPORT",
+      "description": ""
+    },
+    "5": {
+      "title": "STUDENT",
+      "date": "MAR 2023 - Jan 2024",
+      "place": "STOCKPORT COLLEGE. STOCKPORT.",
+      "description": "During this time, I was attending college and had not yet gained any professional experience in the relevant field. During this period, I focusedon acquiring the knowledge and skills needed to meet future professional challenges"
+    },
+    "6": {
+      "title": "Volunteer FULLSTACK Developer",
+      "date": "DEC 2024 - JAN 2024",
+      "place": "PIERADIO (UK). STOCKPORT.",
+      "description": "Developing ideas to improve the website and implementing them.Implementing changes to the website using JS, React, HTML, and CSS, as well asperforming basic database tasks.Creating mockups and presenting the results to the team"
     }
   }
 }
