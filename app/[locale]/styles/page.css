@@ -1,12 +1,14 @@
 :root {
   --h2-section: 23px;
   --bg: 176, 242, 255;
-  --skill-bg: default;
-  --skill-bg-hover: rgb(176, 242, 255);
+  --skill-bg: rgb(129, 255, 245);
+  --headers: rgb(139, 246, 157);
+  --skill-bg-hover: rgb(84, 226, 254);
   --skill-li-border: grey;
 }
 .dark {
   --bg: 16, 1, 47;
+  --headers: rgb(66, 0, 97);
   --skill-bg: rgb(37, 31, 95);
   --skill-bg-hover: rgb(84, 0, 0);
   --skill-li-border: black;
@@ -115,8 +117,13 @@
   border-bottom: 2px grey solid;
   border-radius: 15px;
 }
-.skills_content > h2 {
+.forHBlock {
+  background: var(--headers);
+}
+.forHBlock > h2 {
   text-align: center;
+  padding: 3px;
+  border-bottom: 2px grey solid;
   font-size: var(--h2-section);
 }
 .skills_lvl_stage {
@@ -146,6 +153,7 @@
 .statusBall {
   height: 15px;
   width: 15px;
+  box-shadow: 0px 0px 1px 0.5px black;
   display: block;
   position: absolute;
   left: -19px;
@@ -180,6 +188,7 @@
   width: 15px;
   display: block;
   border-radius: 100%;
+  box-shadow: 0px 0px 1px 0.5px black;
 }
 .ballsContainer {
   display: flex;
@@ -197,11 +206,19 @@
 .experience_content > h2 {
   text-align: center;
   padding: 3px;
+  background: var(--headers);
   border-bottom: 2px grey solid;
   font-size: var(--h2-section);
 }
+
 .exp_content > * {
   padding: 0px 3px;
+}
+.exp_header {
+  background: var(--skill-bg-hover);
+  padding: 5px;
+  border-radius: 0px 0px 10px 10px;
+  border: 1px black solid;
 }
 
 .exp_title_date {
@@ -224,6 +241,14 @@
   flex-direction: column;
 }
 .exp_list > ul > li {
-  list-style: circle;
-  margin-left: 18px;
+  background: var(--skill-bg);
+  border: 1.5px grey solid;
+  margin-left: 10px;
+  margin: 2px;
+  padding: 4px;
+  border-radius: 0px 10px 10px 0px;
+  cursor: pointer;
+}
+.exp_list > ul > li:hover {
+  transform: scale(1.01);
 }

@@ -26,7 +26,6 @@ export default function Page() {
         </div>
       </section>
       <section className="skills_content">
-        <h2>{t("title")}</h2>
         <SkillsContent />
       </section>
       <section className="experience_content">

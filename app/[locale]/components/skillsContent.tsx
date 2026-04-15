@@ -9,44 +9,48 @@ export default function SkillsContent() {
 
   return (
     <div className="skills_main">
-      <div className="skills_lvl_stage">
-        <div className="skills_lvl ">
-          <div className="skills_lvl_title">
-            <h3>{t("lvlTitle")}</h3>
+      <div className="forHBlock">
+        <h2>{t("title")}</h2>
+        <div className="skills_lvl_stage">
+          <div className="skills_lvl ">
+            <div className="skills_lvl_title">
+              <h3>{t("lvlTitle")}</h3>
+            </div>
+            <div className="skills_lvl_list skills_shareStyles">
+              <ul>
+                {Object.values(skillLVL).map((lvl) => (
+                  <li key={lvl.text}>
+                    <span
+                      className="statusBall"
+                      style={{ background: lvl.color }}
+                    ></span>
+                    {t("statusBalls.lvl." + lvl.text)}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-          <div className="skills_lvl_list skills_shareStyles">
-            <ul>
-              {Object.values(skillLVL).map((lvl) => (
-                <li key={lvl.text}>
-                  <span
-                    className="statusBall"
-                    style={{ background: lvl.color }}
-                  ></span>
-                  {t("statusBalls.lvl." + lvl.text)}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-        <div className="skills_stage ">
-          <div className="skills_stage_title">
-            <h3>{t("stageTitle")}</h3>
-          </div>
-          <div className="skills_stage_list skills_shareStyles">
-            <ul>
-              {Object.values(skillStage).map((stage) => (
-                <li key={stage.text}>
-                  <span
-                    className="statusBall"
-                    style={{ background: stage.color }}
-                  ></span>
-                  {t("statusBalls.stage." + stage.text)}
-                </li>
-              ))}
-            </ul>
+          <div className="skills_stage ">
+            <div className="skills_stage_title">
+              <h3>{t("stageTitle")}</h3>
+            </div>
+            <div className="skills_stage_list skills_shareStyles">
+              <ul>
+                {Object.values(skillStage).map((stage) => (
+                  <li key={stage.text}>
+                    <span
+                      className="statusBall"
+                      style={{ background: stage.color }}
+                    ></span>
+                    {t("statusBalls.stage." + stage.text)}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
+
       <div className="skills_table">
         <ul>
           {SKILLS_LIST.map((skill) => (
