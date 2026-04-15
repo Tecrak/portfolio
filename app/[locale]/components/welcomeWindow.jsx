@@ -20,8 +20,9 @@ export default function WelcomeWindow() {
         <h2>Small Disclaimer</h2>
         <p>
           Im not proffesion UI-UX Designer, I've tried to make this website
-          looking not bad at all, but mainly I was focused to demonstrate my
-          skills and what I learned and going to learn
+          looking not bad at all and yes i know it looks like Excel table in
+          some cases(most) XD. But mainly I was focused to demonstrate my skills
+          and what I learned and going to learn
         </p>
         <button
           onClick={() => {
