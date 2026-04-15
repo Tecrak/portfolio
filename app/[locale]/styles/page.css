@@ -1,12 +1,12 @@
 :root {
   --h2-section: 23px;
-  --about-bg: 92, 228, 255;
+  --bg: 176, 242, 255;
   --skill-bg: default;
   --skill-bg-hover: rgb(176, 242, 255);
   --skill-li-border: grey;
 }
 .dark {
-  --about-bg: 16, 1, 47;
+  --bg: 16, 1, 47;
   --skill-bg: rgb(37, 31, 95);
   --skill-bg-hover: rgb(84, 0, 0);
   --skill-li-border: black;
@@ -49,7 +49,7 @@
   display: flex;
   border-bottom: 1.5px solid grey;
   border-radius: 0px 0px 15px 15px;
-  background-color: rgba(var(--about-bg), 0.8);
+  background-color: rgba(var(--bg));
 }
 .aboutImage {
   display: flex;
@@ -101,7 +101,7 @@
   width: 40px;
   height: 40px;
   border: 1.5px grey solid;
-  background: rgba(var(--about-bg), 1);
+  background: rgba(var(--bg), 1);
   border-radius: 100%;
 }
 .contactIcon > img {
@@ -110,7 +110,7 @@
 }
 /* SKILLS TOP PART */
 .skills_content {
-  background: rgba(var(--about-bg));
+  background: rgba(var(--bg));
   border-top: 2px grey solid;
   border-bottom: 2px grey solid;
   border-radius: 15px;
@@ -192,6 +192,7 @@
 .experience_content {
   border-radius: 15px;
   border: 1.5px grey solid;
+  background: rgb(var(--bg));
 }
 .experience_content > h2 {
   text-align: center;
@@ -221,7 +222,4 @@
   flex-wrap: wrap;
   width: 100%;
   flex-direction: column;
-}
-.exp_list > ul > li {
-  /* min-width: 200px; */
 }

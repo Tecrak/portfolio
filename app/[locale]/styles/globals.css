@@ -4,10 +4,12 @@
 
 :root {
   --txt-shadow: 0px 0px 0px;
+  --bg: rgb(255, 255, 255);
 }
 
 .dark {
   --txt-shadow: 0.3px 0.3px 0.4px rgba(0, 0, 0, 0.729);
+  --bg: rgb(0, 0, 0);
 }
 
 * {
@@ -20,7 +22,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: rgb(14, 4, 43);
+  background: var(--bg);
 }
 * a {
   text-decoration: none;

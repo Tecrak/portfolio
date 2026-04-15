@@ -6,8 +6,8 @@ export default function ExpList() {
 
   return (
     <>
-      {EXP_LIST.map((list, index) => (
-        <div className="exp_content">
+      {EXP_LIST.map((list) => (
+        <div key={list.id} className="exp_content">
           <div className="exp_header">
             <div className="exp_title_date">
               <div className="exp_title">
@@ -23,6 +23,7 @@ export default function ExpList() {
             <div className="exp_about">
               <p>{t(`${list.id}.description`)}</p>
             </div>
+            <h2>I've learned or improved those skills:</h2>
             <div className="exp_list">
               <ul>
                 {list.earnedExp.map((exp) => (
