@@ -165,6 +165,7 @@
   position: relative;
   padding: 5px;
   background: var(--skill-bg);
+  max-width: 50%;
   cursor: pointer;
   border: 1.5px var(--skill-li-border) solid;
 }
