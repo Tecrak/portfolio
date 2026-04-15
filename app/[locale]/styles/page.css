@@ -155,7 +155,7 @@
 .skills_table > ul {
   display: flex;
   flex-direction: column;
-  height: 40vh;
+  height: 35vh;
   width: 100%;
   flex-wrap: wrap;
 }

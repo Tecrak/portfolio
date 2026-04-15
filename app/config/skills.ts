@@ -38,8 +38,18 @@ export const SKILLS_LIST = resolveSkills([
   { skillName: "JS", lvl: "Confident", stage: "Completed" },
   { skillName: "React", lvl: "High", stage: "Active" },
   {
-    skillName: "React Frameworks(Route, Query, etc.)",
+    skillName: "React Frameworks",
     lvl: "Moderate",
+    stage: "Active",
+  },
+  {
+    skillName: "React Query",
+    lvl: "Moderate",
+    stage: "Active",
+  },
+  {
+    skillName: "React Route",
+    lvl: "High",
     stage: "Active",
   },
   { skillName: "Typescript", lvl: "High", stage: "Active" },
@@ -48,7 +58,17 @@ export const SKILLS_LIST = resolveSkills([
   { skillName: "Next.JS", lvl: "High", stage: "Active" },
   { skillName: "Next-intl", lvl: "High", stage: "Active" },
   {
-    skillName: "Databases(MongoDB, PostgreSQL, MySQL)",
+    skillName: "MongoDB",
+    lvl: "Moderate",
+    stage: "Active",
+  },
+  {
+    skillName: "PostgreSQL",
+    lvl: "High",
+    stage: "Active",
+  },
+  {
+    skillName: "MySQL",
     lvl: "Moderate",
     stage: "Active",
   },
