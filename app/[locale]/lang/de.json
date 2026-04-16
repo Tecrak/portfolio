@@ -33,18 +33,43 @@
     }
   },
   "WorkEXP": {
-    "title": "Berufserfahrung",
+    "title": "Berufserfahrung und Tätigkeiten",
+    "h2": "Ich habe diese Fähigkeiten erworben oder verbessert",
     "1": {
-      "title": "1ENTWICKLER MOBILER ANWENDUNGEN",
-      "date": "FEB 2024 - APR 2024",
-      "place": "STOCKPORT COUNCIL (UK), STOCKPORT",
-      "description": "Während dieses Zeitraums studierte ich am College und hatte noch keine beruichen Tätigkeiten im entspreche"
+      "title": "JOBSUCHE UND SELBSTSTUDIUM",
+      "date": "AB 2025",
+      "place": "",
+      "description": "Ich lerne weiterhin mehr und intensiver, um meinen Traumjob zu finden."
     },
     "2": {
-      "title": "2ENTWICKLER MOBILER ANWENDUNGEN",
+      "title": "ENTWICKLUNG EINER WEBSITE FÜR EINEN BLUMENLADEN ALS TESTAUFGABE",
+      "date": "Aug. 2025 - Sep. 2025",
+      "place": "ElifTech School",
+      "description": "Ich habe eine Blumen-App entwickelt, um einen Platz in einer Schule zu erhalten und meine Fähigkeiten dort weiter auszubauen."
+    },
+    "3": {
+      "title": "JOBSUCHE UND SELBSTSTUDIUM",
+      "date": "AB 2024",
+      "place": "",
+      "description": "Seit meinem Abschluss am College im Jahr 2024 suche ich aktiv nach einer Stelle im IT-Bereich. Gleichzeitig bilde ich mich kontinuierlich weiter, unter anderem durch Kurse auf Udemy und Laracasts. Außerdem entwickle ich regelmäßig eigene Webseiten, um praktische Erfahrungen zu sammeln und meine Fähigkeiten weiterzuentwickeln."
+    },
+    "4": {
+      "title": "Ehrenamtlicher MOBILER WEB-ENTWICKLER",
       "date": "FEB 2024 - APR 2024",
       "place": "STOCKPORT COUNCIL (UK), STOCKPORT",
-      "description": "Während dieses Zeitraums studierte ich am College und hatte noch keine beruichen Tätigkeiten im entspreche"
+      "description": ""
+    },
+    "5": {
+      "title": "STUDENT",
+      "date": "MÄR 2023 - JAN 2024",
+      "place": "STOCKPORT COLLEGE, STOCKPORT",
+      "description": "In dieser Zeit besuchte ich das College und hatte noch keine Berufserfahrung in dem relevanten Bereich gesammelt. In dieser Phase konzentrierte ich mich darauf, das Wissen und die Fähigkeiten zu erwerben, die für zukünftige berufliche Herausforderungen erforderlich sind."
+    },
+    "6": {
+      "title": "Ehrenamtlicher FULLSTACK-Entwickler",
+      "date": "DEZ 2024 - JAN 2024",
+      "place": "PIERADIO (UK), STOCKPORT",
+      "description": "Entwicklung von Ideen zur Verbesserung der Website und deren Umsetzung. Implementierung von Änderungen an der Website mit JS, React, HTML und CSS sowie Durchführung grundlegender Datenbankaufgaben. Erstellung von Mockups und Präsentation der Ergebnisse vor dem Team."
     }
   }
 }
