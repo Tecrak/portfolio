@@ -10,6 +10,7 @@ import { useTranslations } from "next-intl";
 export default function Page() {
   const t = useTranslations("SkillsList");
   const tEXP = useTranslations("WorkEXP");
+  const tSKILL = useTranslations("SkillsList");
   return (
     <div className="main">
       <section className="main_content">
@@ -26,6 +27,7 @@ export default function Page() {
         </div>
       </section>
       <section className="skills_content">
+        <h2>{t("title")}</h2>
         <SkillsContent />
       </section>
       <section className="experience_content">

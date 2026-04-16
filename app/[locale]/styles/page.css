@@ -112,20 +112,29 @@
 }
 /* SKILLS TOP PART */
 .skills_content {
+  position: relative;
+  border-radius: 15px;
+  border: 1.5px grey solid;
+  background: rgb(var(--bg));
+  overflow: hidden;
+  z-index: 2;
+}
+.skills_content > h2 {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  padding: 3px;
+  background: var(--headers);
+  border-bottom: 2px grey solid;
+  font-size: var(--h2-section);
+}
+.skills_content {
   background: rgba(var(--bg));
   border-top: 2px grey solid;
   border-bottom: 2px grey solid;
   border-radius: 15px;
 }
-.forHBlock {
-  background: var(--headers);
-}
-.forHBlock > h2 {
-  text-align: center;
-  padding: 3px;
-  border-bottom: 2px grey solid;
-  font-size: var(--h2-section);
-}
+
 .skills_lvl_stage {
   display: flex;
   text-align: center;
@@ -199,12 +208,56 @@
 }
 /* ---ExpList--- */
 .experience_content {
+  position: relative;
   border-radius: 15px;
   border: 1.5px grey solid;
   background: rgb(var(--bg));
+  overflow: hidden;
+  z-index: 2;
+}
+.experiment {
+  /* background: red; */
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  right: 0%;
+  transform: translate(-70%, -180%);
+  z-index: 2;
+  cursor: pointer;
+}
+.experiment::before {
+  content: "";
+  position: absolute;
+  height: 19px;
+  transform: rotate(35deg);
+  border-radius: 0px 0px 10px 0px;
+  left: 10px;
+  width: 3px;
+  background: grey;
+  transition: transform 0.4s ease-in-out;
+}
+
+.experiment::after {
+  content: "";
+  position: absolute;
+  height: 19px;
+  transform: rotate(-35deg);
+  border-radius: 0px 0px 0px 10px;
+  width: 3px;
+  background: grey;
+  transition: transform 0.4s ease-in-out;
+}
+.experiment.closed::before {
+  transform: rotate(-35deg);
+}
+
+.experiment.closed::after {
+  transform: rotate(35deg);
 }
 .experience_content > h2 {
   text-align: center;
+  position: relative;
+  z-index: 2;
   padding: 3px;
   background: var(--headers);
   border-bottom: 2px grey solid;
@@ -241,6 +294,8 @@
   flex-wrap: wrap;
   width: 100%;
   flex-direction: column;
+  position: relative;
+  z-index: 1;
 }
 .exp_list > ul > li {
   background: var(--skill-bg);
