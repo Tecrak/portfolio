@@ -6,6 +6,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { routing } from "../i18n/routing";
 import { notFound } from "next/navigation";
+import PageTransition from "./components/pageLoad";
 
 export default async function RootLayout({
   children,
@@ -20,6 +21,7 @@ export default async function RootLayout({
     notFound();
   }
   const messages = await getMessages();
+
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className="Main">
@@ -28,7 +30,7 @@ export default async function RootLayout({
             <div className="Navigation">
               <ActivePathName />
             </div>
-            {children}
+            <PageTransition>{children}</PageTransition>
           </NextIntlClientProvider>
         </Providers>
       </body>
