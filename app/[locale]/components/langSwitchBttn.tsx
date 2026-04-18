@@ -1,12 +1,11 @@
 "use client";
 import { useRouter, usePathname } from "next/navigation";
 
-export default function LangSwithBttn() {
+export default function LangSwitchBttn() {
   const router = useRouter();
   const pathname = usePathname();
 
   const switchLocale = (locale: string) => {
-    // Замінюємо поточну локаль у URL
     const newPath = pathname.replace(/^\/(en|ua|de)/, `/${locale}`);
     router.push(newPath);
   };

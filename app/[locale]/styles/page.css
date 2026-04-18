@@ -250,7 +250,9 @@
 .experiment.closed::before {
   transform: rotate(-35deg);
 }
-
+.page-content {
+  width: 100%;
+}
 .experiment.closed::after {
   transform: rotate(35deg);
 }

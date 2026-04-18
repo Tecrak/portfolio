@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { NAVIGATION } from "../../config/navigation";
 import { useTranslations } from "next-intl";
 import ThemeSwitchBttn from "./themeSwitchBttn";
-import LangSwithBttn from "./langSwithBttn";
+import LangSwitchBttn from "./langSwitchBttn";
 
 export function ActivePathName() {
   const pathname = usePathname();
@@ -30,7 +30,7 @@ export function ActivePathName() {
       ))}
       <div className="switchers">
         <ThemeSwitchBttn />
-        <LangSwithBttn />
+        <LangSwitchBttn />
       </div>
     </nav>
   );

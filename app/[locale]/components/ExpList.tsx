@@ -8,7 +8,7 @@ export default function ExpList() {
 
   return (
     <>
-      <BlockToClose>
+      <BlockToClose id="expToClose">
         {EXP_LIST.map((list) => (
           <div key={list.id}>
             <div className="exp_header">

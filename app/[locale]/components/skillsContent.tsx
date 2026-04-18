@@ -9,7 +9,7 @@ export default function SkillsContent() {
   const [fixedLi, setFixedLi] = useState<string | null>(null);
 
   return (
-    <BlockToClose>
+    <BlockToClose id="skillsToCLose">
       <div className="skills_main">
         <div className="forHBlock">
           <div className="skills_lvl_stage">
