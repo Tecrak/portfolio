@@ -26,7 +26,7 @@ export default function PageTransition({
 
     if (prevPathRef.current === null || isLangSwitch || !alreadyShown) {
       setIsLoading(true);
-      const timer = setTimeout(() => setIsLoading(false), 100);
+      const timer = setTimeout(() => setIsLoading(false), 150);
 
       if (!isLangSwitch) {
         shownPathsRef.current.add(currentPath);

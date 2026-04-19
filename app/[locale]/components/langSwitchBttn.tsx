@@ -1,7 +1,7 @@
 "use client";
 import { useRouter, usePathname } from "next/navigation";
 
-export default function LangSwitchBttn() {
+export default function LangSwithBttn() {
   const router = useRouter();
   const pathname = usePathname();
 

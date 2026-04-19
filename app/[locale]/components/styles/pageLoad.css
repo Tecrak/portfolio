@@ -9,7 +9,7 @@
 .loader-bar {
   height: 3px;
   background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
-  animation: loading-bar 0.5s ease-in-out;
+  animation: loading-bar 0.1s ease-in-out;
 }
 
 @keyframes loading-bar {
@@ -32,6 +32,6 @@
   opacity: 1;
   transform: translateY(0);
   transition:
-    opacity 0.3s ease,
-    transform 0.3s ease;
+    opacity 0.1s ease,
+    transform 0.1s ease;
 }
