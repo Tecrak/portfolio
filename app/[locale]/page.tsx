@@ -11,7 +11,7 @@ import Education from "./components/education";
 export default function Page() {
   const t = useTranslations("SkillsList");
   const tEXP = useTranslations("WorkEXP");
-  const tSKILL = useTranslations("SkillsList");
+  const tED = useTranslations("Education");
   return (
     <div className="main">
       <section className="main_content">
@@ -36,7 +36,7 @@ export default function Page() {
         <ExpList />
       </section>
       <section className="education">
-        <h2>{tEXP("title")}</h2>
+        <h2>{tED("title")}</h2>
         <Education />
       </section>
       <section className="end_content"></section>

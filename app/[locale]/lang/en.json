@@ -72,5 +72,8 @@
       "place": "PIERADIO (UK). STOCKPORT.",
       "description": "Developing ideas to improve the website and implementing them.Implementing changes to the website using JS, React, HTML, and CSS, as well asperforming basic database tasks.Creating mockups and presenting the results to the team"
     }
+  },
+  "Education": {
+    "title": "Education"
   }
 }
