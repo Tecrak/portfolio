@@ -68,6 +68,7 @@
 }
 .exp_about {
   width: 50%;
+  padding: 3px;
 }
 .exp_list {
   display: flex;

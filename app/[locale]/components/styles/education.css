@@ -1,9 +1,55 @@
 .education_content {
-  background: red;
   display: flex;
   flex-wrap: wrap;
+  position: relative;
+  margin-top: 3px;
 }
+
+.education_content::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background: grey;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+}
+
 .education_item {
-  background: green;
-  width: 300px;
+  width: 50%;
+  position: relative;
+  box-sizing: border-box;
+  padding: 18px;
+  background: rgba(128, 128, 128, 0.168);
+  border-radius: 30px;
+  box-shadow: 0px 0px 0px 0.8px rgb(0, 255, 34);
+}
+
+.education_item:nth-child(even) {
+  margin-left: 50%;
+}
+
+.education_item::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  z-index: 1;
+  background: black;
+  border: 2px grey solid;
+}
+
+.education_item:nth-child(odd)::before {
+  right: 0;
+  top: 0px;
+  transform: translateX(50%);
+}
+
+.education_item:nth-child(even)::before {
+  left: 0;
+  top: 0px;
+  transform: translateX(-50%);
 }
