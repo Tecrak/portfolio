@@ -4,6 +4,9 @@
   overflow: hidden;
   z-index: 2;
 }
+.skills_content {
+  background: rgba(var(--bg));
+}
 
 .skills_lvl_stage {
   display: flex;

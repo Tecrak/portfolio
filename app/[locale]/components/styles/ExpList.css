@@ -1,6 +1,7 @@
 .experience_content {
   position: relative;
   overflow: hidden;
+  background: rgba(var(--bg));
   z-index: 2;
 }
 .experiment {
