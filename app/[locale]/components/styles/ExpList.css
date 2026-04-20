@@ -1,8 +1,5 @@
 .experience_content {
   position: relative;
-  border-radius: 15px;
-  border: 1.5px grey solid;
-  background: rgb(var(--bg));
   overflow: hidden;
   z-index: 2;
 }

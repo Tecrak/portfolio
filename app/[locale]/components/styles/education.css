@@ -1,3 +1,9 @@
+:root {
+  --ball-color: white;
+}
+.dark {
+  --ball-color: black;
+}
 .education_content {
   display: flex;
   flex-wrap: wrap;
@@ -38,7 +44,7 @@
   height: 10px;
   border-radius: 100%;
   z-index: 1;
-  background: black;
+  background: var(--ball-color);
   border: 2px grey solid;
 }
 

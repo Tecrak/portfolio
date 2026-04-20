@@ -26,7 +26,7 @@ export default function Education() {
             </div>
             <div className="education_item">
               <div className="education_header">
-                <h3>2222Level 3 BTEK Computer Science (Level in EQF:4)</h3>
+                <h3>High School in Ukraine</h3>
                 <h4>SEP 2022- JUN 2024</h4>
               </div>
               <div className="education_place">
@@ -44,7 +44,7 @@ export default function Education() {
             </div>
             <div className="education_item">
               <div className="education_header">
-                <h3>2222Level 3 BTEK Computer Science (Level in EQF:4)</h3>
+                <h3>Middle School in Ukraine</h3>
                 <h4>SEP 2022- JUN 2024</h4>
               </div>
               <div className="education_place">
