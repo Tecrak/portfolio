@@ -44,7 +44,7 @@ export const SKILLS_LIST = resolveSkills([
   },
   {
     skillName: "React Query",
-    lvl: "Moderate",
+    lvl: "High",
     stage: "Active",
   },
   {
