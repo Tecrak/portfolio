@@ -1,0 +1,96 @@
+/* ---SKILLS TOP PART--- */
+.skills_content {
+  position: relative;
+  border-radius: 15px;
+  border: 1.5px grey solid;
+  background: rgb(var(--bg));
+  overflow: hidden;
+  z-index: 2;
+}
+.skills_content > h2 {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  padding: 3px;
+  background: var(--headers);
+  border-bottom: 2px grey solid;
+  font-size: var(--h2-section);
+}
+.skills_content {
+  background: rgba(var(--bg));
+  border-top: 2px grey solid;
+  border-bottom: 2px grey solid;
+  border-radius: 15px;
+}
+
+.skills_lvl_stage {
+  display: flex;
+  text-align: center;
+  padding: 2px;
+  border-top: 2px grey solid;
+  border-bottom: 2px grey solid;
+}
+.skills_lvl {
+  width: 50%;
+  border-right: 1.5px grey solid;
+}
+.skills_stage {
+  width: 50%;
+  border-left: 1.5px grey solid;
+}
+.skills_shareStyles > ul {
+  display: flex;
+  justify-content: space-around;
+}
+.skills_shareStyles > ul > li {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.statusBall {
+  height: 15px;
+  width: 15px;
+  box-shadow: 0px 0px 1px 0.5px black;
+  display: block;
+  position: absolute;
+  left: -19px;
+  border-radius: 100%;
+}
+/* --- SKILLS MAIN --- */
+.skills_table > ul {
+  display: flex;
+  flex-direction: column;
+  height: 35vh;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.skills_table > ul > li {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 5px;
+  background: var(--skill-bg);
+  max-width: 50%;
+  cursor: pointer;
+  border: 1.5px var(--skill-li-border) solid;
+}
+.skills_table > ul > li.fixed {
+  border: 3px rgb(255, 255, 255) solid;
+}
+.skills_table > ul > li:hover {
+  background: var(--skill-bg-hover);
+}
+.skillStatusBall {
+  height: 15px;
+  width: 15px;
+  display: block;
+  border-radius: 100%;
+  box-shadow: 0px 0px 1px 0.5px black;
+}
+.ballsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-left: 10px;
+}

@@ -3,6 +3,7 @@ import { SKILLS_LIST, skillStage, skillLVL } from "@/app/config/skills";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import BlockToClose from "./closingButton";
+import "./styles/skillsContent.css";
 
 export default function SkillsContent() {
   const t = useTranslations("SkillsList");

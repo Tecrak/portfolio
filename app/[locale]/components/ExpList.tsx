@@ -1,6 +1,7 @@
 "use client";
 import { EXP_LIST } from "@/app/config/exp";
 import { useTranslations } from "next-intl";
+import "./styles/ExpList.css";
 import BlockToClose from "./closingButton";
 
 export default function ExpList() {

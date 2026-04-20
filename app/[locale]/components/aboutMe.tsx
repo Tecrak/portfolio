@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import "./styles/aboutMe.css";
 
 export default function AboutMe() {
   const t = useTranslations("AboutMe");
