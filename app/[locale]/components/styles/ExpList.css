@@ -47,15 +47,6 @@
 .experiment.closed::after {
   transform: rotate(35deg);
 }
-.experience_content > h2 {
-  text-align: center;
-  position: relative;
-  z-index: 2;
-  padding: 3px;
-  background: var(--headers);
-  border-bottom: 2px grey solid;
-  font-size: var(--h2-section);
-}
 
 .exp_content > * {
   padding: 0px 3px;

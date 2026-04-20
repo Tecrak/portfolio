@@ -1,0 +1,9 @@
+.education_content {
+  background: red;
+  display: flex;
+  flex-wrap: wrap;
+}
+.education_item {
+  background: green;
+  width: 300px;
+}

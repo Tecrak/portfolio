@@ -46,3 +46,12 @@
 .welcomeBackScrn > button:hover {
   background: rgb(12, 99, 0);
 }
+section > h2 {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  padding: 3px;
+  background: var(--headers);
+  border-bottom: 2px grey solid;
+  font-size: var(--h2-section);
+}

@@ -7,15 +7,6 @@
   overflow: hidden;
   z-index: 2;
 }
-.skills_content > h2 {
-  text-align: center;
-  position: relative;
-  z-index: 2;
-  padding: 3px;
-  background: var(--headers);
-  border-bottom: 2px grey solid;
-  font-size: var(--h2-section);
-}
 .skills_content {
   background: rgba(var(--bg));
   border-top: 2px grey solid;

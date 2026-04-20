@@ -6,6 +6,7 @@ import ExpList from "./components/ExpList";
 import WelcomeWindow from "./components/welcomeWindow";
 export const dynamic = "force-dynamic";
 import { useTranslations } from "next-intl";
+import Education from "./components/education";
 
 export default function Page() {
   const t = useTranslations("SkillsList");
@@ -34,7 +35,10 @@ export default function Page() {
         <h2>{tEXP("title")}</h2>
         <ExpList />
       </section>
-      <section className="education"></section>
+      <section className="education">
+        <h2>{tEXP("title")}</h2>
+        <Education />
+      </section>
       <section className="end_content"></section>
       <WelcomeWindow />
     </div>
