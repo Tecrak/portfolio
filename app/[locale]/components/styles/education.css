@@ -1,14 +1,16 @@
 :root {
   --ball-color: white;
+  --edu--head--bg: rgb(97, 255, 189);
 }
 .dark {
   --ball-color: black;
+  --edu--head--bg: rgb(40, 100, 3);
 }
 .education_content {
   display: flex;
   flex-wrap: wrap;
   position: relative;
-  margin-top: 3px;
+  margin: 4px 0px;
 }
 
 .education_content::after {
@@ -21,13 +23,18 @@
   transform: translateX(-50%);
   top: 0;
 }
-
+.education_info {
+  background: var(--edu--head--bg);
+  padding: 8px 14px 0px 10px;
+  position: relative;
+}
 .education_item {
   width: 50%;
   position: relative;
   box-sizing: border-box;
-  padding: 18px;
+  z-index: 1;
   background: rgba(128, 128, 128, 0.168);
+  overflow: hidden;
   border-radius: 30px;
   box-shadow: 0px 0px 0px 0.8px rgb(0, 255, 34);
 }
@@ -58,4 +65,11 @@
   left: 0;
   top: 0px;
   transform: translateX(-50%);
+}
+.education_header {
+  display: flex;
+  justify-content: space-between;
+}
+.education_desc {
+  padding: 5px 0px 14px 14px;
 }
