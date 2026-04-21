@@ -73,6 +73,24 @@
     }
   },
   "Education": {
-    "title": "Bildung"
+    "title": "Ausbildung",
+    "items": [
+      {
+        "id": 1,
+        "Lvl": "Level 3 BTEC Computer Science (EQF-Niveau: 4)",
+        "Date": "Sep 2022 - Jul 2024",
+        "Place": "Stockport College, Stockport, UK",
+        "Marks": "~1,5 (deutsches Notensystem)",
+        "Description": "Im Rahmen dieses Kurses wurden folgende Technologien und Themen behandelt: Java, HTML / HTML5, HTML-Scripting, PHP, MySQL / SQL, Cybersicherheit und die damit verbundenen Risiken, Cascading Style Sheets (CSS) einschließlich Flexbox sowie JavaScript. Während meiner Ausbildung habe ich mich aktiv an freiwilligen Tätigkeiten beteiligt und wurde als bester Student des gesamten Computer-Science-Kurses ausgezeichnet. Parallel zu meinem Studium am College absolvierte ich außerdem Kurse auf Udemy und Laracasts und entwickelte eigene Websites, um praktische Erfahrung zu sammeln und meine Fähigkeiten weiter auszubauen."
+      },
+      {
+        "id": 2,
+        "Lvl": "Allgemeine Hochschulreife (vollständige Sekundarschulbildung)",
+        "Date": "Abschluss im Jahr 2022",
+        "Place": "Lyzeum Nr. 2 Stryzhavka, Stryzhavka, Ukraine",
+        "Marks": "Durchschnittsnote: 1,7; Informatik: 1,0 (deutsches Notensystem)",
+        "Description": "Abschluss der vollständigen allgemeinen Sekundarschulbildung am Lyzeum Nr. 2 in Stryzhavka mit einem Durchschnitt von 10 Punkten sowie der Bestnote 12 im Fach Informatik. Aktive Teilnahme an Olympiaden in Informatik und Geografie. Mitglied des Organisationsteams der Schule. Unterstützung von Schülern und Lehrkräften bei Computerproblemen und anderen technischen Anliegen."
+      }
+    ]
   }
 }

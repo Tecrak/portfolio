@@ -1,65 +1,38 @@
 import BlockToClose from "./closingButton";
 import "./styles/education.css";
+import { useMessages, useTranslations } from "next-intl";
 export default function Education() {
+  const messages = useMessages();
+  const tED = useTranslations("Education");
+  type EducationItem = {
+    id: number;
+    Lvl: string;
+    Date: string;
+    Place: string;
+    Marks: string;
+    Description: string;
+  };
+  const educationItems = (messages.Education as any).items as EducationItem[];
   return (
     <>
       <BlockToClose id="educationToClose">
         <div className="education_main">
           <div className="education_content">
-            <div className="education_item">
-              <div className="education_header">
-                <h3>Level 3 BTEK Computer Science (Level in EQF:4)</h3>
-                <h4>SEP 2022- JUN 2024</h4>
+            {educationItems.map((item) => (
+              <div key={item.id} className="education_item">
+                <div className="education_header">
+                  <h3>{item.Lvl}</h3>
+                  <h4>{item.Date}</h4>
+                </div>
+                <div className="education_place">
+                  <h4>{item.Place}</h4>
+                </div>
+                <div className="education_marks">{item.Marks}</div>
+                <div className="education_desc">
+                  <p>{item.Description}</p>
+                </div>
               </div>
-              <div className="education_place">
-                <h4>Stockport College</h4>
-              </div>
-              <div className="education_marks">Abschlussnote: D*DD</div>
-              <div className="education_desc">
-                <p>
-                  Im Rahmen dieses Kurses wurden folgende Technologien und
-                  Themen behandelt: Java, HTML / HTML5, HTML Scripting, PHP,
-                  MySQL / SQL, Cybersecurity und Cybersecurity-Risiken,
-                  Cascading Style Sheets (CSS) und CSS Flexbox, JavaScript
-                </p>
-              </div>
-            </div>
-            <div className="education_item">
-              <div className="education_header">
-                <h3>High School in Ukraine</h3>
-                <h4>SEP 2022- JUN 2024</h4>
-              </div>
-              <div className="education_place">
-                <h4>Stockport College</h4>
-              </div>
-              <div className="education_marks">Abschlussnote: D*DD</div>
-              <div className="education_desc">
-                <p>
-                  Im Rahmen dieses Kurses wurden folgende Technologien und
-                  Themen behandelt: Java, HTML / HTML5, HTML Scripting, PHP,
-                  MySQL / SQL, Cybersecurity und Cybersecurity-Risiken,
-                  Cascading Style Sheets (CSS) und CSS Flexbox, JavaScript
-                </p>
-              </div>
-            </div>
-            <div className="education_item">
-              <div className="education_header">
-                <h3>Middle School in Ukraine</h3>
-                <h4>SEP 2022- JUN 2024</h4>
-              </div>
-              <div className="education_place">
-                <h4>Stockport College</h4>
-              </div>
-              <div className="education_marks">Abschlussnote: D*DD</div>
-              <div className="education_desc">
-                <p>
-                  Im Rahmen dieses Kurses wurden folgende Technologien und
-                  Themen behandelt: Java, HTML / HTML5, HTML Scripting, PHP,
-                  MySQL / SQL, Cybersecurity und Cybersecurity-Risiken,
-                  Cascading Style Sheets (CSS) und CSS Flexbox, JavaScript
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </BlockToClose>

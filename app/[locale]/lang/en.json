@@ -74,6 +74,24 @@
     }
   },
   "Education": {
-    "title": "Education"
+    "title": "Education",
+    "items": [
+      {
+        "id": 1,
+        "Lvl": "Level 3 BTEC Computer Science (EQF Level: 4)",
+        "Date": "Sep 2022 - Jul 2024",
+        "Place": "Stockport College, Stockport, UK",
+        "Marks": "D*,D,D (UK grading system)",
+        "Description": "During this course, the following technologies and topics were covered: Java, HTML / HTML5, HTML scripting, PHP, MySQL / SQL, cybersecurity and its associated risks, Cascading Style Sheets (CSS) including Flexbox, as well as JavaScript. I actively participated in volunteer work during my studies and was awarded recognition as the top student across the entire Computer Science course. Alongside my college education, I also completed courses on Udemy and Laracasts, and developed my own websites to gain practical experience and further improve my skills."
+      },
+      {
+        "id": 2,
+        "Lvl": "Complete General Secondary Education",
+        "Date": "Graduated in 2022",
+        "Place": "Stryzhavka Lyceum No. 2, Stryzhavka, Ukraine",
+        "Marks": "Average grade: A, IT: A+ (UK grading system)",
+        "Description": "Completed full general secondary education at Stryzhavka Lyceum No. 2, achieving an average grade of 10 and an excellent grade of 12 in Computer Science. Actively participated in olympiads in computer science and geography. Was a member of the school organizer team. Assisted students and staff with computer-related issues and other technical problems."
+      }
+    ]
   }
 }
