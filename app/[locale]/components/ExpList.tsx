@@ -10,34 +10,31 @@ export default function ExpList() {
   return (
     <>
       <BlockToClose id="expToClose">
-        {EXP_LIST.map((list) => (
-          <div key={list.id}>
-            <div className="exp_header">
-              <div className="exp_title_date">
-                <div className="exp_title">
-                  <h3>{t(`${list.id}.title`)}</h3>
+        <div className="exp_timeline">
+          {EXP_LIST.map((list) => (
+            <div key={list.id} className="exp_timeline_item">
+              <div className="exp_timeline_line" />
+              <div className="exp_timeline_content">
+                <div className="exp_header">
+                  <div className="exp_title_date">
+                    <h3>{t(`${list.id}.title`)}</h3>
+                    <span className="exp_date">{t(`${list.id}.date`)}</span>
+                  </div>
+                  <p className="exp_place">{t(`${list.id}.place`)}</p>
                 </div>
-                <div className="exp_date">{t(`${list.id}.date`)}</div>
-              </div>
-              <div className="exp_place">
-                <p>{t(`${list.id}.place`)}</p>
-              </div>
-            </div>
-            <div className="exp_main">
-              <div className="exp_about">
-                <p>{t(`${list.id}.description`)}</p>
-              </div>
-              <h2>{t("h2")}:</h2>
-              <div className="exp_list">
-                <ul>
-                  {list.earnedExp.map((exp) => (
-                    <li key={exp}>{exp}</li>
-                  ))}
-                </ul>
+                <div className="exp_main">
+                  <p className="exp_about">{t(`${list.id}.description`)}</p>
+                  <p className="exp_skills_label">{t("h2")}</p>
+                  <ul className="exp_list">
+                    {list.earnedExp.map((exp) => (
+                      <li key={exp}>{exp}</li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </BlockToClose>
     </>
   );

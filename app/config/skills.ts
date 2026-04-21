@@ -2,7 +2,7 @@ type skillLvlKey = "Confident" | "High" | "Moderate" | "Bad";
 type skillStageKey = "Completed" | "Active" | "InPlan" | "None";
 
 export const skillLVL: Record<skillLvlKey, { text: string; color: string }> = {
-  Confident: { text: "Confident", color: "rgb(44, 44, 242)" },
+  Confident: { text: "Confident", color: "rgb(255, 6, 251)" },
   High: { text: "High", color: "rgb(100, 173, 90)" },
   Moderate: { text: "Moderate", color: "rgb(253, 165, 2)" },
   Bad: { text: "Bad", color: "rgb(255, 0, 0)" },

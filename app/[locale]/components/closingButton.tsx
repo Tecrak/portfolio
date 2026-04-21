@@ -1,6 +1,7 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import "../styles/page.css";
+import "./styles/closingBttn.css";
 
 const closedBlocks = new Set<string>();
 

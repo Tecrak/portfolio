@@ -1,0 +1,37 @@
+.experiment {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  right: 0%;
+  transform: translate(-70%, -180%);
+  z-index: 2;
+  cursor: pointer;
+}
+.experiment::before {
+  content: "";
+  position: absolute;
+  height: 19px;
+  transform: rotate(35deg);
+  border-radius: 0px 0px 10px 0px;
+  left: 10px;
+  width: 3px;
+  background: grey;
+  transition: transform 0.4s ease-in-out;
+}
+
+.experiment::after {
+  content: "";
+  position: absolute;
+  height: 19px;
+  transform: rotate(-35deg);
+  border-radius: 0px 0px 0px 10px;
+  width: 3px;
+  background: grey;
+  transition: transform 0.4s ease-in-out;
+}
+.experiment.closed::before {
+  transform: rotate(-35deg);
+}
+.experiment.closed::after {
+  transform: rotate(35deg);
+}

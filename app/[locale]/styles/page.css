@@ -1,17 +1,19 @@
 :root {
   --h2-section: 23px;
-  --bg: 176, 242, 255;
-  --skill-bg: rgb(129, 255, 245);
-  --headers: rgb(139, 246, 157);
-  --skill-bg-hover: rgb(84, 226, 254);
+  --bg: rgb(254, 243, 226);
+  --skill-bg: rgb(255, 189, 74);
+  --headers: rgb(252, 222, 85);
+  --skill-bg-hover: rgb(254, 228, 84);
   --skill-li-border: grey;
+  --head-nice-bg: rgb(251, 97, 97);
 }
 .dark {
-  --bg: 16, 1, 47;
-  --headers: rgb(66, 0, 97);
-  --skill-bg: rgb(37, 31, 95);
+  --bg: rgb(9, 29, 64);
+  --headers: rgb(19, 34, 132);
+  --skill-bg: rgb(33, 57, 176);
   --skill-bg-hover: rgb(84, 0, 0);
   --skill-li-border: black;
+  --head-nice-bg: rgb(151, 50, 3);
 }
 
 /* ---WELCOME WINDOW--- */
