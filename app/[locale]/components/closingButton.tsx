@@ -2,7 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 import "../styles/page.css";
 
-const openedBlocks = new Set<string>();
+const closedBlocks = new Set<string>();
 
 export default function BlockToClose({
   children,
@@ -11,19 +11,22 @@ export default function BlockToClose({
   children: React.ReactNode;
   id: string;
 }) {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(() => !closedBlocks.has(id));
   const [height, setHeight] = useState<string>("0px");
   const ref = useRef<HTMLDivElement>(null);
-  const skipAnimation = useRef(!openedBlocks.has(id));
+  const isFirstRender = useRef(true);
 
   useEffect(() => {
     if (!ref.current) return;
 
-    if (skipAnimation.current) {
-      openedBlocks.add(id);
-      setHeight(`${ref.current.scrollHeight}px`);
-      skipAnimation.current = false;
-    } else {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+
+      if (!isOpen) {
+        setHeight("0px");
+        return;
+      }
+
       ref.current.style.transition = "none";
       setHeight(`${ref.current.scrollHeight}px`);
       requestAnimationFrame(() => {
@@ -37,15 +40,26 @@ export default function BlockToClose({
   }, []);
 
   useEffect(() => {
+    if (isFirstRender.current) return;
     if (ref.current) {
       setHeight(isOpen ? `${ref.current.scrollHeight}px` : "0px");
     }
   }, [isOpen]);
 
+  const toggle = () => {
+    const next = !isOpen;
+    if (!next) {
+      closedBlocks.add(id);
+    } else {
+      closedBlocks.delete(id);
+    }
+    setIsOpen(next);
+  };
+
   return (
     <>
       <div
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={toggle}
         className={`experiment ${isOpen ? "" : "closed"}`}
       />
       <div
