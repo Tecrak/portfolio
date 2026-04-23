@@ -30,7 +30,6 @@ export default function Education() {
                   </div>
                   <div className="education_marks">{item.Marks}</div>
                 </div>
-
                 <div className="education_desc">
                   <p>{item.Description}</p>
                 </div>

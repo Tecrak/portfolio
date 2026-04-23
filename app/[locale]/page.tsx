@@ -39,7 +39,6 @@ export default function Page() {
         <h2>{tED("title")}</h2>
         <Education />
       </section>
-      <section className="end_content"></section>
       <WelcomeWindow />
     </div>
   );

@@ -24,13 +24,14 @@
   width: 50%;
   position: relative;
   box-sizing: border-box;
-  background: rgba(128, 128, 128, 0.168);
+  background: var(--skill-bg);
   border-radius: 30px;
   box-shadow: 0px 0px 0px 0.8px rgb(253, 120, 58);
 }
 
 .education_item:nth-child(even) {
   margin-left: 50%;
+  margin-bottom:10px;
 }
 
 .education_item::before {

@@ -15,23 +15,36 @@ export default function PageTransition({
 }) {
   const pathname = usePathname();
   const [isLoading, setIsLoading] = useState(true);
+  const [isLangSwitch, setIsLangSwitch] = useState(false);
 
   const prevPathRef = useRef<string | null>(null);
   const shownPathsRef = useRef<Set<string>>(new Set());
 
   useEffect(() => {
     const currentPath = stripLocale(pathname);
-    const isLangSwitch = prevPathRef.current === currentPath;
+    const langSwitch = prevPathRef.current === currentPath;
     const alreadyShown = shownPathsRef.current.has(currentPath);
+    
+    console.log("pathname:", pathname);
+    console.log("currentPath:", currentPath);
+    console.log("prevPathRef:", prevPathRef.current);
+    console.log("langSwitch:", langSwitch);
+    console.log("scrollY at effect:", window.scrollY);
 
-    if (prevPathRef.current === null || isLangSwitch || !alreadyShown) {
+    setIsLangSwitch(langSwitch);
+
+    if (prevPathRef.current === null || langSwitch || !alreadyShown) {
+      // При зміні мови — одразу показуємо без анімації
+      if (langSwitch) {
+        setIsLoading(false);
+        prevPathRef.current = currentPath;
+        return;
+      }
+
       setIsLoading(true);
       const timer = setTimeout(() => setIsLoading(false), 150);
 
-      if (!isLangSwitch) {
-        shownPathsRef.current.add(currentPath);
-      }
-
+      shownPathsRef.current.add(currentPath);
       prevPathRef.current = currentPath;
       return () => clearTimeout(timer);
     }

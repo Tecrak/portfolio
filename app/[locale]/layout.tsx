@@ -30,7 +30,9 @@ export default async function RootLayout({
             <div className="Navigation">
               <ActivePathName />
             </div>
-            <PageTransition>{children}</PageTransition>
+            <main className="pageWrapper">
+              <PageTransition>{children}</PageTransition>
+            </main>
           </NextIntlClientProvider>
         </Providers>
       </body>

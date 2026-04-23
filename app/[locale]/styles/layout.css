@@ -3,6 +3,7 @@
   --nav-bttn-hover: rgb(255, 89, 0);
   --slider-circle: rgb(255, 255, 0);
   --slider-bg: #2400b2;
+  --nav-height:37px;
   transition: 0.4s;
 }
 .dark {
@@ -11,10 +12,15 @@
   --slider-circle: #2400b2;
   --slider-bg: rgb(255, 255, 0);
 }
+.pageWrapper {
+  padding-top: var(--nav-height)
+}
 .Navigation {
   background: var(--nav-bg);
   width: 100%;
-  position: relative;
+  position: fixed;
+  height:var(--nav-height);
+  z-index:100;
 }
 .navigationItems {
   display: flex;
