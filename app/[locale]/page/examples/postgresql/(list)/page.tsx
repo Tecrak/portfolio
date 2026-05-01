@@ -1,25 +1,31 @@
 "use client";
+
 import { FormSubmit } from "../components/formSubmit";
 import { usePeople } from "@/app/api/usePeople";
 import DeleteButton from "../components/deleteButton";
 import EditButton from "../components/editButton";
+import "../styles/postgresql.page.css"; 
 
-export default function postgresqlPage() {
+export default function PostgresqlPage() {
   const { data: dbInfo = [], isLoading } = usePeople();
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) {
+    return <div className="pg-loading">завантаження...</div>;
+  }
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center">
-      <ul>
+    <div className="pg-page">
+      <ul className="pg-list">
         {dbInfo.map((data: { id: number; name: string }) => (
-          <li key={data.id}>
-            {data.name}
+          <li key={data.id} className="pg-list__item">
+            <span className="pg-list__id">#{data.id}</span>
+            <span className="pg-list__name">{data.name}</span>
             <DeleteButton data={data} />
             <EditButton data={data} />
           </li>
         ))}
       </ul>
+
       <FormSubmit />
     </div>
   );

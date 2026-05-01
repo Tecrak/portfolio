@@ -1,39 +1,58 @@
-import { useUpdatePerson } from "@/app/api/usePeople";
-import { useState } from "react";
+"use client";
 
-export default function EditButton({ data }: { data: { id: number } }) {
+import { useState } from "react";
+import { useUpdatePerson } from "@/app/api/usePeople";
+
+interface Props {
+  data: { id: number };
+}
+
+export default function EditButton({ data }: Props) {
   const [editingId, setEditingId] = useState<number | null>(null);
   const [newName, setNewName] = useState("");
   const updateMutation = useUpdatePerson();
 
+  const isEditing = editingId === data.id;
+
+  function toggle() {
+    setEditingId(isEditing ? null : data.id);
+    setNewName("");
+  }
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (!newName.trim()) return;
+    updateMutation.mutate({ id: data.id, name: newName });
+    setEditingId(null);
+    setNewName("");
+  }
+
   return (
     <>
       <button
-        style={{ background: "green" }}
-        onClick={() => setEditingId(editingId === data.id ? null : data.id)}
+        className={`pg-btn ${isEditing ? "pg-btn--stop" : "pg-btn--edit"}`}
+        onClick={toggle}
       >
-        {editingId === data.id ? "Stop" : "Edit"}
+        {isEditing ? "Stop" : "Edit"}
       </button>
-      {editingId === data.id && (
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
 
-            updateMutation.mutate({
-              id: data.id,
-              name: newName,
-            });
-
-            setEditingId(null);
-            setNewName("");
-          }}
-        >
+      {isEditing && (
+        <form className="pg-edit-form" onSubmit={handleSubmit}>
           <input
+            className="pg-edit-input"
             type="text"
+            placeholder="нове ім'я..."
+            value={newName}
             onChange={(e) => setNewName(e.target.value)}
-            style={{ background: "blue", marginLeft: "15px" }}
+            autoFocus
           />
-          <button type="submit">Edit</button>
+          <button
+            className="pg-btn pg-btn--submit"
+            type="submit"
+            disabled={updateMutation.isPending || !newName.trim()}
+          >
+            {updateMutation.isPending ? "..." : "Save"}
+          </button>
         </form>
       )}
     </>

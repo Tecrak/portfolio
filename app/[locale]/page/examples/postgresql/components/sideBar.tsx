@@ -1,3 +1,12 @@
+/*
+  sideBar.tsx is no longer needed as a standalone component —
+  the sidebar logic now lives inside ExamplesLayout.tsx.
+
+  If you still need SideBar for the people list inside the test area
+  (the old postgresql sidebar), keep this file as-is or delete it.
+  It is NOT imported by the new layout.
+*/
+
 "use client";
 
 import { usePeople } from "@/app/api/usePeople";
@@ -6,14 +15,19 @@ import Link from "next/link";
 export default function SideBar() {
   const { data: people = [], isLoading } = usePeople();
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <div className="pg-loading">завантаження...</div>;
 
   return (
-    <ul>
+    <ul className="pg-list" style={{ padding: "12px 16px" }}>
       {people.map((data: { id: number; name: string }) => (
-        <li key={data.id}>
-          <Link href={`/page/examples/postgresql/${data.id}`}>
-            {data.id}: {data.name}
+        <li key={data.id} className="pg-list__item">
+          <span className="pg-list__id">#{data.id}</span>
+          <Link
+            href={`/page/examples/postgresql/${data.id}`}
+            className="pg-list__name"
+            style={{ color: "#8da8ff", textDecoration: "none" }}
+          >
+            {data.name}
           </Link>
         </li>
       ))}

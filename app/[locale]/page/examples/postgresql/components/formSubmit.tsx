@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
@@ -21,28 +22,32 @@ export function FormSubmit() {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-
     if (name.length <= 3) return;
-
     createMutation.mutate(name);
     setName("");
   }
 
+  const isValid = name.length > 3;
+
   return (
-    <form onSubmit={handleSubmit} className="mt-4 flex gap-2">
+    <form className="pg-add-form" onSubmit={handleSubmit}>
       <input
+        className={`pg-add-input ${isValid ? "pg-add-input--valid" : "pg-add-input--invalid"}`}
         value={name}
         onChange={(e) => setName(e.target.value)}
-        style={{
-          border: name.length <= 3 ? "1px red solid" : "1px green solid",
-          outline: "none",
-        }}
+        placeholder="ім'я нового запису..."
       />
 
-      {name.length <= 3 && <p>Name is too short</p>}
+      {!isValid && name.length > 0 && (
+        <span className="pg-add-hint">надто коротко</span>
+      )}
 
-      <button type="submit" disabled={createMutation.isPending}>
-        {createMutation.isPending ? "Adding..." : "Submit"}
+      <button
+        className="pg-btn pg-btn--submit"
+        type="submit"
+        disabled={createMutation.isPending || !isValid}
+      >
+        {createMutation.isPending ? "Adding..." : "+ Add"}
       </button>
     </form>
   );

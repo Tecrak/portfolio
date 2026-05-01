@@ -1,13 +1,21 @@
+"use client";
+
 import { useDeletePerson } from "@/app/api/usePeople";
-export default function DeleteButton({ data }: { data: { id: number } }) {
+
+interface Props {
+  data: { id: number };
+}
+
+export default function DeleteButton({ data }: Props) {
   const deleteMutation = useDeletePerson();
 
   return (
     <button
+      className="pg-btn pg-btn--delete"
       onClick={() => deleteMutation.mutate(data.id)}
-      style={{ background: "red", marginLeft: "15px" }}
+      disabled={deleteMutation.isPending}
     >
-      Delete
+      {deleteMutation.isPending ? "..." : "Delete"}
     </button>
   );
 }
