@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import "./styles/welcomeWindow.css"
 
 export default function WelcomeWindow() {
   const [modalOpen, setModalOpen] = useState(false);
