@@ -6,7 +6,9 @@
   --skill-bg-hover: rgb(254, 228, 84);
   --skill-li-border: grey;
   --head-nice-bg: rgb(251, 97, 97);
+  
 }
+
 .dark {
   --bg: rgb(9, 29, 64);
   --headers: rgb(19, 34, 132);
