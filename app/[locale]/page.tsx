@@ -14,6 +14,7 @@ export default function Page() {
   const tED = useTranslations("Education");
   return (
     <div className="main">
+      <WelcomeWindow />
       <section className="main_content">
         <div className="aboutInfoContainer">
           <div className="aboutImage">
@@ -39,7 +40,6 @@ export default function Page() {
         <h2>{tED("title")}</h2>
         <Education />
       </section>
-      <WelcomeWindow />
     </div>
   );
 }
