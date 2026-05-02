@@ -4,13 +4,15 @@ import { FormSubmit } from "../components/formSubmit";
 import { usePeople } from "@/app/api/usePeople";
 import DeleteButton from "../components/deleteButton";
 import EditButton from "../components/editButton";
+import { useTranslations } from "next-intl";
 import "../styles/postgresql.page.css"; 
 
 export default function PostgresqlPage() {
   const { data: dbInfo = [], isLoading } = usePeople();
+  const t = useTranslations("Examples");
 
   if (isLoading) {
-    return <div className="pg-loading">завантаження...</div>;
+    return <div className="pg-loading">{t("download")}</div>;
   }
 
   return (

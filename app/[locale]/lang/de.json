@@ -92,5 +92,27 @@
         "Description": "Abschluss der vollständigen allgemeinen Sekundarschulbildung am Lyzeum Nr. 2 in Stryzhavka mit einem Durchschnitt von 10 Punkten sowie der Bestnote 12 im Fach Informatik. Aktive Teilnahme an Olympiaden in Informatik und Geografie. Mitglied des Organisationsteams der Schule. Unterstützung von Schülern und Lehrkräften bei Computerproblemen und anderen technischen Anliegen."
       }
     ]
+  },
+  "Examples": {
+  "sidebarTitle": "Fähigkeiten",
+  "download": "Lade....",
+  "footerText": "env: bereit",
+  "breadcrumbRoot": "skills",
+  "testAreaLabel": "Testbereich",
+  "indexHint": "← Fähigkeit aus der Liste auswählen",
+  "skills": {
+    "/page/examples/postgresql": {
+      "infoTitle": "PostgreSQL — Relationales DBMS",
+      "infoDesc": "Eine leistungsstarke objektrelationale Datenbank mit Unterstützung für komplexe Abfragen, Transaktionen und Erweiterungen. Ideal für strukturierte Daten und ACID-konforme Operationen."
+    },
+    "/page/examples/mongodb": {
+      "infoTitle": "MongoDB — Dokumentendatenbank",
+      "infoDesc": "Eine flexible BSON-basierte Dokumentendatenbank. Ideal für unstrukturierte oder sich ändernde Schemata und schnelle Iteration."
+    },
+    "/page/examples/mysql": {
+      "infoTitle": "MySQL — Populäres DBMS",
+      "infoDesc": "Eine weit verbreitete relationale Datenbank, besonders in der Webentwicklung. Hervorragend für den LAMP-Stack und leseintensive Anwendungen."
+    }
   }
+}
 }

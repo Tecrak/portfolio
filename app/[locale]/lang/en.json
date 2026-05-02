@@ -93,5 +93,28 @@
         "Description": "Completed full general secondary education at Stryzhavka Lyceum No. 2, achieving an average grade of 10 and an excellent grade of 12 in Computer Science. Actively participated in olympiads in computer science and geography. Was a member of the school organizer team. Assisted students and staff with computer-related issues and other technical problems."
       }
     ]
+  },
+  "Examples": {
+  "sidebarTitle": "skills",
+  "footerText": "env: ready",
+  "download": "Download....",
+  "breadcrumbRoot": "skills",
+  "testAreaLabel": "test area",
+  "indexHint": "← select a skill from the list",
+  "skills": {
+    "/page/examples/postgresql": {
+      "infoTitle": "PostgreSQL — Relational DBMS",
+      "infoDesc": "A powerful object-relational database with support for complex queries, transactions, and extensions. Ideal for structured data and ACID-compliant operations."
+    },
+    "/page/examples/mongodb": {
+      "infoTitle": "MongoDB — Document Database",
+      "infoDesc": "A flexible BSON-based document database. Ideal for unstructured or evolving schemas and rapid iteration."
+    },
+    "/page/examples/mysql": {
+      "infoTitle": "MySQL — Popular DBMS",
+      "infoDesc": "A widely used relational database, especially in web development. Great for the LAMP stack and read-heavy applications."
+    }
   }
+}
+ 
 }

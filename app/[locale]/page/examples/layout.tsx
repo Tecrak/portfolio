@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { EXAMPLELINKS, ExampleLink } from "@/app/config/examplelinks";
 import "./styles/examples.layout.css";
 
@@ -20,6 +21,7 @@ export default function ExamplesLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const t = useTranslations("Examples");
   const pathname = usePathname();
   const normalized = stripLocale(pathname);
   const current = useCurrentLink(EXAMPLELINKS);
@@ -27,11 +29,28 @@ export default function ExamplesLayout({
   const statusClass = `ex-badge--${current?.badgeStatus ?? "stable"}`;
   const isIndex = normalized === "/page/examples";
 
+  const skillT = current
+    ? (() => {
+        try {
+          return {
+            infoTitle: t(`skills.${current.path}.infoTitle`),
+            infoDesc: t(`skills.${current.path}.infoDesc`),
+          };
+        } catch {
+          return {
+            infoTitle: current.infoTitle,
+            infoDesc: current.infoDesc,
+          };
+        }
+      })()
+    : null;
+
   return (
     <div className="examples-root">
+      {/* ── SIDEBAR ── */}
       <aside className="ex-sidebar">
         <div className="ex-sidebar__header">
-          <span className="ex-sidebar__title">навички</span>
+          <span className="ex-sidebar__title">{t("sidebarTitle")}</span>
         </div>
 
         <ul className="ex-sidebar__list">
@@ -58,14 +77,15 @@ export default function ExamplesLayout({
 
         <div className="ex-sidebar__footer">
           <span className="ex-sidebar__footer-dot" />
-          <span className="ex-sidebar__footer-text">env: ready</span>
+          <span className="ex-sidebar__footer-text">{t("footerText")}</span>
         </div>
       </aside>
 
+      {/* ── MAIN ── */}
       <main className="ex-main">
         <div className="ex-topbar">
           <div className="ex-breadcrumb">
-            <span className="ex-breadcrumb__root">skills</span>
+            <span className="ex-breadcrumb__root">{t("breadcrumbRoot")}</span>
             <span className="ex-breadcrumb__sep">/</span>
             <span className="ex-breadcrumb__current">
               {current?.label ?? "—"}
@@ -86,10 +106,10 @@ export default function ExamplesLayout({
         </div>
 
         <div className="ex-content">
-          {current && (
+          {current && skillT && (
             <div className="ex-info">
-              <p className="ex-info__title">{current.infoTitle}</p>
-              <p className="ex-info__desc">{current.infoDesc}</p>
+              <p className="ex-info__title">{skillT.infoTitle}</p>
+              <p className="ex-info__desc">{skillT.infoDesc}</p>
               {current.infoChips && (
                 <div className="ex-info__chips">
                   {current.infoChips.map((c) => (
@@ -105,7 +125,7 @@ export default function ExamplesLayout({
           {!isIndex && (
             <div className="ex-test">
               <div className="ex-test__header">
-                <span className="ex-test__label">test area</span>
+                <span className="ex-test__label">{t("testAreaLabel")}</span>
               </div>
               <div className="ex-test__body">{children}</div>
             </div>
@@ -113,7 +133,7 @@ export default function ExamplesLayout({
 
           {isIndex && (
             <div className="ex-index-hint">
-              <span>← оберіть навичку зі списку</span>
+              <span>{t("indexHint")}</span>
             </div>
           )}
         </div>
