@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { EXAMPLELINKS, ExampleLink } from "@/app/config/examplelinks";
 import "./styles/examples.layout.css";
@@ -25,6 +25,7 @@ export default function ExamplesLayout({
   const pathname = usePathname();
   const normalized = stripLocale(pathname);
   const current = useCurrentLink(EXAMPLELINKS);
+  const { id } = useParams();
 
   const statusClass = `ex-badge--${current?.badgeStatus ?? "stable"}`;
   const isIndex = normalized === "/page/examples";
@@ -60,8 +61,7 @@ export default function ExamplesLayout({
               <li key={link.path}>
                 <Link
                   href={link.path}
-                  className={`ex-nav-item${isActive ? " active" : ""}`}
-                >
+                  className={`ex-nav-item${isActive ? " active" : ""}`}>
                   <span className="ex-nav-item__meta">
                     <span className="ex-nav-item__name">{link.label}</span>
                     {link.tag && (
@@ -88,8 +88,8 @@ export default function ExamplesLayout({
             <span className="ex-breadcrumb__root">Skills</span>
             <span className="ex-breadcrumb__sep">/</span>
             <span className="ex-breadcrumb__current">
-              {current?.label ?? "—"}
-              {current?.label}
+              {current?.label ?? ""}
+              {id && `/${id}`}
             </span>
           </div>
           <div className="ex-topbar__badges">
