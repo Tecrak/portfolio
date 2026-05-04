@@ -85,10 +85,11 @@ export default function ExamplesLayout({
       <main className="ex-main">
         <div className="ex-topbar">
           <div className="ex-breadcrumb">
-            <span className="ex-breadcrumb__root">{t("breadcrumbRoot")}</span>
+            <span className="ex-breadcrumb__root">Skills</span>
             <span className="ex-breadcrumb__sep">/</span>
             <span className="ex-breadcrumb__current">
               {current?.label ?? "—"}
+              {current?.label}
             </span>
           </div>
           <div className="ex-topbar__badges">
