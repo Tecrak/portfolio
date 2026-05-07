@@ -1,6 +1,6 @@
 "use client";
 import "./styles/layout.css";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { EXAMPLELINKS } from "./config/exampleLinks";
@@ -16,12 +16,12 @@ export default function ExamplesLayout({
     (link) => pathname === `/${locale}${link.path}`,
   );
   const isRootPage = pathname === `/${locale}/page/examples`;
-
+  const t = useTranslations("Examples");
   return (
     <div className="mainBox">
       {/* --- Side Bar --- */}
       <div className="sideBar">
-        <h4>Навчики</h4>
+        <h4>{t("label")}</h4>
         <ul>
           {EXAMPLELINKS.map((link) => (
             <Link
@@ -48,7 +48,7 @@ export default function ExamplesLayout({
       <div className="mainArea">
         <div className="pathText">
           <h4>
-            Skills / {""}
+            {t("label")} / {""}
             <span className="pathTextPage">
               {!isRootPage && currentLink?.label}
             </span>
@@ -57,7 +57,11 @@ export default function ExamplesLayout({
 
         <div className="mainAreaContent">
           <div className="exmplDesc">
-            {isRootPage ? <p>Оберіть навичку</p> : <p>{currentLink?.desc}</p>}
+            {isRootPage ? (
+              <p>{t("chooseSkill")}</p>
+            ) : (
+              <p>{t(`skills.${currentLink?.label}.description`)}</p>
+            )}
           </div>
           {!isRootPage ? (
             <div className="testAreaBlock">

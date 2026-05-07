@@ -22,6 +22,7 @@
 
 .pg-list__item {
   display: flex;
+  position: relative;
   align-items: center;
   gap: 10px;
   padding: 10px 14px;
@@ -199,6 +200,10 @@
 
 .pg-list_bait {
   opacity: 0.1;
-  position: relative;
-  right: 60px;
+  position: absolute;
+  transform: translate(30%, -50%);
+}
+.pg-list_bait:hover {
+  opacity: 0.5;
+  border: 1px white;
 }

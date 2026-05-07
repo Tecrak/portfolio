@@ -94,25 +94,27 @@
     ]
   },
   "Examples": {
-  "sidebarTitle": "Fähigkeiten",
-  "download": "Lade....",
-  "footerText": "env: bereit",
-  "breadcrumbRoot": "skills",
-  "testAreaLabel": "Testbereich",
-  "indexHint": "← Fähigkeit aus der Liste auswählen",
-  "skills": {
-    "/page/examples/postgresql": {
-      "infoTitle": "PostgreSQL — Relationales DBMS",
-      "infoDesc": "Eine leistungsstarke objektrelationale Datenbank mit Unterstützung für komplexe Abfragen, Transaktionen und Erweiterungen. Ideal für strukturierte Daten und ACID-konforme Operationen."
-    },
-    "/page/examples/mongodb": {
-      "infoTitle": "MongoDB — Dokumentendatenbank",
-      "infoDesc": "Eine flexible BSON-basierte Dokumentendatenbank. Ideal für unstrukturierte oder sich ändernde Schemata und schnelle Iteration."
-    },
-    "/page/examples/mysql": {
-      "infoTitle": "MySQL — Populäres DBMS",
-      "infoDesc": "Eine weit verbreitete relationale Datenbank, besonders in der Webentwicklung. Hervorragend für den LAMP-Stack und leseintensive Anwendungen."
+    "label": "Fähigkeiten",
+    "chooseSkill": "Bitte wählen Sie eine Fähigkeit",
+    "skills": {
+      "PostgreSQL": {
+        "description": "PostgreSQL-Beschreibung hier",
+        "clickMe": "Klick mich",
+        "editBttn": "Bearbeiten",
+        "deleteBttn": "Löschen",
+        "addBttn": "Hinzufügen",
+        "stopBttn": "Stop",
+        "saveBttn": "Fertig",
+        "smthng": "Neuer Name",
+        "adding": "Hinzufügen...",
+        "tooShort": "zu kurz"
+      },
+      "MongoDB": {
+        "description": "In Bearbeitung"
+      },
+      "MySQL": {
+        "description": "In Bearbeitung"
+      }
     }
   }
-}
 }

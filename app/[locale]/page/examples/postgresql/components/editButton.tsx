@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useUpdatePerson } from "@/app/api/usePeople";
+import { useTranslations } from "next-intl";
 
 interface Props {
   data: { id: number };
@@ -11,7 +12,7 @@ export default function EditButton({ data }: Props) {
   const [editingId, setEditingId] = useState<number | null>(null);
   const [newName, setNewName] = useState("");
   const updateMutation = useUpdatePerson();
-
+  const t = useTranslations("Examples.skills.PostgreSQL");
   const isEditing = editingId === data.id;
 
   function toggle() {
@@ -31,9 +32,8 @@ export default function EditButton({ data }: Props) {
     <>
       <button
         className={`pg-btn ${isEditing ? "pg-btn--stop" : "pg-btn--edit"}`}
-        onClick={toggle}
-      >
-        {isEditing ? "Stop" : "Edit"}
+        onClick={toggle}>
+        {isEditing ? t("stopBttn") : t("editBttn")}
       </button>
 
       {isEditing && (
@@ -41,7 +41,7 @@ export default function EditButton({ data }: Props) {
           <input
             className="pg-edit-input"
             type="text"
-            placeholder="нове ім'я..."
+            placeholder={t("smthng")}
             value={newName}
             onChange={(e) => setNewName(e.target.value)}
             autoFocus
@@ -49,9 +49,8 @@ export default function EditButton({ data }: Props) {
           <button
             className="pg-btn pg-btn--submit"
             type="submit"
-            disabled={updateMutation.isPending || !newName.trim()}
-          >
-            {updateMutation.isPending ? "..." : "Save"}
+            disabled={updateMutation.isPending || !newName.trim()}>
+            {updateMutation.isPending ? "..." : t("saveBttn")}
           </button>
         </form>
       )}

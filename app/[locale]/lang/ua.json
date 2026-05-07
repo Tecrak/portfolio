@@ -96,25 +96,27 @@
     ]
   },
   "Examples": {
-  "sidebarTitle": "навички",
-  "footerText": "env: ready",
-  "download": "Завантаження....",
-  "breadcrumbRoot": "skills",
-  "testAreaLabel": "test area",
-  "indexHint": "← оберіть навичку зі списку",
-  "skills": {
-    "/page/examples/postgresql": {
-      "infoTitle": "PostgreSQL — реляційна СУБД",
-      "infoDesc": "Потужна об'єктно-реляційна база даних з підтримкою складних запитів, транзакцій та розширень. Ідеальна для структурованих даних і ACID-сумісних операцій."
-    },
-    "/page/examples/mongodb": {
-      "infoTitle": "MongoDB — документна БД",
-      "infoDesc": "Гнучка документна база даних на основі BSON. Ідеальна для неструктурованих або мінливих схем та швидкої ітерації."
-    },
-    "/page/examples/mysql": {
-      "infoTitle": "MySQL — популярна СУБД",
-      "infoDesc": "Широко використовувана реляційна база даних, особливо у веб-розробці. Відмінно підходить для LAMP-стеку та додатків з читанням-переважанням."
+    "label": "Навички",
+    "chooseSkill": "Оберіть навичку",
+    "skills": {
+      "PostgreSQL": {
+        "description": "Опис для PostgreSQL тут",
+        "clickMe": "Натисни на мене",
+        "editBttn": "Змінити",
+        "deleteBttn": "Вирізати",
+        "addBttn": "Мобілізувати",
+        "stopBttn": "Стопе",
+        "saveBttn": "Підмінити",
+        "smthng": "Імя пацика",
+        "adding": "Зара буде...",
+        "tooShort": "надто коротко"
+      },
+      "MongoDB": {
+        "description": "Поки нема"
+      },
+      "MySQL": {
+        "description": "Поки нема"
+      }
     }
   }
-}
 }

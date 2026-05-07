@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useTranslations } from "next-intl";
 
 export function FormSubmit() {
   const [name, setName] = useState("");
+  const t = useTranslations("Examples.skills.PostgreSQL");
   const queryClient = useQueryClient();
 
   const createMutation = useMutation({
@@ -35,19 +37,18 @@ export function FormSubmit() {
         className={`pg-add-input ${isValid ? "pg-add-input--valid" : "pg-add-input--invalid"}`}
         value={name}
         onChange={(e) => setName(e.target.value)}
-        placeholder="ім'я нового запису..."
+        placeholder={t("smthng")}
       />
 
       {!isValid && name.length > 0 && (
-        <span className="pg-add-hint">надто коротко</span>
+        <span className="pg-add-hint">{t("tooShort")}</span>
       )}
 
       <button
         className="pg-btn pg-btn--submit"
         type="submit"
-        disabled={createMutation.isPending || !isValid}
-      >
-        {createMutation.isPending ? "Adding..." : "+ Add"}
+        disabled={createMutation.isPending || !isValid}>
+        {createMutation.isPending ? t("adding") : "+ " + t("addBttn")}
       </button>
     </form>
   );
