@@ -1,9 +1,3 @@
-"use client";
-
-import Link from "next/link";
-import { useParams, usePathname } from "next/navigation";
-import { useTranslations } from "next-intl";
-import { EXAMPLELINKS, ExampleLink } from "@/app/config/examplelinks";
 import "./styles/layout.css";
 import ExpSideBar from "./components/sideBar";
 import ExpMainArea from "./components/mainArea";

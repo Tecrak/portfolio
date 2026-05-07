@@ -9,7 +9,7 @@ export default function ExpMainArea({
         <h4>Skills /</h4>
       </div>
       <div className="exmplDesc">
-        <p>ddsdfdsfsdfsdfsdfsdfsdfsdf</p>
+        <p></p>
       </div>
       <div className="testAreaBlock">
         <p>TEST AREA</p>
