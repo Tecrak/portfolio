@@ -1,3 +1,3 @@
 export default function ExamplesIndexPage() {
-  return null;
+  return <div>dasidhjasmrfiuewhn</div>;
 }

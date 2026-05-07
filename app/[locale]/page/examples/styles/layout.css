@@ -1,0 +1,62 @@
+.mainBox {
+  display: flex;
+  background: red;
+  min-height: calc(100vh - 60px); /* 60px = висота вашого navbar */
+}
+/* --- SIDEBAR --- */
+
+.sideBar {
+  background: yellow;
+}
+.sideBar > h4 {
+  background: green;
+  padding: 10px 60px 10px 10px;
+  border-right: 1px black solid;
+}
+.sideBar > ul {
+  background: pink;
+}
+.sideBar > ul > li {
+  background: orange;
+  padding: 7px;
+  margin: 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sideBarLed {
+  background: white;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  filter: blur(0.8);
+}
+/* --- MAIN AREA --- */
+
+.mainArea {
+  background: blue;
+  width: 100%;
+}
+.pathText {
+  background: purple;
+  padding: 10px 60px 10px 10px;
+}
+.exmplDesc {
+  background: cyan;
+  margin: 15px;
+  padding: 7px;
+  border-radius: 5px;
+}
+.testAreaBlock {
+  background: lime;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 15px;
+}
+.testAreaBlock > p {
+  background: red;
+  padding: 0px;
+}
+.testArea {
+  padding: 5px;
+}
