@@ -2,7 +2,7 @@
   --head-text-color: rgb(40, 30, 10);
   --smpl-text-color: rgb(100, 80, 40);
   --kindOfList-color: rgb(255, 248, 235);
-  --sideBar-list-hover: rgba(252, 189, 74, 0.25);
+  --sideBar-list-hover: rgb(251, 220, 164);
   --exp-borders: rgb(220, 185, 120);
   --exp-mainArea-bg: rgb(248, 238, 216);
   --exp-headers-bg: rgb(253, 218, 142);
@@ -48,6 +48,10 @@
   height: 10px;
   border-radius: 100%;
   filter: blur(0.6);
+}
+
+.expActivePath > li {
+  background: var(--sideBar-list-hover);
 }
 /* --- MAIN AREA --- */
 

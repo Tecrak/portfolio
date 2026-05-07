@@ -1,5 +1,6 @@
 export type NavItem = {
   label: string;
+  desc?: string;
   path: string;
   led: string;
 };
@@ -7,6 +8,7 @@ export type NavItem = {
 export const EXAMPLELINKS: NavItem[] = [
   {
     label: "PostgreSQL",
+    desc: "dasdasdad",
     path: "/page/examples/postgresql",
     led: "lime",
   },

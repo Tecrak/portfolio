@@ -2,9 +2,11 @@
 import { useLocale } from "next-intl";
 import { EXAMPLELINKS } from "../config/exampleLinks";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function ExpSideBar() {
   const locale = useLocale();
+  const pathname = usePathname();
 
   return (
     <div className="sideBar">
@@ -13,7 +15,10 @@ export default function ExpSideBar() {
         <ul>
           <Link
             key={link.label}
-            href={`/${locale}${link.path === "/" ? "" : link.path}`}>
+            href={`/${locale}${link.path === "/" ? "" : link.path}`}
+            className={
+              pathname == "/" + locale + link.path ? "expActivePath" : ""
+            }>
             <li key={link.label} className="linkItem">
               <div className="sideBarText">
                 <p>{link.label}</p>
