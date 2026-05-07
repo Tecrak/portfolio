@@ -16,10 +16,10 @@ export default function PostgresqlPage() {
     <div className="pg-page">
       <ul className="pg-list">
         {dbInfo.map((data: { id: number; name: string }) => (
-          <li className="pg-list__item">
+          <li key={data.id} className="pg-list__item">
             <span className="pg-list__id">#{data.id}</span>
             <span className="pg-list__name">{data.name}</span>{" "}
-            <Link
+            {/* <Link
               key={data.id}
               href={`/page/examples/postgresql/${data.id}`}
               className="pg-list__name"
@@ -27,7 +27,7 @@ export default function PostgresqlPage() {
               <span className="pg-list_bait">
                 {t("skills.PostgreSQL.clickMe")}
               </span>
-            </Link>
+            </Link> */}
             <DeleteButton data={data} />
             <EditButton data={data} />
           </li>
