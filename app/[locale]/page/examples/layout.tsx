@@ -5,6 +5,8 @@ import { useParams, usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { EXAMPLELINKS, ExampleLink } from "@/app/config/examplelinks";
 import "./styles/layout.css";
+import ExpSideBar from "./components/sideBar";
+import ExpMainArea from "./components/mainArea";
 
 export default function ExamplesLayout({
   children,
@@ -13,47 +15,8 @@ export default function ExamplesLayout({
 }) {
   return (
     <div className="mainBox">
-      <div className="sideBar">
-        <h4>Навчики</h4>
-        <ul>
-          <li>
-            <div className="sideBarText">
-              <p>PostgreSQL</p>
-            </div>
-            <div className="sideBarLed">
-              <span></span>
-            </div>
-          </li>
-          <li>
-            <div className="sideBarText">
-              <p>PostgreSQL</p>
-            </div>
-            <div className="sideBarLed">
-              <span></span>
-            </div>
-          </li>
-          <li>
-            <div className="sideBarText">
-              <p>PostgreSQL</p>
-            </div>
-            <div className="sideBarLed">
-              <span></span>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div className="mainArea">
-        <div className="pathText">
-          <h4>Skills /</h4>
-        </div>
-        <div className="exmplDesc">
-          <p>ddsdfdsfsdfsdfsdfsdfsdfsdf</p>
-        </div>
-        <div className="testAreaBlock">
-          <p>TEST AREA</p>
-          <div className="testArea">{children}</div>
-        </div>
-      </div>
+      <ExpSideBar />
+      <ExpMainArea children={children} />
     </div>
   );
 }

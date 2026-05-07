@@ -4,8 +4,8 @@
   --kindOfList-color: rgb(255, 248, 235);
   --sideBar-list-hover: rgba(252, 189, 74, 0.25);
   --exp-borders: rgb(220, 185, 120);
-  --exp-mainArea-bg: rgb(238, 224, 197);
-  --exp-headers-bg: rgb(251, 228, 180);
+  --exp-mainArea-bg: rgb(248, 238, 216);
+  --exp-headers-bg: rgb(253, 218, 142);
 }
 .dark {
   --head-text-color: rgb(86, 95, 143);
