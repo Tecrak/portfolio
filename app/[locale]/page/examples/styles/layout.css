@@ -3,18 +3,18 @@
   --smpl-text-color: rgb(100, 80, 40);
   --kindOfList-color: rgb(255, 248, 235);
   --sideBar-list-hover: rgb(251, 220, 164);
-  --exp-borders: rgb(220, 185, 120);
-  --exp-mainArea-bg: rgb(248, 238, 216);
-  --exp-headers-bg: rgb(253, 218, 142);
+  --skills-borders: rgb(220, 185, 120);
+  --skills-mainArea-bg: rgb(248, 238, 216);
+  --skills-headers-bg: rgb(253, 218, 142);
 }
 .dark {
   --head-text-color: rgb(86, 95, 143);
   --smpl-text-color: rgb(191, 191, 191);
   --kindOfList-color: rgb(13, 25, 60);
   --sideBar-list-hover: rgb(37, 50, 135);
-  --exp-borders: rgb(19, 34, 80);
-  --exp-mainArea-bg: rgb(25, 42, 100);
-  --exp-headers-bg: rgb(6, 15, 40);
+  --skills-borders: rgb(19, 34, 80);
+  --skills-mainArea-bg: rgb(25, 42, 100);
+  --skills-headers-bg: rgb(6, 15, 40);
 }
 
 .mainBox {
@@ -29,7 +29,7 @@
 }
 .sideBar > h4 {
   padding: 15px 110px 15px 15px;
-  border-bottom: 1.5px var(--exp-borders) solid;
+  border-bottom: 1.5px var(--skills-borders) solid;
 }
 
 .linkItem {
@@ -50,19 +50,19 @@
   filter: blur(0.6);
 }
 
-.expActivePath > li {
+.skillsActivePath > li {
   background: var(--sideBar-list-hover);
 }
 /* --- MAIN AREA --- */
 
 .mainArea {
-  background: var(--exp-mainArea-bg);
+  background: var(--skills-mainArea-bg);
   width: 100%;
 }
 .pathText {
-  background: var(--exp-headers-bg);
-  border-bottom: 1.5px var(--exp-borders) solid;
-  border-left: 1.5px var(--exp-borders) solid;
+  background: var(--skills-headers-bg);
+  border-bottom: 1.5px var(--skills-borders) solid;
+  border-left: 1.5px var(--skills-borders) solid;
   padding: 15px 0px 15px 15px;
   color: var(--head-text-color);
 }
@@ -86,7 +86,7 @@
   margin: 15px;
 }
 .testAreaBlock > p {
-  background: var(--exp-headers-bg);
+  background: var(--skills-headers-bg);
   padding: 9px;
   color: var(--head-text-color);
   font-size: 15px;

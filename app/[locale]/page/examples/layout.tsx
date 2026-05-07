@@ -13,25 +13,25 @@ export default function ExamplesLayout({
 }) {
   const locale = useLocale();
   const pathname = usePathname();
-  const [currentPath, setCurrentPath] = useState("");
-  const [currentPage, setCurrentPage] = useState("");
+  const currentLink = EXAMPLELINKS.find(
+    (link) => pathname === `/${locale}${link.path}`,
+  );
+  const isRootPage = pathname === `/${locale}/page/examples`;
+
   return (
     <div className="mainBox">
+      {/* --- Side Bar --- */}
       <div className="sideBar">
         <h4>Навчики</h4>
-        {EXAMPLELINKS.map((link) => (
-          <ul>
+        <ul>
+          {EXAMPLELINKS.map((link) => (
             <Link
               key={link.label}
               href={`/${locale}${link.path === "/" ? "" : link.path}`}
               className={
-                pathname == "/" + locale + link.path ? "expActivePath" : ""
-              }
-              onClick={() => {
-                setCurrentPath(link.label);
-                setCurrentPage(link.path);
-              }}>
-              <li key={link.label} className="linkItem">
+                pathname == `/${locale}${link.path}` ? "skillsActivePath" : ""
+              }>
+              <li className="linkItem">
                 <div className="sideBarText">
                   <p>{link.label}</p>
                 </div>
@@ -40,26 +40,37 @@ export default function ExamplesLayout({
                 </div>
               </li>
             </Link>
-          </ul>
-        ))}
+          ))}
+        </ul>
       </div>
+      {/* --- END Side Bar --- */}
+
+      {/* --- Test Area --- */}
       <div className="mainArea">
         <div className="pathText">
           <h4>
             Skills / {""}
             <span className="pathTextPage">
-              {pathname == "/" + locale + currentPage ? currentPath : ""}
+              {!isRootPage && currentLink?.label}
             </span>
           </h4>
         </div>
-        <div className="exmplDesc">
-          <p></p>
-        </div>
-        <div className="testAreaBlock">
-          <p>TEST AREA</p>
-          <div className="testArea">{children}</div>
+
+        <div className="mainAreaContent">
+          <div className="exmplDesc">
+            {isRootPage ? <p>Оберіть навичку</p> : <p>{currentLink?.desc}</p>}
+          </div>
+          {!isRootPage ? (
+            <div className="testAreaBlock">
+              <p>TEST AREA</p>
+              <div className="testArea">{children}</div>
+            </div>
+          ) : (
+            <div></div>
+          )}
         </div>
       </div>
+      {/* --- END Test Area --- */}
     </div>
   );
 }
