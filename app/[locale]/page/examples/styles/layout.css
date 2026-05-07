@@ -47,7 +47,7 @@
   width: 10px;
   height: 10px;
   border-radius: 100%;
-  filter: blur(0.6);
+  filter: blur(1px);
 }
 
 .skillsActivePath > li {
@@ -101,7 +101,7 @@
   width: 10px;
   height: 10px;
   margin: 5px;
-  filter: blur(0.6);
+  filter: blur(1px);
 }
 .testArea {
   padding: 5px;

@@ -4,7 +4,6 @@ import { useLocale } from "next-intl";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { EXAMPLELINKS } from "./config/exampleLinks";
-import { useState } from "react";
 
 export default function ExamplesLayout({
   children,
@@ -29,7 +28,7 @@ export default function ExamplesLayout({
               key={link.label}
               href={`/${locale}${link.path === "/" ? "" : link.path}`}
               className={
-                pathname == `/${locale}${link.path}` ? "skillsActivePath" : ""
+                pathname === `/${locale}${link.path}` ? "skillsActivePath" : ""
               }>
               <li className="linkItem">
                 <div className="sideBarText">
@@ -65,9 +64,7 @@ export default function ExamplesLayout({
               <p>TEST AREA</p>
               <div className="testArea">{children}</div>
             </div>
-          ) : (
-            <div></div>
-          )}
+          ) : null}
         </div>
       </div>
       {/* --- END Test Area --- */}
