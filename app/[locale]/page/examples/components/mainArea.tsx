@@ -1,3 +1,5 @@
+import { EXAMPLELINKS } from "../config/exampleLinks";
+
 export default function ExpMainArea({
   children,
 }: {
@@ -6,7 +8,8 @@ export default function ExpMainArea({
   return (
     <div className="mainArea">
       <div className="pathText">
-        <h4>Skills /</h4>
+        {EXAMPLELINKS.map(())}
+        <h4>Skills / </h4>
       </div>
       <div className="exmplDesc">
         <p></p>
