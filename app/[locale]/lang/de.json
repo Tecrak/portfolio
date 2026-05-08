@@ -107,7 +107,8 @@
         "saveBttn": "Fertig",
         "smthng": "Neuer Name",
         "adding": "Hinzufügen...",
-        "tooShort": "zu kurz"
+        "tooShort": "Zu kurz",
+        "tooLong": "Zu lang"
       },
       "MongoDB": {
         "description": "In Bearbeitung"

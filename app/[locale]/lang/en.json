@@ -108,7 +108,8 @@
         "saveBttn": "Save",
         "smthng": "New name",
         "adding": "Adding...",
-        "tooShort": "Too short"
+        "tooShort": "Too short",
+        "tooLong": "Too long"
       },
       "MongoDB": {
         "description": "In progress"

@@ -29,27 +29,32 @@ export function FormSubmit() {
     setName("");
   }
 
-  const isValid = name.length > 3;
+  const isValid = name.length > 3 && name.length < 10;
 
   return (
-    <form className="peopleSF" onSubmit={handleSubmit}>
-      <input
-        className={`peopleSFInput ${isValid ? "PValid" : "PInvalid"}`}
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        placeholder={t("smthng")}
-      />
-
-      {!isValid && name.length > 0 && (
-        <span className="peopleTooShort">{t("tooShort")}</span>
-      )}
-
-      <button
-        className="peopleSubmitNew"
-        type="submit"
-        disabled={createMutation.isPending || !isValid}>
-        {createMutation.isPending ? t("adding") : "+ " + t("addBttn")}
-      </button>
-    </form>
+    <>
+      <form className="peopleSF" onSubmit={handleSubmit}>
+        <div className="inputBlock">
+          {" "}
+          <input
+            className={`peopleSFInput ${isValid ? "PValid" : "PInvalid"}`}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder={t("smthng")}
+          />
+          {!isValid && name.length > 0 && (
+            <span className="peopleTooShort">
+              {name.length < 10 ? t("tooShort") : t("tooLong")}
+            </span>
+          )}
+        </div>
+        <button
+          className="peopleSubmitNew"
+          type="submit"
+          disabled={createMutation.isPending || !isValid}>
+          {createMutation.isPending ? t("adding") : "+ " + t("addBttn")}
+        </button>
+      </form>
+    </>
   );
 }

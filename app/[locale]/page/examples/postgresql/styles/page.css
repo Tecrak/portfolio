@@ -18,7 +18,7 @@
   padding: 10px;
   border-radius: 5px;
   margin: 4px;
-  width: 40vw;
+  width: 50vw;
   display: flex;
   justify-content: space-between;
 }
@@ -38,19 +38,18 @@
   color: var(--smpl-text-color);
 }
 .bttnsBlock {
-  width: 125px;
   display: flex;
   justify-content: space-between;
 }
 .bttnsBlock > button {
   font-size: 12px;
   font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", monospace;
-  --font-ui: "Segoe UI", system-ui, sans-serif;
   border-radius: 5px;
+  margin: 2px;
   padding: 1px 10px;
 }
 .deletePeople {
-  background: rgba(108, 0, 0, 0.463);
+  background: rgba(55, 1, 1, 0.725);
   border: 1.5px rgba(108, 0, 0, 0.463) solid;
   color: red;
 }
@@ -62,20 +61,36 @@
 .peopleSF {
   background: var(--postgre-listItem);
   border-radius: 5px;
-  width: 43vw;
+  width: 45vw;
   padding: 2px;
   margin-top: 3px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inputBlock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
 }
 .peopleSFInput {
   background: transparent;
   border: 0px;
+  width: 20vw;
   border-radius: 5px;
+  position: relative;
   outline: none;
   padding: 4px;
   margin: 6px;
 }
-
+.peopleTooShort {
+  position: absolute;
+  pointer-events: none;
+  top: 45px;
+  opacity: 0.5;
+}
 .PValid {
   background: rgba(75, 255, 75, 0.518);
   border: 1px rgb(75, 255, 75) solid;
@@ -83,4 +98,9 @@
 .PInvalid {
   background: rgba(255, 0, 0, 0.131);
   border: 1px rgb(105, 2, 2) solid;
+}
+.peopleSubmitNew {
+  background: rgba(52, 244, 52, 0.511);
+  padding: 4px;
+  border-radius: 5px;
 }

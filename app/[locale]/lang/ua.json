@@ -109,7 +109,8 @@
         "saveBttn": "Підмінити",
         "smthng": "Імя пацика",
         "adding": "Зара буде...",
-        "tooShort": "надто коротко"
+        "tooShort": "Закортко",
+        "tooLong": "Задовгеньке"
       },
       "MongoDB": {
         "description": "Поки нема"
