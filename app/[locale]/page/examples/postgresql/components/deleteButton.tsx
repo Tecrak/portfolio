@@ -1,6 +1,6 @@
 "use client";
 
-import { useDeletePerson } from "@/app/api/usePeople";
+import { useDeletePerson } from "../api/usePeople";
 import { useTranslations } from "next-intl";
 
 interface Props {

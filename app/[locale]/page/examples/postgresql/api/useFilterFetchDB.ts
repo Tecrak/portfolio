@@ -9,7 +9,7 @@ export function useFilterFetchDB(id: string) {
   );
 
   return {
-    data: data ? data[0] : null, // як у тебе було: беремо перший елемент
+    data: data ? data[0] : null,
     loading: !error && !data,
     isError: error,
     mutate, // можна викликати mutate() після PUT/DELETE

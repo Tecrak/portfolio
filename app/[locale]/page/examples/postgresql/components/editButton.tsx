@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useUpdatePerson } from "@/app/api/usePeople";
+import { useUpdatePerson } from "..//api/usePeople";
 import { useTranslations } from "next-intl";
 
 interface Props {

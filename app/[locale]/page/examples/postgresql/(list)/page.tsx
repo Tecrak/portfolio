@@ -1,7 +1,7 @@
 "use client";
 
 import { FormSubmit } from "../components/formSubmit";
-import { usePeople } from "@/app/api/usePeople";
+import { usePeople } from "../api/usePeople";
 import DeleteButton from "../components/deleteButton";
 import EditButton from "../components/editButton";
 import { useTranslations } from "next-intl";
