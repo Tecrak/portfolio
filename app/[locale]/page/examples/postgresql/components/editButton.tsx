@@ -14,6 +14,7 @@ export default function EditButton({ data }: Props) {
   const updateMutation = useUpdatePerson();
   const t = useTranslations("Examples.skills.PostgreSQL");
   const isEditing = editingId === data.id;
+  const isValid = newName.length > 3 && newName.length < 10;
 
   function toggle() {
     setEditingId(isEditing ? null : data.id);
@@ -39,7 +40,7 @@ export default function EditButton({ data }: Props) {
       {isEditing && (
         <form className="peopleForm" onSubmit={handleSubmit}>
           <input
-            className="peoplInput"
+            className="peopleEditInput"
             type="text"
             placeholder={t("smthng")}
             value={newName}
@@ -49,9 +50,10 @@ export default function EditButton({ data }: Props) {
           <button
             className="peopleUpdate"
             type="submit"
-            disabled={updateMutation.isPending || !newName.trim()}>
-            {updateMutation.isPending ? "..." : t("saveBttn")}
+            disabled={updateMutation.isPending || !newName.trim() || !isValid}>
+            {updateMutation.isPending ? "..." : "✓"}
           </button>
+          <p>{}</p>
         </form>
       )}
     </>

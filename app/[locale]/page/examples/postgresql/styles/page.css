@@ -18,7 +18,7 @@
   padding: 10px;
   border-radius: 5px;
   margin: 4px;
-  width: 50vw;
+  width: 56vw;
   display: flex;
   justify-content: space-between;
 }
@@ -48,6 +48,7 @@
   margin: 2px;
   padding: 1px 10px;
   cursor: pointer;
+  height: 25px;
 }
 .bttnsBlock > button:hover {
   opacity: 0.8;
@@ -109,4 +110,30 @@
   padding: 4px;
   border-radius: 5px;
   cursor: pointer;
+}
+/* --- EDITIN BLOCK --- */
+.peopleForm {
+  display: flex;
+}
+.peopleEditInput {
+  width: 15vw;
+  outline: none;
+  background: transparent;
+  border: 1px grey solid;
+  border-radius: 3px;
+}
+.editStop {
+  background: rgba(255, 132, 0, 0.699);
+  border: 1px rgba(255, 132, 0, 0.699) solid;
+}
+.peopleUpdate {
+  font-size: 12px;
+  font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", monospace;
+  border-radius: 5px;
+  margin: 2px;
+  padding: 1px 10px;
+  font-size: 17px;
+  cursor: pointer;
+  height: 25px;
+  background: rgba(255, 255, 255, 0.355);
 }
