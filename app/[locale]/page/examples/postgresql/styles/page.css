@@ -1,0 +1,52 @@
+:root {
+  --postgre-listItem: rgb(249, 217, 163);
+}
+.dark {
+  --postgre-listItem: rgb(26, 31, 79);
+}
+
+.mainBlock {
+  border-radius: 5px;
+  padding: 5px;
+}
+.peopleList {
+}
+.listItem {
+  background: var(--postgre-listItem);
+  padding: 10px;
+  border-radius: 5px;
+  margin: 4px;
+  display: flex;
+  justify-content: space-between;
+}
+.spansBlock > span {
+  margin: 2px;
+}
+
+.spansBlock > span:first-child {
+  color: var(--head-text-color);
+}
+.spansBlock > span:last-child {
+  color: var(--smpl-text-color);
+}
+.bttnsBlock {
+  width: 125px;
+  display: flex;
+  justify-content: space-between;
+}
+.bttnsBlock > button {
+  font-size: 12px;
+  font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", monospace;
+  --font-ui: "Segoe UI", system-ui, sans-serif;
+  border-radius: 5px;
+  padding: 1px 10px;
+}
+.deletePeople {
+  background: rgba(108, 0, 0, 0.463);
+  border: 1.5px rgba(108, 0, 0, 0.463) solid;
+  color: red;
+}
+.editPeople {
+  background: rgba(0, 242, 255, 0.226);
+  border: 1.5px rgba(0, 242, 255, 0.226) solid;
+}

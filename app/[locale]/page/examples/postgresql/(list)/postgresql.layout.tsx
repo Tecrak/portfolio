@@ -1,4 +1,4 @@
-import ExamplesLayout from "@/app/[locale]/page/examples/layout"; 
+import ExamplesLayout from "@/app/[locale]/page/examples/layout";
 
 export default function PostgresqlLayout({
   children,

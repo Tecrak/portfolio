@@ -1,0 +1,9 @@
+            {/* <Link
+              key={data.id}
+              href={`/page/examples/postgresql/${data.id}`}
+              className="pg-list__name"
+              style={{ color: "#8da8ff", textDecoration: "none" }}>
+              <span className="pg-list_bait">
+                {t("skills.PostgreSQL.clickMe")}
+              </span>
+            </Link> */}

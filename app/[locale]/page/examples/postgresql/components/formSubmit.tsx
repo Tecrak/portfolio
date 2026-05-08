@@ -32,20 +32,20 @@ export function FormSubmit() {
   const isValid = name.length > 3;
 
   return (
-    <form className="pg-add-form" onSubmit={handleSubmit}>
+    <form className="peopleSF" onSubmit={handleSubmit}>
       <input
-        className={`pg-add-input ${isValid ? "pg-add-input--valid" : "pg-add-input--invalid"}`}
+        className={`peopleSFInput ${isValid ? "PValid" : "PInvalid"}`}
         value={name}
         onChange={(e) => setName(e.target.value)}
         placeholder={t("smthng")}
       />
 
       {!isValid && name.length > 0 && (
-        <span className="pg-add-hint">{t("tooShort")}</span>
+        <span className="peopleTooShort">{t("tooShort")}</span>
       )}
 
       <button
-        className="pg-btn pg-btn--submit"
+        className="peopleSubmitNew"
         type="submit"
         disabled={createMutation.isPending || !isValid}>
         {createMutation.isPending ? t("adding") : "+ " + t("addBttn")}

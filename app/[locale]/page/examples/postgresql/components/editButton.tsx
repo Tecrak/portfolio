@@ -31,15 +31,15 @@ export default function EditButton({ data }: Props) {
   return (
     <>
       <button
-        className={`pg-btn ${isEditing ? "pg-btn--stop" : "pg-btn--edit"}`}
+        className={`editPeople ${isEditing ? "editStop" : "editStart"}`}
         onClick={toggle}>
         {isEditing ? t("stopBttn") : t("editBttn")}
       </button>
 
       {isEditing && (
-        <form className="pg-edit-form" onSubmit={handleSubmit}>
+        <form className="peopleForm" onSubmit={handleSubmit}>
           <input
-            className="pg-edit-input"
+            className="peoplInput"
             type="text"
             placeholder={t("smthng")}
             value={newName}
@@ -47,7 +47,7 @@ export default function EditButton({ data }: Props) {
             autoFocus
           />
           <button
-            className="pg-btn pg-btn--submit"
+            className="peopleUpdate"
             type="submit"
             disabled={updateMutation.isPending || !newName.trim()}>
             {updateMutation.isPending ? "..." : t("saveBttn")}

@@ -13,7 +13,7 @@ export default function DeleteButton({ data }: Props) {
 
   return (
     <button
-      className="pg-btn pg-btn--delete"
+      className="deletePeople"
       onClick={() => deleteMutation.mutate(data.id)}
       disabled={deleteMutation.isPending}>
       {deleteMutation.isPending ? "..." : t("deleteBttn")}
