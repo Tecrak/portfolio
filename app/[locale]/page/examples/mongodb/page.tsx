@@ -1,5 +1,23 @@
 "use client";
 
-export default function mongoDBPage() {
-  return <div>On progress</div>;
+import { useMongopeople, MongoPerson } from "./api/useMPeople";
+
+export default function MongoDBPage() {
+  const { data: people = [], isLoading, isError } = useMongopeople();
+
+  if (isLoading) return <div className="pg-loading">завантаження...</div>;
+  if (isError) return <div className="pg-loading">помилка підключення</div>;
+
+  return (
+    <div className="mainPage">
+      <ul className="itemsList">
+        {people.map((person: MongoPerson) => (
+          <li key={person._id} className="listItem">
+            <span className="pID">#{person._id.slice(-4)}</span>
+            <span className="pame">{person.name}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }

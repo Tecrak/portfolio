@@ -25,8 +25,8 @@ async function getCollection() {
   }
 
   return client
-    .db(process.env.MONGODB_DB) // "people"
-    .collection(process.env.MONGODB_COLLECTION ?? "peopleColl");
+    .db(process.env.MDB_DB) // "people"
+    .collection(process.env.MDB_COLLECTION ?? "peopleColl");
 }
 
 // ─── GET ─────────────────────────────────────────────
