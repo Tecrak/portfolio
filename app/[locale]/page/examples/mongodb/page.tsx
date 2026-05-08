@@ -9,10 +9,10 @@ export default function MongoDBPage() {
   if (isError) return <div className="pg-loading">помилка підключення</div>;
 
   return (
-    <div className="mainPage">
-      <ul className="itemsList">
+    <div className="mainMPage">
+      <ul className="itemsMList">
         {people.map((person: MongoPerson) => (
-          <li key={person._id} className="listItem">
+          <li key={person._id} className="listMItem">
             <span className="pID">#{person._id.slice(-4)}</span>
             <span className="pame">{person.name}</span>
           </li>
