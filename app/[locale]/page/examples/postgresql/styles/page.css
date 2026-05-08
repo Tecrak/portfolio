@@ -66,8 +66,7 @@
 .peopleSF {
   background: var(--postgre-listItem);
   border-radius: 5px;
-  width: 45vw;
-  padding: 2px;
+  padding: 2px 10px;
   margin-top: 3px;
   display: flex;
   justify-content: center;
