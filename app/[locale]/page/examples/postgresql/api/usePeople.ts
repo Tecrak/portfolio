@@ -4,7 +4,7 @@ export function usePeople() {
   return useQuery({
     queryKey: ["people"],
     queryFn: async () => {
-      const res = await fetch("/api");
+      const res = await fetch("/page/examples/postgresql/api");
       return res.json();
     },
   });
@@ -16,7 +16,7 @@ export function useDeletePerson() {
 
   return useMutation({
     mutationFn: async (id: number) => {
-      await fetch("/api", {
+      await fetch("/page/examples/postgresql/api", {
         method: "DELETE",
         body: JSON.stringify({ id }),
       });
@@ -33,7 +33,7 @@ export function useUpdatePerson() {
 
   return useMutation({
     mutationFn: async ({ id, name }: { id: number; name: string }) => {
-      await fetch("/api", {
+      await fetch("/page/examples/postgresql/api", {
         method: "PUT",
         body: JSON.stringify({ id, name }),
       });

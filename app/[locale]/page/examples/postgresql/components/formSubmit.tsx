@@ -11,7 +11,7 @@ export function FormSubmit() {
 
   const createMutation = useMutation({
     mutationFn: async (name: string) => {
-      await fetch("/api", {
+      await fetch("/page/examples/postgresql/api", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name }),
