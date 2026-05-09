@@ -14,11 +14,11 @@ export async function dbConnect({
   values?: any[];
 }): Promise<DbItem[]> {
   const client = new Client({
-    host: process.env.DB_HOST,
-    port: Number(process.env.DB_PORT),
-    database: process.env.DB_NAME,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
+    host: process.env.PDB_HOST,
+    port: Number(process.env.PDB_PORT),
+    database: process.env.PDB_NAME,
+    user: process.env.PDB_USER,
+    password: process.env.PDB_PASSWORD,
     ssl: {
       rejectUnauthorized: false,
     },
@@ -38,7 +38,7 @@ export async function POST(req: Request) {
     const { name } = await req.json();
 
     await dbConnect({
-      query: `INSERT INTO ${process.env.DB_TABLE} ("name") VALUES ($1)`,
+      query: `INSERT INTO ${process.env.PDB_TABLE} ("name") VALUES ($1)`,
       values: [name],
     });
 
@@ -56,7 +56,7 @@ export async function GET(req: Request) {
   // якщо id передали — фільтруємо
   if (id) {
     const data = await dbConnect({
-      query: `SELECT * FROM ${process.env.DB_TABLE} WHERE id = $1`,
+      query: `SELECT * FROM ${process.env.PDB_TABLE} WHERE id = $1`,
       values: [id],
     });
 
@@ -65,7 +65,7 @@ export async function GET(req: Request) {
 
   // якщо ні — повертаємо все (опційно)
   const data = await dbConnect({
-    query: `SELECT * FROM ${process.env.DB_TABLE}`,
+    query: `SELECT * FROM ${process.env.PDB_TABLE}`,
   });
 
   return NextResponse.json(data);
@@ -74,7 +74,7 @@ export async function PUT(req: Request) {
   const { id, name } = await req.json();
 
   const data = await dbConnect({
-    query: `UPDATE ${process.env.DB_TABLE} SET name=$1 WHERE id=$2`,
+    query: `UPDATE ${process.env.PDB_TABLE} SET name=$1 WHERE id=$2`,
     values: [name, id],
   });
   return new Response(JSON.stringify(data), { status: 200 });
@@ -84,7 +84,7 @@ export async function DELETE(req: Request) {
   const { id } = await req.json();
 
   const data = await dbConnect({
-    query: `DELETE FROM ${process.env.DB_TABLE} WHERE id=$1`,
+    query: `DELETE FROM ${process.env.PDB_TABLE} WHERE id=$1`,
     values: [id],
   });
   return new Response(JSON.stringify(data), { status: 200 });
