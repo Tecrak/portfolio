@@ -4,6 +4,12 @@
 .dark {
   --postgre-listItem: rgb(26, 31, 79);
 }
+/* 
+.pLoad {
+  background: red;
+  width: 100px;
+  height: 100px;
+} */
 
 .mainBlock {
   border-radius: 5px;

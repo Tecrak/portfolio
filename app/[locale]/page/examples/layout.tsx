@@ -29,7 +29,8 @@ export default function ExamplesLayout({
               href={`/${locale}${link.path === "/" ? "" : link.path}`}
               className={
                 pathname === `/${locale}${link.path}` ? "skillsActivePath" : ""
-              }>
+              }
+              style={link.disabled ? { pointerEvents: "none" } : undefined}>
               <li className="linkItem">
                 <div className="sideBarText">
                   <p>{link.label}</p>

@@ -1,7 +1,8 @@
 export type NavItem = {
   label: string;
   desc: string;
-  path: string;
+  path?: string;
+  disabled?: boolean;
   led: string;
 };
 
@@ -23,5 +24,19 @@ export const EXAMPLELINKS: NavItem[] = [
     desc: "dasdasdad3",
     path: "/page/examples/mysql",
     led: "red",
+  },
+  {
+    label: "NestJS",
+    desc: "dasdasdad3",
+    // path: "/page/examples/mysql",
+    disabled: true,
+    led: "grey",
+  },
+  {
+    label: "Express",
+    desc: "dasdasdad3",
+    // path: "/page/examples/mysql",
+    disabled: true,
+    led: "grey",
   },
 ];
