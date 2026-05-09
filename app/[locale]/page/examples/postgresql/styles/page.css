@@ -142,3 +142,16 @@
   height: 25px;
   background: rgba(255, 255, 255, 0.355);
 }
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pagination > button {
+  background: var(--skills-headers-bg);
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  justify-content: center;
+}

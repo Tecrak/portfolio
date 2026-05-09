@@ -6,12 +6,19 @@ import DeleteButton from "../components/deleteButton";
 import EditButton from "../components/editButton";
 import { useTranslations } from "next-intl";
 import "../styles/page.css";
-import Link from "next/link";
+import { useState } from "react";
 
 export default function PostgresqlPage() {
+  type DbItem = { id: number; name: string };
   const { data: dbInfo = [], isLoading } = usePeople();
   const t = useTranslations("Examples");
-
+  const [page, setPage] = useState(1);
+  const perPage = 7;
+  const totalPages = Math.ceil(dbInfo.length / perPage);
+  const paginated = dbInfo
+    .slice()
+    .sort((a: DbItem, b: DbItem) => a.id - b.id)
+    .slice((page - 1) * perPage, page * perPage);
   if (isLoading)
     return (
       <div className="mainBlock">
@@ -36,7 +43,7 @@ export default function PostgresqlPage() {
   return (
     <div className="mainBlock">
       <ul className="peopleList">
-        {dbInfo.map((data: { id: number; name: string }) => (
+        {paginated.map((data: { id: number; name: string }) => (
           <li key={data.id} className="listItem">
             <div className="spansBlock">
               <span className="listID">#{data.id}</span>
@@ -48,6 +55,19 @@ export default function PostgresqlPage() {
             </div>
           </li>
         ))}
+        <div className="pagination">
+          <button onClick={() => setPage((p) => p - 1)} disabled={page === 1}>
+            ⬅️
+          </button>
+          <p>
+            {page} / {totalPages}
+          </p>
+          <button
+            onClick={() => setPage((p) => p + 1)}
+            disabled={page === totalPages}>
+            ➡️
+          </button>
+        </div>
       </ul>
       <FormSubmit />
     </div>
