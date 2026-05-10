@@ -19,6 +19,7 @@ export default function PostgresqlPage() {
     .slice()
     .sort((a: DbItem, b: DbItem) => a.id - b.id)
     .slice((page - 1) * perPage, page * perPage);
+  const isDbFull = dbInfo.length === 15;
   if (isLoading)
     return (
       <div className="mainBlock">
@@ -36,7 +37,6 @@ export default function PostgresqlPage() {
             </li>
           ))}
         </ul>
-        <FormSubmit />
       </div>
     );
 
@@ -69,7 +69,7 @@ export default function PostgresqlPage() {
           </button>
         </div>
       </ul>
-      <FormSubmit />
+      <FormSubmit isDbFull={isDbFull} />
     </div>
   );
 }

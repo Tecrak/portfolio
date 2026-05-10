@@ -43,8 +43,13 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json({ ok: true });
-  } catch (error) {
-    console.error("Submit error:", error);
+  } catch (error: any) {
+    if (error.message?.includes("Table limit reached")) {
+      return NextResponse.json(
+        { ok: false, error: "Database is full" },
+        { status: 429 },
+      );
+    }
     return NextResponse.json({ ok: false }, { status: 500 });
   }
 }
