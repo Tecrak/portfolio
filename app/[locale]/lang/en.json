@@ -108,7 +108,8 @@
         "smthng": "New name",
         "adding": "Adding...",
         "tooShort": "Too short",
-        "tooLong": "Too long"
+        "tooLong": "Too long",
+        "dbFull": "DB is full"
       },
       "MongoDB": {
         "description": "In progress"

@@ -43,9 +43,7 @@ export function FormSubmit({ isDbFull }: { isDbFull: boolean }) {
             placeholder={t("smthng")}
           />
           {isDbFull ? (
-            <span className="peopleTooShort">
-              DB is full, delete some record
-            </span>
+            <span className="peopleTooShort">{t("dbFull")}</span>
           ) : (
             !isValid &&
             name.length > 0 && (
