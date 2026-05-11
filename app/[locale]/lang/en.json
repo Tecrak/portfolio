@@ -112,7 +112,7 @@
         "dbFull": "DB is full"
       },
       "MongoDB": {
-        "description": "In progress"
+        "description": "The database is currently under construction and only displays data"
       },
       "MySQL": {
         "description": "In progress"

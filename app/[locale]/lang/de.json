@@ -111,7 +111,7 @@
         "dbFull": "DB ist voll"
       },
       "MongoDB": {
-        "description": "In Bearbeitung"
+        "description": "Die Datenbank befindet sich derzeit im Aufbau und enthält bislang nur Datenausgaben"
       },
       "MySQL": {
         "description": "In Bearbeitung"
