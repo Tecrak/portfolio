@@ -40,7 +40,7 @@ export function FormSubmit({ isDbFull }: { isDbFull: boolean }) {
             className={`peopleSFInput ${isDbFull ? "PInvalid" : isValid ? "PValid" : "PInvalid"}`}
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder={t("smthng")}
+            placeholder={t("placeHDesc")}
           />
           {isDbFull ? (
             <span className="peopleTooShort">{t("dbFull")}</span>

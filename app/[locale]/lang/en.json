@@ -105,7 +105,7 @@
         "deleteBttn": "Delete",
         "addBttn": "Add",
         "stopBttn": "Cancel",
-        "smthng": "New name",
+        "placeHDesc": "New name",
         "adding": "Adding...",
         "tooShort": "Too short",
         "tooLong": "Too long",
