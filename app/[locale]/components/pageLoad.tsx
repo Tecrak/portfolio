@@ -24,7 +24,7 @@ export default function PageTransition({
     const currentPath = stripLocale(pathname);
     const langSwitch = prevPathRef.current === currentPath;
     const alreadyShown = shownPathsRef.current.has(currentPath);
-    
+
     console.log("pathname:", pathname);
     console.log("currentPath:", currentPath);
     console.log("prevPathRef:", prevPathRef.current);
@@ -34,7 +34,6 @@ export default function PageTransition({
     setIsLangSwitch(langSwitch);
 
     if (prevPathRef.current === null || langSwitch || !alreadyShown) {
-      // При зміні мови — одразу показуємо без анімації
       if (langSwitch) {
         setIsLoading(false);
         prevPathRef.current = currentPath;
@@ -61,8 +60,7 @@ export default function PageTransition({
         </div>
       )}
       <div
-        className={`page-content ${isLoading ? "page-hidden" : "page-visible"}`}
-      >
+        className={`page-content ${isLoading ? "page-hidden" : "page-visible"}`}>
         {children}
       </div>
     </>
