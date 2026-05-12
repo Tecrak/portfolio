@@ -19,7 +19,7 @@
 
 .mainBox {
   display: flex;
-  min-height: calc(100vh - 37px); /* 60px = висота вашого navbar */
+  min-height: calc(100vh - 37px);
 }
 /* --- SIDEBAR --- */
 
