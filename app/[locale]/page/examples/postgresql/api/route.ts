@@ -68,7 +68,6 @@ export async function GET(req: Request) {
     return NextResponse.json(data);
   }
 
-  // якщо ні — повертаємо все (опційно)
   const data = await dbConnect({
     query: `SELECT * FROM ${process.env.PDB_TABLE}`,
   });
