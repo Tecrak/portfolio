@@ -1,0 +1,32 @@
+.mainMPage {
+  background: red;
+}
+.newPhotoBttn {
+  /* background: blue; */
+  width: 100%;
+}
+
+.imgList {
+  background: yellow;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+.imgList > li {
+  background: green;
+  width: 45%;
+}
+.imgBox {
+  background: blue;
+  display: flex;
+  margin-bottom: 10px;
+  flex-direction: column;
+}
+.bttnSection {
+  background: red;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

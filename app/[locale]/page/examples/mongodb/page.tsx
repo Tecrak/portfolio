@@ -1,5 +1,6 @@
 "use client";
 
+import "./styles/page.css";
 import { mData } from "./config/data";
 import { useMongopeople, MongoPerson } from "./api/useMPeople";
 
@@ -11,23 +12,93 @@ export default function MongoDBPage() {
 
   return (
     <div className="mainMPage">
-      <ul className="itemsMList">
-        {mData.map((person) => (
-          <li key={person._id} className="listMItem">
-            <span className="pID">#{person._id}</span>
-            <>/</>
-            <span className="pame">{person.name}</span>
-            <img src={person.imgHref}></img>
-            <div className="comms">
-              {person.comments.map((comms) => (
-                <>
-                  <span>{comms.comment}</span>
-                  <span>{comms.aId}</span>
-                </>
-              ))}
+      <button className="newPhotoBttn">Add new</button>
+      <ul className="imgList">
+        <li>
+          <div className="imgBox">
+            <img src="https://i.pravatar.cc/150?img=1"></img>
+            <div className="bttnSection">
+              <div className="likeBox">
+                <button className="likeBttn">like</button>
+                <span className="commsCount">10</span>
+              </div>
+              <button className="addComm">Add</button>
+              <ul className="commentsBttn">comms</ul>
             </div>
-          </li>
-        ))}
+          </div>
+        </li>
+        <li>
+          <div className="imgBox">
+            <img src="https://i.pravatar.cc/150?img=1"></img>
+            <div className="bttnSection">
+              <div className="likeBox">
+                <button className="likeBttn">like</button>
+                <span className="commsCount">10</span>
+              </div>
+              <ul className="commentsBttn">comms</ul>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div className="imgBox">
+            <img src="https://i.pravatar.cc/150?img=1"></img>
+            <div className="bttnSection">
+              <div className="likeBox">
+                <button className="likeBttn">like</button>
+                <span className="commsCount">10</span>
+              </div>
+              <ul className="commentsBttn">comms</ul>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div className="imgBox">
+            <img src="https://i.pravatar.cc/150?img=1"></img>
+            <div className="bttnSection">
+              <div className="likeBox">
+                <button className="likeBttn">like</button>
+                <span className="commsCount">10</span>
+              </div>
+              <ul className="commentsBttn">comms</ul>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div className="imgBox">
+            <img src="https://i.pravatar.cc/150?img=1"></img>
+            <div className="bttnSection">
+              <div className="likeBox">
+                <button className="likeBttn">like</button>
+                <span className="commsCount">10</span>
+              </div>
+              <ul className="commentsBttn">comms</ul>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div className="imgBox">
+            <img src="https://i.pravatar.cc/150?img=1"></img>
+            <div className="bttnSection">
+              <div className="likeBox">
+                <button className="likeBttn">like</button>
+                <span className="commsCount">10</span>
+              </div>
+              <ul className="commentsBttn">comms</ul>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div className="imgBox">
+            <img src="https://i.pravatar.cc/150?img=1"></img>
+            <div className="bttnSection">
+              <div className="likeBox">
+                <button className="likeBttn">like</button>
+                <span className="commsCount">10</span>
+              </div>
+              <ul className="commentsBttn">comms</ul>
+            </div>
+          </div>
+        </li>
       </ul>
     </div>
   );
