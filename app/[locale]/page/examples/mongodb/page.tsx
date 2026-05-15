@@ -22,7 +22,6 @@ export default function MongoDBPage() {
                 <button className="likeBttn">like</button>
                 <span className="commsCount">10</span>
               </div>
-              <button className="addComm">Add</button>
               <ul className="commentsBttn">comms</ul>
             </div>
           </div>

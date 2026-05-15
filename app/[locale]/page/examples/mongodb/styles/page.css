@@ -1,32 +1,136 @@
+/* ── mongodb.page.css ── */
+
 .mainMPage {
-  background: red;
-}
-.newPhotoBttn {
-  /* background: blue; */
-  width: 100%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 100%;
 }
 
+/* ─── ADD BUTTON ─────────────────────────────────────── */
+.newPhotoBttn {
+  align-self: center;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 6px 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition:
+    opacity 0.15s,
+    transform 0.1s;
+  background: var(--ex-accent);
+  color: #fff;
+}
+
+.newPhotoBttn:hover {
+  opacity: 0.85;
+}
+.newPhotoBttn:active {
+  transform: scale(0.97);
+}
+
+/* ─── GRID ───────────────────────────────────────────── */
 .imgList {
-  background: yellow;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
-  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
 }
+
+/* ─── CARD ───────────────────────────────────────────── */
 .imgList > li {
-  background: green;
-  width: 45%;
+  background: var(--ex-panel-bg, #1a1d2a);
+  border: 1px solid var(--ex-panel-border, #252840);
+  border-radius: 8px;
+  overflow: hidden;
+  transition:
+    border-color 0.15s,
+    transform 0.15s;
 }
+
+.imgList > li:hover {
+  border-color: var(--ex-accent, #4f6ef7);
+  transform: translateY(-2px);
+}
+
+/* ─── IMAGE ──────────────────────────────────────────── */
 .imgBox {
-  background: blue;
   display: flex;
-  margin-bottom: 10px;
   flex-direction: column;
 }
+
+.imgBox img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+/* ─── BOTTOM BAR ─────────────────────────────────────── */
 .bttnSection {
-  background: red;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 8px 10px;
+  gap: 6px;
+  background: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid var(--ex-panel-border, #252840);
+}
+
+/* ─── LIKE BOX ───────────────────────────────────────── */
+.likeBox {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.likeBttn {
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(34, 212, 106, 0.3);
+  background: rgba(34, 212, 106, 0.1);
+  color: #22d46a;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.likeBttn:hover {
+  opacity: 0.75;
+}
+
+.commsCount {
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 11px;
+  color: var(--ex-text-secondary, #7a80a0);
+}
+
+/* ─── COMMENTS LIST ──────────────────────────────────── */
+.commentsBttn {
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--ex-panel-border, #252840);
+  background: transparent;
+  color: var(--ex-text-muted, #3d4260);
+  cursor: pointer;
+  list-style: none;
+  margin: 0;
+  transition:
+    color 0.15s,
+    border-color 0.15s;
+}
+
+.commentsBttn:hover {
+  color: var(--ex-text-secondary, #7a80a0);
+  border-color: var(--ex-text-muted, #3d4260);
 }
