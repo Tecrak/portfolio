@@ -19,7 +19,7 @@ export default function MongoDBPage() {
             <img src="https://i.pravatar.cc/150?img=1"></img>
             <div className="bttnSection">
               <div className="likeBox">
-                <button className="likeBttn">like</button>
+                <button className="likeBttn notLiked">❤️ Like</button>
                 <span className="commsCount">10</span>
               </div>
               <ul className="commentsBttn">
@@ -45,7 +45,7 @@ export default function MongoDBPage() {
             <img src="https://i.pravatar.cc/150?img=1"></img>
             <div className="bttnSection">
               <div className="likeBox">
-                <button className="likeBttn">like</button>
+                <button className="likeBttn notLiked">❤️ Like</button>
                 <span className="commsCount">10</span>
               </div>
               <ul className="commentsBttn">
@@ -71,7 +71,7 @@ export default function MongoDBPage() {
             <img src="https://i.pravatar.cc/150?img=1"></img>
             <div className="bttnSection">
               <div className="likeBox">
-                <button className="likeBttn">like</button>
+                <button className="likeBttn notLiked">❤️ Like</button>
                 <span className="commsCount">10</span>
               </div>
               <ul className="commentsBttn">
@@ -97,7 +97,7 @@ export default function MongoDBPage() {
             <img src="https://i.pravatar.cc/150?img=1"></img>
             <div className="bttnSection">
               <div className="likeBox">
-                <button className="likeBttn">like</button>
+                <button className="likeBttn notLiked">❤️ Like</button>
                 <span className="commsCount">10</span>
               </div>
               <ul className="commentsBttn">
@@ -123,7 +123,7 @@ export default function MongoDBPage() {
             <img src="https://i.pravatar.cc/150?img=1"></img>
             <div className="bttnSection">
               <div className="likeBox">
-                <button className="likeBttn">like</button>
+                <button className="likeBttn notLiked">❤️ Like</button>
                 <span className="commsCount">10</span>
               </div>
               <ul className="commentsBttn">
@@ -149,12 +149,12 @@ export default function MongoDBPage() {
             <img src="https://i.pravatar.cc/150?img=1"></img>
             <div className="bttnSection">
               <div className="likeBox">
-                <button className="likeBttn">like</button>
+                <button className="likeBttn notLiked">❤️ Like</button>
                 <span className="commsCount">10</span>
               </div>
               <ul className="commentsBttn">
                 comms
-                <li className="commentBlock">
+                <li className="commentBlock ">
                   <div className="commentTopPart">
                     <p className="commentName">Stas</p>
                     <p className="commentDate">22.2.2222</p>
@@ -175,7 +175,7 @@ export default function MongoDBPage() {
             <img src="https://i.pravatar.cc/150?img=1"></img>
             <div className="bttnSection">
               <div className="likeBox">
-                <button className="likeBttn">like</button>
+                <button className="notLiked likeBttn">❤️ Like</button>
                 <span className="commsCount">10</span>
               </div>
               <ul className="commentsBttn">

@@ -1,5 +1,4 @@
 .mainMPage {
-  background: red;
 }
 .newPhotoBttn {
   /* background: blue; */
@@ -24,17 +23,38 @@
     transform 0.15s;
 }
 .imgBox {
-  background: blue;
   display: flex;
-  margin-bottom: 10px;
   flex-direction: column;
 }
+
+.imgBox img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
 .bttnSection {
-  background: red;
+  background: blue;
+  padding: 5px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 .commentBlock {
   display: none;
+}
+.likeBttn {
+  padding: 2px 7px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.notLiked {
+  border: 1px grey solid;
+  background: transparent;
+}
+
+.commsCount {
+  margin-left: 4px;
+  opacity: 0.8;
 }
