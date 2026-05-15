@@ -17,6 +17,7 @@ export default function MongoDBPage() {
         <li>
           <div className="imgBox">
             <img src="https://i.pravatar.cc/150?img=1"></img>
+            {/* <div className="deleteBox"> */}
             <div className="bttnSection">
               <div className="likeBox">
                 <button className="likeBttn notLiked">❤️ Like</button>

@@ -34,7 +34,7 @@
   display: block;
 }
 .bttnSection {
-  background: blue;
+  background: var(--skills-borders);
   padding: 5px;
   display: flex;
   align-items: center;
