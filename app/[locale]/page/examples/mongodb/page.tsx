@@ -24,7 +24,7 @@ export default function MongoDBPage() {
               </div>
               <ul className="commentsBttn">
                 comms
-                <li>
+                <li className="commentBlock">
                   <div className="commentTopPart">
                     <p className="commentName">Stas</p>
                     <p className="commentDate">22.2.2222</p>
@@ -32,10 +32,10 @@ export default function MongoDBPage() {
                   <div className="commentContent">
                     <p>dsadasd</p>
                   </div>
+                  <div className="newCommentBox">
+                    <input type="text"></input>
+                  </div>
                 </li>
-                <div className="newCommentBox">
-                  <input type="text"></input>
-                </div>
               </ul>
             </div>
           </div>
@@ -50,7 +50,7 @@ export default function MongoDBPage() {
               </div>
               <ul className="commentsBttn">
                 comms
-                <li>
+                <li className="commentBlock">
                   <div className="commentTopPart">
                     <p className="commentName">Stas</p>
                     <p className="commentDate">22.2.2222</p>
@@ -58,10 +58,10 @@ export default function MongoDBPage() {
                   <div className="commentContent">
                     <p>dsadasd</p>
                   </div>
+                  <div className="newCommentBox">
+                    <input type="text"></input>
+                  </div>
                 </li>
-                <div className="newCommentBox">
-                  <input type="text"></input>
-                </div>
               </ul>
             </div>
           </div>
@@ -76,7 +76,7 @@ export default function MongoDBPage() {
               </div>
               <ul className="commentsBttn">
                 comms
-                <li>
+                <li className="commentBlock">
                   <div className="commentTopPart">
                     <p className="commentName">Stas</p>
                     <p className="commentDate">22.2.2222</p>
@@ -84,10 +84,10 @@ export default function MongoDBPage() {
                   <div className="commentContent">
                     <p>dsadasd</p>
                   </div>
+                  <div className="newCommentBox">
+                    <input type="text"></input>
+                  </div>
                 </li>
-                <div className="newCommentBox">
-                  <input type="text"></input>
-                </div>
               </ul>
             </div>
           </div>
@@ -102,7 +102,7 @@ export default function MongoDBPage() {
               </div>
               <ul className="commentsBttn">
                 comms
-                <li>
+                <li className="commentBlock">
                   <div className="commentTopPart">
                     <p className="commentName">Stas</p>
                     <p className="commentDate">22.2.2222</p>
@@ -110,10 +110,10 @@ export default function MongoDBPage() {
                   <div className="commentContent">
                     <p>dsadasd</p>
                   </div>
+                  <div className="newCommentBox">
+                    <input type="text"></input>
+                  </div>
                 </li>
-                <div className="newCommentBox">
-                  <input type="text"></input>
-                </div>
               </ul>
             </div>
           </div>
@@ -128,7 +128,7 @@ export default function MongoDBPage() {
               </div>
               <ul className="commentsBttn">
                 comms
-                <li>
+                <li className="commentBlock">
                   <div className="commentTopPart">
                     <p className="commentName">Stas</p>
                     <p className="commentDate">22.2.2222</p>
@@ -136,10 +136,10 @@ export default function MongoDBPage() {
                   <div className="commentContent">
                     <p>dsadasd</p>
                   </div>
+                  <div className="newCommentBox">
+                    <input type="text"></input>
+                  </div>
                 </li>
-                <div className="newCommentBox">
-                  <input type="text"></input>
-                </div>
               </ul>
             </div>
           </div>
@@ -154,7 +154,7 @@ export default function MongoDBPage() {
               </div>
               <ul className="commentsBttn">
                 comms
-                <li>
+                <li className="commentBlock">
                   <div className="commentTopPart">
                     <p className="commentName">Stas</p>
                     <p className="commentDate">22.2.2222</p>
@@ -162,10 +162,10 @@ export default function MongoDBPage() {
                   <div className="commentContent">
                     <p>dsadasd</p>
                   </div>
+                  <div className="newCommentBox">
+                    <input type="text"></input>
+                  </div>
                 </li>
-                <div className="newCommentBox">
-                  <input type="text"></input>
-                </div>
               </ul>
             </div>
           </div>
@@ -180,7 +180,7 @@ export default function MongoDBPage() {
               </div>
               <ul className="commentsBttn">
                 comms
-                <li>
+                <li className="commentBlock">
                   <div className="commentTopPart">
                     <p className="commentName">Stas</p>
                     <p className="commentDate">22.2.2222</p>
@@ -188,10 +188,10 @@ export default function MongoDBPage() {
                   <div className="commentContent">
                     <p>dsadasd</p>
                   </div>
+                  <div className="newCommentBox">
+                    <input type="text"></input>
+                  </div>
                 </li>
-                <div className="newCommentBox">
-                  <input type="text"></input>
-                </div>
               </ul>
             </div>
           </div>

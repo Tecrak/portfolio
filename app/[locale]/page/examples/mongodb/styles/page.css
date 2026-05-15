@@ -1,39 +1,11 @@
-/* ── mongodb.page.css ── */
-
 .mainMPage {
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  min-height: 100%;
+  background: red;
 }
-
-/* ─── ADD BUTTON ─────────────────────────────────────── */
 .newPhotoBttn {
-  align-self: flex-end;
-  font-family: "JetBrains Mono", "Fira Code", monospace;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  padding: 6px 16px;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  transition:
-    opacity 0.15s,
-    transform 0.1s;
-  background: var(--ex-accent);
-  color: #fff;
+  /* background: blue; */
+  width: 100%;
 }
 
-.newPhotoBttn:hover {
-  opacity: 0.85;
-}
-.newPhotoBttn:active {
-  transform: scale(0.97);
-}
-
-/* ─── GRID ───────────────────────────────────────────── */
 .imgList {
   list-style: none;
   margin: 0;
@@ -42,8 +14,6 @@
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 12px;
 }
-
-/* ─── CARD ───────────────────────────────────────────── */
 .imgList > li {
   background: var(--ex-panel-bg, #1a1d2a);
   border: 1px solid var(--ex-panel-border, #252840);
@@ -53,270 +23,18 @@
     border-color 0.15s,
     transform 0.15s;
 }
-
-.imgList > li:hover {
-  border-color: var(--ex-accent, #4f6ef7);
-  transform: translateY(-2px);
-}
-
-/* ─── IMAGE ──────────────────────────────────────────── */
 .imgBox {
+  background: blue;
   display: flex;
+  margin-bottom: 10px;
   flex-direction: column;
 }
-
-.imgBox img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  display: block;
-}
-
-/* ─── BOTTOM BAR ─────────────────────────────────────── */
 .bttnSection {
+  background: red;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 8px 10px;
-  gap: 6px;
-  background: rgba(0, 0, 0, 0.2);
-  border-top: 1px solid var(--ex-panel-border, #252840);
 }
-
-/* ─── LIKE BOX ───────────────────────────────────────── */
-.likeBox {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.likeBttn {
-  font-family: "JetBrains Mono", "Fira Code", monospace;
-  font-size: 10px;
-  font-weight: 600;
-  padding: 3px 8px;
-  border-radius: 4px;
-  border: 1px solid rgba(34, 212, 106, 0.3);
-  background: rgba(34, 212, 106, 0.1);
-  color: #22d46a;
-  cursor: pointer;
-  transition: opacity 0.15s;
-}
-
-.likeBttn:hover {
-  opacity: 0.75;
-}
-
-.commsCount {
-  font-family: "JetBrains Mono", "Fira Code", monospace;
-  font-size: 11px;
-  color: var(--ex-text-secondary, #7a80a0);
-}
-
-/* ─── ADD COMMENT ────────────────────────────────────── */
-.addComm {
-  font-family: "JetBrains Mono", "Fira Code", monospace;
-  font-size: 10px;
-  font-weight: 600;
-  padding: 3px 8px;
-  border-radius: 4px;
-  border: 1px solid var(--ex-chip-border, rgba(79, 110, 247, 0.2));
-  background: var(--ex-chip-bg, rgba(79, 110, 247, 0.12));
-  color: var(--ex-chip-color, #8da8ff);
-  cursor: pointer;
-  transition: opacity 0.15s;
-}
-
-.addComm:hover {
-  opacity: 0.75;
-}
-
-/* ─── COMMENTS LIST ──────────────────────────────────── */
-.commentsBttn {
-  font-family: "JetBrains Mono", "Fira Code", monospace;
-  font-size: 10px;
-  padding: 3px 8px;
-  border-radius: 4px;
-  border: 1px solid var(--ex-panel-border, #252840);
-  background: transparent;
-  color: var(--ex-text-muted, #3d4260);
-  cursor: pointer;
-  list-style: none;
-  margin: 0;
-  transition:
-    color 0.15s,
-    border-color 0.15s;
-}
-
-.commentsBttn:hover {
-  color: var(--ex-text-secondary, #7a80a0);
-  border-color: var(--ex-text-muted, #3d4260);
-}
-
-/* ─── MODAL OVERLAY ──────────────────────────────────── */
-.modalOverlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(4px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 100;
-  padding: 16px;
-}
-
-/* ─── MODAL BOX ──────────────────────────────────────── */
-.modalBox {
-  position: relative;
-  background: var(--ex-panel-bg, #1a1d2a);
-  border: 1px solid var(--ex-panel-border, #252840);
-  border-radius: 12px;
-  width: 100%;
-  max-width: 760px;
-  max-height: 90vh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.modalClose {
-  position: absolute;
-  top: 10px;
-  right: 12px;
-  background: transparent;
-  border: none;
-  color: var(--ex-text-muted, #3d4260);
-  font-size: 16px;
-  cursor: pointer;
-  z-index: 1;
-  transition: color 0.15s;
-}
-.modalClose:hover {
-  color: var(--ex-text-primary, #e8eaf0);
-}
-
-/* ─── MODAL CONTENT (two columns) ───────────────────── */
-.modalContent {
-  display: flex;
-  flex: 1;
-  overflow: hidden;
-  min-height: 0;
-}
-
-/* Left side */
-.modalImgSide {
-  width: 45%;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.modalImgSide img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  display: block;
-}
-
-.modalName {
-  padding: 10px 14px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--ex-text-primary, #e8eaf0);
-  border-top: 1px solid var(--ex-panel-border, #252840);
-  background: rgba(0, 0, 0, 0.2);
-}
-
-/* Right side */
-.modalCommsSide {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  border-left: 1px solid var(--ex-panel-border, #252840);
-  min-height: 0;
-}
-
-.modalCommsTitle {
-  padding: 12px 16px;
-  font-family: "JetBrains Mono", "Fira Code", monospace;
-  font-size: 11px;
-  color: var(--ex-text-muted, #3d4260);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  border-bottom: 1px solid var(--ex-panel-border, #252840);
-  flex-shrink: 0;
-}
-
-/* Comments scroll area */
-.modalCommsList {
-  flex: 1;
-  overflow-y: auto;
-  padding: 10px 14px;
-  list-style: none;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.modalCommItem {
-  padding: 8px 12px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--ex-panel-border, #252840);
-  border-radius: 6px;
-  font-size: 12px;
-  color: var(--ex-text-secondary, #7a80a0);
-  line-height: 1.5;
-}
-
-.noComms {
-  font-size: 12px;
-  color: var(--ex-text-muted, #3d4260);
-  font-family: "JetBrains Mono", "Fira Code", monospace;
-  font-style: italic;
-  text-align: center;
-  padding: 20px 0;
-}
-
-/* Add comment input */
-.modalAddComm {
-  display: flex;
-  gap: 8px;
-  padding: 12px 14px;
-  border-top: 1px solid var(--ex-panel-border, #252840);
-  flex-shrink: 0;
-}
-
-.modalInput {
-  flex: 1;
-  background: var(--ex-sidebar-bg, #0f1117);
-  border: 1px solid var(--ex-panel-border, #252840);
-  border-radius: 5px;
-  padding: 7px 12px;
-  font-family: "JetBrains Mono", "Fira Code", monospace;
-  font-size: 12px;
-  color: var(--ex-text-primary, #e8eaf0);
-  outline: none;
-  transition: border-color 0.15s;
-}
-.modalInput:focus {
-  border-color: var(--ex-accent, #4f6ef7);
-}
-.modalInput::placeholder {
-  color: var(--ex-text-muted, #3d4260);
-}
-
-.modalSubmit {
-  font-size: 16px;
-  padding: 6px 14px;
-  border-radius: 5px;
-  border: none;
-  background: var(--ex-accent, #4f6ef7);
-  color: #fff;
-  cursor: pointer;
-  transition: opacity 0.15s;
-}
-.modalSubmit:hover {
-  opacity: 0.85;
+.commentBlock {
+  display: none;
 }
