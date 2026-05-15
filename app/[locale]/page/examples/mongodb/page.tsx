@@ -22,7 +22,21 @@ export default function MongoDBPage() {
                 <button className="likeBttn">like</button>
                 <span className="commsCount">10</span>
               </div>
-              <ul className="commentsBttn">comms</ul>
+              <ul className="commentsBttn">
+                comms
+                <li>
+                  <div className="commentTopPart">
+                    <p className="commentName">Stas</p>
+                    <p className="commentDate">22.2.2222</p>
+                  </div>
+                  <div className="commentContent">
+                    <p>dsadasd</p>
+                  </div>
+                </li>
+                <div className="newCommentBox">
+                  <input type="text"></input>
+                </div>
+              </ul>
             </div>
           </div>
         </li>
@@ -34,7 +48,21 @@ export default function MongoDBPage() {
                 <button className="likeBttn">like</button>
                 <span className="commsCount">10</span>
               </div>
-              <ul className="commentsBttn">comms</ul>
+              <ul className="commentsBttn">
+                comms
+                <li>
+                  <div className="commentTopPart">
+                    <p className="commentName">Stas</p>
+                    <p className="commentDate">22.2.2222</p>
+                  </div>
+                  <div className="commentContent">
+                    <p>dsadasd</p>
+                  </div>
+                </li>
+                <div className="newCommentBox">
+                  <input type="text"></input>
+                </div>
+              </ul>
             </div>
           </div>
         </li>
@@ -46,7 +74,21 @@ export default function MongoDBPage() {
                 <button className="likeBttn">like</button>
                 <span className="commsCount">10</span>
               </div>
-              <ul className="commentsBttn">comms</ul>
+              <ul className="commentsBttn">
+                comms
+                <li>
+                  <div className="commentTopPart">
+                    <p className="commentName">Stas</p>
+                    <p className="commentDate">22.2.2222</p>
+                  </div>
+                  <div className="commentContent">
+                    <p>dsadasd</p>
+                  </div>
+                </li>
+                <div className="newCommentBox">
+                  <input type="text"></input>
+                </div>
+              </ul>
             </div>
           </div>
         </li>
@@ -58,7 +100,21 @@ export default function MongoDBPage() {
                 <button className="likeBttn">like</button>
                 <span className="commsCount">10</span>
               </div>
-              <ul className="commentsBttn">comms</ul>
+              <ul className="commentsBttn">
+                comms
+                <li>
+                  <div className="commentTopPart">
+                    <p className="commentName">Stas</p>
+                    <p className="commentDate">22.2.2222</p>
+                  </div>
+                  <div className="commentContent">
+                    <p>dsadasd</p>
+                  </div>
+                </li>
+                <div className="newCommentBox">
+                  <input type="text"></input>
+                </div>
+              </ul>
             </div>
           </div>
         </li>
@@ -70,7 +126,21 @@ export default function MongoDBPage() {
                 <button className="likeBttn">like</button>
                 <span className="commsCount">10</span>
               </div>
-              <ul className="commentsBttn">comms</ul>
+              <ul className="commentsBttn">
+                comms
+                <li>
+                  <div className="commentTopPart">
+                    <p className="commentName">Stas</p>
+                    <p className="commentDate">22.2.2222</p>
+                  </div>
+                  <div className="commentContent">
+                    <p>dsadasd</p>
+                  </div>
+                </li>
+                <div className="newCommentBox">
+                  <input type="text"></input>
+                </div>
+              </ul>
             </div>
           </div>
         </li>
@@ -82,7 +152,21 @@ export default function MongoDBPage() {
                 <button className="likeBttn">like</button>
                 <span className="commsCount">10</span>
               </div>
-              <ul className="commentsBttn">comms</ul>
+              <ul className="commentsBttn">
+                comms
+                <li>
+                  <div className="commentTopPart">
+                    <p className="commentName">Stas</p>
+                    <p className="commentDate">22.2.2222</p>
+                  </div>
+                  <div className="commentContent">
+                    <p>dsadasd</p>
+                  </div>
+                </li>
+                <div className="newCommentBox">
+                  <input type="text"></input>
+                </div>
+              </ul>
             </div>
           </div>
         </li>
@@ -94,7 +178,21 @@ export default function MongoDBPage() {
                 <button className="likeBttn">like</button>
                 <span className="commsCount">10</span>
               </div>
-              <ul className="commentsBttn">comms</ul>
+              <ul className="commentsBttn">
+                comms
+                <li>
+                  <div className="commentTopPart">
+                    <p className="commentName">Stas</p>
+                    <p className="commentDate">22.2.2222</p>
+                  </div>
+                  <div className="commentContent">
+                    <p>dsadasd</p>
+                  </div>
+                </li>
+                <div className="newCommentBox">
+                  <input type="text"></input>
+                </div>
+              </ul>
             </div>
           </div>
         </li>
