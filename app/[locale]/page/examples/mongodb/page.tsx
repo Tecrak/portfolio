@@ -23,7 +23,7 @@ export default function MongoDBPage() {
                 <span className="commsCount">10</span>
               </div>
               <ul className="commentsBttn">
-                comms
+                💬
                 <li className="commentBlock">
                   <div className="commentTopPart">
                     <p className="commentName">Stas</p>
@@ -49,7 +49,7 @@ export default function MongoDBPage() {
                 <span className="commsCount">10</span>
               </div>
               <ul className="commentsBttn">
-                comms
+                💬
                 <li className="commentBlock">
                   <div className="commentTopPart">
                     <p className="commentName">Stas</p>
@@ -75,7 +75,7 @@ export default function MongoDBPage() {
                 <span className="commsCount">10</span>
               </div>
               <ul className="commentsBttn">
-                comms
+                💬
                 <li className="commentBlock">
                   <div className="commentTopPart">
                     <p className="commentName">Stas</p>
@@ -101,7 +101,7 @@ export default function MongoDBPage() {
                 <span className="commsCount">10</span>
               </div>
               <ul className="commentsBttn">
-                comms
+                💬
                 <li className="commentBlock">
                   <div className="commentTopPart">
                     <p className="commentName">Stas</p>
@@ -127,7 +127,7 @@ export default function MongoDBPage() {
                 <span className="commsCount">10</span>
               </div>
               <ul className="commentsBttn">
-                comms
+                💬
                 <li className="commentBlock">
                   <div className="commentTopPart">
                     <p className="commentName">Stas</p>
@@ -153,7 +153,7 @@ export default function MongoDBPage() {
                 <span className="commsCount">10</span>
               </div>
               <ul className="commentsBttn">
-                comms
+                💬
                 <li className="commentBlock ">
                   <div className="commentTopPart">
                     <p className="commentName">Stas</p>
@@ -179,7 +179,7 @@ export default function MongoDBPage() {
                 <span className="commsCount">10</span>
               </div>
               <ul className="commentsBttn">
-                comms
+                💬
                 <li className="commentBlock">
                   <div className="commentTopPart">
                     <p className="commentName">Stas</p>
