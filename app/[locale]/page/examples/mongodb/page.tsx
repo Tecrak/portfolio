@@ -14,189 +14,35 @@ export default function MongoDBPage() {
     <div className="mainMPage">
       <button className="newPhotoBttn">Add new</button>
       <ul className="imgList">
-        <li>
-          <div className="imgBox">
-            <img src="https://i.pravatar.cc/150?img=1"></img>
-            {/* <div className="deleteBox"> */}
-            <div className="bttnSection">
-              <div className="likeBox">
-                <button className="likeBttn notLiked">❤️ Like</button>
-                <span className="commsCount">10</span>
+        {mData.map((data) => (
+          <li>
+            <div className="imgBox">
+              <img src={data.imgSrc}></img>
+              {/* <div className="deleteBox"> */}
+              <div className="bttnSection">
+                <div className="likeBox">
+                  <button className="likeBttn notLiked">❤️ Like</button>
+                  <span className="commsCount">{data.likeCount}</span>
+                </div>
+                <ul className="commentsBttn">
+                  <span>💬</span>
+                  <li className="commentBlock">
+                    <div className="commentTopPart">
+                      <p className="commentName">Stas</p>
+                      <p className="commentDate">22.2.2222</p>
+                    </div>
+                    <div className="commentContent">
+                      <p>dsadasd</p>
+                    </div>
+                    <div className="newCommentBox">
+                      <input type="text"></input>
+                    </div>
+                  </li>
+                </ul>
               </div>
-              <ul className="commentsBttn">
-                💬
-                <li className="commentBlock">
-                  <div className="commentTopPart">
-                    <p className="commentName">Stas</p>
-                    <p className="commentDate">22.2.2222</p>
-                  </div>
-                  <div className="commentContent">
-                    <p>dsadasd</p>
-                  </div>
-                  <div className="newCommentBox">
-                    <input type="text"></input>
-                  </div>
-                </li>
-              </ul>
             </div>
-          </div>
-        </li>
-        <li>
-          <div className="imgBox">
-            <img src="https://i.pravatar.cc/150?img=1"></img>
-            <div className="bttnSection">
-              <div className="likeBox">
-                <button className="likeBttn notLiked">❤️ Like</button>
-                <span className="commsCount">10</span>
-              </div>
-              <ul className="commentsBttn">
-                💬
-                <li className="commentBlock">
-                  <div className="commentTopPart">
-                    <p className="commentName">Stas</p>
-                    <p className="commentDate">22.2.2222</p>
-                  </div>
-                  <div className="commentContent">
-                    <p>dsadasd</p>
-                  </div>
-                  <div className="newCommentBox">
-                    <input type="text"></input>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div className="imgBox">
-            <img src="https://i.pravatar.cc/150?img=1"></img>
-            <div className="bttnSection">
-              <div className="likeBox">
-                <button className="likeBttn notLiked">❤️ Like</button>
-                <span className="commsCount">10</span>
-              </div>
-              <ul className="commentsBttn">
-                💬
-                <li className="commentBlock">
-                  <div className="commentTopPart">
-                    <p className="commentName">Stas</p>
-                    <p className="commentDate">22.2.2222</p>
-                  </div>
-                  <div className="commentContent">
-                    <p>dsadasd</p>
-                  </div>
-                  <div className="newCommentBox">
-                    <input type="text"></input>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div className="imgBox">
-            <img src="https://i.pravatar.cc/150?img=1"></img>
-            <div className="bttnSection">
-              <div className="likeBox">
-                <button className="likeBttn notLiked">❤️ Like</button>
-                <span className="commsCount">10</span>
-              </div>
-              <ul className="commentsBttn">
-                💬
-                <li className="commentBlock">
-                  <div className="commentTopPart">
-                    <p className="commentName">Stas</p>
-                    <p className="commentDate">22.2.2222</p>
-                  </div>
-                  <div className="commentContent">
-                    <p>dsadasd</p>
-                  </div>
-                  <div className="newCommentBox">
-                    <input type="text"></input>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div className="imgBox">
-            <img src="https://i.pravatar.cc/150?img=1"></img>
-            <div className="bttnSection">
-              <div className="likeBox">
-                <button className="likeBttn notLiked">❤️ Like</button>
-                <span className="commsCount">10</span>
-              </div>
-              <ul className="commentsBttn">
-                💬
-                <li className="commentBlock">
-                  <div className="commentTopPart">
-                    <p className="commentName">Stas</p>
-                    <p className="commentDate">22.2.2222</p>
-                  </div>
-                  <div className="commentContent">
-                    <p>dsadasd</p>
-                  </div>
-                  <div className="newCommentBox">
-                    <input type="text"></input>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div className="imgBox">
-            <img src="https://i.pravatar.cc/150?img=1"></img>
-            <div className="bttnSection">
-              <div className="likeBox">
-                <button className="likeBttn notLiked">❤️ Like</button>
-                <span className="commsCount">10</span>
-              </div>
-              <ul className="commentsBttn">
-                💬
-                <li className="commentBlock ">
-                  <div className="commentTopPart">
-                    <p className="commentName">Stas</p>
-                    <p className="commentDate">22.2.2222</p>
-                  </div>
-                  <div className="commentContent">
-                    <p>dsadasd</p>
-                  </div>
-                  <div className="newCommentBox">
-                    <input type="text"></input>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div className="imgBox">
-            <img src="https://i.pravatar.cc/150?img=1"></img>
-            <div className="bttnSection">
-              <div className="likeBox">
-                <button className="notLiked likeBttn">❤️ Like</button>
-                <span className="commsCount">10</span>
-              </div>
-              <ul className="commentsBttn">
-                💬
-                <li className="commentBlock">
-                  <div className="commentTopPart">
-                    <p className="commentName">Stas</p>
-                    <p className="commentDate">22.2.2222</p>
-                  </div>
-                  <div className="commentContent">
-                    <p>dsadasd</p>
-                  </div>
-                  <div className="newCommentBox">
-                    <input type="text"></input>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </li>
+          </li>
+        ))}
       </ul>
     </div>
   );
