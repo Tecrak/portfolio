@@ -17,7 +17,6 @@
   background: var(--ex-panel-bg, #1a1d2a);
   border: 1px solid var(--ex-panel-border, #252840);
   border-radius: 8px;
-  overflow: hidden;
   transition:
     border-color 0.15s,
     transform 0.15s;
@@ -33,10 +32,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
-.commentBlock {
-  display: none;
-}
+
 .likeBttn {
   padding: 2px 7px;
   border-radius: 5px;
@@ -51,4 +49,24 @@
 .commsCount {
   margin-left: 4px;
   opacity: 0.8;
+}
+.commentBlock {
+  /* position: absolute; */
+  background: red;
+  left: 0;
+  z-index: 10;
+}
+
+.commentBlock img {
+  width: 50px;
+  border-radius: 100%;
+}
+.commentTopPart {
+  display: flex;
+}
+
+.comOpenned:first-child {
+  background: green;
+  top: 20px;
+  position: relative;
 }
