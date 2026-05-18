@@ -1,4 +1,16 @@
-export const mData = [
+export type Comment = {
+  aId: number;
+  comment: string;
+};
+
+export type Person = {
+  _id: number;
+  name: string;
+  imgSrc: string;
+  likeCount: number;
+  comments: Comment[];
+};
+export const mData: Person[] = [
   {
     _id: 1,
     name: "Olena Kovalenko",

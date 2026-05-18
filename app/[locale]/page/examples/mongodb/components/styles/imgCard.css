@@ -1,0 +1,65 @@
+.imgList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+.imgList > li {
+  background: var(--ex-panel-bg, #1a1d2a);
+  border: 1px solid var(--ex-panel-border, #252840);
+  border-radius: 8px;
+  transition:
+    border-color 0.15s,
+    transform 0.15s;
+}
+.imgBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.bttnSection {
+  background: var(--skills-borders);
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.likeBttn {
+  padding: 2px 7px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.notLiked {
+  border: 1px grey solid;
+  background: transparent;
+}
+
+.commsCount {
+  margin-left: 4px;
+  opacity: 0.8;
+}
+.commentBlock {
+  /* position: absolute; */
+  background: red;
+  left: 0;
+  z-index: 10;
+}
+
+.commentBlock img {
+  width: 50px;
+  border-radius: 100%;
+}
+.commentTopPart {
+  display: flex;
+}
+
+.comOpenned:first-child {
+  background: green;
+  top: 20px;
+  position: relative;
+}

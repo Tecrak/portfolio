@@ -1,19 +1,13 @@
 "use client";
 import { useState } from "react";
 import { Person } from "../config/data";
-import "./styles/imgCard.css";
 
-export default function ImgCard({
-  mData,
-  setImgOpened,
-  imgOpened,
-  selectedImg,
-}: {
-  mData: Person[];
-  setImgOpened: (v: number) => void;
-  imgOpened: number;
-  selectedImg: (imgID: number) => boolean;
-}) {
+export default function OpenedCard() {
+  const [imgOpened, setImgOpened] = useState(0);
+  function selectedImg(imgID: number) {
+    const valid = imgID === imgOpened;
+    return valid;
+  }
   return (
     <ul className="imgList">
       {mData.map((data) => (
