@@ -12,7 +12,7 @@ export default function MongoDBPage() {
   // if (isError) return <div className="pg-loading">помилка підключення</div>;
   const [imgOpened, setImgOpened] = useState(0);
 
-  function selectedImg(imgID) {
+  function selectedImg(imgID: number) {
     const valid = imgID === imgOpened;
     return valid;
   }
