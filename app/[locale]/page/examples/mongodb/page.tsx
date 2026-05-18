@@ -12,6 +12,11 @@ export default function MongoDBPage() {
   // if (isError) return <div className="pg-loading">помилка підключення</div>;
   const [imgOpened, setImgOpened] = useState(0);
 
+  function selectedImg(imgID) {
+    const valid = imgID === imgOpened;
+    return valid;
+  }
+
   return (
     <div className="mainMPage">
       <button className="newPhotoBttn">Add new</button>
@@ -37,7 +42,7 @@ export default function MongoDBPage() {
                       key={`${cData.aId}+"a"`}
                       className="commentBlock"
                       style={
-                        data._id === imgOpened
+                        selectedImg(data._id)
                           ? { display: "block" }
                           : { display: "none" }
                       }>
@@ -49,11 +54,17 @@ export default function MongoDBPage() {
                       <div className="commentContent">
                         <p>{cData.comment}</p>
                       </div>
-                      <div className="newCommentBox">
-                        <input type="text"></input>
-                      </div>
                     </li>
                   ))}
+                  <div
+                    className="newCommentBox"
+                    style={
+                      selectedImg(data._id)
+                        ? { display: "block" }
+                        : { display: "none" }
+                    }>
+                    <input type="text"></input>
+                  </div>
                 </ul>
               </div>
             </div>
