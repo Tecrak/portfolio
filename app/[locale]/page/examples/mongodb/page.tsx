@@ -5,7 +5,8 @@ import { mData } from "./config/data";
 
 import { useMongopeople, MongoPerson } from "./api/useMPeople";
 import ImgCard from "./components/imgCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import OpenedCard from "./components/openedCard";
 
 export default function MongoDBPage() {
   // const { data: people = [], isLoading, isError } = useMongopeople();
@@ -18,7 +19,9 @@ export default function MongoDBPage() {
     const valid = imgID === imgOpened;
     return valid;
   }
-
+  useEffect(() => {
+    console.log("imgOpened changed:", imgOpened);
+  }, [imgOpened]);
   return (
     <div className="mainMPage">
       <button className="newPhotoBttn">Add new</button>
@@ -28,7 +31,12 @@ export default function MongoDBPage() {
         imgOpened={imgOpened}
         selectedImg={selectedImg}
       />
-      {imgOpened > 0 && <li>hisssssssssssssssssssssssssssssss</li>}
+      <OpenedCard
+        mData={mData}
+        setImgOpened={setImgOpened}
+        imgOpened={imgOpened}
+        selectedImg={selectedImg}
+      />
     </div>
   );
 }

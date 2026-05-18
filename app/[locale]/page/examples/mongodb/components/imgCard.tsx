@@ -30,37 +30,13 @@ export default function ImgCard({
                 <button className="likeBttn notLiked">❤️ Like</button>
                 <span className="commsCount">{data.likeCount}</span>
               </div>
-              <ul className="commentsBttn">
+              <div
+                className="commentsBttn"
+                onClick={() =>
+                  imgOpened <= 0 ? setImgOpened(data._id) : setImgOpened(0)
+                }>
                 <span>💬</span>
-                {data.comments.map((cData) => (
-                  <li
-                    key={`${cData.aId}+"a"`}
-                    className="commentBlock"
-                    style={
-                      selectedImg(data._id)
-                        ? { display: "block" }
-                        : { display: "none" }
-                    }>
-                    <div className="commentTopPart">
-                      <img src={data.imgSrc}></img>
-                      <p className="commentName">{}</p>
-                      <p className="commentDate">22.2.2222</p>
-                    </div>
-                    <div className="commentContent">
-                      <p>{cData.comment}</p>
-                    </div>
-                  </li>
-                ))}
-                <div
-                  className="newCommentBox"
-                  style={
-                    selectedImg(data._id)
-                      ? { display: "block" }
-                      : { display: "none" }
-                  }>
-                  <input type="text"></input>
-                </div>
-              </ul>
+              </div>
             </div>
           </div>
         </li>
