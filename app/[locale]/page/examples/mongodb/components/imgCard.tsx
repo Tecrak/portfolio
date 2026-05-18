@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Person } from "../config/data";
 import "./styles/imgCard.css";
 
@@ -14,16 +14,16 @@ export default function ImgCard({
   imgOpened: number;
   selectedImg: (imgID: number) => boolean;
 }) {
+  useEffect(() => {
+    imgOpened > 0 && setImgOpened;
+    console.log(imgOpened);
+  }, [imgOpened]);
   return (
     <ul className="imgList">
       {mData.map((data) => (
         <li key={data._id}>
           <div className="comOpenned imgBox">
-            <img
-              src={data.imgSrc}
-              onClick={() =>
-                imgOpened <= 0 ? setImgOpened(data._id) : setImgOpened(0)
-              }></img>
+            <img src={data.imgSrc} onClick={() => setImgOpened(data._id)}></img>
             {/* <div className="deleteBox"> */}
             <div className="bttnSection">
               <div className="likeBox">
@@ -32,9 +32,7 @@ export default function ImgCard({
               </div>
               <div
                 className="commentsBttn"
-                onClick={() =>
-                  imgOpened <= 0 ? setImgOpened(data._id) : setImgOpened(0)
-                }>
+                onClick={() => setImgOpened(data._id)}>
                 <span>💬</span>
               </div>
             </div>

@@ -19,9 +19,7 @@ export default function MongoDBPage() {
     const valid = imgID === imgOpened;
     return valid;
   }
-  useEffect(() => {
-    console.log("imgOpened changed:", imgOpened);
-  }, [imgOpened]);
+
   return (
     <div className="mainMPage">
       <button className="newPhotoBttn">Add new</button>

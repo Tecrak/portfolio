@@ -18,7 +18,9 @@
   display: flex;
   flex-direction: column;
 }
-
+.imgBox img {
+  cursor: pointer;
+}
 .bttnSection {
   background: var(--skills-borders);
   padding: 5px;
