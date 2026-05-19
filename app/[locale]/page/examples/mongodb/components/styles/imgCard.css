@@ -17,7 +17,8 @@
     box-shadow 0.1s;
 }
 .imgList > li:hover {
-  box-shadow: 0px 2px 2px 0.5px rgba(15, 54, 139, 0.911);
+  box-shadow: 0px 2px 2px 0.5px rgba(136, 136, 136, 0.911);
+  transform: scale(1.04);
 }
 .imgBox {
   display: flex;

@@ -47,7 +47,18 @@
   width: 10px;
   height: 10px;
   border-radius: 100%;
-  filter: blur(1px);
+  /* filter: blur(1px); */
+  animation: blupblup 2s infinite alternate-reverse;
+}
+@keyframes blupblup {
+  from {
+    transform: scale(0.95);
+    filter: blur(0px);
+  }
+  to {
+    transform: scale(1.05);
+    filter: blur(0.7px);
+  }
 }
 
 .skillsActivePath > li {
