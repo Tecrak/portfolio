@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { Person } from "../config/data";
-import "./styles/imgCard.css";
+import styles from "./styles/imgCard.module.css";
 
 export default function ImgCard({
   mData,
@@ -19,19 +19,21 @@ export default function ImgCard({
     console.log(imgOpened);
   }, [imgOpened]);
   return (
-    <ul className="imgList">
+    <ul className={styles.imgList}>
       {mData.map((data) => (
         <li key={data._id}>
-          <div className="comOpenned imgBox">
+          <div className={`${styles.comOpenned} ${styles.imgBox}`}>
             <img src={data.imgSrc} onClick={() => setImgOpened(data._id)}></img>
             {/* <div className="deleteBox"> */}
-            <div className="bttnSection">
-              <div className="likeBox">
-                <button className="likeBttn notLiked">❤️ Like</button>
-                <span className="commsCount">{data.likeCount}</span>
+            <div className={styles.bttnSection}>
+              <div className={styles.likeBox}>
+                <button className={`${styles.likeBttn} ${styles.notLiked}`}>
+                  ❤️ Like
+                </button>
+                <span className={styles.commsCount}>{data.likeCount}</span>
               </div>
               <div
-                className="commentsBttn"
+                className={styles.commentsBttn}
                 onClick={() => setImgOpened(data._id)}>
                 <span>💬</span>
               </div>

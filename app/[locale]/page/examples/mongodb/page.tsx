@@ -2,10 +2,9 @@
 
 import "./styles/page.css";
 import { mData } from "./config/data";
-
+import { useEffect, useState } from "react";
 import { useMongopeople, MongoPerson } from "./api/useMPeople";
 import ImgCard from "./components/imgCard";
-import { useEffect, useState } from "react";
 import OpenedCard from "./components/openedCard";
 
 export default function MongoDBPage() {

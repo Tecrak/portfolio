@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Person } from "../config/data";
-import "./styles/openedCard.css";
+import "./styles/openedCard.module.css";
 
 export default function ImgCard({
   mData,
