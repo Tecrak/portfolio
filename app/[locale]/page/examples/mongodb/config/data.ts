@@ -57,4 +57,44 @@ export const mData: Person[] = [
       { aId: 8, comment: "Завжди готовий допомогти колегам." },
     ],
   },
+  {
+    _id: 6,
+    name: "Andriy Melnyk",
+    imgSrc: "https://i.pravatar.cc/150?img=7",
+    likeCount: 10,
+    comments: [
+      { aId: 7, comment: "Надійний розробник." },
+      { aId: 8, comment: "Завжди готовий допомогти колегам." },
+    ],
+  },
+  {
+    _id: 7,
+    name: "Andriy Melnyk",
+    imgSrc: "https://i.pravatar.cc/150?img=7",
+    likeCount: 10,
+    comments: [
+      { aId: 7, comment: "Надійний розробник." },
+      { aId: 8, comment: "Завжди готовий допомогти колегам." },
+    ],
+  },
+  {
+    _id: 8,
+    name: "Andriy Melnyk",
+    imgSrc: "https://i.pravatar.cc/150?img=7",
+    likeCount: 10,
+    comments: [
+      { aId: 7, comment: "Надійний розробник." },
+      { aId: 8, comment: "Завжди готовий допомогти колегам." },
+    ],
+  },
+  {
+    _id: 9,
+    name: "Andriy Melnyk",
+    imgSrc: "https://i.pravatar.cc/150?img=7",
+    likeCount: 10,
+    comments: [
+      { aId: 7, comment: "Надійний розробник." },
+      { aId: 8, comment: "Завжди готовий допомогти колегам." },
+    ],
+  },
 ];
