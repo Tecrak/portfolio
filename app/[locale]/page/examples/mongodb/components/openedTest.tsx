@@ -19,98 +19,40 @@ export default function OpenedText({
       document.body.style.overflow = "";
     };
   }, []);
+  const current = mData.find((item) => item._id === imgOpened);
+
+  if (!current) return null;
   return (
-    <div className={styles.openedCard}>
+    <div className={styles.openedCard} onClick={() => setImgOpened(0)}>
       <ul className={styles.cardContent}>
-        <li className={styles.cardItem}>
+        <li className={styles.cardItem} key={current._id}>
           <div className={styles.cardImg}>
-            <img src="https://i.pravatar.cc/150?img=11"></img>
+            <img src={current.imgSrc}></img>
           </div>
           <div className={styles.commentSection}>
             <div className={styles.bttnsSection}>
               <div className={styles.likeBttn}>
                 <button>Like</button>
-                <span>100</span>
+                <span>{current.likeCount}</span>
               </div>
-              <span>21.21.2222</span>
+              <span>{current.date}</span>
             </div>
             <div className={styles.commentsBlock}>
               <ul>
-                <li className={styles.commentContent}>
-                  <div className={styles.commentLeftPart}>
-                    <img src="https://i.pravatar.cc/150?img=2"></img>
-                  </div>
-                  <div className={styles.commentContent}>
-                    <p>
-                      COMMENT HERE COMMENT HERE COMMENT HERE COMMENT HERE
-                      COMMENT HERE COMMENT HERE COMMENT HERE COMMENT HERE
-                      COMMENT HERE COMMENT HERE COMMENT HERE COMMENT HERECOMMENT
-                      HERECOMMENT HERECOMMENT HERECOMMENT HERECOMMENT
-                      HERECOMMENT HERECOMMENT HERECOMMENT HERECOMMENT
-                      HERECOMMENT HERECOMMENT HERECOMMENT HERECOMMENT
-                      HERECOMMENT HERECOMMENT HERECOMMENT HERECOMMENT
-                      HERECOMMENT HERE111111111111111111111111111
-                    </p>
-                    <div className={styles.lazyIMLike}>
-                      <span>♡</span>
-                      <span>10</span>{" "}
+                {current.comments.map((comment) => (
+                  <li className={styles.commentContent} key={comment.aId}>
+                    <div className={styles.commentLeftPart}>
+                      <img src={comment.aImg}></img>
                     </div>
-                  </div>
-                </li>
-                <li className={styles.commentContent}>
-                  <div className={styles.commentLeftPart}>
-                    <img src="https://i.pravatar.cc/150?img=2"></img>
-                  </div>
-                  <div className={styles.commentContent}>
-                    <p>
-                      COMMENT HERE COMMENT HERE COMMENT HERE COMMENT HERE
-                      COMMENT HERE COMMENT HERE COMMENT HERE COMMENT HERE
-                      COMMENT HERE COMMENT HERE COMMENT HERE COMMENT HERECOMMENT
-                      HERECOMMENT HERECOMMENT HERECOMMENT HERECOMMENT
-                      HERECOMMENT HERECOMMENT HERECOMMENT HERECOMMENT
-                      HERECOMMENT HERECOMMENT HERECOMMENT HERECOMMENT
-                      HERECOMMENT HERECOMMENT HERECOMMENT HERECOMMENT
-                      HERECOMMENT HERE
-                    </p>
-                    <span>Likes:10</span>
-                  </div>
-                </li>
-                <li className={styles.commentContent}>
-                  <div className={styles.commentLeftPart}>
-                    <img src="https://i.pravatar.cc/150?img=2"></img>
-                  </div>
-                  <div className={styles.commentContent}>
-                    <p>
-                      COMMENT HERE COMMENT HERE COMMENT HERE COMMENT HERE
-                      COMMENT HERE COMMENT HERE COMMENT HERE COMMENT HERE
-                      COMMENT HERE COMMENT HERE COMMENT HERE COMMENT HERECOMMENT
-                      HERECOMMENT HERECOMMENT HERECOMMENT HERECOMMENT
-                      HERECOMMENT HERECOMMENT HERECOMMENT HERECOMMENT
-                      HERECOMMENT HERECOMMENT HERECOMMENT HERECOMMENT
-                      HERECOMMENT HERECOMMENT HERECOMMENT HERECOMMENT
-                      HERECOMMENT HERE
-                    </p>
-                    <span>Likes:10</span>
-                  </div>
-                </li>
-                <li className={styles.commentContent}>
-                  <div className={styles.commentLeftPart}>
-                    <img src="https://i.pravatar.cc/150?img=2"></img>
-                  </div>
-                  <div className={styles.commentContent}>
-                    <p>
-                      COMMENT HERE COMMENT HERE COMMENT HERE COMMENT HERE
-                      COMMENT HERE COMMENT HERE COMMENT HERE COMMENT HERE
-                      COMMENT HERE COMMENT HERE COMMENT HERE COMMENT HERECOMMENT
-                      HERECOMMENT HERECOMMENT HERECOMMENT HERECOMMENT
-                      HERECOMMENT HERECOMMENT HERECOMMENT HERECOMMENT
-                      HERECOMMENT HERECOMMENT HERECOMMENT HERECOMMENT
-                      HERECOMMENT HERECOMMENT HERECOMMENT HERECOMMENT
-                      HERECOMMENT HERE
-                    </p>
-                    <span>Likes:10</span>
-                  </div>
-                </li>
+                    <div className={styles.commentContent}>
+                      <p>{comment.commentText}</p>
+                      <div className={styles.lazyIMLike}>
+                        <span>♡</span>
+                        <span>{comment.commentLikes}</span>{" "}
+                      </div>
+                    </div>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
