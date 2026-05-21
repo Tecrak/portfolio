@@ -13,12 +13,6 @@ export default function OpenedText({
   imgOpened: number;
   selectedImg: (imgID: number) => boolean;
 }) {
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, []);
   const current = mData.find((item) => item._id === imgOpened);
 
   if (!current) return null;

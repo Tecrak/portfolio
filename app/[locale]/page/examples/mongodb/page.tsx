@@ -18,7 +18,16 @@ export default function MongoDBPage() {
     const valid = imgID === imgOpened;
     return valid;
   }
-
+  useEffect(() => {
+    if (imgOpened > 0) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [imgOpened]);
   return (
     <div className="mainMPage">
       <button className="newPhotoBttn">Add new</button>
