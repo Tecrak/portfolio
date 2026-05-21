@@ -5,20 +5,22 @@
   height: 100%;
   width: 100%;
   z-index: 3;
-  background: rgba(0, 0, 0, 0.384);
+  background: rgba(0, 0, 0, 0.723);
 }
 .cardContent {
   position: relative;
   width: 95%;
+  border: 4px var(--skills-borders) solid;
+  border-radius: 15px 0px 0px 15px;
+  top: 20px;
+  overflow: hidden;
   margin: 0 auto;
-  background: var(--skills-borders);
+  background: var(--kindOfList-color);
 }
 .cardItem {
-  /* background: yellow; */
   display: flex;
 }
 .cardImg {
-  background: green;
   display: flex;
 }
 .cardImg img {
@@ -26,32 +28,35 @@
   max-width: 700px;
 }
 .commentSection {
-  background: pink;
   width: 100%;
   max-height: 300px;
   overflow: scroll;
   overflow-x: hidden;
 }
 .bttnsSection {
-  background: red;
-  padding: 2px;
+  padding: 6px;
+  border-bottom: 1px var(--skills-borders) solid;
+  background: var(--skills-mainArea-bg);
+  border-radius: 0px 0px 10px 10px;
   display: flex;
   justify-content: space-between;
 }
 .commentContent {
-  background: purple;
   position: relative;
   display: flex;
   width: 100%;
   margin: 5px;
+  background: var(--sideBar-list-hover);
+  border-radius: 10px;
 }
 .commentLeftPart img {
   border-radius: 100%;
   width: 55px;
 }
-.commentContent p {
-  background: green;
-}
-.commentContent span {
-  background: blue;
+
+.lazyIMLike {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

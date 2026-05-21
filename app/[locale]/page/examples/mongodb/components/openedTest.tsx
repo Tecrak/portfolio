@@ -51,8 +51,10 @@ export default function OpenedText({
                       HERECOMMENT HERECOMMENT HERECOMMENT HERECOMMENT
                       HERECOMMENT HERE111111111111111111111111111
                     </p>
-                    <span>Likes</span>
-                    <span>10</span>
+                    <div className={styles.lazyIMLike}>
+                      <span>♡</span>
+                      <span>10</span>{" "}
+                    </div>
                   </div>
                 </li>
                 <li className={styles.commentContent}>
