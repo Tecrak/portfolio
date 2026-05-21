@@ -28,6 +28,9 @@
 .commentSection {
   background: pink;
   width: 100%;
+  max-height: 300px;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 .bttnsSection {
   background: red;
@@ -40,6 +43,7 @@
   position: relative;
   display: flex;
   width: 100%;
+  margin: 5px;
 }
 .commentLeftPart img {
   border-radius: 100%;
@@ -50,7 +54,4 @@
 }
 .commentContent span {
   background: blue;
-  position: absolute;
-  right: 0px;
-  bottom: 0px;
 }

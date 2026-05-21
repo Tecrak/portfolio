@@ -49,6 +49,61 @@ export default function OpenedText({
                       HERECOMMENT HERECOMMENT HERECOMMENT HERECOMMENT
                       HERECOMMENT HERECOMMENT HERECOMMENT HERECOMMENT
                       HERECOMMENT HERECOMMENT HERECOMMENT HERECOMMENT
+                      HERECOMMENT HERE111111111111111111111111111
+                    </p>
+                    <span>Likes</span>
+                    <span>10</span>
+                  </div>
+                </li>
+                <li className={styles.commentContent}>
+                  <div className={styles.commentLeftPart}>
+                    <img src="https://i.pravatar.cc/150?img=2"></img>
+                  </div>
+                  <div className={styles.commentContent}>
+                    <p>
+                      COMMENT HERE COMMENT HERE COMMENT HERE COMMENT HERE
+                      COMMENT HERE COMMENT HERE COMMENT HERE COMMENT HERE
+                      COMMENT HERE COMMENT HERE COMMENT HERE COMMENT HERECOMMENT
+                      HERECOMMENT HERECOMMENT HERECOMMENT HERECOMMENT
+                      HERECOMMENT HERECOMMENT HERECOMMENT HERECOMMENT
+                      HERECOMMENT HERECOMMENT HERECOMMENT HERECOMMENT
+                      HERECOMMENT HERECOMMENT HERECOMMENT HERECOMMENT
+                      HERECOMMENT HERE
+                    </p>
+                    <span>Likes:10</span>
+                  </div>
+                </li>
+                <li className={styles.commentContent}>
+                  <div className={styles.commentLeftPart}>
+                    <img src="https://i.pravatar.cc/150?img=2"></img>
+                  </div>
+                  <div className={styles.commentContent}>
+                    <p>
+                      COMMENT HERE COMMENT HERE COMMENT HERE COMMENT HERE
+                      COMMENT HERE COMMENT HERE COMMENT HERE COMMENT HERE
+                      COMMENT HERE COMMENT HERE COMMENT HERE COMMENT HERECOMMENT
+                      HERECOMMENT HERECOMMENT HERECOMMENT HERECOMMENT
+                      HERECOMMENT HERECOMMENT HERECOMMENT HERECOMMENT
+                      HERECOMMENT HERECOMMENT HERECOMMENT HERECOMMENT
+                      HERECOMMENT HERECOMMENT HERECOMMENT HERECOMMENT
+                      HERECOMMENT HERE
+                    </p>
+                    <span>Likes:10</span>
+                  </div>
+                </li>
+                <li className={styles.commentContent}>
+                  <div className={styles.commentLeftPart}>
+                    <img src="https://i.pravatar.cc/150?img=2"></img>
+                  </div>
+                  <div className={styles.commentContent}>
+                    <p>
+                      COMMENT HERE COMMENT HERE COMMENT HERE COMMENT HERE
+                      COMMENT HERE COMMENT HERE COMMENT HERE COMMENT HERE
+                      COMMENT HERE COMMENT HERE COMMENT HERE COMMENT HERECOMMENT
+                      HERECOMMENT HERECOMMENT HERECOMMENT HERECOMMENT
+                      HERECOMMENT HERECOMMENT HERECOMMENT HERECOMMENT
+                      HERECOMMENT HERECOMMENT HERECOMMENT HERECOMMENT
+                      HERECOMMENT HERECOMMENT HERECOMMENT HERECOMMENT
                       HERECOMMENT HERE
                     </p>
                     <span>Likes:10</span>
