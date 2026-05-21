@@ -24,21 +24,33 @@ export default function OpenedText({
       <ul className={styles.cardContent}>
         <li className={styles.cardItem}>
           <div className={styles.cardImg}>
-            <img src="https://i.pravatar.cc/150?img=7"></img>
+            <img src="https://i.pravatar.cc/150?img=11"></img>
           </div>
           <div className={styles.commentSection}>
             <div className={styles.bttnsSection}>
-              <button>Like</button>
+              <div className={styles.likeBttn}>
+                <button>Like</button>
+                <span>100</span>
+              </div>
+              <span>21.21.2222</span>
             </div>
             <div className={styles.commentsBlock}>
               <ul>
                 <li className={styles.commentContent}>
                   <div className={styles.commentLeftPart}>
                     <img src="https://i.pravatar.cc/150?img=2"></img>
-                    <span>21.21.2222</span>
                   </div>
                   <div className={styles.commentContent}>
-                    <p>COMMENT HERE</p>
+                    <p>
+                      COMMENT HERE COMMENT HERE COMMENT HERE COMMENT HERE
+                      COMMENT HERE COMMENT HERE COMMENT HERE COMMENT HERE
+                      COMMENT HERE COMMENT HERE COMMENT HERE COMMENT HERECOMMENT
+                      HERECOMMENT HERECOMMENT HERECOMMENT HERECOMMENT
+                      HERECOMMENT HERECOMMENT HERECOMMENT HERECOMMENT
+                      HERECOMMENT HERECOMMENT HERECOMMENT HERECOMMENT
+                      HERECOMMENT HERECOMMENT HERECOMMENT HERECOMMENT
+                      HERECOMMENT HERE
+                    </p>
                     <span>Likes:10</span>
                   </div>
                 </li>
