@@ -46,6 +46,18 @@ export const mData: Person[] = [
         commentText: "Приємно співпрацювати.",
         commentLikes: 0,
       },
+      {
+        aId: 5,
+        aImg: "https://i.pravatar.cc/150?img=19",
+        commentText: "Приємно співпрацювати.",
+        commentLikes: 0,
+      },
+      {
+        aId: 6,
+        aImg: "https://i.pravatar.cc/150?img=21",
+        commentText: "Приємно співпрацювати.",
+        commentLikes: 0,
+      },
     ],
   },
   {

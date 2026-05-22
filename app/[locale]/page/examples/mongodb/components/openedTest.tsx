@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Person } from "../config/data";
+import { createPortal } from "react-dom";
 import styles from "./styles/openedCard.module.css";
 
 export default function OpenedText({
@@ -16,9 +17,9 @@ export default function OpenedText({
   const current = mData.find((item) => item._id === imgOpened);
 
   if (!current) return null;
-  return (
+  return createPortal(
     <div className={styles.openedCard} onClick={() => setImgOpened(0)}>
-      <ul className={styles.cardContent}>
+      <ul className={styles.cardContent} onClick={(e) => e.stopPropagation()}>
         <li className={styles.cardItem} key={current._id}>
           <div className={styles.cardImg}>
             <img src={current.imgSrc}></img>
@@ -52,6 +53,7 @@ export default function OpenedText({
           </div>
         </li>
       </ul>
-    </div>
+    </div>,
+    document.body,
   );
 }
