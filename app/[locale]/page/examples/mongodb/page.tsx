@@ -5,7 +5,7 @@ import { mData } from "./config/data";
 import { useEffect, useState } from "react";
 import { useMongopeople, MongoPerson } from "./api/useMPeople";
 import ImgCard from "./components/imgCard";
-import OpenedText from "./components/openedTest";
+import OpenedCard from "./components/openedCard";
 
 export default function MongoDBPage() {
   // const { data: people = [], isLoading, isError } = useMongopeople();
@@ -37,7 +37,7 @@ export default function MongoDBPage() {
         imgOpened={imgOpened}
         selectedImg={selectedImg}
       />
-      <OpenedText
+      <OpenedCard
         mData={mData}
         setImgOpened={setImgOpened}
         imgOpened={imgOpened}

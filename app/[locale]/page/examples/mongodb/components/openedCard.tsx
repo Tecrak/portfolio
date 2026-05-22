@@ -1,9 +1,9 @@
-"use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Person } from "../config/data";
-import "./styles/openedCard.module.css";
+import { createPortal } from "react-dom";
+import styles from "./styles/openedCard.module.css";
 
-export default function ImgCard({
+export default function OpenedText({
   mData,
   setImgOpened,
   imgOpened,
@@ -17,57 +17,43 @@ export default function ImgCard({
   const current = mData.find((item) => item._id === imgOpened);
 
   if (!current) return null;
-  return (
-    <div className="imgCardBackground">
-      <ul className="imgList">
-        <li key={current._id}>
-          <div className="comOpenned imgBox">
-            <img
-              src={current.imgSrc}
-              onClick={() =>
-                imgOpened <= 0 ? setImgOpened(current._id) : setImgOpened(0)
-              }></img>
-            {/* <div className="deleteBox"> */}
-            <div className="bttnSection">
-              <div className="likeBox">
-                <button className="likeBttn notLiked">❤️ Like</button>
-                <span className="commsCount">{current.likeCount}</span>
+  return createPortal(
+    <div className={styles.openedCard} onClick={() => setImgOpened(0)}>
+      <ul className={styles.cardContent} onClick={(e) => e.stopPropagation()}>
+        <li className={styles.cardItem} key={current._id}>
+          <div className={styles.cardImg}>
+            <img src={current.imgSrc}></img>
+          </div>
+          <div className={styles.commentSection}>
+            <div className={styles.bttnsSection}>
+              <div className={styles.likeBttn}>
+                <button>Like</button>
+                <span>{current.likeCount}</span>
               </div>
-              <ul className="commentsBttn">
-                <span>💬</span>
-                {current.comments.map((cData) => (
-                  <li
-                    key={`${cData.aId}+"a"`}
-                    className="commentBlock"
-                    style={
-                      selectedImg(current._id)
-                        ? { display: "block" }
-                        : { display: "none" }
-                    }>
-                    <div className="commentTopPart">
-                      <img src={current.imgSrc}></img>
-                      <p className="commentName">{}</p>
-                      <p className="commentDate">22.2.2222</p>
+              <span>{current.date}</span>
+            </div>
+            <div className={styles.commentsBlock}>
+              <ul>
+                {current.comments.map((comment) => (
+                  <li className={styles.commentContent} key={comment.aId}>
+                    <div className={styles.commentLeftPart}>
+                      <img src={comment.aImg}></img>
                     </div>
-                    <div className="commentContent">
-                      <p>{cData.comment}</p>
+                    <div className={styles.commentContent}>
+                      <p>{comment.commentText}</p>
+                      <div className={styles.lazyIMLike}>
+                        <span>♡</span>
+                        <span>{comment.commentLikes}</span>{" "}
+                      </div>
                     </div>
                   </li>
                 ))}
-                <div
-                  className="newCommentBox"
-                  style={
-                    selectedImg(current._id)
-                      ? { display: "block" }
-                      : { display: "none" }
-                  }>
-                  <input type="text"></input>
-                </div>
               </ul>
             </div>
           </div>
         </li>
       </ul>
-    </div>
+    </div>,
+    document.body,
   );
 }
