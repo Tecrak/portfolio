@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { Person } from "../config/data";
 import styles from "./styles/imgCard.module.css";
+import LikeBttn from "./likeBttn";
 
 export default function ImgCard({
   mData,
@@ -14,7 +15,6 @@ export default function ImgCard({
 }) {
   useEffect(() => {
     imgOpened === "" && setImgOpened;
-    console.log(imgOpened);
   }, [imgOpened]);
   return (
     <ul className={styles.imgList}>
@@ -25,9 +25,7 @@ export default function ImgCard({
             {/* <div className="deleteBox"> */}
             <div className={styles.bttnSection}>
               <div className={styles.likeBox}>
-                <button className={`${styles.likeBttn} ${styles.notLiked}`}>
-                  ❤️ Like
-                </button>
+                <LikeBttn />
                 <span className={styles.commsCount}>{data.likeCount}</span>
               </div>
               <div

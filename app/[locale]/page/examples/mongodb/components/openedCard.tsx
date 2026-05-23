@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Person } from "../config/data";
 import { createPortal } from "react-dom";
 import styles from "./styles/openedCard.module.css";
+import LikeBttn from "./likeBttn";
 
 export default function OpenedText({
   mData,
@@ -25,7 +26,7 @@ export default function OpenedText({
           <div className={styles.commentSection}>
             <div className={styles.bttnsSection}>
               <div className={styles.likeBttn}>
-                <button>Like</button>
+                <LikeBttn />
                 <span>{current.likeCount}</span>
               </div>
               <span>{current.date}</span>
