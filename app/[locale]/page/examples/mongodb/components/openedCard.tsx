@@ -7,12 +7,10 @@ export default function OpenedText({
   mData,
   setImgOpened,
   imgOpened,
-  selectedImg,
 }: {
   mData: Person[];
   imgOpened: string;
   setImgOpened: (v: string) => void;
-  selectedImg: (imgID: string) => boolean;
 }) {
   const current = mData.find((item) => item._id === imgOpened);
 
@@ -34,8 +32,8 @@ export default function OpenedText({
             </div>
             <div className={styles.commentsBlock}>
               <ul>
-                {current.comments.map((comment) => (
-                  <li className={styles.commentContent} key={comment.aId}>
+                {current.comments.map((comment, index) => (
+                  <li className={styles.commentContent} key={index}>
                     <div className={styles.commentLeftPart}>
                       <img src={comment.aImg}></img>
                     </div>

@@ -40,7 +40,6 @@ export default function MongoDBPage() {
         mData={people}
         setImgOpened={setImgOpened}
         imgOpened={imgOpened}
-        selectedImg={selectedImg}
       />
     </div>
   );
