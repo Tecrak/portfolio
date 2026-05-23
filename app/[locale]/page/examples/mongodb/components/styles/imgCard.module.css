@@ -35,17 +35,15 @@
   justify-content: space-between;
   position: relative;
 }
-
+.likeBox {
+  display: flex;
+  align-items: center;
+}
 .likeBttn {
-  outline: none;
-  background: none;
-  cursor: pointer;
-  background: blue;
-  font-size: 0px;
+  background: transparent;
 }
 
 .commsCount {
-  margin-left: 4px;
   opacity: 0.8;
 }
 .commentsBttn {
