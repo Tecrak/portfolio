@@ -48,7 +48,23 @@ export async function GET(req: Request) {
     return NextResponse.json({ ok: false }, { status: 500 });
   }
 }
+// ─── PATCH (likes) ────────────────────────────────────
+export async function PATCH(req: Request) {
+  try {
+    const { id, increment } = await req.json();
+    // increment: 1 або -1
+    const col = await getCollection();
 
+    await col.updateOne(
+      { _id: new ObjectId(id) },
+      { $inc: { likeCount: increment } },
+    );
+    return NextResponse.json({ ok: true });
+  } catch (error) {
+    console.error("PATCH error:", error);
+    return NextResponse.json({ ok: false }, { status: 500 });
+  }
+}
 // ─── POST ─────────────────────────────────────────────
 export async function POST(req: Request) {
   try {

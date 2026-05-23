@@ -8,10 +8,14 @@ export default function ImgCard({
   mData,
   setImgOpened,
   imgOpened,
+  likes,
+  onLike,
 }: {
   mData: Person[];
   imgOpened: string;
   setImgOpened: (v: string) => void;
+  likes: Record<string, number>;
+  onLike: (id: string, increment: number) => void;
 }) {
   useEffect(() => {
     imgOpened === "" && setImgOpened;
@@ -24,7 +28,11 @@ export default function ImgCard({
             <img src={data.imgSrc} onClick={() => setImgOpened(data._id)}></img>
             {/* <div className="deleteBox"> */}
             <div className={styles.bttnSection}>
-              <LikeBttn lCount={data.likeCount} />
+              <LikeBttn
+                lCount={likes[data._id] ?? data.likeCount}
+                id={data._id}
+                onLike={onLike}
+              />
               <div
                 className={styles.commentsBttn}
                 onClick={() => setImgOpened(data._id)}>

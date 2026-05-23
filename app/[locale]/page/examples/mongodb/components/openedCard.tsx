@@ -8,10 +8,14 @@ export default function OpenedText({
   mData,
   setImgOpened,
   imgOpened,
+  likes,
+  onLike,
 }: {
   mData: Person[];
   imgOpened: string;
   setImgOpened: (v: string) => void;
+  likes: Record<string, number>;
+  onLike: (id: string, increment: number) => void;
 }) {
   const current = mData.find((item) => item._id === imgOpened);
 
@@ -25,7 +29,11 @@ export default function OpenedText({
           </div>
           <div className={styles.commentSection}>
             <div className={styles.bttnsSection}>
-              <LikeBttn lCount={current.likeCount} />
+              <LikeBttn
+                lCount={likes[current._id] ?? current.likeCount}
+                id={current._id}
+                onLike={onLike}
+              />
               <span>{current.date}</span>
             </div>
             <div className={styles.commentsBlock}>
