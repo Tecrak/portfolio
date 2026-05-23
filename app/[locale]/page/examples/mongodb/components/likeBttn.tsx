@@ -1,9 +1,12 @@
 import styles from "./styles/imgCard.module.css";
 import { Heart, MessageCircle } from "lucide-react";
-export default function LikeBttn() {
+export default function LikeBttn({ lCount }: { lCount: number }) {
   return (
-    <button className={`${styles.likeBttn} ${styles.notLiked}`}>
-      <Heart fill="red" stroke="transperent" />
-    </button>
+    <div className={styles.likeBox}>
+      <button className={`${styles.likeBttn}`}>
+        <Heart fill="red" stroke="transperent" />
+      </button>
+      <span className={styles.commsCount}>{lCount}</span>
+    </div>
   );
 }

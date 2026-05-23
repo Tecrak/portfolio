@@ -24,10 +24,7 @@ export default function ImgCard({
             <img src={data.imgSrc} onClick={() => setImgOpened(data._id)}></img>
             {/* <div className="deleteBox"> */}
             <div className={styles.bttnSection}>
-              <div className={styles.likeBox}>
-                <LikeBttn />
-                <span className={styles.commsCount}>{data.likeCount}</span>
-              </div>
+              <LikeBttn lCount={data.likeCount} />
               <div
                 className={styles.commentsBttn}
                 onClick={() => setImgOpened(data._id)}>

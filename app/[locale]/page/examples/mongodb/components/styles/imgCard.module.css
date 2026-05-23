@@ -37,14 +37,11 @@
 }
 
 .likeBttn {
-  padding: 2px 7px;
-  border-radius: 5px;
+  outline: none;
+  background: none;
   cursor: pointer;
-}
-
-.notLiked {
-  border: 1px grey solid;
-  background: transparent;
+  background: blue;
+  font-size: 0px;
 }
 
 .commsCount {

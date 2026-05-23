@@ -25,10 +25,7 @@ export default function OpenedText({
           </div>
           <div className={styles.commentSection}>
             <div className={styles.bttnsSection}>
-              <div className={styles.likeBttn}>
-                <LikeBttn />
-                <span>{current.likeCount}</span>
-              </div>
+              <LikeBttn lCount={current.likeCount} />
               <span>{current.date}</span>
             </div>
             <div className={styles.commentsBlock}>
