@@ -10,12 +10,14 @@ export default function OpenedText({
   imgOpened,
   likes,
   onLike,
+  likedIds,
 }: {
   mData: Person[];
   imgOpened: string;
   setImgOpened: (v: string) => void;
   likes: Record<string, number>;
   onLike: (id: string, increment: number) => void;
+  likedIds: Record<string, boolean>;
 }) {
   const current = mData.find((item) => item._id === imgOpened);
 
@@ -33,6 +35,7 @@ export default function OpenedText({
                 lCount={likes[current._id] ?? current.likeCount}
                 id={current._id}
                 onLike={onLike}
+                isLiked={likedIds[current._id] ?? false}
               />
               <span>{current.date}</span>
             </div>

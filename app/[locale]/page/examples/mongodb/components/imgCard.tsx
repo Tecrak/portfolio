@@ -10,12 +10,14 @@ export default function ImgCard({
   imgOpened,
   likes,
   onLike,
+  likedIds,
 }: {
   mData: Person[];
   imgOpened: string;
   setImgOpened: (v: string) => void;
   likes: Record<string, number>;
   onLike: (id: string, increment: number) => void;
+  likedIds: Record<string, boolean>;
 }) {
   useEffect(() => {
     imgOpened === "" && setImgOpened;
@@ -32,6 +34,7 @@ export default function ImgCard({
                 lCount={likes[data._id] ?? data.likeCount}
                 id={data._id}
                 onLike={onLike}
+                isLiked={likedIds[data._id] ?? false}
               />
               <div
                 className={styles.commentsBttn}

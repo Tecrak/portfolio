@@ -11,6 +11,28 @@ export default function MongoDBPage() {
   const { data: people = [], isLoading, isError } = useMongopeople();
   const [likes, setLikes] = useState<Record<string, number>>({});
   const [imgOpened, setImgOpened] = useState("");
+  const [likedIds, setLikedIds] = useState<Record<string, boolean>>({});
+
+  // ініціалізуй з localStorage при монтуванні
+  useEffect(() => {
+    if (!isLoading && people.length > 0) {
+      const initialLikes: Record<string, number> = {};
+      const initialLiked: Record<string, boolean> = {};
+      people.forEach((p: Person) => {
+        initialLikes[p._id] = p.likeCount;
+        initialLiked[p._id] = localStorage.getItem(`liked_${p._id}`) === "true";
+      });
+      setLikes(initialLikes);
+      setLikedIds(initialLiked);
+    }
+  }, [isLoading]);
+
+  function handleLike(id: string, increment: number) {
+    const newVal = !likedIds[id];
+    setLikedIds((prev) => ({ ...prev, [id]: newVal }));
+    setLikes((prev) => ({ ...prev, [id]: (prev[id] ?? 0) + increment }));
+    localStorage.setItem(`liked_${id}`, String(newVal));
+  }
 
   useEffect(() => {
     if (imgOpened !== "") {
@@ -23,18 +45,6 @@ export default function MongoDBPage() {
     };
   }, [imgOpened]);
 
-  useEffect(() => {
-    if (people.length > 0) {
-      const initial: Record<string, number> = {};
-      people.forEach((p: Person) => {
-        initial[p._id] = p.likeCount;
-      });
-      setLikes(initial);
-    }
-  }, [people]);
-  function handleLike(id: string, increment: number) {
-    setLikes((prev) => ({ ...prev, [id]: (prev[id] ?? 0) + increment }));
-  }
   if (isLoading) return <div className="pg-loading">завантаження...</div>;
   if (isError) return <div className="pg-loading">помилка підключення</div>;
 
@@ -47,6 +57,7 @@ export default function MongoDBPage() {
         imgOpened={imgOpened}
         likes={likes}
         onLike={handleLike}
+        likedIds={likedIds}
       />
       <OpenedCard
         mData={people}
@@ -54,6 +65,7 @@ export default function MongoDBPage() {
         imgOpened={imgOpened}
         likes={likes}
         onLike={handleLike}
+        likedIds={likedIds}
       />
     </div>
   );
