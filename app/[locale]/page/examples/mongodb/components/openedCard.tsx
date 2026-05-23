@@ -10,15 +10,15 @@ export default function OpenedText({
   selectedImg,
 }: {
   mData: Person[];
-  setImgOpened: (v: number) => void;
-  imgOpened: number;
-  selectedImg: (imgID: number) => boolean;
+  imgOpened: string;
+  setImgOpened: (v: string) => void;
+  selectedImg: (imgID: string) => boolean;
 }) {
   const current = mData.find((item) => item._id === imgOpened);
 
   if (!current) return null;
   return createPortal(
-    <div className={styles.openedCard} onClick={() => setImgOpened(0)}>
+    <div className={styles.openedCard} onClick={() => setImgOpened("")}>
       <ul className={styles.cardContent} onClick={(e) => e.stopPropagation()}>
         <li className={styles.cardItem} key={current._id}>
           <div className={styles.cardImg}>

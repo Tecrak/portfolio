@@ -7,15 +7,13 @@ export default function ImgCard({
   mData,
   setImgOpened,
   imgOpened,
-  selectedImg,
 }: {
   mData: Person[];
-  setImgOpened: (v: number) => void;
-  imgOpened: number;
-  selectedImg: (imgID: number) => boolean;
+  imgOpened: string;
+  setImgOpened: (v: string) => void;
 }) {
   useEffect(() => {
-    imgOpened > 0 && setImgOpened;
+    imgOpened === "" && setImgOpened;
     console.log(imgOpened);
   }, [imgOpened]);
   return (
