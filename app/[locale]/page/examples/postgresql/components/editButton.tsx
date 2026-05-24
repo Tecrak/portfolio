@@ -42,7 +42,7 @@ export default function EditButton({ data }: Props) {
           <input
             className="peopleEditInput"
             type="text"
-            placeholder={t("smthng")}
+            placeholder={t("placeHDesc")}
             value={newName}
             onChange={(e) => setNewName(e.target.value)}
             autoFocus
