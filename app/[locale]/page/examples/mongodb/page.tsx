@@ -27,13 +27,18 @@ export default function MongoDBPage() {
     }
   }, [isLoading]);
 
-  function handleLike(id: string, increment: number) {
+  async function handleLike(id: string, increment: number) {
     const newVal = !likedIds[id];
     setLikedIds((prev) => ({ ...prev, [id]: newVal }));
     setLikes((prev) => ({ ...prev, [id]: (prev[id] ?? 0) + increment }));
     localStorage.setItem(`liked_${id}`, String(newVal));
-  }
 
+    await fetch("/page/examples/mongodb/api", {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id, increment }),
+    });
+  }
   useEffect(() => {
     if (imgOpened !== "") {
       document.body.style.overflow = "hidden";
