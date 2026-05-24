@@ -99,7 +99,7 @@
     "chooseSkill": "Please choose skill",
     "skills": {
       "PostgreSQL": {
-        "description": "Description PostgreSQL here",
+        "description": "Here I decided to create something like basic database manipulations such as: Adding, Editing, Deleting data. I also decided to set limits on the name length, a filter by smallest ID first, to make things a bit more interesting. At the database level I set a limit on the number of records so the poor database doesn't crash from spam. If the limit is reached, a message will let you know. Pagination was added as well.",
         "clickMe": "Click me",
         "editBttn": "Edit",
         "deleteBttn": "Delete",

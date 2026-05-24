@@ -41,6 +41,7 @@
 }
 .likeBttn {
   background: transparent;
+  cursor: pointer;
 }
 
 .commsCount {

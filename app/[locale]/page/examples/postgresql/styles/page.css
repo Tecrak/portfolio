@@ -141,7 +141,7 @@
   align-items: center;
 }
 .pagination > button {
-  background: var(--skills-headers-bg);
+  background: transparent;
   align-items: center;
   font-size: 20px;
   font-weight: bold;

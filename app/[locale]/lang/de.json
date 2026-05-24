@@ -98,7 +98,7 @@
     "chooseSkill": "Bitte wählen Sie eine Fähigkeit",
     "skills": {
       "PostgreSQL": {
-        "description": "PostgreSQL-Beschreibung hier",
+        "description": "Hier habe ich mich entschieden, grundlegende Datenbankoperationen zu implementieren, wie: Hinzufügen, Bearbeiten und Löschen von Daten. Außerdem habe ich Längenbeschränkungen für den Namen gesetzt, einen Filter nach kleinster ID, um die Sache etwas interessanter zu machen. Auf Datenbankebene habe ich eine Begrenzung der Anzahl der Einträge gesetzt, damit die arme Datenbank nicht durch Spam zusammenbricht. Falls das Limit erreicht wird, erscheint eine entsprechende Meldung. Außerdem wurde eine Paginierung hinzugefügt.",
         "clickMe": "Klick mich",
         "editBttn": "Bearbeiten",
         "deleteBttn": "Löschen",
