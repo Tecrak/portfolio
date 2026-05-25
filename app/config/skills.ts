@@ -39,7 +39,7 @@ export const SKILLS_LIST = resolveSkills([
   { skillName: "React", lvl: "High", stage: "Active" },
   {
     skillName: "React Frameworks",
-    lvl: "Moderate",
+    lvl: "High",
     stage: "Active",
   },
   {
@@ -53,10 +53,10 @@ export const SKILLS_LIST = resolveSkills([
     stage: "Active",
   },
   { skillName: "Typescript", lvl: "High", stage: "Active" },
-  { skillName: "Node.JS", lvl: "Moderate", stage: "Active" },
+  { skillName: "Node.JS", lvl: "High", stage: "Active" },
   { skillName: "AI Promts", lvl: "Confident", stage: "Completed" },
   { skillName: "Next.JS", lvl: "High", stage: "Active" },
-  { skillName: "Next-intl", lvl: "High", stage: "Active" },
+  { skillName: "Next-intl", lvl: "Confident", stage: "Active" },
   {
     skillName: "MongoDB",
     lvl: "Moderate",
@@ -72,7 +72,7 @@ export const SKILLS_LIST = resolveSkills([
     lvl: "Moderate",
     stage: "Active",
   },
-  { skillName: "Rest API", lvl: "Moderate", stage: "Active" },
+  { skillName: "Rest API", lvl: "High", stage: "Active" },
   { skillName: "Git", lvl: "Moderate", stage: "Active" },
   { skillName: "Figma & Sketch", lvl: "Moderate", stage: "InPlan" },
   { skillName: "Vite", lvl: "Confident", stage: "Completed" },
