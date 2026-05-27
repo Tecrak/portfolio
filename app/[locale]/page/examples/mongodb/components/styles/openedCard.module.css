@@ -13,7 +13,7 @@
 
 .cardContent {
   position: relative;
-  /* width: 90%; */
+  max-width: 80%;
   border: 4px var(--skills-borders) solid;
   border-radius: 15px 0px 0px 15px;
   overflow: hidden;
