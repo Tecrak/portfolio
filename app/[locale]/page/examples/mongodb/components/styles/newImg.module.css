@@ -1,7 +1,56 @@
-.newImgBttn {
+.newImgBox {
+  background: rgba(0, 0, 0, 0.497);
+  position: fixed;
   width: 100%;
-  border-radius: 10px 10px 0px 0px;
+  height: 100%;
+  top: 0px;
+  display: flex;
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
 }
 .newImgForm {
-  background: red;
+  border-radius: 10px;
+  position: relative;
+  bottom: 30px;
+  background: var(--form-bg-colour);
+  border: 1px solid var(--skills-borders);
+  padding: 20px;
+  display: flex;
+}
+.imgBox {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+.imgBox img {
+  max-width: 400px;
+  max-height: 400px;
+}
+.kostyl p {
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.kostyl div {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.kostyl div label {
+  position: relative;
+  right: 8px;
+  margin: 5px 0px;
+  color: var(--head-text-color);
+  opacity: 0.6;
+  font-size: 15px;
+}
+.kostyl div input {
+  background: rgb(16, 17, 22);
+  border-radius: 5px;
+  height: 25px;
+  outline: none;
+  padding: 2px 5px;
+  border: 1px rgba(128, 128, 128, 0.555) solid;
 }

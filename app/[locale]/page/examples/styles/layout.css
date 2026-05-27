@@ -1,5 +1,6 @@
 :root {
   --head-text-color: rgb(40, 30, 10);
+  --form-bg-colour: red;
   --smpl-text-color: rgb(100, 80, 40);
   --kindOfList-color: rgb(255, 248, 235);
   --sideBar-list-hover: rgb(251, 220, 164);
@@ -9,6 +10,7 @@
 }
 .dark {
   --head-text-color: rgb(86, 95, 143);
+  --form-bg-colour: #171b29;
   --smpl-text-color: rgb(191, 191, 191);
   --kindOfList-color: rgb(13, 25, 60);
   --sideBar-list-hover: rgb(37, 50, 135);

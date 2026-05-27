@@ -1,6 +1,6 @@
 "use client";
 
-import "./styles/page.css";
+import styles from "./styles/page.module.css";
 import { useEffect, useState } from "react";
 import { useMongopeople, MongoPerson } from "./api/useMPeople";
 import { Person } from "./config/data";
@@ -56,6 +56,7 @@ export default function MongoDBPage() {
 
   return (
     <div className="mainMPage">
+      <button className={styles.newImgBttn}>Add new</button>
       <NewImg />
       <ImgCard
         mData={people}
