@@ -13,8 +13,8 @@ export default function MongoDBPage() {
   const [likes, setLikes] = useState<Record<string, number>>({});
   const [imgOpened, setImgOpened] = useState("");
   const [likedIds, setLikedIds] = useState<Record<string, boolean>>({});
+  const [isNewImg, setIsNewImg] = useState(false);
 
-  // ініціалізуй з localStorage при монтуванні
   useEffect(() => {
     if (!isLoading && people.length > 0) {
       const initialLikes: Record<string, number> = {};
@@ -50,14 +50,20 @@ export default function MongoDBPage() {
       document.body.style.overflow = "";
     };
   }, [imgOpened]);
-
+  useEffect(() => {
+    console.log(isNewImg);
+  }, [isNewImg]);
   if (isLoading) return <div className="pg-loading">завантаження...</div>;
   if (isError) return <div className="pg-loading">помилка підключення</div>;
 
   return (
     <div className="mainMPage">
-      <button className={styles.newImgBttn}>Add new</button>
-      <NewImg />
+      <button
+        className={styles.newImgBttn}
+        onClick={() => setIsNewImg(!isNewImg)}>
+        Add new
+      </button>
+      <NewImg isNewImg={isNewImg} setIsNewImg={setIsNewImg} />
       <ImgCard
         mData={people}
         setImgOpened={setImgOpened}

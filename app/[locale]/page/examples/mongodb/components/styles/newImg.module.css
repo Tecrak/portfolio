@@ -17,6 +17,7 @@
   border: 1px solid var(--skills-borders);
   padding: 20px;
   display: flex;
+  z-index: 3;
 }
 .imgBox {
   display: flex;
