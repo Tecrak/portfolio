@@ -1,0 +1,11 @@
+.newImgBttn {
+  width: 100%;
+  background: var(--newImg-submit);
+  padding: 3px;
+  font-weight: bold;
+  border-radius: 9px 9px 0px 0px;
+  cursor: pointer;
+}
+.newImgBttn:hover {
+  opacity: 0.9;
+}
