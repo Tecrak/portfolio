@@ -30,7 +30,9 @@ export default function NewImg() {
               className={styles.authCommInput}
             />
           </div>
-          <button type="submit">Add img</button>
+          <button type="submit" className={styles.newImgSubmit}>
+            Add img
+          </button>
         </div>
       </form>
     </div>,
