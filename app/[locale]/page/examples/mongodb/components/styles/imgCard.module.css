@@ -64,3 +64,8 @@
 .commentTopPart {
   display: flex;
 }
+.authComment {
+  background: var(--skills-borders);
+  padding: 3px;
+  border-bottom: 1px grey solid;
+}

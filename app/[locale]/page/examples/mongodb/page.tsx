@@ -6,6 +6,7 @@ import { useMongopeople, MongoPerson } from "./api/useMPeople";
 import { Person } from "./config/data";
 import ImgCard from "./components/imgCard";
 import OpenedCard from "./components/openedCard";
+import NewImg from "./components/newImg";
 
 export default function MongoDBPage() {
   const { data: people = [], isLoading, isError } = useMongopeople();
@@ -55,7 +56,7 @@ export default function MongoDBPage() {
 
   return (
     <div className="mainMPage">
-      <button className="newPhotoBttn">Add new</button>
+      <NewImg />
       <ImgCard
         mData={people}
         setImgOpened={setImgOpened}
