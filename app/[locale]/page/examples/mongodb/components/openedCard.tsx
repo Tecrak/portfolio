@@ -39,6 +39,9 @@ export default function OpenedText({
               />
               <span>{current.date}</span>
             </div>
+            <div className={styles.authComment}>
+              <p>{current.authComment}</p>
+            </div>
             <div className={styles.commentsBlock}>
               <ul>
                 {current.comments.map((comment, index) => (

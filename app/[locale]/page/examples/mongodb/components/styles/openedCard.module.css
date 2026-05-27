@@ -65,3 +65,9 @@
   align-items: center;
   justify-content: center;
 }
+.authComment {
+  padding: 0px 6px;
+  border-radius: 10px 10px 0px 0px;
+  background: var(--skills-borders);
+  border-bottom: 1px grey solid;
+}
