@@ -9,7 +9,7 @@ export type Person = {
   _id: string;
   name: string;
   imgSrc: string;
-  authComment: string;
+  authComment?: string;
   likeCount: number;
   date: string;
   comments: Comment[];
