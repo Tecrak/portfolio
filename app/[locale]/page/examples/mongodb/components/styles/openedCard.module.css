@@ -33,8 +33,21 @@
 .commentSection {
   width: 100%;
   max-height: 300px;
-  overflow: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
+}
+.commentSection::-webkit-scrollbar {
+  width: 10px;
+}
+.commentSection::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.commentSection::-webkit-scrollbar-thumb {
+  background: var(--skills-mainArea-bg);
+
+  border-radius: 20px;
+  border: 2px solid transparent;
 }
 .bttnsSection {
   padding: 6px;

@@ -20,6 +20,7 @@ export default function NewImg({
   const [imgUrl, setImgUrl] = useState("");
   const [authComment, setAuthComment] = useState("");
   const [isPending, setIsPending] = useState(false);
+  const [charCount, setCharCount] = useState(0);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -86,13 +87,18 @@ export default function NewImg({
           </div>
           <div>
             <label htmlFor="authComment">AUTHOR COMMENT</label>
-            <input
-              type="text"
+            <textarea
               name="authComment"
               value={authComment}
+              maxLength={250}
+              placeholder="Max 250 chars"
               className={styles.authCommInput}
-              onChange={(e) => setAuthComment(e.target.value)}
+              onChange={(e) => {
+                setAuthComment(e.target.value);
+                setCharCount(e.target.value.length);
+              }}
             />
+            <span className={styles.charCount}>{charCount}/250</span>
           </div>
           <button
             type="submit"
