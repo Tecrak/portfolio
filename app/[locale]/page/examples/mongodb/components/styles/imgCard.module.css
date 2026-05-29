@@ -27,7 +27,7 @@
 }
 .imgBox img {
   cursor: pointer;
-  width: 100%;
+  max-width: 242px;
   height: 242px;
   object-fit: cover;
   display: block;

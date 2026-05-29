@@ -42,6 +42,8 @@
   background: var(--skills-mainArea-bg);
   border-radius: 0px 0px 10px 10px;
   display: flex;
+  min-width: 200px;
+  align-items: center;
   justify-content: space-between;
 }
 .commentContent {
