@@ -1,6 +1,6 @@
 "use client";
 import { createPortal } from "react-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import styles from "./styles/newImg.module.css";
 
@@ -38,7 +38,19 @@ export default function NewImg({
     setImgUrl("");
     setAuthComment("");
   }
+  const [isImgValid, setIsImgValid] = useState(false);
 
+  useEffect(() => {
+    if (!imgUrl) {
+      setIsImgValid(false);
+      return;
+    }
+
+    const img = new Image();
+    img.src = imgUrl;
+    img.onload = () => setIsImgValid(true);
+    img.onerror = () => setIsImgValid(false);
+  }, [imgUrl]);
   return createPortal(
     <div
       className={styles.newImgBox}
@@ -59,12 +71,17 @@ export default function NewImg({
         <div className={styles.kostyl}>
           <p>Please provide some information to add photo :)</p>
           <div>
-            <label htmlFor="imgSrc">IMAGE URL</label>
+            <label htmlFor="imgSrc">
+              IMAGE URL {imgUrl && (isImgValid ? "✓" : "✗")}
+            </label>
             <input
               type="text"
               name="imgSrc"
               value={imgUrl}
-              onChange={(e) => setImgUrl(e.target.value)}
+              onChange={(e) => {
+                setImgUrl(e.target.value);
+                setIsImgValid(false); // скидаємо під час вводу
+              }}
             />
           </div>
           <div>
@@ -80,7 +97,7 @@ export default function NewImg({
           <button
             type="submit"
             className={styles.newImgSubmit}
-            disabled={isPending || !imgUrl}>
+            disabled={isPending || !imgUrl || !isImgValid}>
             {isPending ? "Adding..." : "Add img"}
           </button>
         </div>
