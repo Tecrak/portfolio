@@ -3,7 +3,7 @@
   margin: 10px 0px 0px 0px;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 12px;
 }
 .imgList > li {
@@ -11,6 +11,7 @@
   border: 1px solid var(--ex-panel-border, #252840);
   border-radius: 8px;
   overflow: hidden;
+  display: flex;
   transition:
     border-color 0.15s,
     transform 0.15s,
@@ -26,6 +27,10 @@
 }
 .imgBox img {
   cursor: pointer;
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
 }
 .bttnSection {
   background: var(--skills-borders);
