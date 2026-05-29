@@ -68,10 +68,16 @@ export async function PATCH(req: Request) {
 // ─── POST ─────────────────────────────────────────────
 export async function POST(req: Request) {
   try {
-    const { name } = await req.json();
+    const { imgSrc, authComment } = await req.json();
     const col = await getCollection();
 
-    await col.insertOne({ name });
+    await col.insertOne({
+      imgSrc,
+      authComment: authComment ?? "",
+      likeCount: 0,
+      date: new Date().toLocaleDateString("uk-UA"),
+      comments: [],
+    });
     return NextResponse.json({ ok: true });
   } catch (error) {
     console.error("POST error:", error);
