@@ -11,6 +11,8 @@
   --skill-bg-hover: rgb(254, 228, 84);
   --skill-li-border: grey;
   --head-nice-bg: rgb(251, 97, 97);
+  --scrollbar-main: rgba(251, 163, 0, 0.791);
+  --scrollbar-border: rgb(25, 0, 255);
 }
 .dark {
   --nav-bg: rgb(0, 28, 207); /* dark */
@@ -23,4 +25,6 @@
   --skill-bg-hover: rgb(84, 0, 0);
   --skill-li-border: black;
   --head-nice-bg: rgb(151, 50, 3);
+  --scrollbar-main: rgb(14, 14, 112);
+  --scrollbar-border: rgb(255, 179, 39);
 }

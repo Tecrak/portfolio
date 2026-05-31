@@ -42,3 +42,16 @@ input {
   outline: none;
   border: none;
 }
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-main);
+  border-top: 3px var(--scrollbar-border) solid;
+  border-bottom: 3px var(--scrollbar-border) solid;
+  border-radius: 20px;
+}

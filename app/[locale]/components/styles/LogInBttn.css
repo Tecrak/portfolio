@@ -18,9 +18,8 @@
   align-items: center;
   border-top: 0.6px grey solid;
   border-left: 0.6px grey solid;
-  border-right: 0.6px grey solid;
   padding: 2px;
-  border-radius: 5px 5px 0px 0px;
+  border-radius: 5px 0px 0px 0px;
   position: relative;
   cursor: pointer;
 }
