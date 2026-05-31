@@ -26,19 +26,11 @@ export default function LangSwitchBttn() {
   };
 
   return (
-    <div>
-      {/* <select
-        defaultValue={pathname.split("/")[1]}
-        onChange={(e) => switchLocale(e.target.value)}
-        className="langSwitcher">
-        <option value="en">EN</option>
-        <option value="ua" className="fi fi-ua"></option>
-        <option value="de">DE</option>
-      </select> */}
-      <ul className="langSwitcher">
-        <span className={`fi fi-${locale}`}></span>
+    <div className="langSwitchBox">
+      <span className={`fi fi-${locale}`}></span>
+      <ul className="langSwitcher" style={{ display: "block" }}>
         {otherLocales.map((lang) => (
-          <li key={lang}>
+          <li key={lang} onClick={() => switchLocale(lang)}>
             <span className={`fi fi-${lang}`}></span>
           </li>
         ))}

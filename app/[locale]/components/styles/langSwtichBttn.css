@@ -1,3 +1,28 @@
-select {
-  outline: none;
+.langSwitchBox {
+  text-align: center;
+  transform: scale(1.3);
+  width: 37px;
+  position: relative;
+  margin: 4px;
+  cursor: pointer;
+}
+.langSwitcher {
+  display: flex;
+  position: absolute;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  border: none;
+  top: 22px;
+}
+.langSwitcher li {
+  width: 35px;
+  padding: 2px;
+  background: var(--nav-bg);
+}
+.langSwitcher li:last-child {
+  border-radius: 0px 0px 5px 5px;
+}
+.langSwitcher li:hover {
+  background: rgb(90, 90, 90);
 }
