@@ -76,6 +76,7 @@ export default function NewImg({
               IMAGE URL {imgUrl && (isImgValid ? "✓" : "✗")}
             </label>
             <input
+              id="imgSrc"
               type="text"
               name="imgSrc"
               value={imgUrl}
@@ -88,6 +89,7 @@ export default function NewImg({
           <div>
             <label htmlFor="authComment">AUTHOR COMMENT</label>
             <textarea
+              id="authComment"
               name="authComment"
               value={authComment}
               maxLength={250}
