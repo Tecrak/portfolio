@@ -4,6 +4,7 @@ import { Person } from "../config/data";
 import styles from "./styles/imgCard.module.css";
 import LikeBttn from "./likeBttn";
 import { useMPeopleDelete } from "../api/useMPeopleDelete";
+import { useSession } from "next-auth/react";
 
 export default function ImgCard({
   mData,
@@ -21,9 +22,11 @@ export default function ImgCard({
   likedIds: Record<string, boolean>;
 }) {
   const deleteMutation = useMPeopleDelete();
+  const { data: session } = useSession();
   useEffect(() => {
     imgOpened === "" && setImgOpened;
   }, [imgOpened]);
+
   return (
     <ul className={styles.imgList}>
       {mData.map((data) => (

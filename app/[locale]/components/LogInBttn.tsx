@@ -3,10 +3,13 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import Image from "next/image";
 import "./styles/LogInBttn.css";
 import { useState } from "react";
+import Link from "next/link";
+import { useLocale } from "next-intl";
 
 export default function AuthButton() {
   const { data: session } = useSession();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const locale = useLocale();
 
   if (session) {
     return (
@@ -29,8 +32,15 @@ export default function AuthButton() {
           />
           <span>{session.user?.name}</span>
         </div>
-        <ul className="loggInMenu">
-          <li style={isMenuOpen ? { display: "block" } : { display: "none" }}>
+        <ul
+          className="loggInMenu"
+          style={isMenuOpen ? { display: "block" } : { display: "none" }}>
+          <li>
+            <Link href={`/${locale}/page/account/${session.user?.name}`}>
+              Account
+            </Link>
+          </li>
+          <li>
             <button
               className="badBoy"
               onClick={() => {
