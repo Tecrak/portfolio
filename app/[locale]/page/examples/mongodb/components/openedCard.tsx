@@ -60,6 +60,7 @@ export default function OpenedText({
                 ))}
               </ul>
             </div>
+            <div className={styles.newComment}>sds</div>
           </div>
         </li>
       </ul>

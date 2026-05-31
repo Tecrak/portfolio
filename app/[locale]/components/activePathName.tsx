@@ -7,6 +7,7 @@ import { NAVIGATION } from "../../config/navigation";
 import { useTranslations, useLocale } from "next-intl";
 import ThemeSwitchBttn from "./themeSwitchBttn";
 import LangSwitchBttn from "./langSwitchBttn";
+import LogInBttn from "./LogInBttn";
 
 function stripLocale(pathname: string) {
   return pathname.replace(/^\/(en|ua|de)/, "") || "/";
@@ -30,14 +31,16 @@ export function ActivePathName() {
         <Link
           key={link.path}
           href={`/${locale}${link.path === "/" ? "" : link.path}`}
-          className={currentPath === link.path ? "activePath" : ""}
-        >
+          className={currentPath === link.path ? "activePath" : ""}>
           {t(link.label)}
         </Link>
       ))}
       <div className="switchers">
         <ThemeSwitchBttn />
         <LangSwitchBttn />
+      </div>
+      <div className="loginBox">
+        <LogInBttn />
       </div>
     </nav>
   );

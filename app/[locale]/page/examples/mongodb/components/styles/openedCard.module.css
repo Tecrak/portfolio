@@ -87,3 +87,6 @@
   background: var(--skills-borders);
   border-bottom: 1px grey solid;
 }
+.newComment {
+  background: red;
+}
