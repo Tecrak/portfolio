@@ -6,7 +6,7 @@ import { useState } from "react";
 
 export default function AuthButton() {
   const { data: session } = useSession();
-  const [isMenuOpen, setIsMenuOpen] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   if (session) {
     return (
@@ -31,7 +31,11 @@ export default function AuthButton() {
         </div>
         <ul className="loggInMenu">
           <li style={isMenuOpen ? { display: "block" } : { display: "none" }}>
-            <button className="badBoy" onClick={() => signOut()}>
+            <button
+              className="badBoy"
+              onClick={() => {
+                signOut();
+              }}>
               Sign out
             </button>
           </li>
@@ -41,7 +45,9 @@ export default function AuthButton() {
   }
 
   return (
-    <button className="logInBttn" onClick={() => signIn("google")}>
+    <button
+      className="logInBttn"
+      onClick={() => signIn("google", undefined, { prompt: "select_account" })}>
       <img
         alt="noLogin"
         src="https://img.icons8.com/?size=100&id=118880&format=png&color=000000"
