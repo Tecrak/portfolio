@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Person } from "../config/data";
 import styles from "./styles/imgCard.module.css";
 import LikeBttn from "./likeBttn";
+import { useMPeopleDelete } from "../api/useMPeopleDelete";
 
 export default function ImgCard({
   mData,
@@ -19,6 +20,7 @@ export default function ImgCard({
   onLike: (id: string, increment: number) => void;
   likedIds: Record<string, boolean>;
 }) {
+  const deleteMutation = useMPeopleDelete();
   useEffect(() => {
     imgOpened === "" && setImgOpened;
   }, [imgOpened]);
@@ -26,6 +28,11 @@ export default function ImgCard({
     <ul className={styles.imgList}>
       {mData.map((data) => (
         <li key={data._id}>
+          <div
+            className={styles.deleteBttn}
+            onClick={() => deleteMutation.mutate(data._id)}>
+            {deleteMutation.isPending ? "..." : "X"}
+          </div>
           <div className={`${styles.comOpenned} ${styles.imgBox}`}>
             <img src={data.imgSrc} onClick={() => setImgOpened(data._id)}></img>
             <div className={styles.authCommentBLock}>

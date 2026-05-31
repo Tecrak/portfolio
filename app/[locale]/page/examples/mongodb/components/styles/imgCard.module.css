@@ -10,6 +10,7 @@
   border: 1px solid var(--ex-panel-border, #252840);
   border-radius: 8px;
   overflow: hidden;
+  position: relative;
   width: 237px;
   transition:
     border-color 0.15s,
@@ -63,10 +64,10 @@
   display: flex;
 }
 .authCommentBLock {
-  padding: 3px 6px;
+  padding: 2px 3px;
   border-bottom: 1px grey solid;
-  min-height: 45px;
-  max-height: 46px;
+  min-height: 40px;
+  max-height: 40px;
   overflow: hidden;
   width: 100%;
   word-break: break-word;
@@ -75,4 +76,16 @@
 .authCommentBLock p {
   white-space: normal;
   word-break: break-word;
+}
+.deleteBttn {
+  background: rgba(255, 0, 0, 0.62);
+  font-size: 15px;
+  padding: 2px;
+  border-radius: 0px 0px 0px 10px;
+  position: absolute;
+  right: 0px;
+  cursor: pointer;
+}
+.deleteBttn:hover {
+  background: red;
 }

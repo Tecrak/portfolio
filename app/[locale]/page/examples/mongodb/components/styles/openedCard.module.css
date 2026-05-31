@@ -33,6 +33,7 @@
 .commentSection {
   width: 100%;
   max-height: 300px;
+  word-break: break-all;
   overflow-y: auto;
   overflow-x: hidden;
 }
