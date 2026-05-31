@@ -38,8 +38,6 @@ export function ActivePathName() {
       <div className="switchers">
         <ThemeSwitchBttn />
         <LangSwitchBttn />
-      </div>
-      <div className="loginBox">
         <LogInBttn />
       </div>
     </nav>

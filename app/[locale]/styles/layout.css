@@ -3,7 +3,7 @@
   --nav-bttn-hover: rgb(255, 89, 0);
   --slider-circle: rgb(255, 255, 0);
   --slider-bg: #2400b2;
-  --nav-height:37px;
+  --nav-height: 37px;
   transition: 0.4s;
 }
 .dark {
@@ -13,14 +13,14 @@
   --slider-bg: rgb(255, 255, 0);
 }
 .pageWrapper {
-  padding-top: var(--nav-height)
+  padding-top: var(--nav-height);
 }
 .Navigation {
   background: var(--nav-bg);
   width: 100%;
   position: fixed;
-  height:var(--nav-height);
-  z-index:100;
+  height: var(--nav-height);
+  z-index: 100;
 }
 .navigationItems {
   display: flex;
@@ -60,6 +60,8 @@
 }
 .switchers {
   display: flex;
+  align-items: center;
+  justify-content: center;
   margin-left: auto;
   position: relative;
   right: 5px;
