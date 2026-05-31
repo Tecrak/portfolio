@@ -1,6 +1,6 @@
-// app/[locale]/components/authButton.tsx
 "use client";
 import { useSession, signIn, signOut } from "next-auth/react";
+import Image from "next/image";
 
 export default function AuthButton() {
   const { data: session } = useSession();
@@ -8,10 +8,12 @@ export default function AuthButton() {
   if (session) {
     return (
       <div>
-        <img
+        <Image
           src={session.user?.image ?? ""}
           width={32}
+          height={32}
           style={{ borderRadius: "50%" }}
+          alt="avatar"
         />
         <span>{session.user?.name}</span>
         <button onClick={() => signOut()}>Sign out</button>
