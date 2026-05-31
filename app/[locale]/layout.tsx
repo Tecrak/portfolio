@@ -1,5 +1,6 @@
 import "./styles/layout.css";
 import "./styles/globalvars.css";
+import "flag-icons/css/flag-icons.min.css";
 import { ActivePathName } from "./components/activePathName";
 import Providers from "../api/providers";
 import "./styles/globals.css";
