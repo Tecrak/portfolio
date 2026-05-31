@@ -35,4 +35,10 @@ button {
   border: 0px solid transparent;
   text-align: center;
   padding: 0px 5px;
+  background: none;
+  cursor: pointer;
+}
+input {
+  outline: none;
+  border: none;
 }

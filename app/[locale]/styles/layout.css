@@ -1,17 +1,3 @@
-:root {
-  --nav-bg: rgb(254, 149, 36); /* light */
-  --nav-bttn-hover: rgb(255, 89, 0);
-  --slider-circle: rgb(255, 255, 0);
-  --slider-bg: #2400b2;
-  --nav-height: 37px;
-  transition: 0.4s;
-}
-.dark {
-  --nav-bg: rgb(0, 28, 207); /* dark */
-  --nav-bttn-hover: rgb(1, 7, 122);
-  --slider-circle: #2400b2;
-  --slider-bg: rgb(255, 255, 0);
-}
 .pageWrapper {
   padding-top: var(--nav-height);
 }

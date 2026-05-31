@@ -1,4 +1,5 @@
 import "./styles/layout.css";
+import "./styles/globalvars.css";
 import { ActivePathName } from "./components/activePathName";
 import Providers from "../api/providers";
 import "./styles/globals.css";

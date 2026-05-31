@@ -10,13 +10,16 @@ export default function AuthButton() {
 
   if (session) {
     return (
-      <div className="loggedInBlock">
+      <div
+        className="loggedInBlock"
+        style={isMenuOpen ? { background: "var(--nav-bttn-hover)" } : {}}>
         <div
           className="loggedInUser"
           onClick={() => {
             setIsMenuOpen(!isMenuOpen);
             console.log(isMenuOpen);
-          }}>
+          }}
+          style={{ userSelect: "none" }}>
           <Image
             src={session.user?.image ?? ""}
             width={32}
@@ -28,7 +31,9 @@ export default function AuthButton() {
         </div>
         <ul className="loggInMenu">
           <li style={isMenuOpen ? { display: "block" } : { display: "none" }}>
-            <button onClick={() => signOut()}>Sign out</button>
+            <button className="badBoy" onClick={() => signOut()}>
+              Sign out
+            </button>
           </li>
         </ul>
       </div>
