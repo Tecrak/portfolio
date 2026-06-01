@@ -46,7 +46,7 @@ export default function ImgCard({
 
             <div className={styles.bttnSection}>
               <LikeBttn
-                lCount={data.likes?.length ?? 0}
+                lCount={likes[data._id] ?? data.likes?.length ?? 0}
                 id={data._id}
                 onLike={onLike}
                 isLiked={likedIds[data._id] ?? false}
@@ -54,7 +54,7 @@ export default function ImgCard({
               <div
                 className={styles.commentsBttn}
                 onClick={() => setImgOpened(data._id)}>
-                <span>💬</span>
+                <span>{data.comments.length}💬</span>
               </div>
             </div>
           </div>
