@@ -45,24 +45,34 @@
   background: var(--skills-mainArea-bg);
   border-radius: 0px 0px 10px 10px;
   display: flex;
-  min-width: 200px;
+  min-width: 300px;
   align-items: center;
   justify-content: space-between;
 }
 .commentContent {
   position: relative;
   display: flex;
-  width: 100%;
+  width: 97%;
   margin: 5px;
-  justify-content: space-between;
   background: var(--sideBar-list-hover);
   border-radius: 10px;
 }
+.commentText {
+  width: 100%;
+  padding-left: 8px;
+  display: flex;
+  flex-direction: column;
+}
 .commentLeftPart img {
   border-radius: 100%;
-  width: 55px;
+  width: 35px;
 }
-
+.commPerson {
+  border-bottom: 1px grey solid;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
 .lazyIMLike {
   padding: 0px 10px 0px 0px;
   display: flex;
@@ -74,6 +84,7 @@
   padding: 0px 6px;
   border-radius: 10px 10px 0px 0px;
   background: var(--skills-borders);
+
   border-bottom: 1px grey solid;
 }
 .newComment {
@@ -95,7 +106,6 @@
   min-height: 25px;
   max-height: 100px;
   width: 100%;
-
   padding: 2px;
   resize: vertical;
   outline: none;

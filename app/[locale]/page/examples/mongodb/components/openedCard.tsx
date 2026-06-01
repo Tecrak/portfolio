@@ -85,13 +85,15 @@ export default function OpenedText({
                       <img src={comment.commImg} alt={comment.commName} />
                     </div>
                     <div className={styles.commentText}>
-                      <span className={styles.commName}>
-                        {comment.commName}
-                      </span>
+                      <div className={styles.commPerson}>
+                        <span className={styles.commName}>
+                          {comment.commName}
+                        </span>
+                        <span className={styles.commDate}>
+                          {comment.commDate}
+                        </span>
+                      </div>
                       <p>{comment.commText}</p>
-                      <span className={styles.commDate}>
-                        {comment.commDate}
-                      </span>
                     </div>
                   </li>
                 ))}
