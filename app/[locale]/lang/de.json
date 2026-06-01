@@ -111,7 +111,7 @@
         "dbFull": "DB ist voll"
       },
       "MongoDB": {
-        "description": "Die Datenbank ist hier nicht perfekt, zum Beispiel: Ich habe localStorage verwendet, obwohl FingerprintJS möglich gewesen wäre, aber für den lokalen Einsatz habe ich mich für die erste Option entschieden, da sie relativ einfach ist und meiner Meinung nach (vorerst) für eine Website ohne Benutzerkonten geeignet ist. Außerdem habe ich auf Datenbankebene festgelegt, dass maximal 12 Einträge, 7 Kommentare dazu und 25 Likes zulässig sind. Die Likes werden automatisch gelöscht, um die Datenbank nicht zu überlasten und zu verhindern, dass sie durch ständiges Senden von Daten zusammenbricht. Beim Hinzufügen von Bildern habe ich mich entschieden, auf die Unterstützung für das Hochladen lokaler Bilder zu verzichten, da ich einen kostenlosen Tarif nutze und mir keine unnötigen Sorgen darüber machen möchte, ob das Geld reicht, um alles aufrechtzuerhalten."
+        "description": "Ich werde alles umgestalten, denn ich habe mich doch dazu entschlossen, OAuth hinzuzufügen, und werde nun die Datenbank darauf umstellen. Ich hoffe, in ein oder zwei Tagen ist es geschafft – und voilà! Und ich bereue es total, dass ich es nicht schon früher gemacht habe :| 01.06.2026"
       },
       "MySQL": {
         "description": "In Pläne"

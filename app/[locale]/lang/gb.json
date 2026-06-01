@@ -112,7 +112,7 @@
         "dbFull": "DB is full"
       },
       "MongoDB": {
-        "description": "The database here isn't perfect. For example, I used localStorage even though I could have used FingerprintJS, but for local use I opted for the first option because it's relatively simple and, in my opinion, suitable for a site that (for now) doesn't require an account. I also set the database limits to a maximum of 12 posts, 7 comments per post, and 25 likes. Likes will be automatically deleted to avoid cluttering the database and to prevent the database from crashing due to constant data uploads. When adding images, I decided to disable support for uploading local images, since I’m on a free plan and don’t want to worry about whether I’ll have enough money to keep everything running."
+        "description": "I'm going to have to redo everything because I finally decided to add OAuth, so now I'll be adapting the database to work with it. Hopefully it'll take a day or two, and voilà! And I really regret not adding it sooner :| 06/01/2026"
       },
       "MySQL": {
         "description": "In plan"
