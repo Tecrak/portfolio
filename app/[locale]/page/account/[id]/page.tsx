@@ -1,11 +1,10 @@
-"use client";
-import { useSession } from "next-auth/react";
+import AccountClient from "./content";
+export default async function AccountPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
 
-export default function AccountPage() {
-  const { data: session } = useSession();
-  return (
-    <div>
-      <p>Hi {session?.user?.name}</p>
-    </div>
-  );
+  return <AccountClient person={id} />;
 }

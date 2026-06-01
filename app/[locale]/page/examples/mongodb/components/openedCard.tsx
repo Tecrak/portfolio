@@ -7,6 +7,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import styles from "./styles/openedCard.module.css";
 import LikeBttn from "./likeBttn";
 import { useSession } from "next-auth/react";
+import AuthorDetails from "./authorDetails";
 
 export default function OpenedText({
   mData,
@@ -59,10 +60,11 @@ export default function OpenedText({
         <li className={styles.cardItem} key={current._id}>
           <div className={styles.cardImg}>
             <img src={current.imgSrc} className={styles.postImg}></img>
-            <div className={styles.ownerDetail}>
-              <img src={current.ownerImage}></img>
-              <p>{current.ownerName}</p>
-            </div>
+            <AuthorDetails
+              data={current}
+              person={current.ownerName}
+              personEmail={current.ownerEmail}
+            />
           </div>
           <div className={styles.commentSection}>
             <div className={styles.bttnsSection}>

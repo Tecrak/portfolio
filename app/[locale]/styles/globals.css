@@ -15,6 +15,7 @@
   text-shadow: var(--txt-shadow);
   padding: 0;
   font-size: 18px;
+  transition: 0.2s;
 }
 body {
   margin: 0;

@@ -5,6 +5,7 @@ import styles from "./styles/imgCard.module.css";
 import LikeBttn from "./likeBttn";
 import { useMPeopleDelete } from "../api/useMPeopleDelete";
 import { useSession } from "next-auth/react";
+import AuthorDetails from "./authorDetails";
 
 export default function ImgCard({
   mData,
@@ -38,10 +39,11 @@ export default function ImgCard({
               {deleteMutation.isPending ? "..." : "X"}
             </div>
           )}
-          <div className={styles.authorDetails}>
-            <img src={data.ownerImage}></img>
-            <p>{data.ownerName}</p>
-          </div>
+          <AuthorDetails
+            data={data}
+            person={data.ownerName}
+            personEmail={data.ownerEmail}
+          />
           <div className={`${styles.comOpenned} ${styles.imgBox}`}>
             <img src={data.imgSrc} onClick={() => setImgOpened(data._id)}></img>
             <div className={styles.authCommentBLock}>

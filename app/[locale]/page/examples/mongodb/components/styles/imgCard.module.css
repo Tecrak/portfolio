@@ -3,7 +3,7 @@
   margin: 10px 0px 0px 0px;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(237px, 0fr));
+  grid-template-columns: repeat(auto-fill, minmax(232px, 0fr));
   gap: 12px;
 }
 .imgList > li {
@@ -11,7 +11,7 @@
   border-radius: 8px;
   overflow: hidden;
   position: relative;
-  width: 237px;
+  width: 232px;
   transition:
     border-color 0.15s,
     transform 0.15s,
@@ -23,8 +23,8 @@
 }
 .imgBox img {
   cursor: pointer;
-  max-width: 237px;
-  height: 237px;
+  max-width: 232px;
+  height: 232px;
   object-fit: cover;
   display: block;
 }
@@ -89,20 +89,4 @@
 }
 .deleteBttn:hover {
   background: red;
-}
-.authorDetails {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: var(--reverseForImgs);
-  padding: 2px;
-  border-radius: 0px 0px 10px 0px;
-}
-.authorDetails p {
-  margin-left: 3px;
-}
-.authorDetails img {
-  width: 35px;
-  border-radius: 100%;
 }
