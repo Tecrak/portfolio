@@ -3,6 +3,7 @@ import { createPortal } from "react-dom";
 import { useEffect, useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import styles from "./styles/newImg.module.css";
+import { useSession } from "next-auth/react";
 
 export default function NewImg({
   isNewImg,
@@ -21,16 +22,26 @@ export default function NewImg({
   const [authComment, setAuthComment] = useState("");
   const [isPending, setIsPending] = useState(false);
   const [charCount, setCharCount] = useState(0);
+  const { data: session } = useSession();
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!imgUrl) return;
+    if (!imgUrl || !session?.user) return;
 
     setIsPending(true);
     await fetch("/page/examples/mongodb/api", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ imgSrc: imgUrl, authComment }),
+      body: JSON.stringify({
+        imgSrc: imgUrl,
+        authComment,
+        ownerEmail: session.user.email,
+        ownerName: session.user.name,
+        ownerImage: session.user.image,
+        date: new Date().toLocaleDateString("uk-UA"),
+        likes: [],
+        comments: [],
+      }),
     });
 
     queryClient.invalidateQueries({ queryKey: ["mongopeople"] });
@@ -82,7 +93,7 @@ export default function NewImg({
               value={imgUrl}
               onChange={(e) => {
                 setImgUrl(e.target.value);
-                setIsImgValid(false); // скидаємо під час вводу
+                setIsImgValid(false);
               }}
             />
           </div>

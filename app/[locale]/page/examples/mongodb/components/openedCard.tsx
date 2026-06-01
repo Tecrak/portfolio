@@ -33,7 +33,7 @@ export default function OpenedText({
           <div className={styles.commentSection}>
             <div className={styles.bttnsSection}>
               <LikeBttn
-                lCount={likes[current._id] ?? current.likes.length}
+                lCount={current.likes?.length ?? 0}
                 id={current._id}
                 onLike={onLike}
                 isLiked={likedIds[current._id] ?? false}

@@ -33,6 +33,7 @@ export default function MongoDBPage() {
       body: JSON.stringify({ id, userEmail, action }),
     });
   }
+
   useEffect(() => {
     if (!isLoading && people.length > 0) {
       const initialLikes: Record<string, number> = {};
@@ -40,8 +41,8 @@ export default function MongoDBPage() {
       const userEmail = session?.user?.email ?? "";
 
       people.forEach((p: Post) => {
-        initialLikes[p._id] = p.likes.length;
-        initialLiked[p._id] = p.likes.includes(userEmail);
+        initialLikes[p._id] = p.likes?.length ?? 0;
+        initialLiked[p._id] = p.likes?.includes(userEmail) ?? false;
       });
       setLikes(initialLikes);
       setLikedIds(initialLiked);

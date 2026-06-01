@@ -75,15 +75,27 @@ export async function PATCH(req: Request) {
 // ─── POST ─────────────────────────────────────────────
 export async function POST(req: Request) {
   try {
-    const { imgSrc, authComment } = await req.json();
+    const {
+      imgSrc,
+      authComment,
+      ownerEmail,
+      ownerName,
+      ownerImage,
+      date,
+      likes,
+      comments,
+    } = await req.json();
     const col = await getCollection();
 
     await col.insertOne({
       imgSrc,
       authComment: authComment ?? "",
-      likeCount: 0,
-      date: new Date().toLocaleDateString("uk-UA"),
-      comments: [],
+      ownerEmail,
+      ownerName,
+      ownerImage,
+      date,
+      likes,
+      comments,
     });
     return NextResponse.json({ ok: true });
   } catch (error) {

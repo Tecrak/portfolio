@@ -22,7 +22,6 @@ export default function ImgCard({
   likedIds: Record<string, boolean>;
 }) {
   const deleteMutation = useMPeopleDelete();
-  const { data: session } = useSession();
   useEffect(() => {
     imgOpened === "" && setImgOpened;
   }, [imgOpened]);
@@ -37,7 +36,7 @@ export default function ImgCard({
             {deleteMutation.isPending ? "..." : "X"}
           </div>
           <div className={styles.authorDetails}>
-            <img src={data.imgSrc}></img>
+            <img src={data.ownerImage}></img>
             <p>{data.ownerName}</p>
           </div>
           <div className={`${styles.comOpenned} ${styles.imgBox}`}>
@@ -48,7 +47,7 @@ export default function ImgCard({
 
             <div className={styles.bttnSection}>
               <LikeBttn
-                lCount={likes[data._id] ?? data.likes.length}
+                lCount={data.likes?.length ?? 0}
                 id={data._id}
                 onLike={onLike}
                 isLiked={likedIds[data._id] ?? false}

@@ -11,6 +11,7 @@ export type Post = {
   _id: string;
   ownerEmail: string;
   ownerName: string;
+  ownerImage: string;
   imgSrc: string;
   authComment?: string;
   date: string;
