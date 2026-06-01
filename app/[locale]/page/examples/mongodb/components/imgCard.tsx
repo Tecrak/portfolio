@@ -36,6 +36,10 @@ export default function ImgCard({
             onClick={() => deleteMutation.mutate(data._id)}>
             {deleteMutation.isPending ? "..." : "X"}
           </div>
+          <div className={styles.authorDetails}>
+            <img src={data.imgSrc}></img>
+            <p>{data.ownerName}</p>
+          </div>
           <div className={`${styles.comOpenned} ${styles.imgBox}`}>
             <img src={data.imgSrc} onClick={() => setImgOpened(data._id)}></img>
             <div className={styles.authCommentBLock}>
@@ -44,7 +48,7 @@ export default function ImgCard({
 
             <div className={styles.bttnSection}>
               <LikeBttn
-                lCount={data.likes.length}
+                lCount={likes[data._id] ?? data.likes.length}
                 id={data._id}
                 onLike={onLike}
                 isLiked={likedIds[data._id] ?? false}
