@@ -1,9 +1,11 @@
+"use client";
 import { useEffect, useState } from "react";
 import { Post } from "../config/data";
 import { Comment } from "../config/data";
 import { createPortal } from "react-dom";
 import styles from "./styles/openedCard.module.css";
 import LikeBttn from "./likeBttn";
+import { useSession } from "next-auth/react";
 
 export default function OpenedText({
   mData,
@@ -21,6 +23,7 @@ export default function OpenedText({
   likedIds: Record<string, boolean>;
 }) {
   const current = mData.find((item) => item._id === imgOpened);
+  const { data: session } = useSession();
 
   if (!current) return null;
   return createPortal(
@@ -28,7 +31,11 @@ export default function OpenedText({
       <ul className={styles.cardContent} onClick={(e) => e.stopPropagation()}>
         <li className={styles.cardItem} key={current._id}>
           <div className={styles.cardImg}>
-            <img src={current.imgSrc}></img>
+            <img src={current.imgSrc} className={styles.postImg}></img>
+            <div className={styles.ownerDetail}>
+              <img src={current.ownerImage}></img>
+              <p>{current.ownerName}</p>
+            </div>
           </div>
           <div className={styles.commentSection}>
             <div className={styles.bttnsSection}>
@@ -63,7 +70,14 @@ export default function OpenedText({
                 ))}
               </ul>
             </div>
-            <div className={styles.newComment}>sds</div>
+            <div className={styles.newComment}>
+              <p>{session?.user?.name}</p>
+              <img
+                src={
+                  session?.user?.image !== null ? session?.user?.image : ""
+                }></img>
+              <textarea></textarea>
+            </div>
           </div>
         </li>
       </ul>

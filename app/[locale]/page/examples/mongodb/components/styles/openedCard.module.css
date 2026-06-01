@@ -22,11 +22,13 @@
 }
 .cardItem {
   display: flex;
+  position: relative;
 }
 .cardImg {
   display: flex;
+  position: relative;
 }
-.cardImg img {
+.postImg {
   min-width: 300px;
   max-width: 700px;
 }
@@ -76,4 +78,20 @@
 }
 .newComment {
   background: red;
+  margin-top: auto;
+}
+.ownerDetail {
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.322);
+  padding: 3px;
+  border-radius: 0px 0px 10px 0px;
+  position: absolute;
+}
+
+.ownerDetail img {
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  margin-right: 5px;
 }
