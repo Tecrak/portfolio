@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Person } from "../config/data";
+import { Post } from "../config/data";
 import styles from "./styles/imgCard.module.css";
 import LikeBttn from "./likeBttn";
 import { useMPeopleDelete } from "../api/useMPeopleDelete";
@@ -14,7 +14,7 @@ export default function ImgCard({
   onLike,
   likedIds,
 }: {
-  mData: Person[];
+  mData: Post[];
   imgOpened: string;
   setImgOpened: (v: string) => void;
   likes: Record<string, number>;
@@ -44,7 +44,7 @@ export default function ImgCard({
 
             <div className={styles.bttnSection}>
               <LikeBttn
-                lCount={likes[data._id] ?? data.likeCount}
+                lCount={data.likes.length}
                 id={data._id}
                 onLike={onLike}
                 isLiked={likedIds[data._id] ?? false}

@@ -1,46 +1,19 @@
 export type Comment = {
-  aId: string;
-  aImg: string;
-  commentText: string;
-  commentLikes: number;
+  commID: string;
+  commName: string;
+  commEmail: string;
+  commImg: string;
+  commText: string;
+  commDate: string;
 };
 
-export type Person = {
+export type Post = {
   _id: string;
-  name: string;
+  ownerEmail: string;
+  ownerName: string;
   imgSrc: string;
   authComment?: string;
-  likeCount: number;
   date: string;
+  likes: string[]; // масив email
   comments: Comment[];
 };
-
-const account = [
-  {
-    id: 1,
-    name: "Stas",
-    email: "staspon@gmail.com",
-    imgCards: [
-      {
-        imgCardId: "1",
-        imgCardSrc: "https:sssss",
-        imgCardText: "Hi, First one",
-        likes: [
-          {
-            likeEmail: "tester@gmail.com",
-            likeName: "Tester",
-            likeCount: "1",
-          },
-        ],
-        comments: [
-          {
-            commID: "1",
-            commName: "Tester",
-            commEmail: "tester@gmail.com",
-            commText: "Nice first!",
-          },
-        ],
-      },
-    ],
-  },
-];

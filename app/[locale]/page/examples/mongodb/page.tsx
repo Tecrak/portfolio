@@ -3,43 +3,50 @@
 import styles from "./styles/page.module.css";
 import { useEffect, useState } from "react";
 import { useMongopeople, MongoPerson } from "./api/useMPeople";
-import { Person } from "./config/data";
+import { Post } from "./config/data";
 import ImgCard from "./components/imgCard";
 import OpenedCard from "./components/openedCard";
 import NewImg from "./components/newImg";
+import { useSession } from "next-auth/react";
 
 export default function MongoDBPage() {
   const { data: people = [], isLoading, isError } = useMongopeople();
   const [likes, setLikes] = useState<Record<string, number>>({});
   const [imgOpened, setImgOpened] = useState("");
   const [likedIds, setLikedIds] = useState<Record<string, boolean>>({});
+  const { data: session } = useSession();
   const [isNewImg, setIsNewImg] = useState(false);
 
-  useEffect(() => {
-    if (!isLoading && people.length > 0) {
-      const initialLikes: Record<string, number> = {};
-      const initialLiked: Record<string, boolean> = {};
-      people.forEach((p: Person) => {
-        initialLikes[p._id] = p.likeCount;
-        initialLiked[p._id] = localStorage.getItem(`liked_${p._id}`) === "true";
-      });
-      setLikes(initialLikes);
-      setLikedIds(initialLiked);
-    }
-  }, [isLoading]);
-
   async function handleLike(id: string, increment: number) {
-    const newVal = !likedIds[id];
-    setLikedIds((prev) => ({ ...prev, [id]: newVal }));
+    if (!session?.user?.email) return; // не авторизований
+
+    const userEmail = session.user.email;
+    const isCurrentlyLiked = likedIds[id];
+    const action = isCurrentlyLiked ? "unlike" : "like";
+
+    setLikedIds((prev) => ({ ...prev, [id]: !isCurrentlyLiked }));
     setLikes((prev) => ({ ...prev, [id]: (prev[id] ?? 0) + increment }));
-    localStorage.setItem(`liked_${id}`, String(newVal));
 
     await fetch("/page/examples/mongodb/api", {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ id, increment }),
+      body: JSON.stringify({ id, userEmail, action }),
     });
   }
+  useEffect(() => {
+    if (!isLoading && people.length > 0) {
+      const initialLikes: Record<string, number> = {};
+      const initialLiked: Record<string, boolean> = {};
+      const userEmail = session?.user?.email ?? "";
+
+      people.forEach((p: Post) => {
+        initialLikes[p._id] = p.likes.length;
+        initialLiked[p._id] = p.likes.includes(userEmail);
+      });
+      setLikes(initialLikes);
+      setLikedIds(initialLiked);
+    }
+  }, [isLoading, session]);
   useEffect(() => {
     if (imgOpened !== "") {
       document.body.style.overflow = "hidden";

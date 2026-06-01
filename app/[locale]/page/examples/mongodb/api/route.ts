@@ -51,14 +51,21 @@ export async function GET(req: Request) {
 // ─── PATCH (likes) ────────────────────────────────────
 export async function PATCH(req: Request) {
   try {
-    const { id, increment } = await req.json();
-    // increment: 1 або -1
+    const { id, userEmail, action } = await req.json();
+    // action: "like" або "unlike"
     const col = await getCollection();
 
-    await col.updateOne(
-      { _id: new ObjectId(id) },
-      { $inc: { likeCount: increment } },
-    );
+    if (action === "like") {
+      await col.updateOne(
+        { _id: new ObjectId(id) },
+        { $addToSet: { likes: userEmail } },
+      );
+    } else {
+      await col.updateOne(
+        { _id: new ObjectId(id) },
+        { $pull: { likes: userEmail } },
+      );
+    }
     return NextResponse.json({ ok: true });
   } catch (error) {
     console.error("PATCH error:", error);

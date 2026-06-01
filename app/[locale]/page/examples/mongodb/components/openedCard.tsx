@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Person } from "../config/data";
+import { Post } from "../config/data";
+import { Comment } from "../config/data";
 import { createPortal } from "react-dom";
 import styles from "./styles/openedCard.module.css";
 import LikeBttn from "./likeBttn";
@@ -12,7 +13,7 @@ export default function OpenedText({
   onLike,
   likedIds,
 }: {
-  mData: Person[];
+  mData: Post[];
   imgOpened: string;
   setImgOpened: (v: string) => void;
   likes: Record<string, number>;
@@ -32,7 +33,7 @@ export default function OpenedText({
           <div className={styles.commentSection}>
             <div className={styles.bttnsSection}>
               <LikeBttn
-                lCount={likes[current._id] ?? current.likeCount}
+                lCount={current.likes.length}
                 id={current._id}
                 onLike={onLike}
                 isLiked={likedIds[current._id] ?? false}
@@ -44,17 +45,19 @@ export default function OpenedText({
             </div>
             <div className={styles.commentsBlock}>
               <ul>
-                {current.comments.map((comment, index) => (
-                  <li className={styles.commentContent} key={index}>
+                {current.comments.map((comment: Comment) => (
+                  <li className={styles.commentContent} key={comment.commID}>
                     <div className={styles.commentLeftPart}>
-                      <img src={comment.aImg}></img>
+                      <img src={comment.commImg} alt={comment.commName} />
                     </div>
-                    <div className={styles.commentContent}>
-                      <p>{comment.commentText}</p>
-                      <div className={styles.lazyIMLike}>
-                        <span>♡</span>
-                        <span>{comment.commentLikes}</span>{" "}
-                      </div>
+                    <div className={styles.commentText}>
+                      <span className={styles.commName}>
+                        {comment.commName}
+                      </span>
+                      <p>{comment.commText}</p>
+                      <span className={styles.commDate}>
+                        {comment.commDate}
+                      </span>
                     </div>
                   </li>
                 ))}
