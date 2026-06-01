@@ -68,10 +68,18 @@ export default function MongoDBPage() {
     <div className="mainMPage">
       <button
         className={styles.newImgBttn}
-        onClick={() => setIsNewImg(!isNewImg)}>
-        Add new
+        onClick={() => setIsNewImg(!isNewImg)}
+        style={
+          !session?.user?.email
+            ? { pointerEvents: "none" }
+            : { pointerEvents: "all" }
+        }
+        disabled={!session?.user?.email}>
+        {!session?.user?.email ? "Please log in to leave image" : "Add new"}
       </button>
+
       <NewImg isNewImg={isNewImg} setIsNewImg={setIsNewImg} />
+
       <ImgCard
         mData={people}
         setImgOpened={setImgOpened}

@@ -70,14 +70,18 @@ export default function OpenedText({
                 ))}
               </ul>
             </div>
-            <div className={styles.newComment}>
-              <p>{session?.user?.name}</p>
-              <img
-                src={
-                  session?.user?.image !== null ? session?.user?.image : ""
-                }></img>
-              <textarea></textarea>
-            </div>
+            {session?.user?.image !== null ? (
+              <div className={styles.newComment}>
+                <p>{session?.user?.name}</p>
+                <img
+                  src={
+                    session?.user?.image !== null ? session?.user?.image : ""
+                  }></img>
+                <textarea></textarea>
+              </div>
+            ) : (
+              <p>Please Login </p>
+            )}
           </div>
         </li>
       </ul>

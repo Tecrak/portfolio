@@ -4,7 +4,6 @@ import { Post } from "../config/data";
 import styles from "./styles/imgCard.module.css";
 import LikeBttn from "./likeBttn";
 import { useMPeopleDelete } from "../api/useMPeopleDelete";
-import { useSession } from "next-auth/react";
 
 export default function ImgCard({
   mData,

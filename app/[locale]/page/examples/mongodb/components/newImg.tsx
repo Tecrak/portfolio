@@ -63,6 +63,7 @@ export default function NewImg({
     img.onload = () => setIsImgValid(true);
     img.onerror = () => setIsImgValid(false);
   }, [imgUrl]);
+
   return createPortal(
     <div
       className={styles.newImgBox}
