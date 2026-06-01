@@ -48,11 +48,10 @@ export async function GET(req: Request) {
     return NextResponse.json({ ok: false }, { status: 500 });
   }
 }
-// ─── PATCH (likes) ────────────────────────────────────
+// ─── PATCH ────────────────────────────────────
 export async function PATCH(req: Request) {
   try {
-    const { id, userEmail, action } = await req.json();
-    // action: "like" або "unlike"
+    const { id, action, userEmail, increment, comment } = await req.json();
     const col = await getCollection();
 
     if (action === "like") {
@@ -60,12 +59,18 @@ export async function PATCH(req: Request) {
         { _id: new ObjectId(id) },
         { $addToSet: { likes: userEmail } },
       );
-    } else {
+    } else if (action === "unlike") {
       await col.updateOne(
         { _id: new ObjectId(id) },
         { $pull: { likes: userEmail } },
       );
+    } else if (action === "comment") {
+      await col.updateOne(
+        { _id: new ObjectId(id) },
+        { $push: { comments: comment } },
+      );
     }
+
     return NextResponse.json({ ok: true });
   } catch (error) {
     console.error("PATCH error:", error);

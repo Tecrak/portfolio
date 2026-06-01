@@ -1,4 +1,5 @@
 :root {
+  --reverseForImgs: rgba(255, 255, 255, 0.558);
   --nav-bg: rgb(254, 149, 36); /* light */
   --nav-bttn-hover: rgb(255, 89, 0);
   --slider-circle: rgb(255, 255, 0);
@@ -15,6 +16,7 @@
   --scrollbar-border: rgb(25, 0, 255);
 }
 .dark {
+  --reverseForImgs: rgba(0, 0, 0, 0.582);
   --nav-bg: rgb(0, 28, 207); /* dark */
   --nav-bttn-hover: rgb(1, 7, 122);
   --slider-circle: #2400b2;

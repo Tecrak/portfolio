@@ -77,13 +77,47 @@
   border-bottom: 1px grey solid;
 }
 .newComment {
-  background: red;
-  margin-top: auto;
+  margin-top: 9px;
+  padding: 2px 0px;
+  border-top: 1px grey solid;
+  border-radius: 5px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.newComment img {
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  margin-right: 5px;
+}
+.newComment textarea {
+  min-height: 25px;
+  max-height: 100px;
+  width: 100%;
+
+  padding: 2px;
+  resize: vertical;
+  outline: none;
+  border: 0.3px black solid;
+  background: var(--sideBar-list-hover);
+}
+.newComment button {
+  background: var(--nav-bg);
+  border: 1px var(--reverseForImgs) solid;
+  padding: 2px 10px;
+  width: 100px;
+  border-radius: 10px;
+  margin-left: auto;
+}
+.commentAuthor {
+  display: flex;
+  align-items: center;
 }
 .ownerDetail {
   display: flex;
   align-items: center;
-  background: rgba(0, 0, 0, 0.322);
+  background: var(--reverseForImgs);
   padding: 3px;
   border-radius: 0px 0px 10px 0px;
   position: absolute;

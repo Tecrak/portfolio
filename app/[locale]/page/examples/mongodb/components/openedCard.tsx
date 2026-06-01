@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Post } from "../config/data";
 import { Comment } from "../config/data";
 import { createPortal } from "react-dom";
+import { useQueryClient } from "@tanstack/react-query";
 import styles from "./styles/openedCard.module.css";
 import LikeBttn from "./likeBttn";
 import { useSession } from "next-auth/react";
@@ -24,6 +25,32 @@ export default function OpenedText({
 }) {
   const current = mData.find((item) => item._id === imgOpened);
   const { data: session } = useSession();
+  const [newCommentText, setNewCommentText] = useState("");
+  const queryClient = useQueryClient();
+
+  async function handleAddComment() {
+    if (!newCommentText.trim() || !session?.user) return;
+
+    await fetch("/page/examples/mongodb/api", {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        action: "comment",
+        id: current?._id,
+        comment: {
+          commID: Date.now().toString(),
+          commName: session.user.name,
+          commEmail: session.user.email,
+          commImg: session.user.image,
+          commText: newCommentText.trim(),
+          commDate: new Date().toLocaleDateString("uk-UA"),
+        },
+      }),
+    });
+
+    queryClient.invalidateQueries({ queryKey: ["mongopeople"] });
+    setNewCommentText("");
+  }
 
   if (!current) return null;
   return createPortal(
@@ -70,17 +97,31 @@ export default function OpenedText({
                 ))}
               </ul>
             </div>
-            {session?.user?.image !== null ? (
+            {session?.user?.image ? (
               <div className={styles.newComment}>
-                <p>{session?.user?.name}</p>
-                <img
-                  src={
-                    session?.user?.image !== null ? session?.user?.image : ""
-                  }></img>
-                <textarea></textarea>
+                <div className={styles.commentAuthor}>
+                  <img
+                    src={
+                      session?.user?.image !== null ? session?.user?.image : ""
+                    }></img>
+                  <p>{session?.user?.name}</p>
+                </div>
+
+                <textarea
+                  maxLength={50}
+                  value={newCommentText}
+                  onChange={(e) => setNewCommentText(e.target.value)}
+                />
+                <button
+                  onClick={handleAddComment}
+                  disabled={!newCommentText.trim()}>
+                  Send
+                </button>
               </div>
             ) : (
-              <p>Please Login </p>
+              <div className={styles.newComment}>
+                <p>Please login to leave comment</p>
+              </div>
             )}
           </div>
         </li>

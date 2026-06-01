@@ -66,6 +66,7 @@
 .authCommentBLock {
   padding: 2px 3px;
   border-bottom: 1px grey solid;
+  border-top: 1px black solid;
   min-height: 40px;
   max-height: 40px;
   overflow: hidden;
@@ -94,7 +95,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.503);
+  background: var(--reverseForImgs);
   padding: 2px;
   border-radius: 0px 0px 10px 0px;
 }
