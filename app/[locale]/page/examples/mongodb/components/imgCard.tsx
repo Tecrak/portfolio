@@ -39,11 +39,7 @@ export default function ImgCard({
               {deleteMutation.isPending ? "..." : "X"}
             </div>
           )}
-          <AuthorDetails
-            data={data}
-            person={data.ownerName}
-            personEmail={data.ownerEmail}
-          />
+          <AuthorDetails data={data} person={data.ownerName} />
           <div className={`${styles.comOpenned} ${styles.imgBox}`}>
             <img src={data.imgSrc} onClick={() => setImgOpened(data._id)}></img>
             <div className={styles.authCommentBLock}>

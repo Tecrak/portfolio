@@ -6,11 +6,9 @@ import { useSession } from "next-auth/react";
 export default function AuthorDetails({
   data,
   person,
-  personEmail,
 }: {
   data: any;
   person: string;
-  personEmail: string;
 }) {
   const locale = useLocale();
   const { data: session } = useSession();

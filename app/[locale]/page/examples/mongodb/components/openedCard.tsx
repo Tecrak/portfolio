@@ -59,12 +59,8 @@ export default function OpenedText({
       <ul className={styles.cardContent} onClick={(e) => e.stopPropagation()}>
         <li className={styles.cardItem} key={current._id}>
           <div className={styles.cardImg}>
+            <AuthorDetails data={current} person={current.ownerName} />
             <img src={current.imgSrc} className={styles.postImg}></img>
-            <AuthorDetails
-              data={current}
-              person={current.ownerName}
-              personEmail={current.ownerEmail}
-            />
           </div>
           <div className={styles.commentSection}>
             <div className={styles.bttnsSection}>
