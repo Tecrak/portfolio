@@ -1,6 +1,10 @@
-.activityBLock {
+.mainBlock {
+  width: 100%;
+  height: 100%;
   position: relative;
-  background: blue;
+}
+.activityBLock {
+  background: rgb(23, 23, 23);
   display: flex;
   width: 100%;
   height: 35px;
@@ -8,30 +12,29 @@
   align-items: center;
 }
 .activityItem {
-  position: relative;
   height: 100%;
   background: green;
 }
-.activityContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-.activityContainer p {
+
+.activityContainer > p {
   background: yellow;
   display: flex;
-  padding: 0px 2px;
+  cursor: pointer;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 35px;
+  z-index: 1;
 }
 .testBlock {
-  position: relative;
-  bottom: 2px;
-  width: 120px;
-  height: 100px;
-  background: red;
-  margin: 2px;
+  position: absolute;
+  opacity: 0;
+  top: -30px;
+  width: 90vw;
+  left: 0;
+  background: rgba(255, 0, 0, 0.384);
+  transition:
+    top 0.2s ease-in-out,
+    opacity 0.3s ease-in-out;
+  z-index: 10;
 }
