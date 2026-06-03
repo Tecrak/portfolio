@@ -4,16 +4,30 @@ const API = "/page/examples/mongodb/api";
 
 export type MongoPerson = {
   _id: string;
-  name: string;
+  ownerName: string;
+  ownerEmail: string;
+  ownerImage: string;
+  imgSrc: string;
+  authComment?: string;
+  date: string;
+  likes: string[];
+  comments: any[];
 };
 
 // ─── GET ─────────────────────────────────────────────
-export function useMongopeople() {
+
+export function useMongopeople(ownerName?: string) {
   return useQuery({
     queryKey: ["mongopeople"],
     queryFn: async () => {
       const res = await fetch(API);
-      return res.json();
+      if (!res.ok) throw new Error("Помилка при завантаженні");
+      return res.json() as Promise<MongoPerson[]>;
     },
+
+    select: (data) =>
+      ownerName
+        ? data.filter((person) => person.ownerName === ownerName)
+        : data,
   });
 }

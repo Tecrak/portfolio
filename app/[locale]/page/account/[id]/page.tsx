@@ -7,5 +7,5 @@ export default async function AccountPage({
   const { id } = await params;
   const decoded = decodeURIComponent(id);
 
-  return <AccountClient person={decoded} />;
+  return <AccountClient owner={decoded} />;
 }
