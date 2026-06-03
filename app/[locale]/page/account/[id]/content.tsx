@@ -2,6 +2,7 @@
 
 import { useSession } from "next-auth/react";
 import { useMongopeople } from "../../examples/mongodb/api/useMPeople";
+import MongoDBPage from "../../examples/mongodb/page";
 
 export default function AccountClient({ owner }: { owner: string }) {
   const { data: session } = useSession();
@@ -18,19 +19,8 @@ export default function AccountClient({ owner }: { owner: string }) {
       ) : (
         <h2>Ви переглядаєте пости користувача {owner}</h2>
       )}
-
-      <h3>Усі пости {owner}:</h3>
-      <ul>
-        {ownerPosts.length > 0 ? (
-          ownerPosts.map((mPost) => (
-            <li key={mPost._id} style={{ listStyle: "none" }}>
-              <img src={mPost.imgSrc} alt="Post content" />
-            </li>
-          ))
-        ) : (
-          <p>Постів поки немає.</p>
-        )}
-      </ul>
+      <p>Усі пости {owner}</p>
+      <MongoDBPage isAccountPage={true} owner={owner} />
     </div>
   );
 }

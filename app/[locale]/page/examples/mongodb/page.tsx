@@ -9,12 +9,23 @@ import OpenedCard from "./components/openedCard";
 import NewImg from "./components/newImg";
 import { useSession } from "next-auth/react";
 
-export default function MongoDBPage() {
-  const { data: people = [], isLoading, isError } = useMongopeople();
+export default function MongoDBPage({
+  isAccountPage,
+  owner,
+}: {
+  isAccountPage: boolean;
+  owner: string;
+}) {
+  const { data: session } = useSession();
+  const {
+    data: people = [],
+    isLoading,
+    isError,
+  } = useMongopeople(isAccountPage ? owner : "");
   const [likes, setLikes] = useState<Record<string, number>>({});
   const [imgOpened, setImgOpened] = useState("");
   const [likedIds, setLikedIds] = useState<Record<string, boolean>>({});
-  const { data: session } = useSession();
+
   const [isNewImg, setIsNewImg] = useState(false);
 
   async function handleLike(id: string, increment: number) {
@@ -66,17 +77,19 @@ export default function MongoDBPage() {
 
   return (
     <div className="mainMPage">
-      <button
-        className={styles.newImgBttn}
-        onClick={() => setIsNewImg(!isNewImg)}
-        style={
-          !session?.user?.email
-            ? { pointerEvents: "none" }
-            : { pointerEvents: "all" }
-        }
-        disabled={!session?.user?.email}>
-        {!session?.user?.email ? "Please log in to leave image" : "Add new"}
-      </button>
+      {!isAccountPage && (
+        <button
+          className={styles.newImgBttn}
+          onClick={() => setIsNewImg(!isNewImg)}
+          style={
+            !session?.user?.email
+              ? { pointerEvents: "none" }
+              : { pointerEvents: "all" }
+          }
+          disabled={!session?.user?.email}>
+          {!session?.user?.email ? "Please log in to leave image" : "Add new"}
+        </button>
+      )}
 
       <NewImg isNewImg={isNewImg} setIsNewImg={setIsNewImg} />
 

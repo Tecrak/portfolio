@@ -16,7 +16,7 @@ export type MongoPerson = {
 
 // ─── GET ─────────────────────────────────────────────
 
-export function useMongopeople(ownerName?: string) {
+export function useMongopeople(ownerName?: string | null) {
   return useQuery({
     queryKey: ["mongopeople"],
     queryFn: async () => {
