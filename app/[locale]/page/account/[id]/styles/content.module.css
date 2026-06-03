@@ -29,9 +29,11 @@
 .testBlock {
   position: absolute;
   opacity: 0;
+  padding: 0px 5px;
   top: -30px;
-  width: 90vw;
-  left: 0;
+  width: 98vw;
+  left: 50%;
+  transform: translateX(-50%);
   background: rgba(255, 0, 0, 0.384);
   transition:
     top 0.2s ease-in-out,
