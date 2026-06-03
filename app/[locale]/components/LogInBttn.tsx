@@ -30,13 +30,14 @@ export default function AuthButton() {
             style={{ borderRadius: "50%" }}
             alt="avatar"
           />
-          <span>{session.user?.name}</span>
         </div>
         <ul
           className="loggInMenu"
           style={isMenuOpen ? { display: "block" } : { display: "none" }}>
           <li>
-            <Link href={`/${locale}/page/account/${session.user?.name}`}>
+            <Link
+              className="linker"
+              href={`/${locale}/page/account/${session.user?.name}`}>
               Account
             </Link>
           </li>

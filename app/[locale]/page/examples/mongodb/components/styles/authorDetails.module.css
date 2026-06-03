@@ -6,10 +6,12 @@
   background: var(--reverseForImgs);
   padding: 2px;
   border-radius: 0px 0px 10px 0px;
-  overflow: hidden;
 }
 .authorDetails p {
-  margin-left: 3px;
+  padding: 4px;
+  overflow: hidden;
+  max-width: 80px;
+  text-wrap: nowrap;
 }
 .authorDetails img {
   width: 35px;

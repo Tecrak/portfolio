@@ -1,7 +1,3 @@
-.loggedInBlock {
-  position: relative;
-  transition: 0.2s;
-}
 .logInBttn {
   background: rgb(255, 255, 255);
   width: 32px;
@@ -12,10 +8,12 @@
   border-radius: 100%;
   cursor: pointer;
 }
+
+.loggedInBlock:hover {
+  background: var(--nav-bttn-hover);
+}
 .loggedInUser {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   border-top: 0.6px grey solid;
   border-left: 0.6px grey solid;
   padding: 2px;
@@ -26,19 +24,27 @@
 .loggedInUser > * {
   margin: 0px 5px;
 }
+.loggedInBlock {
+  position: relative;
+  transition: 0.2s;
+}
 .loggInMenu {
+  /*UL*/
   position: absolute;
-  width: 100%;
+  display: flex;
 }
 .loggInMenu li {
+  position: relative;
   padding: 4px;
+  right: 76px;
+  width: 117px;
+  height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  background: var(--nav-bg);
-  width: 100%;
-  transition: background 0.1s;
-}
-.loggInMenu li:hover {
   background: var(--nav-bttn-hover);
+  transition: background 0.1s;
 }
 .badBoy {
   background: none;
