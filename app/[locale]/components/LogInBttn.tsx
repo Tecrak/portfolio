@@ -31,9 +31,7 @@ export default function AuthButton() {
             alt="avatar"
           />
         </div>
-        <ul
-          className="loggInMenu"
-          style={isMenuOpen ? { display: "block" } : { display: "none" }}>
+        <ul className="loggInMenu">
           <li>
             <Link
               className="linker"

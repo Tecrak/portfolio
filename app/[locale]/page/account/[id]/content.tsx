@@ -8,10 +8,6 @@ export default function AccountClient({ owner }: { owner: string }) {
   const { data: session } = useSession();
   const isOwner = session?.user?.name === owner;
 
-  const { data: ownerPosts = [], isLoading } = useMongopeople(owner);
-
-  if (isLoading) return <div>Завантаження...</div>;
-
   return (
     <div>
       {isOwner ? (

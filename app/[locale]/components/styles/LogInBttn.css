@@ -9,9 +9,11 @@
   cursor: pointer;
 }
 
-.loggedInBlock:hover {
+.loggedInBlock:hover > .loggInMenu > li {
   background: var(--nav-bttn-hover);
+  right: 76px;
 }
+
 .loggedInUser {
   display: flex;
   border-top: 0.6px grey solid;
@@ -31,20 +33,21 @@
 .loggInMenu {
   /*UL*/
   position: absolute;
-  display: flex;
 }
 .loggInMenu li {
   position: relative;
   padding: 4px;
-  right: 76px;
   width: 117px;
+  right: -50px;
   height: 33px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   background: var(--nav-bttn-hover);
-  transition: background 0.1s;
+  transition:
+    background 0.1s,
+    right 0.2s ease-in-out;
 }
 .badBoy {
   background: none;
