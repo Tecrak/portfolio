@@ -17,7 +17,7 @@ export const EXAMPLELINKS: NavItem[] = [
     label: "MongoDB",
     desc: "dasdasdad2",
     path: "/page/examples/mongodb",
-    led: "orange",
+    led: "lime",
   },
   {
     label: "MySQL",

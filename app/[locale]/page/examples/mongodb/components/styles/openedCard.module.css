@@ -13,7 +13,7 @@
 
 .cardContent {
   position: relative;
-  max-width: 80%;
+  max-width: 96%;
   border: 4px var(--skills-borders) solid;
   border-radius: 15px 0px 0px 15px;
   overflow: hidden;
@@ -30,7 +30,7 @@
 }
 .postImg {
   min-width: 300px;
-  max-width: 700px;
+  max-width: 900px;
 }
 .commentSection {
   width: 100%;
