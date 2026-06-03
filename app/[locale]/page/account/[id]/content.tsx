@@ -2,10 +2,17 @@
 
 import { useSession } from "next-auth/react";
 
-export default function AccountClient({ person }: { person: any }) {
+export default function AccountClient({ person }: { person: string }) {
   const { data: session } = useSession();
-
   const isOwner = session?.user?.name === person;
-  console.log(person);
-  return <div>Hi {session?.user?.name}</div>;
+
+  return (
+    <div>
+      {isOwner ? (
+        <div>Hi Owner {session.user?.name}</div>
+      ) : (
+        <div>Hi visitor of {person}</div>
+      )}
+    </div>
+  );
 }
