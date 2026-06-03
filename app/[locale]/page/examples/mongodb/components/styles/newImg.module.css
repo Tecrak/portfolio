@@ -26,8 +26,8 @@
   margin-right: 10px;
 }
 .imgBox img {
-  max-width: 400px;
-  max-height: 400px;
+  width: 400px;
+  height: 270px;
 }
 .kostyl {
   text-align: center;
