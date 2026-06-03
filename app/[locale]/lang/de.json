@@ -111,7 +111,7 @@
         "dbFull": "DB ist voll"
       },
       "MongoDB": {
-        "description": "Ich werde alles umgestalten, denn ich habe mich doch dazu entschlossen, OAuth hinzuzufügen, und werde nun die Datenbank darauf umstellen. Ich hoffe, in ein oder zwei Tagen ist es geschafft – und voilà! Und ich bereue es total, dass ich es nicht schon früher gemacht habe :| 01.06.2026"
+        "description": "Es gibt hier ein grundlegendes Kontosystem ohne direkte Speicherung der Konten; ich musste ein bisschen basteln, aber es scheint stabil zu laufen. Außerdem muss man sich einloggen, um grundlegende Aktionen durchzuführen (ich stehle keine Daten, ich sehe nur Ihre E-Mail-Adresse). Wie man so schön sagt: Einmal sehen (ausprobieren) ist besser als hundertmal beschreiben, also viel Erfolg beim Ausprobieren! Übersetzt mit DeepL.com (kostenlose Version)"
       },
       "MySQL": {
         "description": "In Pläne"
