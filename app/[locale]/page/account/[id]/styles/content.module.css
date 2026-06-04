@@ -29,7 +29,7 @@
   width: 100%;
   justify-content: space-around;
   align-items: center;
-  border-bottom: 2px var(--head-text-color) solid;
+  border-bottom: 1px var(--head-text-color) solid;
   border-top: 1px var(--head-text-color) solid;
 }
 
