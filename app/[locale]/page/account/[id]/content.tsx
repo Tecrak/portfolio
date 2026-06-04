@@ -6,9 +6,13 @@ import MongoDBPage from "../../examples/mongodb/page";
 import styles from "./styles/content.module.css";
 import { useState } from "react";
 import { EXAMPLELINKS } from "../../examples/config/exampleLinks";
+import { Post } from "../../examples/mongodb/config/data";
 
 export default function AccountClient({ owner }: { owner: string }) {
   const { data: session } = useSession();
+  const { data: people = [] } = useMongopeople();
+  const ownerData = people.find((p: Post) => p.ownerName === owner);
+  const ownerImage = ownerData?.ownerImage ?? session?.user?.image ?? "";
   const [openBlock, setOpenBlock] = useState(0);
   const isOwner = session?.user?.name === owner;
   const Comps: Record<string, React.ReactNode> = {
@@ -21,12 +25,20 @@ export default function AccountClient({ owner }: { owner: string }) {
   return (
     <div className={styles.mainBlock}>
       <div className={styles.ownerInfo}>
-        {isOwner ? (
-          <h2>Hello owner {session?.user?.name}</h2>
-        ) : (
-          <h2>Ure checking activity of {owner}</h2>
-        )}
-        {isOwner ? <p> Your activity in:</p> : <p>Activity of {owner}</p>}
+        <img src={ownerImage} className={styles.ownerImg} />
+        <div className={styles.ownerText}>
+          {isOwner ? (
+            <>
+              <h2>Hello owner {session?.user?.name}</h2>
+              <p> Your activity in:</p>
+            </>
+          ) : (
+            <>
+              <h2>Ure checking activity of {owner}</h2>
+              <p>Activity of {owner}</p>
+            </>
+          )}
+        </div>
       </div>
       <ul className={styles.activityBLock}>
         {EXAMPLELINKS.filter((block) => !block.disabled).map((block, index) => (
@@ -39,7 +51,7 @@ export default function AccountClient({ owner }: { owner: string }) {
                 className={styles.testBlock}
                 style={
                   openBlock === index
-                    ? { top: "76px", opacity: "1", pointerEvents: "all" }
+                    ? { top: "110px", opacity: "1", pointerEvents: "all" }
                     : { top: "0px", opacity: "0", pointerEvents: "none" }
                 }>
                 {Comps[block.label]}
