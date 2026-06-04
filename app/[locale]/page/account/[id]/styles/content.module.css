@@ -1,11 +1,22 @@
 .ownerInfo {
   display: flex;
   align-items: center;
+  padding: 10px 5px;
+}
+.ownerText h2 {
+  font-size: 22px;
+  opacity: 0.9;
+}
+.ownerText p {
+  font-size: 14px;
+  color: var(--head-text-color);
 }
 .ownerInfo > img {
-  width: 75px;
-  height: 75px;
+  width: 65px;
+  height: 65px;
   border-radius: 100%;
+  margin-right: 10px;
+  border: 2.5px var(--scrollbar-border) solid;
 }
 .mainBlock {
   width: 100%;
@@ -13,27 +24,54 @@
   position: relative;
 }
 .activityBLock {
-  background: rgb(23, 23, 23);
+  background: var(--skill-bg);
   display: flex;
   width: 100%;
-  height: 35px;
   justify-content: space-around;
   align-items: center;
-}
-.activityItem {
-  height: 100%;
-  background: green;
+  border-bottom: 2px var(--head-text-color) solid;
+  border-top: 1px var(--head-text-color) solid;
 }
 
 .activityContainer > p {
-  background: yellow;
+  position: relative;
+  padding: 5px;
   display: flex;
   cursor: pointer;
   align-items: center;
   justify-content: center;
+  color: var(--smpl-text-color);
   width: 100%;
-  height: 35px;
+  font-weight: 200;
   z-index: 1;
+}
+.activityContainer > p::before {
+  content: "";
+  background: var(--head-nice-bg);
+  position: absolute;
+  transition: 0.3s;
+  -o-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  width: 0px;
+  height: 3px;
+  bottom: -2px;
+}
+.activityContainer > p:hover {
+  color: var(--scrollbar-border);
+}
+.activityContainer > p.active {
+  color: var(--scrollbar-border);
+}
+.activityContainer > p:hover::before {
+  background: var(--scrollbar-border);
+  width: 100%;
+  color: var(--scrollbar-border);
+}
+
+.activityContainer > p.active::before {
+  background: var(--scrollbar-border);
+  width: 100%;
 }
 .testBlock {
   position: absolute;
@@ -43,7 +81,6 @@
   width: 98vw;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(255, 0, 0, 0.384);
   transition:
     top 0.2s ease-in-out,
     opacity 0.3s ease-in-out;

@@ -23,7 +23,7 @@ export const EXAMPLELINKS: NavItem[] = [
     led: "lime",
   },
   {
-    label: "?????",
+    label: "Shop",
     desc: "My",
     forDB: "MySQLSmthng",
     path: "/page/examples/mysqlsmthng",

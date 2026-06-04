@@ -29,12 +29,12 @@ export default function AccountClient({ owner }: { owner: string }) {
         <div className={styles.ownerText}>
           {isOwner ? (
             <>
-              <h2>Hello owner {session?.user?.name}</h2>
-              <p> Your activity in:</p>
+              <h2>Hello, {session?.user?.name}</h2>
+              <p> Your activity across databases</p>
             </>
           ) : (
             <>
-              <h2>Ure checking activity of {owner}</h2>
+              <h2>Welcome to {owner} page</h2>
               <p>Activity of {owner}</p>
             </>
           )}
@@ -46,13 +46,15 @@ export default function AccountClient({ owner }: { owner: string }) {
             <div
               className={styles.activityContainer}
               onClick={() => setOpenBlock(openBlock === index ? null : index)}>
-              <p>{block.label} Activity</p>
+              <p className={openBlock === index ? styles.active : ""}>
+                {block.label} Activity
+              </p>
               <div
                 className={styles.testBlock}
                 style={
                   openBlock === index
-                    ? { top: "110px", opacity: "1", pointerEvents: "all" }
-                    : { top: "0px", opacity: "0", pointerEvents: "none" }
+                    ? { top: "135px", opacity: "1", pointerEvents: "all" }
+                    : { top: "-10px", opacity: "0", pointerEvents: "none" }
                 }>
                 {Comps[block.forDB]}
               </div>

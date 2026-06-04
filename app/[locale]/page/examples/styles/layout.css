@@ -1,28 +1,3 @@
-:root {
-  --head-text-color: rgb(40, 30, 10);
-  --form-bg-colour: rgb(250, 197, 100);
-  --smpl-text-color: rgb(100, 80, 40);
-  --kindOfList-color: rgb(255, 248, 235);
-  --sideBar-list-hover: rgb(251, 220, 164);
-  --skills-borders: rgb(220, 185, 120);
-  --skills-mainArea-bg: rgb(248, 238, 216);
-  --skills-headers-bg: rgb(253, 218, 142);
-  --input-newImg: white;
-  --newImg-submit: rgb(243, 148, 59);
-}
-.dark {
-  --head-text-color: rgb(86, 95, 143);
-  --form-bg-colour: #171b29;
-  --smpl-text-color: rgb(191, 191, 191);
-  --kindOfList-color: rgb(13, 25, 60);
-  --sideBar-list-hover: rgb(37, 50, 135);
-  --skills-borders: rgb(19, 34, 80);
-  --skills-mainArea-bg: rgb(25, 42, 100);
-  --skills-headers-bg: rgb(6, 15, 40);
-  --input-newImg: rgb(16, 17, 22);
-  --newImg-submit: rgb(88, 105, 234);
-}
-
 .mainBox {
   display: flex;
   min-height: calc(100vh - 37px);
