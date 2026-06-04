@@ -20,6 +20,14 @@ export default function AccountClient({ owner }: { owner: string }) {
 
   return (
     <div className={styles.mainBlock}>
+      <div className={styles.ownerInfo}>
+        {isOwner ? (
+          <h2>Hello owner {session?.user?.name}</h2>
+        ) : (
+          <h2>Ure checking activity of {owner}</h2>
+        )}
+        {isOwner ? <p> Your activity in:</p> : <p>Activity of {owner}</p>}
+      </div>
       <ul className={styles.activityBLock}>
         {EXAMPLELINKS.filter((block) => !block.disabled).map((block, index) => (
           <li className={styles.activityItem}>
@@ -31,7 +39,7 @@ export default function AccountClient({ owner }: { owner: string }) {
                 className={styles.testBlock}
                 style={
                   openBlock === index
-                    ? { top: "51px", opacity: "1", pointerEvents: "all" }
+                    ? { top: "76px", opacity: "1", pointerEvents: "all" }
                     : { top: "0px", opacity: "0", pointerEvents: "none" }
                 }>
                 {Comps[block.label]}
@@ -43,10 +51,3 @@ export default function AccountClient({ owner }: { owner: string }) {
     </div>
   );
 }
-// {isOwner ? (
-//   <h2>Вітаємо, Власник {session?.user?.name}</h2>
-// ) : (
-//   <h2>Ви переглядаєте пости користувача {owner}</h2>
-// )}
-// <p>Усі пости {owner}</p>
-// <MongoDBPage isAccountPage={true} owner={owner} />
