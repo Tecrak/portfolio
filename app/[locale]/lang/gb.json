@@ -98,7 +98,7 @@
     "label": "Skills",
     "chooseSkill": "Please choose skill",
     "skills": {
-      "PostgreSQL": {
+      "PostgreSimple": {
         "description": "Here I decided to create something like basic database manipulations such as: Adding, Editing, Deleting data. I also decided to set limits on the name length, a filter by smallest ID first, to make things a bit more interesting. At the database level I set a limit on the number of records so the poor database doesn't crash from spam. If the limit is reached, a message will let you know. Pagination was added as well.",
         "clickMe": "Click me",
         "editBttn": "Edit",
@@ -111,10 +111,10 @@
         "tooLong": "Too long",
         "dbFull": "DB is full"
       },
-      "MongoDB": {
+      "MongoImages": {
         "description": "There’s a basic account system here that doesn’t store accounts directly; it took a bit of tinkering, but it seems to be working reliably. Also, to perform basic operations, you need to log in (I don’t steal your data; I just see your email). As they say: It’s better to see (try) it once than to describe it a hundred times, so good luck with your operations!"
       },
-      "MySQL": {
+      "MySQLSmthng": {
         "description": "In plan"
       }
     }

@@ -15,16 +15,17 @@ export default function AccountClient({ owner }: { owner: string }) {
   const ownerImage = ownerData?.ownerImage ?? session?.user?.image ?? "";
   const isOwner = session?.user?.name === owner;
   const Comps: Record<string, React.ReactNode> = {
-    MongoDB: <MongoDBPage isAccountPage={true} owner={owner} />,
-    PostgreSQL: <div>2</div>,
-    MySQL: <div>3</div>,
+    MongoImages: <MongoDBPage isAccountPage={true} owner={owner} />,
+    PostgreSimple: <div>2</div>,
+    MySQLSmthng: <div>3</div>,
   };
   const [openBlock, setOpenBlock] = useState<number | null>(null);
 
   return (
     <div className={styles.mainBlock}>
       <div className={styles.ownerInfo}>
-        <img src={ownerImage} className={styles.ownerImg} />
+        {session && <img src={ownerImage} className={styles.ownerImg} />}
+
         <div className={styles.ownerText}>
           {isOwner ? (
             <>
@@ -53,7 +54,7 @@ export default function AccountClient({ owner }: { owner: string }) {
                     ? { top: "110px", opacity: "1", pointerEvents: "all" }
                     : { top: "0px", opacity: "0", pointerEvents: "none" }
                 }>
-                {Comps[block.label]}
+                {Comps[block.forDB]}
               </div>
             </div>
           </li>

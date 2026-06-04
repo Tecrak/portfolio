@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 
 export function FormSubmit({ isDbFull }: { isDbFull: boolean }) {
   const [name, setName] = useState("");
-  const t = useTranslations("Examples.skills.PostgreSQL");
+  const t = useTranslations("Examples.skills.PostgreSimple");
   const queryClient = useQueryClient();
 
   const createMutation = useMutation({

@@ -12,7 +12,7 @@ export default function EditButton({ data }: Props) {
   const [editingId, setEditingId] = useState<number | null>(null);
   const [newName, setNewName] = useState("");
   const updateMutation = useUpdatePerson();
-  const t = useTranslations("Examples.skills.PostgreSQL");
+  const t = useTranslations("Examples.skills.PostgreSimple");
   const isEditing = editingId === data.id;
   const isValid = newName.length > 3 && newName.length < 10;
 

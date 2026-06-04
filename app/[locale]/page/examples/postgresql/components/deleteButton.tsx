@@ -9,7 +9,7 @@ interface Props {
 
 export default function DeleteButton({ data }: Props) {
   const deleteMutation = useDeletePerson();
-  const t = useTranslations("Examples.skills.PostgreSQL");
+  const t = useTranslations("Examples.skills.PostgreSimple");
 
   return (
     <button

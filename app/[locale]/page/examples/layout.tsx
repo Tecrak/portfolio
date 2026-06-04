@@ -61,7 +61,7 @@ export default function ExamplesLayout({
             {isRootPage ? (
               <p>{t("chooseSkill")}</p>
             ) : (
-              <p>{t(`skills.${currentLink?.label}.description`)}</p>
+              <p>{t(`skills.${currentLink?.forDB}.description`)}</p>
             )}
           </div>
           {!isRootPage ? (

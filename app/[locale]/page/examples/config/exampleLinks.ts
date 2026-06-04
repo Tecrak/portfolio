@@ -2,26 +2,30 @@ export type NavItem = {
   label: string;
   desc: string;
   path?: string;
+  forDB: string;
   disabled?: boolean;
   led: string;
 };
 
 export const EXAMPLELINKS: NavItem[] = [
   {
-    label: "PostgreSQL",
-    desc: "dasdasdad1",
+    label: "Simple example",
+    desc: "P",
+    forDB: "PostgreSimple",
     path: "/page/examples/postgresql",
     led: "lime",
   },
   {
-    label: "MongoDB",
-    desc: "dasdasdad2",
+    label: "Image share",
+    desc: "M",
+    forDB: "MongoImages",
     path: "/page/examples/mongodb",
     led: "lime",
   },
   {
-    label: "MySQL",
-    desc: "dasdasdad3",
+    label: "?????",
+    desc: "My",
+    forDB: "MySQLSmthng",
     path: "/page/examples/mysql",
     led: "red",
   },
@@ -30,6 +34,7 @@ export const EXAMPLELINKS: NavItem[] = [
     desc: "dasdasdad3",
     // path: "/page/examples/mysql",
     disabled: true,
+    forDB: "??",
     led: "grey",
   },
   {
@@ -37,6 +42,7 @@ export const EXAMPLELINKS: NavItem[] = [
     desc: "dasdasdad3",
     // path: "/page/examples/mysql",
     disabled: true,
+    forDB: "??",
     led: "grey",
   },
 ];
