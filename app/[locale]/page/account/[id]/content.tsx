@@ -1,12 +1,12 @@
 "use client";
 
 import { useSession } from "next-auth/react";
-import { useMongopeople } from "../../examples/mongodb/api/useMPeople";
-import MongoDBPage from "../../examples/mongodb/page";
+import { useMongopeople } from "../../examples/mongoimages/api/useMPeople";
+import MongoDBPage from "../../examples/mongoimages/page";
 import styles from "./styles/content.module.css";
 import { useState } from "react";
 import { EXAMPLELINKS } from "../../examples/config/exampleLinks";
-import { Post } from "../../examples/mongodb/config/data";
+import { Post } from "../../examples/mongoimages/config/data";
 
 export default function AccountClient({ owner }: { owner: string }) {
   const { data: session } = useSession();

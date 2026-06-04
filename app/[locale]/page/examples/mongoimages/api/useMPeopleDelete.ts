@@ -4,7 +4,7 @@ export function useMPeopleDelete() {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: async (id: string) => {
-      await fetch("/page/examples/mongodb/api", {
+      await fetch("/page/examples/mongoimages/api", {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id }),

@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
-const API = "/page/examples/mongodb/api";
+const API = "/page/examples/mongoimages/api";
 
 export type MongoPerson = {
   _id: string;

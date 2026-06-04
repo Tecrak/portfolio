@@ -4,7 +4,7 @@ const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export function useFilterFetchDB(id: string) {
   const { data, error, mutate } = useSWR(
-    id ? `/page/examples/postgresql/api?id=${id}` : null, // якщо id немає, fetch не буде
+    id ? `/page/examples/postgresimple/api?id=${id}` : null, // якщо id немає, fetch не буде
     fetcher,
   );
 
