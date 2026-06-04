@@ -13,14 +13,13 @@ export default function AccountClient({ owner }: { owner: string }) {
   const { data: people = [] } = useMongopeople();
   const ownerData = people.find((p: Post) => p.ownerName === owner);
   const ownerImage = ownerData?.ownerImage ?? session?.user?.image ?? "";
-  const [openBlock, setOpenBlock] = useState(0);
   const isOwner = session?.user?.name === owner;
   const Comps: Record<string, React.ReactNode> = {
     MongoDB: <MongoDBPage isAccountPage={true} owner={owner} />,
     PostgreSQL: <div>2</div>,
     MySQL: <div>3</div>,
   };
-  const compToLower = (comp: string) => comp.toLowerCase;
+  const [openBlock, setOpenBlock] = useState<number | null>(null);
 
   return (
     <div className={styles.mainBlock}>
@@ -42,10 +41,10 @@ export default function AccountClient({ owner }: { owner: string }) {
       </div>
       <ul className={styles.activityBLock}>
         {EXAMPLELINKS.filter((block) => !block.disabled).map((block, index) => (
-          <li className={styles.activityItem}>
+          <li className={styles.activityItem} key={block.label}>
             <div
               className={styles.activityContainer}
-              onClick={() => setOpenBlock(index)}>
+              onClick={() => setOpenBlock(openBlock === index ? null : index)}>
               <p>{block.label} Activity</p>
               <div
                 className={styles.testBlock}
