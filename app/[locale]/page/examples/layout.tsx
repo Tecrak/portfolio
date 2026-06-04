@@ -4,6 +4,7 @@ import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { EXAMPLELINKS } from "./config/exampleLinks";
+import { useState } from "react";
 
 export default function ExamplesLayout({
   children,
@@ -17,12 +18,18 @@ export default function ExamplesLayout({
   );
   const isRootPage = pathname === `/${locale}/page/examples`;
   const t = useTranslations("Examples");
+  const [isSideBarOpen, setIsSideBarOpen] = useState(false);
   return (
     <div className="mainBox">
       {/* --- Side Bar --- */}
-      <div className="sideBar">
-        <h4>{t("label")}</h4>
-        <ul>
+      <div className={isSideBarOpen ? "sideBar closed" : "sideBar"}>
+        <div className="topPartBlock">
+          <h4>{t("label")}</h4>
+          <div
+            onClick={() => setIsSideBarOpen(!isSideBarOpen)}
+            className="closeSideBar"></div>
+        </div>
+        <ul className="sideBarList">
           {EXAMPLELINKS.map((link) => (
             <Link
               key={link.label}

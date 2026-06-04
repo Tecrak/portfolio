@@ -2,16 +2,17 @@
   list-style: none;
   margin: 10px 0px 0px 0px;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(232px, 0fr));
-  gap: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .imgList > li {
   border: 1px solid var(--ex-panel-border, #252840);
   border-radius: 8px;
   overflow: hidden;
+  margin: 4px;
   position: relative;
-  width: 232px;
+  width: 235px;
   transition:
     border-color 0.15s,
     transform 0.15s,
@@ -23,7 +24,7 @@
 }
 .imgBox img {
   cursor: pointer;
-  max-width: 232px;
+  max-width: 235px;
   height: 232px;
   object-fit: cover;
   display: block;

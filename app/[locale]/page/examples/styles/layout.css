@@ -30,14 +30,60 @@
 /* --- SIDEBAR --- */
 
 .sideBar {
+  position: relative;
   background: var(--kindOfList-color);
   color: var(--head-text-color);
+  width: 240px;
 }
-.sideBar > h4 {
+.sideBar.closed {
+  width: 0px;
+}
+.sideBar.closed .closeSideBar {
+  transform: translate(100%) rotate(180deg);
+}
+.closeSideBar {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  cursor: pointer;
+  right: 0px;
+  width: 20px;
+  height: 20px;
+}
+
+.closeSideBar::after {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 3px;
+  background: var(--smpl-text-color);
+  transform: rotate(45deg);
+}
+
+.closeSideBar::before {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 3px;
+  background: var(--smpl-text-color);
+  transform: rotate(-45deg);
+}
+
+.topPartBlock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.topPartBlock > h4 {
   padding: 15px 110px 15px 15px;
   border-bottom: 1.5px var(--skills-borders) solid;
 }
-
+.sideBarList {
+  overflow: hidden;
+  text-wrap: nowrap;
+}
 .linkItem {
   padding: 13px;
   display: flex;
