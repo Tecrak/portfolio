@@ -38,7 +38,7 @@ export default function MongoDBPage({
     setLikedIds((prev) => ({ ...prev, [id]: !isCurrentlyLiked }));
     setLikes((prev) => ({ ...prev, [id]: (prev[id] ?? 0) + increment }));
 
-    await fetch("/page/examples/mongodb/api", {
+    await fetch("/page/examples/mongoimages/api", {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ id, userEmail, action }),
