@@ -28,7 +28,7 @@ export default function NewImg({
     if (!imgUrl || !session?.user) return;
 
     setIsPending(true);
-    await fetch("/page/examples/mongodb/api", {
+    await fetch("/page/examples/mongoimages/api", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
