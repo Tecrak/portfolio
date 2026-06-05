@@ -32,7 +32,7 @@ export default function OpenedText({
   async function handleAddComment() {
     if (!newCommentText.trim() || !session?.user) return;
 
-    await fetch("/page/examples/mongodb/api", {
+    await fetch("/page/examples/mongoimages/api", {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
