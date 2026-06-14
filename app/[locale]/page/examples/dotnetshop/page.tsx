@@ -1,5 +1,5 @@
 "use client";
 
-export default function mySQLPage() {
+export default function dotNetPage() {
   return <div>On progress</div>;
 }

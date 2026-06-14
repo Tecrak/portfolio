@@ -49,11 +49,13 @@
 .topPartBlock {
   display: flex;
   align-items: center;
-  justify-content: center;
+  overflow: hidden;
+  position: relative;
 }
+
 .topPartBlock > h4 {
-  padding: 15px 110px 15px 15px;
-  border-bottom: 1.5px var(--skills-borders) solid;
+  font-size: 20px;
+  padding: 10px;
 }
 .sideBarList {
   overflow: hidden;
@@ -98,11 +100,19 @@
   width: 100%;
 }
 .pathText {
+  position: relative;
   background: var(--skills-headers-bg);
-  border-bottom: 1.5px var(--skills-borders) solid;
   border-left: 1.5px var(--skills-borders) solid;
-  padding: 15px 0px 15px 15px;
+  padding: 10px 0px 10px 10px;
   color: var(--head-text-color);
+}
+.topPartBlock::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1.5px;
+  background: var(--skills-borders);
+  bottom: 0px;
 }
 .pathText > h4 {
   font-weight: 100;

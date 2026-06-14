@@ -113,7 +113,7 @@
       "MongoImages": {
         "description": "Es gibt hier ein grundlegendes Kontosystem ohne direkte Speicherung der Konten; ich musste ein bisschen basteln, aber es scheint stabil zu laufen. Außerdem muss man sich einloggen, um grundlegende Aktionen durchzuführen (ich stehle keine Daten, ich sehe nur Ihre E-Mail-Adresse). Wie man so schön sagt: Einmal sehen (ausprobieren) ist besser als hundertmal beschreiben, also viel Erfolg beim Ausprobieren! Übersetzt mit DeepL.com (kostenlose Version)"
       },
-      "MySQLSmthng": {
+      "DotNetShop": {
         "description": "In Pläne"
       }
     }
