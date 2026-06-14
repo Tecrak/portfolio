@@ -6,22 +6,16 @@ import LikeBttn from "./likeBttn";
 import { useMPeopleDelete } from "../api/useMPeopleDelete";
 import { useSession } from "next-auth/react";
 import AuthorDetails from "./authorDetails";
+import { ShareVarsType } from "../../types";
 
 export default function ImgCard({
   mData,
   setImgOpened,
   imgOpened,
   likes,
-  onLike,
+  handleLike,
   likedIds,
-}: {
-  mData: Post[];
-  imgOpened: string;
-  setImgOpened: (v: string) => void;
-  likes: Record<string, number>;
-  onLike: (id: string, increment: number) => void;
-  likedIds: Record<string, boolean>;
-}) {
+}: ShareVarsType) {
   const deleteMutation = useMPeopleDelete();
   const { data: session } = useSession();
   useEffect(() => {
@@ -50,7 +44,7 @@ export default function ImgCard({
               <LikeBttn
                 lCount={likes[data._id] ?? data.likes?.length ?? 0}
                 id={data._id}
-                onLike={onLike}
+                onLike={handleLike}
                 isLiked={likedIds[data._id] ?? false}
               />
               <div

@@ -8,6 +8,8 @@ import ImgCard from "./components/imgCard";
 import OpenedCard from "./components/openedCard";
 import NewImg from "./components/newImg";
 import { useSession } from "next-auth/react";
+import { useEffectInitLikes } from "./hooks/useEffectInitLikes";
+import { useEffectScrollLock } from "./hooks/useEffectScrollLock";
 
 export default function MongoDBPage({
   isAccountPage,
@@ -44,21 +46,17 @@ export default function MongoDBPage({
       body: JSON.stringify({ id, userEmail, action }),
     });
   }
+  const shareVars = {
+    setImgOpened,
+    imgOpened,
+    likes,
+    handleLike,
+    likedIds,
+  };
 
-  useEffect(() => {
-    if (!isLoading && people.length > 0) {
-      const initialLikes: Record<string, number> = {};
-      const initialLiked: Record<string, boolean> = {};
-      const userEmail = session?.user?.email ?? "";
-
-      people.forEach((p: Post) => {
-        initialLikes[p._id] = p.likes?.length ?? 0;
-        initialLiked[p._id] = p.likes?.includes(userEmail) ?? false;
-      });
-      setLikes(initialLikes);
-      setLikedIds(initialLiked);
-    }
-  }, [isLoading, session]);
+  //useEffects!!!
+  useEffectScrollLock(imgOpened !== "");
+  useEffectInitLikes(isLoading, people, session, setLikes, setLikedIds);
   useEffect(() => {
     if (imgOpened !== "") {
       document.body.style.overflow = "hidden";
@@ -69,9 +67,7 @@ export default function MongoDBPage({
       document.body.style.overflow = "";
     };
   }, [imgOpened]);
-  useEffect(() => {
-    console.log(isNewImg);
-  }, [isNewImg]);
+
   if (isLoading) return <div className="pg-loading">завантаження...</div>;
   if (isError) return <div className="pg-loading">помилка підключення</div>;
 
@@ -93,22 +89,8 @@ export default function MongoDBPage({
 
       <NewImg isNewImg={isNewImg} setIsNewImg={setIsNewImg} />
 
-      <ImgCard
-        mData={people}
-        setImgOpened={setImgOpened}
-        imgOpened={imgOpened}
-        likes={likes}
-        onLike={handleLike}
-        likedIds={likedIds}
-      />
-      <OpenedCard
-        mData={people}
-        setImgOpened={setImgOpened}
-        imgOpened={imgOpened}
-        likes={likes}
-        onLike={handleLike}
-        likedIds={likedIds}
-      />
+      <ImgCard mData={people} {...shareVars} />
+      <OpenedCard mData={people} {...shareVars} />
     </div>
   );
 }

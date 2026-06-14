@@ -8,22 +8,16 @@ import styles from "./styles/openedCard.module.css";
 import LikeBttn from "./likeBttn";
 import { useSession } from "next-auth/react";
 import AuthorDetails from "./authorDetails";
+import { ShareVarsType } from "../../types";
 
 export default function OpenedText({
   mData,
   setImgOpened,
   imgOpened,
   likes,
-  onLike,
+  handleLike,
   likedIds,
-}: {
-  mData: Post[];
-  imgOpened: string;
-  setImgOpened: (v: string) => void;
-  likes: Record<string, number>;
-  onLike: (id: string, increment: number) => void;
-  likedIds: Record<string, boolean>;
-}) {
+}: ShareVarsType) {
   const current = mData.find((item) => item._id === imgOpened);
   const { data: session } = useSession();
   const [newCommentText, setNewCommentText] = useState("");
@@ -67,7 +61,7 @@ export default function OpenedText({
               <LikeBttn
                 lCount={likes[current._id] ?? current.likes?.length ?? 0}
                 id={current._id}
-                onLike={onLike}
+                onLike={handleLike}
                 isLiked={likedIds[current._id] ?? false}
               />
               <span>{current.date}</span>
