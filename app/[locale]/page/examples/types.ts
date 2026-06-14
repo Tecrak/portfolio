@@ -1,7 +1,7 @@
 import { Post } from "./mongoimages/config/data";
 
 export interface ShareVarsType {
-  mData: Post[];
+  mData?: Post[];
   imgOpened: string;
   setImgOpened: (v: string) => void;
   likes: Record<string, number>;

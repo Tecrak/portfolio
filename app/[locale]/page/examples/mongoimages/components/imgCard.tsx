@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Post } from "../config/data";
 import styles from "./styles/imgCard.module.css";
 import LikeBttn from "./likeBttn";
-import { useMPeopleDelete } from "../api/useMPeopleDelete";
+import { useMPeopleDelete } from "../hooks/useMPeopleDelete";
 import { useSession } from "next-auth/react";
 import AuthorDetails from "./authorDetails";
 import { ShareVarsType } from "../../types";
@@ -24,7 +24,7 @@ export default function ImgCard({
 
   return (
     <ul className={styles.imgList}>
-      {mData.map((data) => (
+      {mData?.map((data) => (
         <li key={data._id}>
           {session?.user?.email === data.ownerEmail && (
             <div

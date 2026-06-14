@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Post } from "../config/data";
 import { Comment } from "../config/data";
 import { createPortal } from "react-dom";
 import { useQueryClient } from "@tanstack/react-query";
@@ -9,6 +8,7 @@ import LikeBttn from "./likeBttn";
 import { useSession } from "next-auth/react";
 import AuthorDetails from "./authorDetails";
 import { ShareVarsType } from "../../types";
+import NewComment from "./newComment";
 
 export default function OpenedText({
   mData,
@@ -18,7 +18,7 @@ export default function OpenedText({
   handleLike,
   likedIds,
 }: ShareVarsType) {
-  const current = mData.find((item) => item._id === imgOpened);
+  const current = mData?.find((item) => item._id === imgOpened);
   const { data: session } = useSession();
   const [newCommentText, setNewCommentText] = useState("");
   const queryClient = useQueryClient();
@@ -47,6 +47,15 @@ export default function OpenedText({
     setNewCommentText("");
   }
 
+  const shareVars = {
+    current,
+    session,
+    newCommentText,
+    setNewCommentText,
+    queryClient,
+    handleAddComment,
+  };
+
   if (!current) return null;
   return createPortal(
     <div className={styles.openedCard} onClick={() => setImgOpened("")}>
@@ -55,6 +64,7 @@ export default function OpenedText({
           <div className={styles.cardImg}>
             <AuthorDetails data={current} person={current.ownerName} />
             <img src={current.imgSrc} className={styles.postImg}></img>
+            <button className={styles.closeCard}>X</button>
           </div>
           <div className={styles.commentSection}>
             <div className={styles.bttnsSection}>
@@ -91,32 +101,7 @@ export default function OpenedText({
                 ))}
               </ul>
             </div>
-            {session?.user?.image ? (
-              <div className={styles.newComment}>
-                <div className={styles.commentAuthor}>
-                  <img
-                    src={
-                      session?.user?.image !== null ? session?.user?.image : ""
-                    }></img>
-                  <p>{session?.user?.name}</p>
-                </div>
-
-                <textarea
-                  maxLength={50}
-                  value={newCommentText}
-                  onChange={(e) => setNewCommentText(e.target.value)}
-                />
-                <button
-                  onClick={handleAddComment}
-                  disabled={!newCommentText.trim()}>
-                  Send
-                </button>
-              </div>
-            ) : (
-              <div className={styles.newComment}>
-                <p>Please login to leave comment</p>
-              </div>
-            )}
+            <NewComment {...shareVars} />
           </div>
         </li>
       </ul>

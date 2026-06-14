@@ -1,7 +1,7 @@
 "use client";
 
 import { useSession } from "next-auth/react";
-import { useMongopeople } from "../../examples/mongoimages/api/useMPeople";
+import { useMongopeople } from "../../examples/mongoimages/hooks/useMPeople";
 import MongoDBPage from "../../examples/mongoimages/page";
 import styles from "./styles/content.module.css";
 import { useState } from "react";

@@ -2,14 +2,14 @@
 
 import styles from "./styles/page.module.css";
 import { useEffect, useState } from "react";
-import { useMongopeople, MongoPerson } from "./api/useMPeople";
-import { Post } from "./config/data";
+import { useMongopeople, MongoPerson } from "./hooks/useMPeople";
 import ImgCard from "./components/imgCard";
 import OpenedCard from "./components/openedCard";
 import NewImg from "./components/newImg";
 import { useSession } from "next-auth/react";
 import { useEffectInitLikes } from "./hooks/useEffectInitLikes";
 import { useEffectScrollLock } from "./hooks/useEffectScrollLock";
+import { ShareVarsType } from "../types";
 
 export default function MongoDBPage({
   isAccountPage,
@@ -46,7 +46,7 @@ export default function MongoDBPage({
       body: JSON.stringify({ id, userEmail, action }),
     });
   }
-  const shareVars = {
+  const shareVars: ShareVarsType = {
     setImgOpened,
     imgOpened,
     likes,
