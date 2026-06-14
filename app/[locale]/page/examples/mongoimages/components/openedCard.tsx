@@ -9,6 +9,7 @@ import { useSession } from "next-auth/react";
 import AuthorDetails from "./authorDetails";
 import { ShareVarsType } from "../../types";
 import NewComment from "./newComment";
+import CommentsBlock from "./commentsBlock";
 
 export default function OpenedText({
   mData,
@@ -76,31 +77,7 @@ export default function OpenedText({
               />
               <span>{current.date}</span>
             </div>
-            <div className={styles.authComment}>
-              <p>{current.authComment}</p>
-            </div>
-            <div className={styles.commentsBlock}>
-              <ul>
-                {current.comments.map((comment: Comment) => (
-                  <li className={styles.commentContent} key={comment.commID}>
-                    <div className={styles.commentLeftPart}>
-                      <img src={comment.commImg} alt={comment.commName} />
-                    </div>
-                    <div className={styles.commentText}>
-                      <div className={styles.commPerson}>
-                        <span className={styles.commName}>
-                          {comment.commName}
-                        </span>
-                        <span className={styles.commDate}>
-                          {comment.commDate}
-                        </span>
-                      </div>
-                      <p>{comment.commText}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <CommentsBlock {...shareVars} />
             <NewComment {...shareVars} />
           </div>
         </li>
