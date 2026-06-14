@@ -1,6 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
-import { Comment } from "../config/data";
+import { useState } from "react";
 import { createPortal } from "react-dom";
 import { useQueryClient } from "@tanstack/react-query";
 import styles from "./styles/openedCard.module.css";

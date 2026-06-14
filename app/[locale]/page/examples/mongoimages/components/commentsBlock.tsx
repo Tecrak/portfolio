@@ -1,7 +1,6 @@
 import styles from "./styles/openedCard.module.css";
 import { ShareCompsVars } from "./types";
 import { Comment } from "../config/data";
-import LikeBttn from "./likeBttn";
 
 export default function CommentsBlock({ current }: ShareCompsVars) {
   return (

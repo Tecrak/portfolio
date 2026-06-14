@@ -1,6 +1,4 @@
 "use client";
-import { useEffect, useState } from "react";
-import { Post } from "../config/data";
 import styles from "./styles/imgCard.module.css";
 import LikeBttn from "./likeBttn";
 import { useMPeopleDelete } from "../hooks/useMPeopleDelete";
@@ -18,9 +16,6 @@ export default function ImgCard({
 }: ShareVarsType) {
   const deleteMutation = useMPeopleDelete();
   const { data: session } = useSession();
-  useEffect(() => {
-    imgOpened === "" && setImgOpened;
-  }, [imgOpened]);
 
   return (
     <ul className={styles.imgList}>

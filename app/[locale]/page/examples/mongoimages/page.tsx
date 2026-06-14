@@ -2,7 +2,7 @@
 
 import styles from "./styles/page.module.css";
 import { useEffect, useState } from "react";
-import { useMongopeople, MongoPerson } from "./hooks/useMPeople";
+import { useMongopeople } from "./hooks/useMPeople";
 import ImgCard from "./components/imgCard";
 import OpenedCard from "./components/openedCard";
 import NewImg from "./components/newImg";

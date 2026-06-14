@@ -1,12 +1,13 @@
 import { useEffect } from "react";
 import { Post } from "../config/data";
+import { Session } from "next-auth";
 
 export function useEffectInitLikes(
   isLoading: boolean,
   people: Post[],
-  session: any,
-  setLikes: any,
-  setLikedIds: any,
+  session: Session | null,
+  setLikes: React.Dispatch<React.SetStateAction<Record<string, number>>>,
+  setLikedIds: React.Dispatch<React.SetStateAction<Record<string, boolean>>>,
 ) {
   useEffect(() => {
     if (!isLoading && people.length > 0) {

@@ -1,5 +1,3 @@
-"use client";
-import { useState, useEffect } from "react";
 import styles from "./styles/imgCard.module.css";
 import { Heart } from "lucide-react";
 
