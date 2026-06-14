@@ -25,14 +25,25 @@
   position: relative;
 }
 .cardImg {
-  display: flex;
   position: relative;
+  width: 600px;
+  height: 400px;
+  display: flex;
 }
 
 .postImg {
   width: 100%;
   height: auto;
   display: block;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  object-fit: cover;
+}
+.closeCard {
+  background: rgba(95, 95, 95, 0.507);
+  position: absolute;
+  border-radius: 0px 0px 0px 10px;
+  right: 0px;
 }
 .commentSection {
   min-width: 320px;

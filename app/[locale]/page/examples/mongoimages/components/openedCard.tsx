@@ -64,7 +64,11 @@ export default function OpenedText({
           <div className={styles.cardImg}>
             <AuthorDetails data={current} person={current.ownerName} />
             <img src={current.imgSrc} className={styles.postImg}></img>
-            <button className={styles.closeCard}>X</button>
+            <button
+              className={styles.closeCard}
+              onClick={() => setImgOpened("")}>
+              X
+            </button>
           </div>
           <div className={styles.commentSection}>
             <div className={styles.bttnsSection}>

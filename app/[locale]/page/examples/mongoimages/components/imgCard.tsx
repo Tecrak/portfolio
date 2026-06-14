@@ -9,7 +9,6 @@ import { ShareVarsType } from "../../types";
 export default function ImgCard({
   mData,
   setImgOpened,
-  imgOpened,
   likes,
   handleLike,
   likedIds,
