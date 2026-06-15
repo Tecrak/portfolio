@@ -155,13 +155,18 @@ export default function dotNetPage() {
                   <h3>{game.gameName}</h3>
                   <p>{game.description}</p>
                   <div className={styles.bestPrices}>
-                    <p
-                      style={{ textDecoration: "line-through", color: "grey" }}>
-                      {game.gamePrice.price}
-                    </p>
-                    <p className={styles.bestPercent}>
-                      -{game.gamePrice.discountPer * 100}%
-                    </p>
+                    <div>
+                      <p
+                        style={{
+                          textDecoration: "line-through",
+                          color: "grey",
+                        }}>
+                        {game.gamePrice.price}
+                      </p>
+                      <p className={styles.bestPercent}>
+                        -{game.gamePrice.discountPer * 100}%
+                      </p>
+                    </div>
                     <p className={styles.newBestPrice}>
                       {renderPrice(
                         game.gamePrice.price,

@@ -103,3 +103,17 @@
 .addToCart:hover {
   background: rgb(90, 179, 90);
 }
+.shopAllGames img {
+  width: 275px;
+  height: 135px;
+}
+.shopAllGames > ul {
+  /* background: red; */
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.shopAllGames > ul > li {
+  background: rgba(173, 173, 173, 0.603);
+}
