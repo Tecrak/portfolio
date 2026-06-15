@@ -58,15 +58,16 @@ export default function dotNetPage() {
     },
     {
       id: 4,
-      gameName: "SHoSHo",
+      gameName: "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
       gamePrice: {
-        price: 99.99,
-        discountPer: 0.6,
+        price: 49.99,
+        discountPer: 0.4,
       },
       genre: "RPG",
       imgSrc:
-        "https://imgs.search.brave.com/pTfu8_gadLQXsJYfoPJyXm_HNMab0IbLJ6p9TEuWJ_Q/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9leWVw/aG90by5ldS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyNC8xMS8y/MS0yMV9ERUdSQURB/VElPTi0yLTEuanBn",
-      description: "Beatiful game",
+        "https://imgs.search.brave.com/Y4pD06dOrzZpQ2j_q8SzSrHWpTw3mZJjNZMpvjtYLRs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vd3d3LnF1/YWxiZXJ0LmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMi8w/MS9TdGFsa2VyLTIt/dGl0bGUuanBnP3Jl/c2l6ZT0xMTcwLDcy/MCZzc2w9MQ",
+      description:
+        "Відкрийте для себе Чорнобильську Зону Відчуження сповнену небезпечних ворогів, смертельних аномалій та потужних артефактів. Напишіть свою власну епічну історію, прокладаючи свій шлях до Серця Чорнобиля",
       isCommingSoon: false,
       isBestOfDay: true,
       isPopular: false,
@@ -141,11 +142,11 @@ export default function dotNetPage() {
             <div className={styles.shopCart}>Cart</div>
           </div>
         </div>
-        <div className={styles.shopBestDeal}>
+        <div className={styles.shopBestBlock}>
           {games
             .filter((game) => game.isBestOfDay === true)
             .map((game) => (
-              <div key={game.id}>
+              <div key={game.id} className={styles.shopBestDeal}>
                 <div className={styles.bestImg}>
                   <img src={game.imgSrc}></img>
                 </div>
@@ -154,15 +155,20 @@ export default function dotNetPage() {
                   <h3>{game.gameName}</h3>
                   <p>{game.description}</p>
                   <div className={styles.bestPrices}>
-                    <p>{game.gamePrice.price}</p>
-                    <p>
+                    <p
+                      style={{ textDecoration: "line-through", color: "grey" }}>
+                      {game.gamePrice.price}
+                    </p>
+                    <p className={styles.bestPercent}>
+                      -{game.gamePrice.discountPer * 100}%
+                    </p>
+                    <p className={styles.newBestPrice}>
                       {renderPrice(
                         game.gamePrice.price,
                         game.gamePrice.discountPer,
                       )}
                     </p>
-                    <p>-{game.gamePrice.discountPer * 100}%</p>
-                    <button>Add to cart</button>
+                    <button className={styles.addToCart}>Add to cart</button>
                   </div>
                 </div>
               </div>

@@ -2,6 +2,7 @@
   display: flex;
   background: rgba(0, 0, 0, 0.401);
 }
+
 .shopSideBar {
   background: rgba(145, 145, 145, 0.223);
 }
@@ -41,4 +42,64 @@
   margin: 0px 7px;
 }
 .shopBestDeal {
+  display: flex;
+  background: rgba(0, 0, 0, 0.572);
+  margin: 15px;
+  padding: 5px;
+}
+.bestImg {
+  margin-right: 10px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bestImg img {
+  width: 220px;
+  height: 125px;
+  border-radius: 3px;
+  border: 1px rgb(251, 253, 124) solid;
+}
+.bestDesc > span {
+  background: rgb(103, 103, 1);
+  border: 1px yellow solid;
+  color: rgb(224, 224, 11);
+  padding: 1px 3px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.bestDesc > h3 {
+  margin: 7px 0px 2px 0px;
+}
+.bestPrices {
+  display: flex;
+  padding: 6px 0px;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80%;
+}
+.bestPercent {
+  display: flex;
+  align-items: center;
+  background: rgba(0, 128, 0, 0.507);
+  color: rgba(2, 193, 2, 0.969);
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 15px;
+  padding: 3px 10px;
+}
+.newBestPrice {
+  color: rgb(144, 202, 78);
+  font-size: 20px;
+}
+.addToCart {
+  border: 1px grey solid;
+  padding: 3px 7px;
+  border-radius: 5px;
+}
+.addToCart:hover {
+  background: rgb(90, 179, 90);
 }
