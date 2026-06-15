@@ -81,6 +81,10 @@
   align-items: center;
   width: 80%;
 }
+.bestPricesText {
+  display: flex;
+  gap: 10px;
+}
 .bestPercent {
   display: flex;
   align-items: center;

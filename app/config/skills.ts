@@ -59,7 +59,7 @@ export const SKILLS_LIST = resolveSkills([
   { skillName: "Next-intl", lvl: "Confident", stage: "Active" },
   {
     skillName: "MongoDB",
-    lvl: "Moderate",
+    lvl: "High",
     stage: "Active",
   },
   {
@@ -69,7 +69,7 @@ export const SKILLS_LIST = resolveSkills([
   },
   {
     skillName: "MySQL",
-    lvl: "Moderate",
+    lvl: "High",
     stage: "Active",
   },
   { skillName: "Rest API", lvl: "High", stage: "Active" },
@@ -79,4 +79,7 @@ export const SKILLS_LIST = resolveSkills([
   { skillName: "Python", lvl: "Bad", stage: "InPlan" },
   { skillName: "PhP", lvl: "Bad", stage: "InPlan" },
   { skillName: "Java", lvl: "Moderate", stage: "InPlan" },
+  { skillName: "Docker", lvl: "Moderate", stage: "Active" },
+  { skillName: "ASP.NET", lvl: "Moderate", stage: "Active" },
+  { skillName: "Tanstack", lvl: "Moderate", stage: "Active" },
 ]);

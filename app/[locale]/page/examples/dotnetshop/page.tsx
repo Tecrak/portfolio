@@ -155,7 +155,10 @@ export default function dotNetPage() {
                   <h3>{game.gameName}</h3>
                   <p>{game.description}</p>
                   <div className={styles.bestPrices}>
-                    <div>
+                    <div className={styles.bestPricesText}>
+                      <p className={styles.bestPercent}>
+                        -{game.gamePrice.discountPer * 100}%
+                      </p>
                       <p
                         style={{
                           textDecoration: "line-through",
@@ -163,16 +166,15 @@ export default function dotNetPage() {
                         }}>
                         {game.gamePrice.price}
                       </p>
-                      <p className={styles.bestPercent}>
-                        -{game.gamePrice.discountPer * 100}%
+
+                      <p className={styles.newBestPrice}>
+                        {renderPrice(
+                          game.gamePrice.price,
+                          game.gamePrice.discountPer,
+                        )}
                       </p>
                     </div>
-                    <p className={styles.newBestPrice}>
-                      {renderPrice(
-                        game.gamePrice.price,
-                        game.gamePrice.discountPer,
-                      )}
-                    </p>
+
                     <button className={styles.addToCart}>Add to cart</button>
                   </div>
                 </div>
