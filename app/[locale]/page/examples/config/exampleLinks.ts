@@ -23,7 +23,7 @@ export const EXAMPLELINKS: NavItem[] = [
     label: "Shop",
     forDB: "DotNetShop",
     path: "/page/examples/dotnetshop",
-    led: "red",
+    led: "orange",
   },
   {
     label: "NestJS",
