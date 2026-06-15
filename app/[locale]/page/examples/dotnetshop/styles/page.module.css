@@ -1,3 +1,44 @@
 .shopMainBlock {
   display: flex;
+  background: rgba(0, 0, 0, 0.401);
+}
+.shopSideBar {
+  background: rgba(145, 145, 145, 0.223);
+}
+.shopSideBar > h3 {
+  font-size: 20px;
+  padding: 5px;
+}
+
+.shopGenres > li {
+  padding: 6px 7px;
+}
+.shopGenres > li:hover {
+  background: grey;
+  cursor: pointer;
+}
+.shopSideBar > p {
+  text-align: center;
+}
+.shopContent {
+  width: 100%;
+}
+.shopTopPart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px;
+  background: rgb(132, 132, 132);
+}
+.shopTopFunct {
+  display: flex;
+  align-items: center;
+}
+.shopCart {
+  padding: 3px 5px;
+  border: 1px black solid;
+  border-radius: 5px;
+  margin: 0px 7px;
+}
+.shopBestDeal {
 }

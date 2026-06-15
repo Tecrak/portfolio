@@ -71,6 +71,21 @@ export default function dotNetPage() {
       isBestOfDay: true,
       isPopular: false,
     },
+    {
+      id: 5,
+      gameName: "Kikikaka",
+      gamePrice: {
+        price: 10.99,
+        discountPer: 0.0,
+      },
+      genre: "RPG",
+      imgSrc:
+        "https://imgs.search.brave.com/OF4Ny4Uw6va6GuwVUJPczIbiiZve9e4GgsZzsXCQ4zM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy8w/LzBhL0x1eG9yVGVt/cGxlMy5qcGc",
+      description: "Beatiful game",
+      isCommingSoon: false,
+      isBestOfDay: false,
+      isPopular: false,
+    },
   ];
 
   const renderPrice = (price: number, discount: number) => {
@@ -112,15 +127,19 @@ export default function dotNetPage() {
       </div>
       <div className={styles.shopContent}>
         <div className={styles.shopTopPart}>
-          <h3>Browse games {games.length}</h3>
-          <select defaultValue={"Filter"}>
-            <option>Most popular</option>
-            <option>Price:High to Low</option>
-            <option>Price:Low to High</option>
-            <option>Discounts</option>
-            <option>Comming soon</option>
-          </select>
-          <div className={styles.shopCart}>Cart</div>
+          <div>
+            <h3>Browse games ({games.length})</h3>
+          </div>
+          <div className={styles.shopTopFunct}>
+            <select defaultValue={"Filter"}>
+              <option>Most popular</option>
+              <option>Price:High to Low</option>
+              <option>Price:Low to High</option>
+              <option>Discounts</option>
+              <option>Comming soon</option>
+            </select>
+            <div className={styles.shopCart}>Cart</div>
+          </div>
         </div>
         <div className={styles.shopBestDeal}>
           {games
