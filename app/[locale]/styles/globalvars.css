@@ -1,6 +1,6 @@
 :root {
   --reverseForImgs: rgba(255, 255, 255, 0.558);
-  --nav-bg: rgb(254, 149, 36); /* light */
+  --nav-bg: rgb(254, 149, 36);
   --nav-bttn-hover: rgb(255, 89, 0);
   --slider-circle: rgb(255, 255, 0);
   --slider-bg: #2400b2;
@@ -25,6 +25,7 @@
   --input-newImg: white;
   --newImg-submit: rgb(243, 148, 59);
 }
+
 .dark {
   --reverseForImgs: rgba(0, 0, 0, 0.582);
   --nav-bg: rgb(0, 28, 207); /* dark */
@@ -39,7 +40,7 @@
   --head-nice-bg: rgb(151, 50, 3);
   --scrollbar-main: rgb(14, 14, 112);
   --scrollbar-border: rgb(255, 179, 39);
-  --head-text-color: rgb(86, 95, 143);
+  --head-text-color: rgb(180, 190, 240);
   --form-bg-colour: #171b29;
   --smpl-text-color: rgb(191, 191, 191);
   --kindOfList-color: rgb(13, 25, 60);

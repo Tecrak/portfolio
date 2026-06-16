@@ -15,7 +15,7 @@ export default function dotNetPage() {
         price: 20.99,
         discountPer: 0.25,
       },
-      genre: "Action",
+      genres: ["RPG", "Action"],
       imgSrc:
         "https://imgs.search.brave.com/gxS2bibOZzDvKigxNrFkMByIDJCsLhBDZY99aDGRr5M/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2FjL2Rj/LzIwL2FjZGMyMDIy/N2ExNjIxN2NmZTA2/OWNiODcwNzIxODE1/LmpwZw",
       description: "Cool game",
@@ -31,7 +31,7 @@ export default function dotNetPage() {
         price: 0,
         discountPer: 0,
       },
-      genre: "MOBA",
+      genres: ["MOBA", "Strat"],
       imgSrc:
         "https://imgs.search.brave.com/5KBMrcOTlh4yLfQo5eW4qgyG6RB4xYv-MdNuoEdnvIg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzYxL2E0/LzhmLzYxYTQ4ZjUx/ZWU0YWI5NjlkZTcx/YzAzYjgyM2EzMjg4/LmpwZw",
       description: "Awesome game",
@@ -47,7 +47,7 @@ export default function dotNetPage() {
         price: 20,
         discountPer: 0,
       },
-      genre: "MOBA",
+      genres: ["MOBA", "Strat", "Action"],
       imgSrc:
         "https://imgs.search.brave.com/eRPtjSiR2OEiD82b57VXOaZ3v2CwxEKb-6cTD8MaT04/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9leHRl/cm5hbC1wcmV2aWV3/LnJlZGQuaXQvZGVh/ZGxvY2stZ2FtZXBs/YXktdXBkYXRlLTA1/LTIyLTIwMjYtdjAt/UUVpQWFsTElfT2lz/WGJaUHJUaFZqMmpa/ajZmRVpYeUx0NUs2/alNSSXlway5wbmc_/d2lkdGg9NjQwJmNy/b3A9c21hcnQmYXV0/bz13ZWJwJnM9NzBh/NGEyYjgxNGEzNjcx/MWE2NDY1ZDVmZmM4/YjRiYWM5ODJiNWE4/Yw",
       description: "Amazing game",
@@ -63,11 +63,11 @@ export default function dotNetPage() {
         price: 49.99,
         discountPer: 0.4,
       },
-      genre: "RPG",
+      genres: ["Action", "RPG", "Story"],
       imgSrc:
         "https://imgs.search.brave.com/Y4pD06dOrzZpQ2j_q8SzSrHWpTw3mZJjNZMpvjtYLRs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vd3d3LnF1/YWxiZXJ0LmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMi8w/MS9TdGFsa2VyLTIt/dGl0bGUuanBnP3Jl/c2l6ZT0xMTcwLDcy/MCZzc2w9MQ",
       description:
-        "Відкрийте для себе Чорнобильську Зону Відчуження сповнену небезпечних ворогів, смертельних аномалій та потужних артефактів. Напишіть свою власну епічну історію, прокладаючи свій шлях до Серця Чорнобиля",
+        "Відкрийте для себе Чорнобильську Зону Відчуження сповнену небезпечних ворогів, смертельних аномалій та потужних артефактів. Напишіть свою власну епічну історію, прокладаючи свій шлях до Серця Чорнобиля!",
       isCommingSoon: false,
       isBestOfDay: true,
       isPopular: false,
@@ -79,7 +79,7 @@ export default function dotNetPage() {
         price: 10.99,
         discountPer: 0.0,
       },
-      genre: "RPG",
+      genres: ["RPG", "Story"],
       imgSrc:
         "https://imgs.search.brave.com/OF4Ny4Uw6va6GuwVUJPczIbiiZve9e4GgsZzsXCQ4zM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy8w/LzBhL0x1eG9yVGVt/cGxlMy5qcGc",
       description: "Beatiful game",
@@ -101,7 +101,7 @@ export default function dotNetPage() {
       if (finalPrice <= 0) return "Free";
 
       // Інакше повертаємо обчислену ціну з двома знаками після коми
-      return `${finalPrice.toFixed(2)}`;
+      return `${finalPrice.toFixed(2)}$`;
     }
     // 3. Якщо знижки немає (discount === 0), просто повертаємо базову ціну
     return `${price.toFixed(2)}$`;
@@ -156,7 +156,7 @@ export default function dotNetPage() {
                   <p>{game.description}</p>
                   <div className={styles.bestPrices}>
                     <div className={styles.bestPricesText}>
-                      <p className={styles.bestPercent}>
+                      <p className={styles.discountText}>
                         -{game.gamePrice.discountPer * 100}%
                       </p>
                       <p
@@ -186,17 +186,26 @@ export default function dotNetPage() {
             {games
               .filter((game) => game.isBestOfDay != true)
               .map((game) => (
-                <li key={game.id}>
+                <li key={game.id} className={styles.gameItem}>
                   <img src={game.imgSrc}></img>
                   <div className={styles.gameInfo}>
                     <h4>{game.gameName}</h4>
-                    <p>{game.genre}</p>
+                    <ul className={styles.gameGenres}>
+                      {game.genres.map((genre) => (
+                        <li key={genre}>{genre}</li>
+                      ))}
+                    </ul>
+
                     <div className={styles.payMents}>
                       <p>
                         {renderPrice(
                           game.gamePrice.price,
                           game.gamePrice.discountPer,
                         )}
+
+                        {game.gamePrice.discountPer > 0 ? (
+                          <span>-${game.gamePrice.discountPer * 100}%</span>
+                        ) : null}
                       </p>
                       <button>+</button>
                     </div>

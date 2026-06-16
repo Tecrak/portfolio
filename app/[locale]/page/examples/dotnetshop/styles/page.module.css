@@ -1,123 +1,289 @@
 .shopMainBlock {
   display: flex;
-  background: rgba(0, 0, 0, 0.401);
+  background-color: var(--bg);
+  color: var(--smpl-text-color);
+  border-top: 2px solid var(--skills-borders);
 }
 
 .shopSideBar {
-  background: rgba(145, 145, 145, 0.223);
+  background-color: var(--kindOfList-color);
+  width: 215px;
+  border-right: 1px solid var(--skills-borders);
+  padding: 0px 3px;
 }
+
 .shopSideBar > h3 {
-  font-size: 20px;
-  padding: 5px;
+  font-size: 18px;
+  color: var(--head-text-color);
+  margin: 10px 0px 0px 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .shopGenres > li {
-  padding: 6px 7px;
-}
-.shopGenres > li:hover {
-  background: grey;
+  padding: 8px 10px;
   cursor: pointer;
 }
-.shopSideBar > p {
-  text-align: center;
+
+.shopGenres > li:hover {
+  background-color: var(--sideBar-list-hover);
+  color: var(--head-text-color);
 }
-.shopContent {
+
+.shopSideBar input[type="range"] {
   width: 100%;
+  margin: 5px 0;
+  accent-color: var(--nav-bg);
 }
+
+.shopSideBar > p {
+  font-weight: bold;
+  color: var(--head-text-color);
+}
+
 .shopTopPart {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 7px;
-  background: rgb(132, 132, 132);
+  padding: 15px 25px;
+  background-color: var(--skills-headers-bg);
+  border-bottom: 1px solid var(--skills-borders);
 }
+
+.shopTopPart h3 {
+  color: var(--head-text-color);
+}
+
 .shopTopFunct {
   display: flex;
   align-items: center;
+  gap: 15px;
 }
+
+.shopTopFunct select {
+  background-color: var(--form-bg-colour);
+  color: var(--smpl-text-color);
+  border: 1px solid var(--skills-borders);
+  padding: 6px 12px;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+}
+
 .shopCart {
-  padding: 3px 5px;
-  border: 1px black solid;
-  border-radius: 5px;
-  margin: 0px 7px;
+  padding: 6px 15px;
+  background-color: var(--nav-bg);
+  color: #fff;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
 }
+
+.shopCart:hover {
+  background-color: var(--nav-bttn-hover);
+}
+
+.shopBestBlock {
+  padding: 20px 25px;
+}
+
 .shopBestDeal {
   display: flex;
-  background: rgba(0, 0, 0, 0.572);
-  margin: 15px;
-  padding: 5px;
+  background-color: var(--skills-mainArea-bg);
+  border: 1px solid var(--skills-borders);
+  border-radius: 12px;
+  padding: 20px;
+  gap: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
+
 .bestImg {
-  margin-right: 10px;
-  width: 100%;
-  overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
+
 .bestImg img {
-  width: 220px;
-  height: 125px;
-  border-radius: 3px;
-  border: 1px rgb(251, 253, 124) solid;
+  width: 240px;
+  height: 140px;
+  border-radius: 8px;
+  border: 2px solid var(--head-nice-bg);
 }
+
+.bestDesc {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .bestDesc > span {
-  background: rgb(103, 103, 1);
-  border: 1px yellow solid;
-  color: rgb(224, 224, 11);
-  padding: 1px 3px;
-  border-radius: 5px;
-  text-align: center;
-  font-size: 15px;
+  align-self: flex-start;
+  background-color: var(--head-nice-bg);
+  color: white;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .bestDesc > h3 {
-  margin: 7px 0px 2px 0px;
+  margin: 10px 0 5px 0;
+  color: var(--head-text-color);
+  font-size: 22px;
 }
+
+.bestDesc > p {
+  margin: 0 0 10px 0;
+  font-size: 14px;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
 .bestPrices {
   display: flex;
-  padding: 6px 0px;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
-  width: 80%;
+  background: var(--form-bg-colour);
+  padding: 7px 15px;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
 }
+
 .bestPricesText {
   display: flex;
-  gap: 10px;
-}
-.bestPercent {
-  display: flex;
   align-items: center;
-  background: rgba(0, 128, 0, 0.507);
-  color: rgba(2, 193, 2, 0.969);
+  gap: 12px;
+}
+
+.discountText {
+  background: #22c55e;
+  color: white;
   font-weight: bold;
-  font-size: 15px;
-  border-radius: 15px;
-  padding: 3px 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  padding: 4px 8px;
 }
+
 .newBestPrice {
-  color: rgb(144, 202, 78);
-  font-size: 20px;
+  color: rgb(41, 153, 41);
+  font-weight: bold;
+  font-size: 22px;
 }
+
 .addToCart {
-  border: 1px grey solid;
-  padding: 3px 7px;
-  border-radius: 5px;
+  background-color: var(--newImg-submit);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
 }
+
 .addToCart:hover {
-  background: rgb(90, 179, 90);
+  background-color: var(--nav-bttn-hover);
 }
-.shopAllGames img {
-  width: 275px;
-  height: 135px;
+
+.shopAllGames {
+  padding: 0 25px;
 }
+
 .shopAllGames > ul {
-  /* background: red; */
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.gameItem {
+  background-color: var(--skills-mainArea-bg);
+  border: 1px solid var(--skills-borders);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.gameItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.shopAllGames img {
+  width: 100%;
+  height: 135px;
+  object-fit: cover;
+}
+
+.gameInfo {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  text-align: left; /* Змінено на ліве вирівнювання для кращого дизайну картки */
+}
+
+.gameInfo h4 {
+  margin: 0 0 8px 0;
+  color: var(--head-text-color);
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gameGenres {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 5px;
+  margin: 0 0 15px 0;
 }
-.shopAllGames > ul > li {
-  background: rgba(173, 173, 173, 0.603);
+
+.gameGenres > li {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background-color: var(--skill-bg);
+  color: var(--head-text-color);
+  border: 1px solid var(--skill-li-border);
+}
+
+.payMents {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.payMents > p {
+  font-weight: bold;
+  color: var(--head-text-color);
+}
+
+.payMents > p > span {
+  background: #22c55e;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  border-radius: 4px;
+  padding: 2px 6px;
+  margin-left: 5px;
+}
+
+.payMents > button {
+  border: none;
+  background-color: rgb(3, 171, 3);
+  color: white;
+  border-radius: 6px;
+  font-weight: bold;
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.payMents > button:hover {
+  opacity: 0.9;
 }
