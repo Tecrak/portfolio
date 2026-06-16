@@ -1,0 +1,41 @@
+.shopTopPart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  background-color: var(--skills-headers-bg);
+  border-bottom: 1px solid var(--skills-borders);
+}
+
+.shopTopPart h3 {
+  color: var(--head-text-color);
+}
+
+.shopTopFunct {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.shopTopFunct select {
+  background-color: var(--form-bg-colour);
+  color: var(--smpl-text-color);
+  border: 1px solid var(--skills-borders);
+  padding: 6px 12px;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+}
+
+.shopCart {
+  padding: 6px 15px;
+  background-color: var(--nav-bg);
+  color: #fff;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.shopCart:hover {
+  background-color: var(--nav-bttn-hover);
+}

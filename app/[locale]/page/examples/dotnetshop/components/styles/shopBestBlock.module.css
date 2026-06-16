@@ -1,0 +1,101 @@
+.shopBestBlock {
+  padding: 20px 25px;
+}
+
+.shopBestDeal {
+  display: flex;
+  background-color: var(--skills-mainArea-bg);
+  border: 1px solid var(--skills-borders);
+  border-radius: 12px;
+  padding: 20px;
+  gap: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.bestImg {
+  display: flex;
+  align-items: center;
+}
+
+.bestImg img {
+  width: 240px;
+  height: 140px;
+  border-radius: 8px;
+  border: 2px solid var(--head-nice-bg);
+}
+
+.bestDesc {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bestDesc > span {
+  align-self: flex-start;
+  background-color: var(--head-nice-bg);
+  color: white;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.bestDesc > h3 {
+  margin: 10px 0 5px 0;
+  color: var(--head-text-color);
+  font-size: 22px;
+}
+
+.bestDesc > p {
+  margin: 0 0 10px 0;
+  font-size: 14px;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+.bestPrices {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--form-bg-colour);
+  padding: 7px 15px;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.bestPricesText {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.discountText {
+  background: #22c55e;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 6px;
+  padding: 4px 8px;
+}
+
+.newBestPrice {
+  color: rgb(41, 153, 41);
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.addToCart {
+  background-color: var(--newImg-submit);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.addToCart:hover {
+  background-color: var(--nav-bttn-hover);
+}

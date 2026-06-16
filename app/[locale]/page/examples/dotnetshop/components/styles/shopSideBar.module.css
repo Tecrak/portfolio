@@ -1,0 +1,35 @@
+.shopSideBar {
+  background-color: var(--kindOfList-color);
+  width: 215px;
+  border-right: 1px solid var(--skills-borders);
+  padding: 0px 3px;
+}
+
+.shopSideBar > h3 {
+  font-size: 18px;
+  color: var(--head-text-color);
+  margin: 10px 0px 0px 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.shopGenres > li {
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.shopGenres > li:hover {
+  background-color: var(--sideBar-list-hover);
+  color: var(--head-text-color);
+}
+
+.shopSideBar input[type="range"] {
+  width: 100%;
+  margin: 5px 0;
+  accent-color: var(--nav-bg);
+}
+
+.shopSideBar > p {
+  font-weight: bold;
+  color: var(--head-text-color);
+}
