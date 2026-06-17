@@ -1,6 +1,9 @@
 export type Genre = "All Games" | "Action" | "RPG" | "Strat" | "MOBA" | "Story";
 export type Genres = Genre[];
 
+export interface GameItemProps {
+  game: Game;
+}
 export interface GamePrice {
   price: number;
   discountPer: number;
@@ -20,7 +23,6 @@ export interface Game {
 
 export interface ShareVars {
   games: Game[];
-  renderPrice: (price: number, discount: number) => string;
   styles: Record<string, string>;
   genres: Genres;
   upToPrice: string;

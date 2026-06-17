@@ -1,7 +1,8 @@
 import { ShareVars } from "../config/games";
+import RenderPrice from "./renderPrice";
 import styles from "./styles/shopBestBlock.module.css";
 
-export default function ShopBestBlock({ games, renderPrice }: ShareVars) {
+export default function ShopBestBlock({ games }: ShareVars) {
   return (
     <div className={styles.shopBestBlock}>
       {games
@@ -29,10 +30,10 @@ export default function ShopBestBlock({ games, renderPrice }: ShareVars) {
                   </p>
 
                   <p className={styles.newBestPrice}>
-                    {renderPrice(
-                      game.gamePrice.price,
-                      game.gamePrice.discountPer,
-                    )}
+                    <RenderPrice
+                      price={game.gamePrice.price}
+                      discount={game.gamePrice.discountPer}
+                    />
                   </p>
                 </div>
 

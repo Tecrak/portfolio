@@ -23,7 +23,6 @@ export default function LangSwitchBttn() {
   const switchLocale = (locale: string) => {
     sessionStorage.setItem("scrollPos", String(window.scrollY));
     const newPath = pathname.replace(/^\/(gb|ua|de)/, `/${locale}`);
-    console.log(newPath);
     router.push(newPath);
   };
 

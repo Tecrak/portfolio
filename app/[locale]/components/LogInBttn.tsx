@@ -20,7 +20,6 @@ export default function AuthButton() {
           className="loggedInUser"
           onClick={() => {
             setIsMenuOpen(!isMenuOpen);
-            console.log(isMenuOpen);
           }}
           style={{ userSelect: "none" }}>
           <Image

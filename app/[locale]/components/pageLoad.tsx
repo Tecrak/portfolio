@@ -25,12 +25,6 @@ export default function PageTransition({
     const langSwitch = prevPathRef.current === currentPath;
     const alreadyShown = shownPathsRef.current.has(currentPath);
 
-    console.log("pathname:", pathname);
-    console.log("currentPath:", currentPath);
-    console.log("prevPathRef:", prevPathRef.current);
-    console.log("langSwitch:", langSwitch);
-    console.log("scrollY at effect:", window.scrollY);
-
     setIsLangSwitch(langSwitch);
 
     if (prevPathRef.current === null || langSwitch || !alreadyShown) {

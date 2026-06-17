@@ -24,8 +24,7 @@ export default function AccountClient({ owner }: { owner: string }) {
   return (
     <div className={styles.mainBlock}>
       <div className={styles.ownerInfo}>
-        {session && <img src={ownerImage} className={styles.ownerImg} />}
-
+        <img src={ownerImage} className={styles.ownerImg} />
         <div className={styles.ownerText}>
           {isOwner ? (
             <>

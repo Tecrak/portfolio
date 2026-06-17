@@ -64,13 +64,16 @@ export default function ExamplesLayout({
         </div>
 
         <div className="mainAreaContent">
-          <div className="exmplDesc">
-            {isRootPage ? (
-              <p>{t("chooseSkill")}</p>
-            ) : (
-              <p>{t(`skills.${currentLink?.forDB}.description`)}</p>
-            )}
-          </div>
+          {currentLink && currentLink.forDB && currentLink.forDB !== "??" ? (
+            <div className="exmplDesc">
+              {isRootPage ? (
+                <p>{t("chooseSkill")}</p>
+              ) : (
+                <p>{t(`skills.${currentLink?.forDB}.description`)}</p>
+              )}
+            </div>
+          ) : null}
+
           {!isRootPage ? (
             <div className="testAreaBlock">
               <p>TEST AREA</p>
