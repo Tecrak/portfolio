@@ -24,7 +24,7 @@ export default function GameItem({ game }: GameItemProps) {
               <span>-${game.gamePrice.discountPer * 100}%</span>
             ) : null}
           </p>
-          <button>+</button>
+          {!game.isCommingSoon ? <button>+</button> : <p>Coming soon</p>}
         </div>
       </div>
     </li>

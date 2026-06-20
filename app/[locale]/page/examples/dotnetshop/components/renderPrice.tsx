@@ -22,5 +22,6 @@ export default function RenderPrice({
     // 3. Якщо знижки немає (discount === 0), просто повертаємо базову ціну
     return `${price.toFixed(2)}$`;
   };
+
   return renderPrice();
 }

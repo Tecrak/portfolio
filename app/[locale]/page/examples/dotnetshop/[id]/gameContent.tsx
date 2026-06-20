@@ -8,7 +8,7 @@ export default function GameContent({ gameId }: { gameId: number }) {
       {games
         .filter((game) => game.id == gameId)
         .map((game) => (
-          <div>
+          <div key={game.id}>
             <GameItem game={game} />
           </div>
         ))}

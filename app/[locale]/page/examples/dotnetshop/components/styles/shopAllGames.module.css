@@ -15,6 +15,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  height: 250px;
 }
 
 .gameItem:hover {
@@ -86,7 +87,6 @@
 }
 
 .payMents > button {
-  border: none;
   background-color: rgb(3, 171, 3);
   color: white;
   border-radius: 6px;
