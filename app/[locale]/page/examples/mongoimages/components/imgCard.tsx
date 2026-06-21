@@ -4,7 +4,7 @@ import LikeBttn from "./likeBttn";
 import { useMPeopleDelete } from "../hooks/useMPeopleDelete";
 import { useSession } from "next-auth/react";
 import AuthorDetails from "./authorDetails";
-import { ShareVarsType } from "../../types";
+import { ShareVarsType } from "../types";
 
 export default function ImgCard({
   mData,

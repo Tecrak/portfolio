@@ -1,4 +1,4 @@
-import { Post } from "./mongoimages/config/data";
+import { Post } from "./config/data";
 
 export interface ShareVarsType {
   mData?: Post[];

@@ -6,7 +6,7 @@ import styles from "./styles/openedCard.module.css";
 import LikeBttn from "./likeBttn";
 import { useSession } from "next-auth/react";
 import AuthorDetails from "./authorDetails";
-import { ShareVarsType } from "../../types";
+import { ShareVarsType } from "../types";
 import NewComment from "./newComment";
 import CommentsBlock from "./commentsBlock";
 
