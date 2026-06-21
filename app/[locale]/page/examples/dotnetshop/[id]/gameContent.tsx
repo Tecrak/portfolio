@@ -1,7 +1,13 @@
+"use client";
+import { useContext } from "react";
 import GameItem from "../components/gameItem";
-import { games } from "../config/games";
+import { ShopContext } from "../util/ShopContext";
 
 export default function GameContent({ gameId }: { gameId: number }) {
+  const context = useContext(ShopContext);
+  if (!context) return null;
+  const { games } = context;
+
   return (
     // Треба щоби на рівні БД фільтрувало, а зара на костилях буде
     <>

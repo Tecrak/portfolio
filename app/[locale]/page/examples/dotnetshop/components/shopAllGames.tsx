@@ -7,7 +7,9 @@ import { useContext } from "react";
 
 export default function ShopAllGame() {
   const context = useContext(ShopContext);
+  if (!context) return null;
   const { games } = context;
+
   const getSavings = (price: number, discount: number) =>
     price * (discount / 100);
 
