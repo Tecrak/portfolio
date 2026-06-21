@@ -1,7 +1,7 @@
 import { Genre, GameItemProps } from "../config/games";
 import RenderPrice from "./renderPrice";
 import styles from "./styles/shopAllGames.module.css";
-export default function GameItem({ game }: GameItemProps) {
+export default function GameItem({ game, isBestDeal }: GameItemProps) {
   return (
     <li key={game.id} className={styles.gameItem}>
       <img src={game.imgSrc}></img>

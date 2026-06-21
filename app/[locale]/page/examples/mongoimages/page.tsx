@@ -9,7 +9,7 @@ import NewImg from "./components/newImg";
 import { useSession } from "next-auth/react";
 import { useEffectInitLikes } from "./hooks/useEffectInitLikes";
 import { useEffectScrollLock } from "./hooks/useEffectScrollLock";
-import { ShareVarsType } from "../types";
+import { ShareVarsType } from "./types";
 
 export default function MongoDBPage({
   isAccountPage,

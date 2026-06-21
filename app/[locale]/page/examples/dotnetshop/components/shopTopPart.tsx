@@ -1,7 +1,13 @@
+import { useContext } from "react";
 import { ShareVars } from "../config/games";
 import styles from "./styles/shopTopPart.module.css";
+import { ShopContext } from "../util/ShopContext";
 
-export default function ShopTopPart({ games }: ShareVars) {
+export default function ShopTopPart() {
+  const context = useContext(ShopContext);
+  if (!context) return null;
+  const { games } = context;
+
   return (
     <div className={styles.shopTopPart}>
       <div>
