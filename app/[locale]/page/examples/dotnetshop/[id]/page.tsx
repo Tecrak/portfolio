@@ -3,9 +3,9 @@ import GameContent from "./gameContent";
 export default async function GamePage({
   params,
 }: {
-  params: Promise<{ _id: any }>;
+  params: Promise<{ id: any }>;
 }) {
-  const { _id } = await params;
+  const { id } = await params;
   // Треба буде щоб тут викликалася функція яка візьме дані з ДБ
-  return <GameContent gameId={_id} />;
+  return <GameContent gameId={id} />;
 }

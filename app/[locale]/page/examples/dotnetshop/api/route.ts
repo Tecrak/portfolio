@@ -1,5 +1,5 @@
-import { MongoClient, ServerApiVersion } from "mongodb";
-import { NextResponse } from "next/server";
+import { MongoClient, ObjectId, ServerApiVersion } from "mongodb";
+import { NextRequest, NextResponse } from "next/server";
 // Спочатку треба підключитися до дб
 const uri = `mongodb+srv://${process.env.GDB_USER}:${process.env.GDB_PASSWORD}@portfolioclaster.aagfjag.mongodb.net/?appName=portfolioclaster`;
 
@@ -23,10 +23,19 @@ async function getCollection() {
 
 // GET HTML запит
 
-export async function GET() {
+export async function GET(req: NextRequest) {
+  // req щоби отрмати проп
   try {
+    const { searchParams } = new URL(req.url); // прийняти
+    const gameId = searchParams.get("gameID"); // перекинути в проп
     const col = await getCollection();
-    const data = await col.find({}).toArray();
+    let query = {};
+
+    if (gameId && ObjectId.isValid(gameId)) {
+      query = { _id: new ObjectId(gameId) };
+    }
+    const data = await col.find(query).toArray();
+
     return NextResponse.json(data);
   } catch (error) {
     console.error("GET error", error);
