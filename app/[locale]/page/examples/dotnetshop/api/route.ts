@@ -34,8 +34,23 @@ export async function GET(req: NextRequest) {
     if (gameId && ObjectId.isValid(gameId)) {
       query = { _id: new ObjectId(gameId) };
     }
-    const data = await col.find(query).toArray();
 
+    const data = gameId
+      ? await col.find(query).toArray()
+      : await col
+          .find(query, {
+            projection: {
+              // projection щоби витягти  конкретні данні, хочу потім у [id] щоби всі данні про гру витягалися
+              _id: 1,
+              gameName: 1,
+              gamePrice: 1,
+              genres: 1,
+              description: 1,
+              imgSrc: 1,
+              isCommingSoon: 1,
+            },
+          })
+          .toArray();
     return NextResponse.json(data);
   } catch (error) {
     console.error("GET error", error);

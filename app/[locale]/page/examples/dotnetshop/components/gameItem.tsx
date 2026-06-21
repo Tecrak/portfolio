@@ -3,7 +3,7 @@ import RenderPrice from "./renderPrice";
 import styles from "./styles/shopAllGames.module.css";
 export default function GameItem({ game }: GameItemProps) {
   return (
-    <li key={game._id} className={styles.gameItem}>
+    <li title={game.description} key={game._id} className={styles.gameItem}>
       <img src={game.imgSrc}></img>
       <div className={styles.gameInfo}>
         <h4>{game.gameName}</h4>
