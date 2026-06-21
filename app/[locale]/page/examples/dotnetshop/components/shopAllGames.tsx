@@ -28,8 +28,8 @@ export default function ShopAllGame() {
             maxSavings;
 
           return (
-            <Link key={game.id} href={`../examples/dotnetshop/${game.id}`}>
-              <GameItem game={game} isBestDeal={isBestDeal} />
+            <Link key={game._id} href={`../examples/dotnetshop/${game._id}`}>
+              <GameItem game={game} />
             </Link>
           );
         })}

@@ -10,7 +10,7 @@ export interface GamePrice {
 }
 
 export interface Game {
-  id: number;
+  _id: number;
   gameName: string;
   gamePrice: GamePrice;
   genres: Genre[];
