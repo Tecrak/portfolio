@@ -18,15 +18,12 @@ export interface Game {
   imgSrc: string;
   description: string;
   isCommingSoon: boolean;
-  isPopular: boolean;
 }
 
 export interface ShareVars {
   games: Game[];
   styles: Record<string, string>;
   genres: Genres;
-  upToPrice: string;
-  setUpToPrice: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export const genres: Genres = ["All Games", "Action", "RPG", "Strat", "MOBA"];
@@ -35,7 +32,7 @@ export const games: Game[] = [
     id: 1,
     gameName: "Shadow",
     gamePrice: {
-      price: 20.99,
+      price: 10.99,
       discountPer: 0.25,
     },
     genres: ["RPG", "Action"],
@@ -43,7 +40,6 @@ export const games: Game[] = [
       "https://imgs.search.brave.com/gxS2bibOZzDvKigxNrFkMByIDJCsLhBDZY99aDGRr5M/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2FjL2Rj/LzIwL2FjZGMyMDIy/N2ExNjIxN2NmZTA2/OWNiODcwNzIxODE1/LmpwZw",
     description: "Cool game",
     isCommingSoon: false,
-    isPopular: true,
   },
   {
     id: 2,
@@ -55,9 +51,9 @@ export const games: Game[] = [
     genres: ["MOBA", "Strat"],
     imgSrc:
       "https://imgs.search.brave.com/5KBMrcOTlh4yLfQo5eW4qgyG6RB4xYv-MdNuoEdnvIg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzYxL2E0/LzhmLzYxYTQ4ZjUx/ZWU0YWI5NjlkZTcx/YzAzYjgyM2EzMjg4/LmpwZw",
-    description: "Awesome game",
+    description:
+      "Щодня мільйони гравців у всьому світі вступають у бій за одного з понад сотні героїв Dota. І немає значення, буде це 10-та година гри чи 1000-на, завжди знайдеться щось нове для відкриття. Dota 2 живе своїм життям завдяки постійній еволюції ігроладу, можливостей і героїв.",
     isCommingSoon: false,
-    isPopular: true,
   },
   {
     id: 3,
@@ -69,9 +65,9 @@ export const games: Game[] = [
     genres: ["MOBA", "Strat", "Action"],
     imgSrc:
       "https://imgs.search.brave.com/eRPtjSiR2OEiD82b57VXOaZ3v2CwxEKb-6cTD8MaT04/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9leHRl/cm5hbC1wcmV2aWV3/LnJlZGQuaXQvZGVh/ZGxvY2stZ2FtZXBs/YXktdXBkYXRlLTA1/LTIyLTIwMjYtdjAt/UUVpQWFsTElfT2lz/WGJaUHJUaFZqMmpa/ajZmRVpYeUx0NUs2/alNSSXlway5wbmc_/d2lkdGg9NjQwJmNy/b3A9c21hcnQmYXV0/bz13ZWJwJnM9NzBh/NGEyYjgxNGEzNjcx/MWE2NDY1ZDVmZmM4/YjRiYWM5ODJiNWE4/Yw",
-    description: "Amazing game",
+    description:
+      "Deadlock — це багатокористувацька гра на ранньому етапі розробки.",
     isCommingSoon: true,
-    isPopular: false,
   },
   {
     id: 4,
@@ -86,7 +82,6 @@ export const games: Game[] = [
     description:
       "Відкрийте для себе Чорнобильську Зону Відчуження сповнену небезпечних ворогів, смертельних аномалій та потужних артефактів. Напишіть свою власну епічну історію, прокладаючи свій шлях до Серця Чорнобиля!",
     isCommingSoon: false,
-    isPopular: false,
   },
   {
     id: 5,
@@ -100,6 +95,5 @@ export const games: Game[] = [
       "https://imgs.search.brave.com/OF4Ny4Uw6va6GuwVUJPczIbiiZve9e4GgsZzsXCQ4zM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy8w/LzBhL0x1eG9yVGVt/cGxlMy5qcGc",
     description: "Beatiful game",
     isCommingSoon: false,
-    isPopular: false,
   },
 ];

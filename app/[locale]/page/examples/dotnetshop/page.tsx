@@ -10,14 +10,10 @@ import ShopSideBar from "./components/shopSideBar";
 import { ShopContext } from "./util/ShopContext";
 
 export default function dotNetPage() {
-  const [upToPrice, setUpToPrice] = useState("100");
-
   const shareVars: ShareVars = {
     games,
     genres,
     styles,
-    upToPrice,
-    setUpToPrice,
   };
   return (
     <ShopContext.Provider value={shareVars}>

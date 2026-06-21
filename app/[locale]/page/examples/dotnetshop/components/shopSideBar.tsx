@@ -1,5 +1,6 @@
-import { useContext } from "react";
-import { Genre, ShareVars } from "../config/games";
+"use client";
+import { useContext, useState } from "react";
+import { Genre } from "../config/games";
 import { ShopContext } from "../util/ShopContext";
 import styles from "./styles/shopSideBar.module.css";
 
@@ -7,6 +8,7 @@ export default function ShopSideBar() {
   const context = useContext(ShopContext);
   if (!context) return null;
   const { genres } = context;
+  const [upToPrice, setUpToPrice] = useState("100");
 
   return (
     <div className={styles.shopSideBar}>
@@ -17,14 +19,14 @@ export default function ShopSideBar() {
         ))}
       </ul>
       <h3>Price</h3>
-      {/* <input
+      <input
         type="range"
         min={0}
         max={100}
         step={10}
         defaultValue={100}
         onChange={(e) => setUpToPrice(e.target.value)}></input>
-      <p>Up to {upToPrice}$</p> */}
+      <p>Up to {upToPrice}$</p>
     </div>
   );
 }
