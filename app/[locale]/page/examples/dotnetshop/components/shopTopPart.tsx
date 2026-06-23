@@ -15,7 +15,6 @@ export default function ShopTopPart() {
       </div>
       <div className={styles.shopTopFunct}>
         <select defaultValue={"Filter"}>
-          <option>Most popular</option>
           <option>Price:High to Low</option>
           <option>Price:Low to High</option>
           <option>Discounts</option>

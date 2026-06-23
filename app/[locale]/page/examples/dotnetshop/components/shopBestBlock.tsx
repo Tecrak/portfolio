@@ -1,14 +1,11 @@
-import { useContext } from "react";
-import { ShopContext } from "../util/ShopContext";
 import { getBestDealGame } from "../util/getBestDeal";
 import RenderPrice from "./renderPrice";
 import styles from "./styles/shopBestBlock.module.css";
 import Link from "next/link";
+import { useAllGames } from "../hook/useAllGames";
 
 export default function ShopBestBlock() {
-  const context = useContext(ShopContext);
-  if (!context) return null;
-  const { games } = context;
+  const { data: games = [] } = useAllGames();
   const bestDeal = getBestDealGame(games);
   if (!bestDeal) return null;
 

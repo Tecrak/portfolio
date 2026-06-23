@@ -4,38 +4,25 @@ import GameItem from "./gameItem";
 import { ShopContext } from "../util/ShopContext";
 import { useContext } from "react";
 
-export default function ShopAllGame({
-  selectedGenre,
-}: {
-  selectedGenre: Genre | undefined;
-}) {
+export default function ShopAllGame({ upToPrice }: { upToPrice: number }) {
   const context = useContext(ShopContext);
   if (!context) return null;
   const { games } = context;
 
-  const getSavings = (price: number, discount: number) =>
-    price * (discount / 100);
-
-  const maxSavings = Math.max(
-    ...games.map((game: Game) =>
-      getSavings(game.gamePrice.price, game.gamePrice.discountPer),
-    ),
-  );
+  function getActualPrice(game: Game) {
+    return game.gamePrice.price * (1 - game.gamePrice.discountPer);
+  }
 
   return (
     <div className={styles.shopAllGames}>
       <ul>
         {games
-          .filter((game) =>
-            !selectedGenre || selectedGenre === "All Games"
-              ? true
-              : game.genres.includes(selectedGenre),
-          )
+          .filter((game) => {
+            const matchesPrice =
+              upToPrice === undefined || getActualPrice(game) <= upToPrice;
+            return matchesPrice;
+          })
           .map((game: Game) => {
-            const isBestDeal: boolean =
-              getSavings(game.gamePrice.price, game.gamePrice.discountPer) ===
-              maxSavings;
-
             return (
               <div key={game._id}>
                 <GameItem game={game} />

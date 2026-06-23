@@ -8,11 +8,16 @@ import ShopBestBlock from "./components/shopBestBlock";
 import ShopTopPart from "./components/shopTopPart";
 import ShopSideBar from "./components/shopSideBar";
 import { ShopContext } from "./util/ShopContext";
-import { useGames } from "./hook/useGames";
+import { useGenredGames } from "./hook/useGenredGames";
 
 export default function dotNetPage() {
   const [selectedGenre, setSelectedGenre] = useState<Genre>();
-  const { data: games = [], isLoading, isError } = useGames();
+  const [upToPrice, setUpToPrice] = useState<number>(100);
+  const {
+    data: games = [],
+    isLoading,
+    isError,
+  } = useGenredGames(selectedGenre);
   const shareVars: ShareVars = {
     games,
     genres,
@@ -23,14 +28,22 @@ export default function dotNetPage() {
     setSelectedGenre(genre);
   };
 
+  const handlePriceChange = (price: number) => {
+    setUpToPrice(price);
+  };
+
   return (
     <ShopContext.Provider value={shareVars}>
       <div className={styles.shopMainBlock}>
-        <ShopSideBar onGenreChange={handleGenreChange} />
+        <ShopSideBar
+          onGenreChange={handleGenreChange}
+          onPriceChange={handlePriceChange}
+          upToPrice={upToPrice}
+        />
         <div className={styles.shopContent}>
           <ShopTopPart />
           <ShopBestBlock />
-          <ShopAllGames selectedGenre={selectedGenre} />
+          <ShopAllGames upToPrice={upToPrice} />
         </div>
       </div>
     </ShopContext.Provider>

@@ -6,13 +6,16 @@ import styles from "./styles/shopSideBar.module.css";
 
 export default function ShopSideBar({
   onGenreChange,
+  onPriceChange,
+  upToPrice,
 }: {
   onGenreChange: (genre: Genre) => void;
+  onPriceChange: (price: number) => void;
+  upToPrice: number;
 }) {
   const context = useContext(ShopContext);
   if (!context) return null;
   const { genres } = context;
-  const [upToPrice, setUpToPrice] = useState("100");
 
   return (
     <div className={styles.shopSideBar}>
@@ -31,8 +34,8 @@ export default function ShopSideBar({
         max={100}
         step={10}
         defaultValue={100}
-        onChange={(e) => setUpToPrice(e.target.value)}></input>
-      <p>Up to {upToPrice}$</p>
+        onChange={(e) => onPriceChange(+e.target.value)}></input>
+      <p>{upToPrice !== 0 ? `Up to ${upToPrice}$` : "Free"}</p>
     </div>
   );
 }
