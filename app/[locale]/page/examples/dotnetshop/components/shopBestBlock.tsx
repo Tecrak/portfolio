@@ -3,6 +3,7 @@ import { ShopContext } from "../util/ShopContext";
 import { getBestDealGame } from "../util/getBestDeal";
 import RenderPrice from "./renderPrice";
 import styles from "./styles/shopBestBlock.module.css";
+import Link from "next/link";
 
 export default function ShopBestBlock() {
   const context = useContext(ShopContext);
@@ -14,9 +15,11 @@ export default function ShopBestBlock() {
   return (
     <div className={styles.shopBestBlock}>
       <div className={styles.shopBestDeal}>
-        <div className={styles.bestImg}>
-          <img src={bestDeal.imgSrc}></img>
-        </div>
+        <Link href={`../examples/dotnetshop/${bestDeal._id}`}>
+          <div className={styles.bestImg}>
+            <img src={bestDeal.imgSrc}></img>
+          </div>
+        </Link>
         <div className={styles.bestDesc}>
           <span>Deal of the day</span>
           <h3>{bestDeal.gameName}</h3>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Genre, GameItemProps } from "../config/games";
 import RenderPrice from "./renderPrice";
 import styles from "./styles/shopAllGames.module.css";
@@ -6,13 +7,14 @@ export default function GameItem({ game }: GameItemProps) {
     <li title={game.description} key={game._id} className={styles.gameItem}>
       <img src={game.imgSrc}></img>
       <div className={styles.gameInfo}>
-        <h4>{game.gameName}</h4>
-        <ul className={styles.gameGenres}>
-          {game.genres.map((genre: Genre) => (
-            <li key={genre}>{genre}</li>
-          ))}
-        </ul>
-
+        <Link href={`../examples/dotnetshop/${game._id}`}>
+          <h4>{game.gameName}</h4>
+          <ul className={styles.gameGenres}>
+            {game.genres.map((genre: Genre) => (
+              <li key={genre}>{genre}</li>
+            ))}
+          </ul>
+        </Link>
         <div className={styles.payMents}>
           <p>
             <RenderPrice
@@ -24,7 +26,18 @@ export default function GameItem({ game }: GameItemProps) {
               <span>-${game.gamePrice.discountPer * 100}%</span>
             ) : null}
           </p>
-          {!game.isCommingSoon ? <button>+</button> : <p>Coming soon</p>}
+          {!game.isCommingSoon ? (
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                e.preventDefault;
+                console.log("Added to cart game:" + game.gameName);
+              }}>
+              +
+            </button>
+          ) : (
+            <p>Coming soon</p>
+          )}
         </div>
       </div>
     </li>

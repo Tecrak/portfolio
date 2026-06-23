@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { Game, ShareVars } from "../config/games";
+import { Game } from "../config/games";
 import styles from "./styles/shopAllGames.module.css";
 import GameItem from "./gameItem";
 import { ShopContext } from "../util/ShopContext";
@@ -28,9 +27,7 @@ export default function ShopAllGame() {
             maxSavings;
 
           return (
-            <Link key={game._id} href={`../examples/dotnetshop/${game._id}`}>
-              <GameItem game={game} />
-            </Link>
+            <div key={game._id}>{!isBestDeal && <GameItem game={game} />}</div>
           );
         })}
       </ul>
