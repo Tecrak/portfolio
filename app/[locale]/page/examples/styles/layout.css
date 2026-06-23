@@ -113,7 +113,7 @@
 }
 .exmplDesc {
   background: var(--kindOfList-color);
-  margin: 15px;
+  margin: 7px;
   padding: 7px;
   border-radius: 5px;
   color: var(--smpl-text-color);
@@ -122,8 +122,9 @@
   background: var(--kindOfList-color);
   border-radius: 5px;
   overflow: hidden;
+  padding: 0px 0px 8px 0px;
   position: relative;
-  margin: 15px;
+  margin: 7px;
 }
 .testAreaBlock > p {
   background: var(--skills-headers-bg);
