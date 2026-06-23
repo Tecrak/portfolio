@@ -39,6 +39,7 @@ export default function dotNetPage() {
           onGenreChange={handleGenreChange}
           onPriceChange={handlePriceChange}
           upToPrice={upToPrice}
+          selectedGenre={selectedGenre}
         />
         <div className={styles.shopContent}>
           <ShopTopPart />

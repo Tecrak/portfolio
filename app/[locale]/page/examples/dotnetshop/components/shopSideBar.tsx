@@ -8,10 +8,12 @@ export default function ShopSideBar({
   onGenreChange,
   onPriceChange,
   upToPrice,
+  selectedGenre,
 }: {
   onGenreChange: (genre: Genre) => void;
   onPriceChange: (price: number) => void;
   upToPrice: number;
+  selectedGenre: string | undefined;
 }) {
   const context = useContext(ShopContext);
   if (!context) return null;
@@ -22,7 +24,10 @@ export default function ShopSideBar({
       <h3>Genre</h3>
       <ul className={styles.shopGenres}>
         {genres.map((genre: Genre) => (
-          <li onClick={() => onGenreChange(genre)} key={genre}>
+          <li
+            className={selectedGenre === genre ? styles.selectedG : ""}
+            onClick={() => onGenreChange(genre)}
+            key={genre}>
             {genre}
           </li>
         ))}
