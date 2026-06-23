@@ -1,41 +1,36 @@
 "use client";
 
-import { createContext, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./styles/page.module.css";
 import ShopAllGames from "./components/shopAllGames";
-import { genres, ShareVars } from "./config/games";
+import { Game, Genre, genres, ShareVars } from "./config/games";
 import ShopBestBlock from "./components/shopBestBlock";
 import ShopTopPart from "./components/shopTopPart";
 import ShopSideBar from "./components/shopSideBar";
 import { ShopContext } from "./util/ShopContext";
-import axios from "axios";
-import { useQuery } from "@tanstack/react-query";
-
-function useGames() {
-  return useQuery({
-    queryKey: ["games"],
-    queryFn: async () => {
-      const res = await axios.get("/page/examples/dotnetshop/api");
-      return res.data;
-    },
-  });
-}
+import { useGames } from "./hook/useGames";
 
 export default function dotNetPage() {
+  const [selectedGenre, setSelectedGenre] = useState<Genre>();
   const { data: games = [], isLoading, isError } = useGames();
   const shareVars: ShareVars = {
     games,
     genres,
     styles,
   };
+
+  const handleGenreChange = (genre: Genre) => {
+    setSelectedGenre(genre);
+  };
+
   return (
     <ShopContext.Provider value={shareVars}>
       <div className={styles.shopMainBlock}>
-        <ShopSideBar />
+        <ShopSideBar onGenreChange={handleGenreChange} />
         <div className={styles.shopContent}>
           <ShopTopPart />
           <ShopBestBlock />
-          <ShopAllGames />
+          <ShopAllGames selectedGenre={selectedGenre} />
         </div>
       </div>
     </ShopContext.Provider>

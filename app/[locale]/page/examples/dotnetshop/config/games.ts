@@ -1,4 +1,11 @@
-export type Genre = "All Games" | "Action" | "RPG" | "Strat" | "MOBA" | "Story";
+export type Genre =
+  | "All Games"
+  | "Action"
+  | "RPG"
+  | "Strat"
+  | "MOBA"
+  | "Story"
+  | undefined;
 export type Genres = Genre[];
 
 export interface GameItemProps {

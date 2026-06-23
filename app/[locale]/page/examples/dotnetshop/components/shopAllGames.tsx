@@ -1,10 +1,14 @@
-import { Game } from "../config/games";
+import { Game, Genre } from "../config/games";
 import styles from "./styles/shopAllGames.module.css";
 import GameItem from "./gameItem";
 import { ShopContext } from "../util/ShopContext";
 import { useContext } from "react";
 
-export default function ShopAllGame() {
+export default function ShopAllGame({
+  selectedGenre,
+}: {
+  selectedGenre: Genre | undefined;
+}) {
   const context = useContext(ShopContext);
   if (!context) return null;
   const { games } = context;
@@ -21,15 +25,23 @@ export default function ShopAllGame() {
   return (
     <div className={styles.shopAllGames}>
       <ul>
-        {games.map((game: Game) => {
-          const isBestDeal: boolean =
-            getSavings(game.gamePrice.price, game.gamePrice.discountPer) ===
-            maxSavings;
+        {games
+          .filter((game) =>
+            !selectedGenre || selectedGenre === "All Games"
+              ? true
+              : game.genres.includes(selectedGenre),
+          )
+          .map((game: Game) => {
+            const isBestDeal: boolean =
+              getSavings(game.gamePrice.price, game.gamePrice.discountPer) ===
+              maxSavings;
 
-          return (
-            <div key={game._id}>{!isBestDeal && <GameItem game={game} />}</div>
-          );
-        })}
+            return (
+              <div key={game._id}>
+                <GameItem game={game} />
+              </div>
+            );
+          })}
       </ul>
     </div>
   );

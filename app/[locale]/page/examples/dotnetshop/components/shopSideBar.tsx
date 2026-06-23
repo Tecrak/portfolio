@@ -4,7 +4,11 @@ import { Genre } from "../config/games";
 import { ShopContext } from "../util/ShopContext";
 import styles from "./styles/shopSideBar.module.css";
 
-export default function ShopSideBar() {
+export default function ShopSideBar({
+  onGenreChange,
+}: {
+  onGenreChange: (genre: Genre) => void;
+}) {
   const context = useContext(ShopContext);
   if (!context) return null;
   const { genres } = context;
@@ -15,7 +19,9 @@ export default function ShopSideBar() {
       <h3>Genre</h3>
       <ul className={styles.shopGenres}>
         {genres.map((genre: Genre) => (
-          <li key={genre}>{genre}</li>
+          <li onClick={() => onGenreChange(genre)} key={genre}>
+            {genre}
+          </li>
         ))}
       </ul>
       <h3>Price</h3>
