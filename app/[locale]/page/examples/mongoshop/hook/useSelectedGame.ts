@@ -5,7 +5,7 @@ export function useSelectedGame(gameId: string | null) {
   return useQuery({
     queryKey: ["games", gameId],
     queryFn: async () => {
-      const res = await axios.get("/page/examples/mongoShop/api", {
+      const res = await axios.get("/page/examples/mongoshop/api", {
         params: { gameID: gameId },
       });
       return res.data;

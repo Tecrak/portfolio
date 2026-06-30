@@ -6,7 +6,7 @@ export function useGenredGames(selectedGenre?: Genre) {
   return useQuery({
     queryKey: ["games", selectedGenre],
     queryFn: async () => {
-      const res = await axios.get("/page/examples/mongoShop/api");
+      const res = await axios.get("/page/examples/mongoshop/api");
       return res.data;
     },
     select: (data) =>
