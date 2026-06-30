@@ -5,7 +5,7 @@ export function useAllGames() {
   return useQuery({
     queryKey: ["games"],
     queryFn: async () => {
-      const res = await axios.get("/page/examples/dotnetshop/api");
+      const res = await axios.get("/page/examples/mongoShop/api");
       return res.data;
     },
   });

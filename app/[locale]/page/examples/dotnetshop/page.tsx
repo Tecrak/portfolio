@@ -10,7 +10,7 @@ import ShopSideBar from "./components/shopSideBar";
 import { ShopContext } from "./util/ShopContext";
 import { useGenredGames } from "./hook/useGenredGames";
 
-export default function dotNetPage() {
+export default function MongoShop() {
   const [selectedGenre, setSelectedGenre] = useState<Genre>();
   const [upToPrice, setUpToPrice] = useState<number>(100);
   const {

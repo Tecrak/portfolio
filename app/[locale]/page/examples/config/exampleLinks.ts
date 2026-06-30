@@ -21,8 +21,8 @@ export const EXAMPLELINKS: NavItem[] = [
   },
   {
     label: "Shop",
-    forDB: "DotNetShop",
-    path: "/page/examples/dotnetshop",
+    forDB: "MongoShop",
+    path: "/page/examples/mongoShop",
     led: "orange",
   },
   {

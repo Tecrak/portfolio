@@ -12,7 +12,7 @@ export default function ShopBestBlock() {
   return (
     <div className={styles.shopBestBlock}>
       <div className={styles.shopBestDeal}>
-        <Link href={`../examples/dotnetshop/${bestDeal._id}`}>
+        <Link href={`../examples/mongoShop/${bestDeal._id}`}>
           <div className={styles.bestImg}>
             <img src={bestDeal.imgSrc}></img>
           </div>

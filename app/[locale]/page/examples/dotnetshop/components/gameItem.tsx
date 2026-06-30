@@ -7,7 +7,7 @@ export default function GameItem({ game }: GameItemProps) {
     <li title={game.description} key={game._id} className={styles.gameItem}>
       <img src={game.imgSrc}></img>
       <div className={styles.gameInfo}>
-        <Link href={`../examples/dotnetshop/${game._id}`}>
+        <Link href={`../examples//${game._id}`}>
           <h4>{game.gameName}</h4>
           <ul className={styles.gameGenres}>
             {game.genres.map((genre: Genre) => (

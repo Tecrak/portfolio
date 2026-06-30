@@ -114,7 +114,7 @@
       "MongoImages": {
         "description": "There’s a basic account system here that doesn’t store accounts directly; it took a bit of tinkering, but it seems to be working reliably. Also, to perform basic operations, you need to log in (I don’t steal your data; I just see your email). As they say: It’s better to see (try) it once than to describe it a hundred times, so good luck with your operations!"
       },
-      "DotNetShop": {
+      "MongoShop": {
         "description": "Working on it"
       },
       "GameItem": {
